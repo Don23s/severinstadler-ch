@@ -6,8 +6,153 @@
   <meta name="description" content="Kommunikation – Severin Stadler. Klarheit schaffen, Vertrauen aufbauen.">
   <title>Kommunikation | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ── Phasen-Kacheln ── */
+    .phasen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .phase-card {
+      background: var(--weiss);
+      border: 1px solid var(--linie);
+      border-top: 3px solid var(--rot);
+      padding: 2rem;
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s;
+    }
+
+    .phase-card.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .phase-card:hover {
+      box-shadow: 0 6px 24px rgba(201,23,42,0.1);
+    }
+
+    .phase-card .nr {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--rot-licht);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.04em;
+      /* Zahl im Hintergrund */
+      background: linear-gradient(135deg, var(--rot) 0%, #e85566 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .phase-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .phase-card p {
+      font-size: 0.88rem;
+      color: var(--grau);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Staggered delays */
+    .phase-card:nth-child(1) { transition-delay: 0.05s; }
+    .phase-card:nth-child(2) { transition-delay: 0.12s; }
+    .phase-card:nth-child(3) { transition-delay: 0.19s; }
+    .phase-card:nth-child(4) { transition-delay: 0.26s; }
+    .phase-card:nth-child(5) { transition-delay: 0.33s; }
+    .phase-card:nth-child(6) { transition-delay: 0.40s; }
+
+    /* ── Akkordeon Regeln ── */
+    .akkordeon {
+      margin-top: 2rem;
+      max-width: 680px;
+      border-top: 1px solid var(--linie);
+    }
+
+    .akkordeon-item {
+      border-bottom: 1px solid var(--linie);
+    }
+
+    .akkordeon-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.15s;
+    }
+
+    .akkordeon-trigger:hover { color: var(--rot); }
+
+    .akkordeon-trigger .num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--rot);
+      min-width: 1.5rem;
+      letter-spacing: 0.06em;
+    }
+
+    .akkordeon-trigger .icon {
+      margin-left: auto;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1.5px solid var(--linie);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      color: var(--grau);
+      transition: transform 0.25s, background 0.2s, border-color 0.2s;
+    }
+
+    .akkordeon-item.open .akkordeon-trigger { color: var(--rot); }
+    .akkordeon-item.open .icon {
+      transform: rotate(45deg);
+      background: var(--rot);
+      border-color: var(--rot);
+      color: var(--weiss);
+    }
+
+    .akkordeon-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+
+    .akkordeon-item.open .akkordeon-body {
+      max-height: 200px;
+    }
+
+    .akkordeon-body p {
+      font-size: 0.9rem;
+      color: var(--grau);
+      padding: 0 0 1.25rem 2.5rem;
+      margin: 0;
+      line-height: 1.65;
+    }
+  </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
     <a href="kommunikation.html" class="active">Kommunikation</a>
@@ -15,7 +160,7 @@
     <a href="projekte.html">Projekte</a>
   </nav>
 
-    <div class="page-hero">
+  <div class="page-hero">
     <div class="container">
       <span class="kicker">Kommunikation</span>
       <h1>Klarheit schaffen.<br>Vertrauen aufbauen.<br>Lösungen ermöglichen.</h1>
@@ -23,69 +168,207 @@
     </div>
   </div>
 
-  <div class="haltung-band sans">
+  <div class="haltung-band">
     „Man kann nicht nicht kommunizieren." – Paul Watzlawick
   </div>
 
   <section class="section">
     <div class="container">
-      <span class="section-label sans">Grundsatz</span>
+      <span class="section-label">Grundsatz</span>
       <h2>Kommunikation als Führungsinstrument.</h2>
-      <p style="font-family:system-ui,sans-serif;font-size:0.95rem;color:var(--grau);max-width:620px;">
+      <p style="font-size:0.95rem;color:var(--grau);max-width:620px;">
         Unausgesprochene Annahmen und unterschiedliche Zielbilder behindern Verständigung oft mehr als inhaltliche Differenzen. Gute Gesprächsführung schafft Raum für gemeinsame Lösungen.
       </p>
       <div class="drei-grid" style="margin-top:3rem;">
         <div class="drei-item">
-          <span class="nummer sans">Klarheit</span>
+          <span class="nummer">Klarheit</span>
           <h3>Ziele benennen</h3>
-          <p style="font-family:system-ui,sans-serif;font-size:0.88rem;color:var(--grau);">Klarheit über Gesprächsziele und Transparenz bei Erwartungen und Rollen.</p>
+          <p style="font-size:0.88rem;color:var(--grau);">Klarheit über Gesprächsziele und Transparenz bei Erwartungen und Rollen.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Aufmerksamkeit</span>
+          <span class="nummer">Aufmerksamkeit</span>
           <h3>Nonverbal wahrnehmen</h3>
-          <p style="font-family:system-ui,sans-serif;font-size:0.88rem;color:var(--grau);">Frühzeitige Erkennung von Dynamiken. Hören, was nicht gesagt wird.</p>
+          <p style="font-size:0.88rem;color:var(--grau);">Frühzeitige Erkennung von Dynamiken. Hören, was nicht gesagt wird.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Verbindlichkeit</span>
+          <span class="nummer">Verbindlichkeit</span>
           <h3>Gemeinsam entscheiden</h3>
-          <p style="font-family:system-ui,sans-serif;font-size:0.88rem;color:var(--grau);">Lösungen entwickeln und klare Vereinbarungen treffen. Nicht reden – handeln.</p>
+          <p style="font-size:0.88rem;color:var(--grau);">Lösungen entwickeln und klare Vereinbarungen treffen. Nicht reden – handeln.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-statement">
-    <div class="container">
-      <span class="section-label sans">Methode</span>
+  <!-- 6 Phasen: Scroll-animierte Kacheln -->
+  <section class="section section-warm">
+    <div class="container-wide" style="padding:0 2.5rem;">
+      <span class="section-label">Methode</span>
       <h2>6 Phasen strukturierter Gesprächsführung.</h2>
-      <ol class="steps" style="margin-top:2rem;max-width:640px;">
-        <li><strong>Zielklärung</strong> – Was soll dieses Gespräch erreichen?</li>
-        <li><strong>Erwartungen sichtbar machen</strong> – Was erwartet jede Partei?</li>
-        <li><strong>Perspektiven sammeln</strong> – Alle Sichtweisen aktiv einholen.</li>
-        <li><strong>Struktur halten</strong> – Beim Thema bleiben, Abweichungen benennen.</li>
-        <li><strong>Lösungen entwickeln</strong> – Gemeinsam, nicht gegeneinander.</li>
-        <li><strong>Verbindlichkeit herstellen</strong> – Klare Vereinbarungen treffen.</li>
-      </ol>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:560px;">
+        Jedes Gespräch folgt einer inneren Logik. Wer sie kennt, führt bewusster.
+      </p>
+
+      <div class="phasen-grid" id="phasenGrid">
+        <div class="phase-card">
+          <div class="nr">01</div>
+          <h3>Zielklärung</h3>
+          <p>Was soll dieses Gespräch erreichen? Ein klares Ziel verhindert, dass man aneinander vorbeiredet.</p>
+        </div>
+        <div class="phase-card">
+          <div class="nr">02</div>
+          <h3>Erwartungen sichtbar machen</h3>
+          <p>Was erwartet jede Partei? Unausgesprochene Erwartungen sind die häufigste Quelle von Enttäuschung.</p>
+        </div>
+        <div class="phase-card">
+          <div class="nr">03</div>
+          <h3>Perspektiven sammeln</h3>
+          <p>Alle Sichtweisen aktiv einholen – bevor man urteilt oder entscheidet.</p>
+        </div>
+        <div class="phase-card">
+          <div class="nr">04</div>
+          <h3>Struktur halten</h3>
+          <p>Beim Thema bleiben, Abweichungen benennen, Tempo bewusst steuern.</p>
+        </div>
+        <div class="phase-card">
+          <div class="nr">05</div>
+          <h3>Lösungen entwickeln</h3>
+          <p>Gemeinsam, nicht gegeneinander. Kreativität entsteht in sicherem Raum.</p>
+        </div>
+        <div class="phase-card">
+          <div class="nr">06</div>
+          <h3>Verbindlichkeit herstellen</h3>
+          <p>Klare Vereinbarungen treffen. Wer macht was bis wann? Ohne das bleibt alles Absicht.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section section-warm">
+  <!-- 10 Regeln: Akkordeon -->
+  <section class="section">
     <div class="container">
-      <span class="section-label sans">Regeln</span>
+      <span class="section-label">Regeln</span>
       <h2>10 Regeln der Diskussion.</h2>
-      <ol style="font-family:system-ui,sans-serif;font-size:0.95rem;max-width:560px;display:grid;gap:0.5rem;padding-left:1.25rem;">
-        <li>Ausreden lassen</li>
-        <li>Sachliche Kritik üben</li>
-        <li>Standpunkte begründen</li>
-        <li>Aktiv zuhören</li>
-        <li>Beim Thema bleiben</li>
-        <li>Gemeinsamkeiten suchen</li>
-        <li>Deeskalieren statt eskalieren</li>
-        <li>Offene Fragen stellen</li>
-        <li>Alle gleichwertig behandeln</li>
-        <li>Perspektiven übernehmen</li>
-      </ol>
-      <blockquote style="margin-top:3rem;">Ziel ist kooperatives Problemlösen – nicht Konfrontation.</blockquote>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:560px;">
+        Gute Gespräche entstehen nicht zufällig. Diese Regeln machen den Unterschied.
+      </p>
+
+      <div class="akkordeon" id="akkordeon">
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">01</span>
+            Ausreden lassen
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Wer unterbrochen wird, fühlt sich nicht gehört. Wer sich nicht gehört fühlt, hört nicht zu. Der Kreislauf beginnt mit dem ersten Unterbruch.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">02</span>
+            Sachliche Kritik üben
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Kritik am Inhalt, nie an der Person. Wer das verwechselt, verliert das Gegenüber – und das Argument.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">03</span>
+            Standpunkte begründen
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Eine Meinung ohne Begründung ist eine Behauptung. Wer seine Sicht erklärt, lädt das Gegenüber ein, sie zu verstehen – oder sinnvoll zu hinterfragen.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">04</span>
+            Aktiv zuhören
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Zuhören ist kein Warten auf die eigene Redezeit. Es bedeutet, wirklich zu verstehen, was das Gegenüber meint – auch zwischen den Zeilen.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">05</span>
+            Beim Thema bleiben
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Abschweifungen kosten Zeit und Energie. Wer das Thema hält, schützt das gemeinsame Ziel des Gesprächs.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">06</span>
+            Gemeinsamkeiten suchen
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Unterschiede trennen, Gemeinsamkeiten verbinden. Wer zuerst sucht, was verbindet, schafft Boden für echten Dialog.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">07</span>
+            Deeskalieren statt eskalieren
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Eskalation ist einfach. Deeskalation braucht Haltung. Wer im Moment der Spannung ruhig bleibt, übernimmt Verantwortung für das Gespräch.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">08</span>
+            Offene Fragen stellen
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Offene Fragen öffnen. Geschlossene schliessen. Wer fragt statt behauptet, zeigt echtes Interesse – und bekommt echte Antworten.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">09</span>
+            Alle gleichwertig behandeln
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Hierarchie ausserhalb des Raums lassen. Im Gespräch zählt das Argument, nicht der Titel.</p>
+          </div>
+        </div>
+
+        <div class="akkordeon-item">
+          <button class="akkordeon-trigger">
+            <span class="num">10</span>
+            Perspektiven übernehmen
+            <span class="icon">+</span>
+          </button>
+          <div class="akkordeon-body">
+            <p>Wer die Welt kurz durch andere Augen sieht, versteht mehr – und urteilt weniger. Perspektivwechsel ist kein Zeichen von Schwäche, sondern von Stärke.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <blockquote style="margin-top:3rem;">
+        Ziel ist kooperatives Problemlösen – nicht Konfrontation.
+      </blockquote>
     </div>
   </section>
 
@@ -101,5 +384,31 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Scroll-Animation für Phasen-Kacheln
+    const cards = document.querySelectorAll('.phase-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    cards.forEach(card => observer.observe(card));
+
+    // Akkordeon
+    document.querySelectorAll('.akkordeon-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.akkordeon-item');
+        const isOpen = item.classList.contains('open');
+        // Alle schliessen
+        document.querySelectorAll('.akkordeon-item.open').forEach(i => i.classList.remove('open'));
+        // Dieses öffnen (wenn nicht schon offen)
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
 </body>
 </html>
