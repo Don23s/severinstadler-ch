@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Haltungskompass – 6 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.severinstadler.ch/haltungskompass.html">
+  <meta property="og:title" content="Haltungskompass | Severin Stadler">
+  <meta property="og:description" content="6 Fragen. Wo stehst du politisch – und wo stehe ich? Vergleiche deine Haltung mit dem Solidarischen Liberalismus.">
+  <meta property="og:image" content="https://www.severinstadler.ch/assets/images/severin-stadler.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Haltungskompass | Severin Stadler">
+  <meta name="twitter:description" content="6 Fragen. Wo stehst du politisch?">
+  <title>Haltungskompass | Severin Stadler</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* ── Quiz ── */
+    .quiz-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar {
+      height: 3px;
+      background: var(--linie);
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background: var(--rot);
+      border-radius: 2px;
+      transition: width 0.45s ease;
+      width: 0%;
+    }
+
+    .quiz-zaehler {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grau);
+      margin-bottom: 1.25rem;
+    }
+
+    .quiz-frage-text {
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-antworten {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .quiz-btn {
+      background: var(--weiss);
+      border: 1.5px solid var(--linie);
+      border-radius: 4px;
+      padding: 1.1rem 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.5;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      width: 100%;
+    }
+
+    .quiz-btn:hover:not(:disabled) {
+      border-color: var(--rot);
+      background: var(--rot-licht);
+    }
+
+    .quiz-btn:active:not(:disabled) { transform: scale(0.99); }
+
+    .quiz-btn.selected {
+      border-color: var(--rot);
+      background: var(--rot-licht);
+      font-weight: 600;
+    }
+
+    .quiz-btn:disabled { cursor: default; opacity: 0.65; }
+    .quiz-btn.selected:disabled { opacity: 1; }
+
+    .quiz-slide {
+      animation: slideIn 0.3s ease forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Ergebnis ── */
+    .kompass-wrap {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .kompass-svg-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .ergebnis-lage {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rot);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .ergebnis-titel {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .ergebnis-text {
+      font-family: system-ui, sans-serif;
+      font-size: 0.92rem;
+      color: var(--grau);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      max-width: 380px;
+    }
+
+    .ergebnis-vergleich {
+      background: var(--warm);
+      border-left: 3px solid var(--rot);
+      padding: 1rem 1.25rem;
+      font-family: system-ui, sans-serif;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .ergebnis-vergleich strong { color: var(--rot); }
+
+    .ergebnis-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
+    .btn-neu {
+      background: none;
+      border: 1.5px solid var(--linie);
+      border-radius: 2px;
+      padding: 0.75rem 1.25rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--grau);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-neu:hover { border-color: var(--rot); color: var(--rot); }
+
+    @media (max-width: 900px) {
+      .kompass-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .kompass-svg-wrap svg { max-width: 360px; }
+    }
+
+    @media (max-width: 640px) {
+      .quiz-frage-text { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="brand"><span></span>Severin Stadler</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="kommunikation.html">Kommunikation</a>
+      <a href="politik.html" class="active">Politik</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="kicker">Interaktiv · Politik</span>
+      <h1>Haltungskompass.</h1>
+      <p class="sub">6 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du – und wo stehe ich?</p>
+    </div>
+  </div>
+
+  <div class="haltung-band sans">
+    Wirtschaft &nbsp;·&nbsp; Solidarität &nbsp;·&nbsp; Gesellschaft
+  </div>
+
+  <div class="tldr-box">
+    <span class="tldr-label">Kurzfassung</span>
+    <p>Beantworte 6 kurze Fragen zu Wirtschaft, Staat und Gesellschaft. Du siehst danach auf einem Kompass, wo du politisch stehst – und wo ich stehe. Keine richtigen oder falschen Antworten, nur Haltungen.</p>
+  </div>
+
+  <!-- Quiz-Bereich -->
+  <section class="section" id="quiz-bereich">
+    <div class="container">
+      <div class="quiz-wrap">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="progressFill"></div>
+        </div>
+        <div id="quizInhalt"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ergebnis-Bereich (initial versteckt) -->
+  <section class="section" id="ergebnis-bereich" style="display:none;">
+    <div class="container">
+      <span class="section-label sans">Dein Ergebnis</span>
+      <div class="kompass-wrap" style="margin-top:2rem;">
+        <div class="kompass-svg-wrap">
+          <svg id="kompassSvg" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div id="ergebnisText"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span></span>Severin Stadler</div>
+        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2024</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.linkedin.com/in/severin-stadler-055a5519a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // ══════════════════════════════════════════════════════════════════
+  // HALTUNGSKOMPASS – Konfiguration
+  //
+  // Hier kannst du alles anpassen:
+  //   - CONFIG.severin      → Severins Position (0–100 pro Achse)
+  //   - CONFIG.fragen       → Fragen und Antworten hinzufügen / ändern
+  //   - CONFIG.quadranten   → Labels und Beschreibungen der 4 Felder
+  //   - CONFIG.achsen       → Beschriftungen der X- und Y-Achse
+  //
+  // Scoring pro Antwort:
+  //   x → Wirtschaftsfreiheit: -2 (Staatswirtschaft) bis +2 (Freier Markt)
+  //   y → Solidarität:         -2 (individuell)       bis +2 (solidarisch)
+  // ══════════════════════════════════════════════════════════════════
+  const CONFIG = {
+
+    // Severins eigene Position auf dem Kompass (0–100)
+    // 0 = ganz links/unten, 100 = ganz rechts/oben
+    severin: {
+      x: 72,   // Wirtschaftsfreiheit: leicht rechtsliberal
+      y: 78,   // Solidarität: klar solidarisch
+      label: "Severin"
+    },
+
+    // Achsenbeschriftungen
+    achsen: {
+      x: { links: "Staatswirtschaft", rechts: "Freier Markt" },
+      y: { unten: "Individuell",      oben: "Solidarisch"    }
+    },
+
+    // 4 Quadranten: Name + Beschreibung (erscheint im Ergebnis-Text)
+    quadranten: {
+      obenLinks: {
+        name: "Sozialdemokratie",
+        beschreibung: "Du setzt auf einen starken, aktiven Staat und Umverteilung als Fundament des gesellschaftlichen Zusammenhalts. Wirtschaftliche Effizienz ist dir wichtig – aber nie auf Kosten der Schwächsten."
+      },
+      obenRechts: {
+        name: "Solidarischer Liberalismus",
+        beschreibung: "Du glaubst an wirtschaftliche Freiheit und soziale Verantwortung gleichzeitig. Märkte sollen sich entfalten können – aber im Dienst der Gesellschaft, nicht gegen sie."
+      },
+      untenLinks: {
+        name: "Nationalkonservatismus",
+        beschreibung: "Du bevorzugst Schutz, Stabilität und klare Grenzen – wirtschaftlich wie gesellschaftlich. Bewährtes hat für dich einen hohen Wert."
+      },
+      untenRechts: {
+        name: "Rechtsliberalismus",
+        beschreibung: "Du setzt auf individuelle Freiheit und minimalen Staatseinsatz. Der Markt löst Probleme besser als Bürokratie – Eigenverantwortung steht im Vordergrund."
+      }
+    },
+
+    // Fragen – beliebig erweiterbar
+    // Jede Antwort hat x und y (-2 bis +2)
+    fragen: [
+      {
+        text: "Wie viel Steuern sollen grosse Unternehmen zahlen?",
+        antworten: [
+          { text: "Weniger – hohe Steuern hemmen Wachstum und Innovation.", x: +2, y: -1 },
+          { text: "Fair und proportional zu ihrer gesellschaftlichen Verantwortung.", x: +1, y: +2 },
+          { text: "Mehr – grosse Gewinne müssen stärker umverteilt werden.", x: -2, y: +2 }
+        ]
+      },
+      {
+        text: "Was denkst du über den Sozialstaat?",
+        antworten: [
+          { text: "Er ist zu grosszügig – er schafft Abhängigkeit statt Eigenverantwortung.", x: +1, y: -2 },
+          { text: "Er ist richtig – aber muss effizienter und zielgenauer werden.", x: +1, y: +1 },
+          { text: "Er ist zu schwach – wir brauchen mehr Absicherung für alle.", x: -1, y: +2 }
+        ]
+      },
+      {
+        text: "Wie soll der Klimawandel bekämpft werden?",
+        antworten: [
+          { text: "Durch Marktmechanismen – ohne staatliche Eingriffe in die Wirtschaft.", x: +2, y: -1 },
+          { text: "Mit klugen Regeln, die Wirtschaft und Umwelt gleichzeitig stärken.", x: +1, y: +2 },
+          { text: "Mit klaren Verboten und Gesetzen – auch wenn es kurzfristig kostet.", x: -2, y: +2 }
+        ]
+      },
+      {
+        text: "Wer soll Bildung organisieren und finanzieren?",
+        antworten: [
+          { text: "Der Markt – Wettbewerb und Eigenverantwortung bringen mehr Qualität.", x: +2, y: -2 },
+          { text: "Der Staat – gute Bildung für alle ist die beste Wirtschaftspolitik.", x:  0, y: +2 },
+          { text: "Der Staat vollständig und kostenlos – Bildung darf kein Privileg sein.", x: -1, y: +1 }
+        ]
+      },
+      {
+        text: "Wie stehst du zu Regulierungen im Arbeitsmarkt?",
+        antworten: [
+          { text: "Weniger Regulierung – Flexibilität nützt Arbeitgebern wie Arbeitnehmern.", x: +2, y: -1 },
+          { text: "Faire Mindeststandards – nicht zu viel, nicht zu wenig.", x: +1, y: +1 },
+          { text: "Starke Arbeitnehmerrechte und Gewerkschaften sind unverzichtbar.", x: -2, y: +2 }
+        ]
+      },
+      {
+        text: "Was ist der Hauptzweck eines erfolgreichen Unternehmens?",
+        antworten: [
+          { text: "Gewinn erwirtschaften – das schafft langfristig Wohlstand für alle.", x: +2, y: -2 },
+          { text: "Wert schaffen – für Aktionäre, Mitarbeitende und die Gesellschaft.", x: +1, y: +2 },
+          { text: "Der Gesellschaft dienen – Profit ist Mittel zum Zweck, nicht Selbstzweck.", x: -1, y: +2 }
+        ]
+      }
+    ]
+  };
+
+  // ══════════════════════════════════════════════════════════════════
+  // Logik (nicht ändern)
+  // ══════════════════════════════════════════════════════════════════
+  let aktFrage = 0;
+  let pktX = 0;
+  let pktY = 0;
+  const MAX = CONFIG.fragen.length * 2; // max ±2 pro Frage
+
+  function norm(punkte) {
+    return Math.round(((punkte + MAX) / (MAX * 2)) * 100);
+  }
+
+  function getQuadrant(x, y) {
+    const q = CONFIG.quadranten;
+    if (x >= 50 && y >= 50) return q.obenRechts;
+    if (x <  50 && y >= 50) return q.obenLinks;
+    if (x >= 50 && y <  50) return q.untenRechts;
+    return q.untenLinks;
+  }
+
+  function renderFrage() {
+    const pct = (aktFrage / CONFIG.fragen.length) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+
+    const f = CONFIG.fragen[aktFrage];
+    const btnHTML = f.antworten.map((a, i) =>
+      `<button class="quiz-btn" onclick="waehle(${i})">${a.text}</button>`
+    ).join('');
+
+    document.getElementById('quizInhalt').innerHTML = `
+      <div class="quiz-slide">
+        <div class="quiz-zaehler">Frage ${aktFrage + 1} von ${CONFIG.fragen.length}</div>
+        <div class="quiz-frage-text">${f.text}</div>
+        <div class="quiz-antworten">${btnHTML}</div>
+      </div>
+    `;
+  }
+
+  function waehle(idx) {
+    document.querySelectorAll('.quiz-btn').forEach(b => b.disabled = true);
+    document.querySelectorAll('.quiz-btn')[idx].classList.add('selected');
+
+    const a = CONFIG.fragen[aktFrage].antworten[idx];
+    pktX += a.x;
+    pktY += a.y;
+
+    setTimeout(() => {
+      aktFrage++;
+      if (aktFrage < CONFIG.fragen.length) {
+        renderFrage();
+      } else {
+        renderErgebnis();
+      }
+    }, 380);
+  }
+
+  function renderErgebnis() {
+    document.getElementById('progressFill').style.width = '100%';
+
+    const userX = norm(pktX);
+    const userY = norm(pktY);
+    const sev   = CONFIG.severin;
+    const quad  = getQuadrant(userX, userY);
+
+    const dist      = Math.sqrt(Math.pow(userX - sev.x, 2) + Math.pow(userY - sev.y, 2));
+    const aehnl     = Math.max(0, Math.round(100 - dist));
+    const aehnlText = aehnl >= 70
+      ? 'Ihr teilt eine sehr ähnliche Grundhaltung.'
+      : aehnl >= 45
+        ? 'Es gibt Gemeinsamkeiten – und interessante Unterschiede.'
+        : 'Ihr habt klar unterschiedliche Schwerpunkte – genau das macht Dialog wertvoll.';
+
+    // SVG Kompass
+    const W = 400, H = 440;
+    const px = 54, py = 30;            // padding
+    const cw = W - 2 * px;            // chart width:  292
+    const ch = H - py - 72;           // chart height: 338
+    const toX = v => px + (v / 100) * cw;
+    const toY = v => (py + ch) - (v / 100) * ch;  // Y invertiert
+    const mx = toX(50), my = toY(50);
+    const ux = toX(userX), uy = toY(userY);
+    const sx = toX(sev.x), sy = toY(sev.y);
+
+    document.getElementById('kompassSvg').innerHTML = `
+      <!-- Quadrant-Hintergründe -->
+      <rect x="${px}" y="${py}" width="${cw/2}" height="${ch/2}" fill="#EBF5FB" opacity="0.55"/>
+      <rect x="${mx}" y="${py}" width="${cw/2}" height="${ch/2}" fill="#FDF2F3" opacity="0.7"/>
+      <rect x="${px}" y="${my}" width="${cw/2}" height="${ch/2}" fill="#F5F5F5" opacity="0.45"/>
+      <rect x="${mx}" y="${my}" width="${cw/2}" height="${ch/2}" fill="#FFFBF0" opacity="0.45"/>
+
+      <!-- Rahmen -->
+      <rect x="${px}" y="${py}" width="${cw}" height="${ch}" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+
+      <!-- Mittelachsen -->
+      <line x1="${mx}" y1="${py}" x2="${mx}" y2="${py+ch}" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>
+      <line x1="${px}" y1="${my}" x2="${px+cw}" y2="${my}" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>
+
+      <!-- Quadranten-Labels -->
+      <text x="${px+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">Sozialdemokratie</text>
+      <text x="${mx+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#C9172A" font-weight="700">Solidarischer Liberalismus</text>
+      <text x="${px+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">Nationalkonservatismus</text>
+      <text x="${mx+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">Rechtsliberalismus</text>
+
+      <!-- Y-Achsen-Labels -->
+      <text x="${px + cw/2}" y="${py - 10}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">↑ ${CONFIG.achsen.y.oben}</text>
+      <text x="${px + cw/2}" y="${py + ch + 16}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">${CONFIG.achsen.y.unten} ↓</text>
+
+      <!-- X-Achsen-Labels -->
+      <text x="${px}" y="${py + ch + 34}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF">← ${CONFIG.achsen.x.links}</text>
+      <text x="${px + cw}" y="${py + ch + 34}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="end">${CONFIG.achsen.x.rechts} →</text>
+
+      <!-- Verbindungslinie -->
+      <line x1="${ux}" y1="${uy}" x2="${sx}" y2="${sy}" stroke="#C9172A" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35"/>
+
+      <!-- Severin Punkt -->
+      <circle cx="${sx}" cy="${sy}" r="9" fill="white" stroke="#C9172A" stroke-width="2"/>
+      <circle cx="${sx}" cy="${sy}" r="4.5" fill="#C9172A"/>
+      <text x="${sx + 13}" y="${sy + 4}" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700">${sev.label}</text>
+
+      <!-- User Punkt (pulsierend) -->
+      <circle cx="${ux}" cy="${uy}" r="12" fill="#C9172A" opacity="0.12">
+        <animate attributeName="r" values="9;16;9" dur="2.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.15;0.04;0.15" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="${ux}" cy="${uy}" r="7" fill="#C9172A"/>
+      <text x="${ux}" y="${uy - 13}" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700" text-anchor="middle">Du</text>
+    `;
+
+    // Ergebnis-Text
+    document.getElementById('ergebnisText').innerHTML = `
+      <span class="ergebnis-lage">Dein Quadrant</span>
+      <div class="ergebnis-titel">${quad.name}</div>
+      <p class="ergebnis-text">${quad.beschreibung}</p>
+      <div class="ergebnis-vergleich">
+        <strong>Übereinstimmung mit Severin: ${aehnl}&thinsp;%</strong><br>
+        ${aehnlText} Severin steht für den <em>Solidarischen Liberalismus</em> – wirtschaftliche Freiheit als Werkzeug der Gesellschaft.
+      </div>
+      <div class="ergebnis-cta">
+        <a href="politik.html" class="btn">Politische Haltung lesen</a>
+        <button class="btn-neu" onclick="neustart()">Nochmals</button>
+      </div>
+    `;
+
+    document.getElementById('quiz-bereich').style.display = 'none';
+    document.getElementById('ergebnis-bereich').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('ergebnis-bereich').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+
+  function neustart() {
+    aktFrage = 0; pktX = 0; pktY = 0;
+    document.getElementById('ergebnis-bereich').style.display = 'none';
+    document.getElementById('quiz-bereich').style.display = 'block';
+    document.getElementById('progressFill').style.width = '0%';
+    renderFrage();
+    document.getElementById('quiz-bereich').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    links.classList.remove('open');
+  }));
+
+  // Start
+  renderFrage();
+  </script>
+</body>
+</html>
