@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Das Lernkonzept von Fizzi & the Prof! – pädagogischer und psychologischer Ansatz, Figurenrollen, Lernökosystem.">
+  <meta property="og:title" content="Das Lernkonzept | Fizzi & the Prof!">
+  <meta property="og:description" content="Warum Fizzi & the Prof! funktioniert – der didaktische und psychologische Ansatz hinter den Lernvideos.">
+  <meta property="og:url" content="https://www.severinstadler.ch/fizzi-lernkonzept.html">
+  <meta property="og:image" content="https://www.severinstadler.ch/assets/images/severin-stadler.jpg">
+  <title>Das Lernkonzept | Fizzi & the Prof!</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* Rollen-Grid */
+    .rollen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0;
+      border: 1px solid var(--linie);
+      margin-top: 2.5rem;
+    }
+
+    .rolle {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--linie);
+      position: relative;
+    }
+
+    .rolle:last-child { border-right: none; }
+
+    .rolle .figur-emoji {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .rolle .figur-name {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rot);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .rolle h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .rolle .rolle-tag {
+      display: inline-block;
+      background: var(--rot-licht);
+      color: var(--rot);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    .rolle p {
+      font-size: 0.88rem;
+      color: var(--grau);
+      line-height: 1.65;
+    }
+
+    /* Prinzipien */
+    .prinzip-liste {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--linie);
+      margin-top: 2rem;
+    }
+
+    .prinzip-item {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      border-bottom: 1px solid var(--linie);
+    }
+
+    .prinzip-item:last-child { border-bottom: none; }
+
+    .prinzip-nr {
+      background: var(--rot);
+      color: var(--weiss);
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.04em;
+    }
+
+    .prinzip-inhalt {
+      padding: 1.5rem;
+    }
+
+    .prinzip-inhalt h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .prinzip-inhalt p {
+      font-size: 0.88rem;
+      color: var(--grau);
+      margin: 0;
+    }
+
+    /* Ökosystem Visualisierung */
+    .oeko-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .oeko-card {
+      padding: 2rem;
+      border: 1px solid var(--linie);
+      border-top: 3px solid var(--rot);
+      text-align: center;
+    }
+
+    .oeko-card .icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .oeko-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .oeko-card p { font-size: 0.85rem; color: var(--grau); margin: 0; }
+
+    @media (max-width: 640px) {
+      .rollen-grid { grid-template-columns: 1fr; }
+      .rolle { border-right: none; border-bottom: 1px solid var(--linie); }
+      .rolle:last-child { border-bottom: none; }
+      .oeko-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="brand"><span></span>Severin Stadler</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="kommunikation.html">Kommunikation</a>
+      <a href="politik.html">Politik</a>
+      <a href="projekte.html" class="active">Projekte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="kicker">Fizzi &amp; the Prof! · Lernkonzept</span>
+      <h1>Warum diese Videos funktionieren.</h1>
+      <p class="sub">
+        Hinter Fizzi &amp; the Prof! steckt mehr als Animation. Ein didaktisches System,
+        das auf Neuropsychologie, Identifikation und dem Wissen um das Lernumfeld aufbaut.
+      </p>
+      <div style="margin-top: 1.5rem;">
+        <a href="fizzi-und-der-prof.html" style="font-size:0.85rem; color:var(--rot); text-decoration:none; font-weight:600;">← Zurück zum Projekt</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="haltung-band">
+    Identifikation · Positive Fehlerkultur · Lernökosystem · Alle Altersgruppen
+  </div>
+
+  <!-- Ausgangspunkt -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Ausgangspunkt</span>
+      <h2>Lernen ist keine Frage des Könnens. Es ist eine Frage des Dürfens.</h2>
+      <p style="font-size:0.95rem; color:var(--grau); max-width:680px;">
+        Kinder lernen von Natur aus. Sie fragen, probieren, scheitern, versuchen es wieder.
+        Dieses natürliche Lernen wird durch Druck, Bewertung und Vergleich gehemmt – nicht gefördert.
+        Fizzi &amp; the Prof! setzt dort an, wo Schule oft aufhört: beim Erleben von Lernen als etwas
+        Schönes, Gemeinsames und Bedeutungsvolles.
+      </p>
+      <blockquote>
+        Nicht das Kind muss sich dem Lernen anpassen. Das Lernen muss sich dem Kind anpassen.
+      </blockquote>
+      <p style="font-size:0.95rem; color:var(--grau); max-width:680px;">
+        Dieser Grundsatz gilt für alle Altersgruppen. Ob vier oder vierzig – wer lernt,
+        braucht Sicherheit, Zugehörigkeit und das Gefühl: Ich kann das. Ich gehöre dazu.
+      </p>
+    </div>
+  </section>
+
+  <!-- Das Lernökosystem -->
+  <section class="section section-warm">
+    <div class="container">
+      <span class="section-label">Lernökosystem</span>
+      <h2>Lernen passiert nie allein.</h2>
+      <p style="font-size:0.95rem; color:var(--grau); max-width:680px;">
+        Die Forschung ist eindeutig: Der grösste Einfluss auf Lernerfolg liegt nicht im Lerninhalt,
+        sondern im Umfeld. Eltern, Geschwister, Freunde, Lehrpersonen – sie alle formen,
+        ob Lernen als Last oder als Entdeckungsreise erlebt wird.
+        Fizzi &amp; the Prof! wendet sich deshalb an alle Beteiligten – nicht nur an die Lernenden selbst.
+      </p>
+
+      <div class="oeko-grid">
+        <div class="oeko-card">
+          <span class="icon">🧒</span>
+          <h3>Der Lernende</h3>
+          <p>Findet Figuren, die so fühlen wie er. Darf zweifeln, scheitern, fragen – ohne Angst.</p>
+        </div>
+        <div class="oeko-card">
+          <span class="icon">👨‍👩‍👧</span>
+          <h3>Das Umfeld</h3>
+          <p>Eltern, Geschwister, Peers erleben mit. Verstehen, wie Unterstützung ohne Druck aussieht.</p>
+        </div>
+        <div class="oeko-card">
+          <span class="icon">🏫</span>
+          <h3>Lehrpersonen</h3>
+          <p>Erhalten ein ergänzendes Werkzeug: Inhalte in sicherer, ruhiger Atmosphäre vermittelt.</p>
+        </div>
+      </div>
+
+      <blockquote style="margin-top: 3rem;">
+        Das Ziel ist nicht das Kind zu beschulen. Das Ziel ist eine Gemeinschaft zu schaffen, die gemeinsam lernt.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Figurenrollen -->
+  <section class="section">
+    <div class="container-wide" style="padding: 0 2.5rem;">
+      <span class="section-label">Die Figuren als pädagogisches System</span>
+      <h2>Jede Figur trägt eine Rolle. Jede Rolle trägt eine Botschaft.</h2>
+      <p style="font-size:0.95rem; color:var(--grau); max-width:680px;">
+        Die vier Hauptfiguren sind kein Zufall. Sie verkörpern die wichtigsten Rollen im Lernumfeld –
+        und zeigen modellhaft, wie diese Rollen gesund und unterstützend ausgefüllt werden können.
+      </p>
+
+      <div class="rollen-grid">
+
+        <div class="rolle">
+          <span class="figur-emoji">🦊</span>
+          <span class="figur-name">Fizzi</span>
+          <span class="rolle-tag">Der Lernende</span>
+          <h3>Identifikation &amp; Mut</h3>
+          <p>
+            Fizzi ist neugierig, mutig – und manchmal unsicher. Genau wie echte Lernende.
+            Kinder und Erwachsene sehen sich in Fizzi: den Wunsch zu verstehen,
+            die Angst vor dem Scheitern, die Freude bei der Erkenntnis.
+            Fizzi irrt sich. Und das ist das Wichtigste: Er macht weiter.
+          </p>
+          <p style="margin-top: 0.75rem;">
+            <strong style="color: var(--text);">Botschaft:</strong> Fehler gehören dazu. Neugier ist Stärke.
+          </p>
+        </div>
+
+        <div class="rolle">
+          <span class="figur-emoji">🐦</span>
+          <span class="figur-name">Pico</span>
+          <span class="rolle-tag">Der Peer / Freund</span>
+          <h3>Begleitung ohne Bewertung</h3>
+          <p>
+            Pico ist immer da – leise, loyal, nie wertend. Er verkörpert den idealen Lernbegleiter:
+            einen Freund, der nicht erklärt, sondern ermutigt. Der nicht bewertet, sondern begleitet.
+            Pico zeigt, wie Peers das Lernen positiv beeinflussen können.
+          </p>
+          <p style="margin-top: 0.75rem;">
+            <strong style="color: var(--text);">Botschaft:</strong> Du musst nicht alleine lernen.
+          </p>
+        </div>
+
+        <div class="rolle">
+          <span class="figur-emoji">🦊🎓</span>
+          <span class="figur-name">Professor Pino</span>
+          <span class="rolle-tag">Der Lehrer / Mentor</span>
+          <h3>Struktur ohne Druck</h3>
+          <p>
+            Professor Pino erklärt – aber er fordert nicht. Er fragt statt zu testen,
+            er wartet statt zu drängen. Er verkörpert das Ideal der pädagogischen Beziehung:
+            Lehrpersonen und Eltern, die Raum schaffen statt ihn zu füllen.
+            Sein Tempo ist das Tempo des Lernenden.
+          </p>
+          <p style="margin-top: 0.75rem;">
+            <strong style="color: var(--text);">Botschaft:</strong> Lernen braucht Zeit. Und Zeit ist ein Geschenk.
+          </p>
+        </div>
+
+        <div class="rolle">
+          <span class="figur-emoji">🦉</span>
+          <span class="figur-name">Maana</span>
+          <span class="rolle-tag">Die weise Reflexionsfigur</span>
+          <h3>Tiefe &amp; Bedeutung</h3>
+          <p>
+            Maana erscheint selten – und wenn, dann mit Gewicht. Sie steht für die innere Stimme,
+            die Grosseltern, die Mentoren: jene, die nicht erklären, sondern einordnen.
+            Sie gibt dem Gelernten Bedeutung. Sie verbindet Wissen mit Weisheit.
+          </p>
+          <p style="margin-top: 0.75rem;">
+            <strong style="color: var(--text);">Botschaft:</strong> Verstehen ist mehr als Wissen.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 Prinzipien -->
+  <section class="section section-warm">
+    <div class="container">
+      <span class="section-label">Didaktische Prinzipien</span>
+      <h2>7 Prinzipien, die jede Lektion prägen.</h2>
+      <p style="font-size:0.95rem; color:var(--grau); max-width:640px;">
+        Jede Designentscheidung – Tempo, Musik, Figurenreaktionen, Aufgabenstruktur –
+        folgt einem dieser Prinzipien.
+      </p>
+
+      <ul class="prinzip-liste">
+        <li class="prinzip-item">
+          <div class="prinzip-nr">01</div>
+          <div class="prinzip-inhalt">
+            <h3>Identifikation vor Information</h3>
+            <p>Erst muss das Kind fühlen: Das ist wie ich. Dann kann es lernen. Figuren, die echte Gefühle zeigen, öffnen diesen Raum.</p>
+          </div>
+        </li>
+        <li class="prinzip-item">
+          <div class="prinzip-nr">02</div>
+          <div class="prinzip-inhalt">
+            <h3>Ruhe als Lernraum</h3>
+            <p>Reizüberflutung hemmt Verarbeitung. Ruhige Bilder, sanfte Musik und langsames Tempo aktivieren das Gehirn – nicht überfordern es.</p>
+          </div>
+        </li>
+        <li class="prinzip-item">
+          <div class="prinzip-nr">03</div>
+          <div class="prinzip-inhalt">
+            <h3>Positive Fehlerkultur</h3>
+            <p>Fizzi irrt sich öffentlich – und macht weiter. Fehler sind kein Versagen, sondern Teil des Prozesses. Diese Botschaft ist heilsam für alle Altersgruppen.</p>
+          </div>
+        </li>
+        <li class="prinzip-item">
+          <div class="prinzip-nr">04</div>
+          <div class="prinzip-inhalt">
+            <h3>Ritualisierte Struktur</h3>
+            <p>Jede Lektion folgt demselben Rhythmus: Ritual → Vermittlung → Übung → Bewegung → Erkenntnis → Transfer. Vorhersehbarkeit schafft Sicherheit.</p>
+          </div>
+        </li>
+        <li class="prinzip-item">
+          <div class="prinzip-nr">05</div>
+          <div class="prinzip-inhalt">
+            <h3>Emotionale Verankerung</h3>
+            <p>Inhalte, die mit positiven Emotionen verknüpft sind, bleiben. Freude, Staunen, Erkenntnis sind keine Extras – sie sind das Medium.</p>
+          </div>
+        </li>
+        <li class="prinzip-item">
+          <div class="prinzip-nr">06</div>
+          <div class="prinzip-inhalt">
+            <h3>Wiederholung als Strategie</h3>
+            <p>Wiederholung ist kein Zeichen schwacher Didaktik – sie ist neuropsychologisch notwendig. Kernkonzepte werden spiralförmig vertieft.</p>
+          </div>
+        </li>
+        <li class="prinzip-item">
+          <div class="prinzip-nr">07</div>
+          <div class="prinzip-inhalt">
+            <h3>Das Umfeld einbeziehen</h3>
+            <p>Videos sind so gestaltet, dass sie gemeinsam angeschaut werden können – und Gespräche danüber auslösen. Lernen als soziales Erlebnis.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Statement -->
+  <section class="section section-statement">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.6);">Vision</span>
+      <h2 style="color:var(--weiss); max-width: 700px;">
+        Jede Person im Umfeld eines Lernenden ist Teil des Lernens.
+        Fizzi &amp; the Prof! macht diesen Zusammenhang sichtbar – und erlebbar.
+      </h2>
+      <p style="color:rgba(255,255,255,0.75); font-size:0.95rem; max-width:580px; margin-top:1.25rem;">
+        Das Ziel ist nicht ein besseres Lernvideo. Das Ziel ist eine Kultur,
+        in der Lernen wieder Freude macht – für alle Beteiligten.
+      </p>
+      <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://www.youtube.com/@FizziAndTheProf" class="btn" style="background:#fff;color:var(--rot);" target="_blank" rel="noopener">YouTube-Kanal</a>
+        <a href="fizzi-und-der-prof.html" class="btn btn-outline" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.35);">← Zurück zum Projekt</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span></span>Severin Stadler</div>
+        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2024</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.linkedin.com/in/severin-stadler-055a5519a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
