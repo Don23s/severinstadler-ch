@@ -3,9 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fizzi & the Prof! – Ein neues Projekt von Severin Stadler.">
+  <meta name="description" content="Fizzi & the Prof! – Animierte Lernvideos für alle Altersgruppen. Lernen durch Neugier, Identifikation und ruhige Atmosphäre.">
   <title>Fizzi &amp; the Prof! | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .figuren-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .figur-card {
+      background: var(--card);
+      border-radius: 6px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .figur-card .emoji { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+    .figur-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+    .figur-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    .phasen {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .phase {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+    }
+    .phase strong { color: var(--gold); display: block; margin-bottom: 0.2rem; font-size: 0.75rem; letter-spacing: 0.05em; }
+  </style>
 </head>
 <body>
 
@@ -19,28 +50,85 @@
   <header class="hero">
     <p class="tagline">Projekt</p>
     <h1>Fizzi &amp; the Prof!</h1>
-    <p>Bald mehr Informationen hier.</p>
+    <p>Lernen ist keine Pflicht – es ist ein Abenteuer.</p>
   </header>
 
   <main class="container">
 
     <div class="project-meta">
-      <span class="badge">In Entwicklung</span>
+      <span class="badge">Lernvideos</span>
+      <span class="badge">Animation</span>
+      <span class="badge">Alle Altersgruppen</span>
+      <span class="badge">In Produktion</span>
     </div>
 
-    <!-- TODO: Inhalte ergänzen sobald bereit -->
-    <p>Dieses Projekt befindet sich aktuell in Entwicklung. Mehr Informationen folgen in Kürze.</p>
+    <h2>Die Idee</h2>
+    <p>Lernen scheitert selten am Inhalt – es scheitert an der Haltung. Zu viel Druck, zu wenig Bedeutung, zu wenig Verbindung.</p>
+    <p>Fizzi &amp; the Prof! baut Brücken: zwischen Wissensvermittlung und echtem Erleben, zwischen Figur und Zuschauer, zwischen Schule und der Lust am Verstehen.</p>
 
+    <blockquote>
+      Bildung verdient denselben Innovationsgeist wie Unterhaltung.
+    </blockquote>
+
+    <h2>Die Figuren</h2>
+    <div class="figuren-grid">
+      <div class="figur-card">
+        <span class="emoji">🦊</span>
+        <h3>Fizzi</h3>
+        <p>Junger Fuchs. Neugierig, mutig, manchmal unsicher. Steht für den Lernenden in uns allen.</p>
+      </div>
+      <div class="figur-card">
+        <span class="emoji">🐦</span>
+        <h3>Pico</h3>
+        <p>Kleiner blauer Vogel. Leiser Begleiter, sanfter Witz, immer an Fizzis Seite.</p>
+      </div>
+      <div class="figur-card">
+        <span class="emoji">🦊🎓</span>
+        <h3>Prof. Pino</h3>
+        <p>Älterer Fuchs mit Brille. Ruhiger Lehrpol – erklärt ohne Druck, fragt statt zu fordern.</p>
+      </div>
+      <div class="figur-card">
+        <span class="emoji">🦉</span>
+        <h3>Maana</h3>
+        <p>Weise Eule. Erscheint selten – und wenn, dann mit Gewicht und tiefer Bedeutung.</p>
+      </div>
+    </div>
+
+    <h2>Stil &amp; Atmosphäre</h2>
+    <p>Weicher Farbstiftstil, ruhige Naturtöne, warme Kontraste. Keine Reizüberflutung, keine schnellen Schnitte. Eine Welt, in der man durchatmen darf – und dabei lernt.</p>
+    <p>Die Umgebungen: Fuchsbau, Lernplatz unter dem Baum, Lichtung für Übungen, Traumwald mit Symbolstationen.</p>
+
+    <h2>Für alle Altersgruppen</h2>
+    <div class="phasen">
+      <div class="phase"><strong>Phase 1</strong>4–7 Jahre<br>Mathematik-Grundlagen</div>
+      <div class="phase"><strong>Phase 2</strong>7–11 Jahre<br>Primarschule</div>
+      <div class="phase"><strong>Phase 3</strong>11–15 Jahre<br>Sekundarstufe</div>
+      <div class="phase"><strong>Phase 4</strong>15–18 Jahre<br>Jugendliche</div>
+      <div class="phase"><strong>Phase 5</strong>18+ Jahre<br>Erwachsene</div>
+    </div>
+
+    <h2>Warum es funktioniert</h2>
+    <ul>
+      <li><strong>Identifikation</strong> – Figuren, die man mag und in denen man sich erkennt</li>
+      <li><strong>Ruhige Stimmung</strong> – Kein Stress, kein Tempo-Druck. Lernen darf langsam sein.</li>
+      <li><strong>Positive Fehlerkultur</strong> – Fizzi irrt sich. Und lernt daraus. Das ist der Punkt.</li>
+      <li><strong>Ritualisierte Struktur</strong> – Jede Lektion: Ritual → Vermittlung → Übung → Bewegung → Erkenntnis</li>
+    </ul>
+
+    <h2>Aktuelle Phase: Mathematik (4–7 Jahre)</h2>
+    <p>12 Lektionen: Zahlen 1–10, Addition, Subtraktion, Vergleiche, geometrische Formen, Zehnerschritte bis 100.</p>
+
+    <!-- YouTube-Link: sobald Kanal-URL bekannt -->
+    <a href="https://www.youtube.com/@FizziAndTheProf" class="btn" target="_blank" rel="noopener">YouTube-Kanal</a>
     <a href="projekte.html" class="btn btn-outline">← Alle Projekte</a>
 
   </main>
 
   <footer>
     <div class="social">
-      <a href="#">LinkedIn</a>
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">Twitter / X</a>
+      <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
+      <!-- Instagram: geplant -->
+      <!-- Mastodon oder Discord: geplant -->
     </div>
     <p><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2024 Severin Stadler</p>
   </footer>
