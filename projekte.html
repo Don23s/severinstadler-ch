@@ -4,17 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Projekte von Severin Stadler – Sublingua, Fizzi & the Prof!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.severinstadler.ch/projekte.html">
+  <meta property="og:title" content="Projekte | Severin Stadler">
+  <meta property="og:description" content="Sublingua und Fizzi & the Prof! – Bildung neu denken mit Neuropsychologie und Animation.">
+  <meta property="og:image" content="https://www.severinstadler.ch/assets/images/severin-stadler.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projekte | Severin Stadler">
+  <meta name="twitter:description" content="Sublingua und Fizzi & the Prof! – Bildung neu denken mit Neuropsychologie und Animation.">
   <title>Projekte | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>html {{ scroll-behavior: smooth; }}</style>
 </head>
 <body>
 
-  <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+
     <a href="kommunikation.html">Kommunikation</a>
     <a href="politik.html">Politik</a>
     <a href="projekte.html" class="active">Projekte</a>
-  </nav>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+</nav>
 
   <div class="page-hero">
     <div class="container">
@@ -84,5 +100,18 @@
     </div>
   </footer>
 
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    // Schliessen bei Link-Klick
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    }));
+  </script>
 </body>
 </html>

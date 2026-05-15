@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt – Severin Stadler. Schreib mir direkt.">
+  <meta property="og:title" content="Kontakt | Severin Stadler">
+  <meta property="og:description" content="Direkt in Kontakt treten mit Severin Stadler.">
+  <meta property="og:url" content="https://www.severinstadler.ch/kontakt.html">
+  <meta property="og:image" content="https://www.severinstadler.ch/assets/images/severin-stadler.jpg">
+  <title>Kontakt | Severin Stadler</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>html { scroll-behavior: smooth; }</style>
+  <style>
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grau);
+      margin-bottom: 0.5rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--linie);
+      border-radius: 2px;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--weiss);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--rot);
+    }
+    textarea { resize: vertical; min-height: 140px; }
+    .form-success {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #166534;
+      padding: 1rem 1.25rem;
+      border-radius: 2px;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="brand"><span></span>Severin Stadler</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="kommunikation.html">Kommunikation</a>
+      <a href="politik.html">Politik</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="kicker">Kontakt</span>
+      <h1>Lass uns reden.</h1>
+      <p class="sub">Ob politisches Engagement, Zusammenarbeit bei Projekten oder einfach ein Austausch – ich freue mich über Nachrichten.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div style="max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; padding: 0;">
+
+      <!-- Formular -->
+      <div>
+        <span class="section-label">Schreib mir</span>
+        <form action="https://formspree.io/f/xnnqkzbg" method="POST" id="kontaktForm">
+          <input type="hidden" name="_subject" value="Neue Nachricht von severinstadler.ch">
+          <input type="hidden" name="_next" value="https://www.severinstadler.ch/kontakt.html?success=true">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Dein Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.ch" required>
+          </div>
+
+          <div class="form-group">
+            <label for="thema">Thema</label>
+            <select id="thema" name="thema">
+              <option value="">Bitte wählen...</option>
+              <option value="Politik">Politik & Gesellschaft</option>
+              <option value="Kommunikation">Kommunikation & Beratung</option>
+              <option value="Sublingua">Sublingua</option>
+              <option value="Fizzi">Fizzi & the Prof!</option>
+              <option value="Anderes">Anderes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Was liegt dir auf dem Herzen?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn" style="width: 100%; text-align: center;">Nachricht senden</button>
+          <div class="form-success" id="formSuccess">
+            Danke für deine Nachricht – ich melde mich bald.
+          </div>
+        </form>
+      </div>
+
+      <!-- Kontaktinfo -->
+      <div>
+        <span class="section-label">Direkt</span>
+        <div style="display: grid; gap: 2rem; margin-top: 0.5rem;">
+          <div>
+            <h3>E-Mail</h3>
+            <p style="font-size: 0.95rem; color: var(--grau);">
+              <a href="mailto:severin23stadler@gmail.com" style="color: var(--rot); text-decoration: none; font-weight: 500;">severin23stadler@gmail.com</a>
+            </p>
+          </div>
+          <div>
+            <h3>LinkedIn</h3>
+            <p style="font-size: 0.95rem; color: var(--grau);">
+              <a href="https://www.linkedin.com/in/severin-stadler-055a5519a/" target="_blank" rel="noopener" style="color: var(--rot); text-decoration: none; font-weight: 500;">Severin Stadler</a>
+            </p>
+          </div>
+          <div>
+            <h3>YouTube</h3>
+            <p style="font-size: 0.95rem; color: var(--grau);">
+              <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener" style="color: var(--rot); text-decoration: none; font-weight: 500;">@FizziAndTheProf</a>
+            </p>
+          </div>
+          <div style="border-top: 1px solid var(--linie); padding-top: 2rem;">
+            <h3>Standort</h3>
+            <p style="font-size: 0.95rem; color: var(--grau);">Bern, Schweiz</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span></span>Severin Stadler</div>
+        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2024</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.linkedin.com/in/severin-stadler-055a5519a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+
+    // Formspree Success Detection
+    if (window.location.search.includes('success=true')) {
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('kontaktForm').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seite nicht gefunden | Severin Stadler</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <a href="/index.html" class="brand"><span></span>Severin Stadler</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+
+    <a href="/kommunikation.html">Kommunikation</a>
+    <a href="/politik.html">Politik</a>
+    <a href="/projekte.html">Projekte</a>
+  </div>
+</nav>
+  <section class="section" style="min-height: 70vh; display: flex; align-items: center;">
+    <div class="container" style="text-align: center;">
+      <div style="font-size: 5rem; font-weight: 800; color: var(--rot); line-height: 1; margin-bottom: 1rem;">404</div>
+      <h2 style="margin-bottom: 1rem;">Diese Seite existiert nicht.</h2>
+      <p style="color: var(--grau); font-size: 0.95rem; margin-bottom: 2rem;">
+        Vielleicht wurde der Link verschoben oder es hat sich ein Tippfehler eingeschlichen.
+      </p>
+      <a href="/index.html" class="btn">Zur Startseite</a>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span></span>Severin Stadler</div>
+        <div class="footer-links"><a href="/impressum.html">Impressum</a> &nbsp;·&nbsp; © 2024</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.linkedin.com/in/severin-stadler-055a5519a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    // Schliessen bei Link-Klick
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    }));
+  </script>
+</body>
+</html>
