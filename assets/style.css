@@ -621,3 +621,52 @@ footer {
     width: 100%;
   }
 }
+
+/* ── TL;DR / Kurzfassung-Box ── */
+.tldr-box {
+  background: var(--warm);
+  border-left: 4px solid var(--rot);
+  border-radius: 0 6px 6px 0;
+  padding: 1.5rem 2rem;
+  margin: 2.5rem auto;
+  max-width: var(--max);
+}
+
+.tldr-box .tldr-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rot);
+  display: block;
+  margin-bottom: 0.65rem;
+}
+
+.tldr-box p {
+  font-family: system-ui, sans-serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tldr-box ul {
+  font-family: system-ui, sans-serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0.5rem 0 0 1.1rem;
+  padding: 0;
+}
+
+.tldr-box ul li {
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 640px) {
+  .tldr-box {
+    margin: 1.5rem 1.25rem;
+    padding: 1.2rem 1.25rem;
+  }
+}
