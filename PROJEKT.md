@@ -6,9 +6,11 @@ Vollständige Kontrolle über Inhalt, Design und Deployment.
 
 ## Status
 - [x] Inhalte von Wix-Seite extrahiert und in /content/ abgelegt
+- [x] Projekte-Sektion angelegt (Sublingua, Fizzi & the Prof!)
+- [ ] Fizzi & the Prof! – Inhalte vervollständigen (→ content/projekte/fizzi-und-der-prof.md)
 - [ ] HTML-Grundstruktur erstellen
 - [ ] CSS-Design aufbauen
-- [ ] Seiten: index.html, kommunikation.html, politik.html
+- [ ] Seiten: index.html, kommunikation.html, politik.html, projekte.html
 - [ ] Domain umzeigen (DNS weg von Wix)
 - [ ] Hosting einrichten
 
@@ -21,11 +23,18 @@ Vollständige Kontrolle über Inhalt, Design und Deployment.
 │   ├── start.md
 │   ├── kommunikation.md
 │   ├── politik.md
-│   └── meta.md
+│   ├── meta.md
+│   └── projekte/
+│       ├── uebersicht.md
+│       ├── sublingua.md
+│       └── fizzi-und-der-prof.md
 ├── html/                   ← fertige HTML-Seiten
 │   ├── index.html
 │   ├── kommunikation.html
-│   └── politik.html
+│   ├── politik.html
+│   ├── projekte.html
+│   ├── sublingua.html
+│   └── fizzi-und-der-prof.html
 └── assets/
     ├── images/             ← Bilder
     └── style.css           ← Haupt-CSS
@@ -37,6 +46,9 @@ Vollständige Kontrolle über Inhalt, Design und Deployment.
 | Start / Über mich | content/start.md | html/index.html |
 | Kommunikation | content/kommunikation.md | html/kommunikation.html |
 | Politik | content/politik.md | html/politik.html |
+| Projekte (Übersicht) | content/projekte/uebersicht.md | html/projekte.html |
+| Sublingua | content/projekte/sublingua.md | html/sublingua.html |
+| Fizzi & the Prof! | content/projekte/fizzi-und-der-prof.md | html/fizzi-und-der-prof.html |
 
 ## Hosting-Optionen (einfach & günstig)
 1. **GitHub Pages** – kostenlos, direkt aus Git-Repo, HTTPS inklusive
