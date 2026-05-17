@@ -26,8 +26,8 @@
   </button>
   <div class="nav-links" id="navLinks">
 
-    <a href="kommunikation.html">Kommunikation</a>
     <a href="politik.html">Politik</a>
+    <a href="kommunikation.html">Kommunikation</a>
     <a href="projekte.html" class="active">Projekte</a>
     <a href="kontakt.html">Kontakt</a>
   </div>
@@ -107,18 +107,6 @@
     </div>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const links  = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      links.classList.toggle('open');
-    });
-    // Schliessen bei Link-Klick
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      links.classList.remove('open');
-    }));
-  </script>
+  <script src="assets/main.js"></script>
 </body>
 </html>

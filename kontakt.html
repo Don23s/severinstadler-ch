@@ -61,8 +61,8 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="kommunikation.html">Kommunikation</a>
       <a href="politik.html">Politik</a>
+      <a href="kommunikation.html">Kommunikation</a>
       <a href="projekte.html">Projekte</a>
       <a href="kontakt.html" class="active">Kontakt</a>
     </div>
@@ -171,15 +171,8 @@
     </div>
   </footer>
 
+  <script src="assets/main.js"></script>
   <script>
-    // Mobile Menu
-    const toggle = document.getElementById('navToggle');
-    const links  = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      links.classList.toggle('open');
-    });
-
     // Formspree Success Detection
     if (window.location.search.includes('success=true')) {
       document.getElementById('formSuccess').style.display = 'block';

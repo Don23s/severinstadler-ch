@@ -192,8 +192,8 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="kommunikation.html">Kommunikation</a>
       <a href="politik.html" class="active">Politik</a>
+      <a href="kommunikation.html">Kommunikation</a>
       <a href="projekte.html">Projekte</a>
       <a href="kontakt.html">Kontakt</a>
     </div>
@@ -517,20 +517,9 @@
     document.getElementById('quiz-bereich').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Mobile nav
-  const toggle = document.getElementById('navToggle');
-  const links  = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    toggle.classList.toggle('open');
-    links.classList.toggle('open');
-  });
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    toggle.classList.remove('open');
-    links.classList.remove('open');
-  }));
-
   // Start
   renderFrage();
   </script>
+  <script src="assets/main.js"></script>
 </body>
 </html>

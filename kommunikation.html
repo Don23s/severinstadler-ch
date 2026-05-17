@@ -44,16 +44,11 @@
 
     .phase-card .nr {
       font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--rot-licht);
+      font-weight: 700;
+      color: var(--rot);
       line-height: 1;
       margin-bottom: 0.5rem;
       letter-spacing: -0.04em;
-      /* Zahl im Hintergrund */
-      background: linear-gradient(135deg, var(--rot) 0%, #e85566 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
 
     .phase-card h3 {
@@ -170,8 +165,8 @@
   </button>
   <div class="nav-links" id="navLinks">
 
-    <a href="kommunikation.html" class="active">Kommunikation</a>
     <a href="politik.html">Politik</a>
+    <a href="kommunikation.html" class="active">Kommunikation</a>
     <a href="projekte.html">Projekte</a>
     <a href="kontakt.html">Kontakt</a>
   </div>
@@ -433,18 +428,6 @@
     });
   </script>
 
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const links  = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      links.classList.toggle('open');
-    });
-    // Schliessen bei Link-Klick
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      links.classList.remove('open');
-    }));
-  </script>
+  <script src="assets/main.js"></script>
 </body>
 </html>

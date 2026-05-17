@@ -26,8 +26,8 @@
   </button>
   <div class="nav-links" id="navLinks">
 
-    <a href="kommunikation.html">Kommunikation</a>
     <a href="politik.html">Politik</a>
+    <a href="kommunikation.html">Kommunikation</a>
     <a href="projekte.html">Projekte</a>
     <a href="kontakt.html">Kontakt</a>
   </div>
@@ -39,7 +39,7 @@
       <img src="assets/images/severin-stadler.jpg" alt="Severin Stadler">
     </div>
     <div class="hero-text">
-      <p class="kicker">Unternehmer &amp; Politiker · Bern</p>
+      <p class="kicker">SP-Politiker · Unternehmer · Bern</p>
       <h1>
         <strong>Wirtschaft</strong> im Dienst<br>
         der <strong>Gesellschaft.</strong>
@@ -119,7 +119,7 @@
         „Unternehmen, die zum Nutzen der Gesellschaft beitragen,
         verdienen die stärksten Rahmenbedingungen."
       </blockquote>
-      <p style="color: #999; font-family: system-ui, sans-serif; font-size: 0.95rem; max-width: 600px;">
+      <p style="color: rgba(255,255,255,0.75); font-size: 0.95rem; max-width: 600px;">
         Ich bin SP-Mitglied – und glaube trotzdem an wirtschaftliche Freiheit.
         Das ist kein Widerspruch. Es ist die Antwort auf die Polarisierung unserer Zeit.
         Wer Verantwortung übernimmt, verdient Freiheit. Wer nur optimiert,
@@ -177,18 +177,6 @@
     </div>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const links  = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      links.classList.toggle('open');
-    });
-    // Schliessen bei Link-Klick
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      links.classList.remove('open');
-    }));
-  </script>
+  <script src="assets/main.js"></script>
 </body>
 </html>
