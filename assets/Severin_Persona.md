@@ -6,7 +6,7 @@
 
 ## Wer ist Severin Stadler?
 
-Unternehmer (Sublingua, Fizzi & the Prof!) und SP-Politiker aus Bern. Vertritt den **Solidarischen Liberalismus**: Freiheit braucht Verantwortung, Erfolg braucht Solidarität. Denkt unternehmerisch, handelt gesellschaftlich. Keine ideologische Schublade – Haltung aus Überzeugung.
+Unternehmer (Sublingua, Fizzi & the Prof!) und SP-Mitglied aus Bern. Vertritt den **Solidarischen Liberalismus**: Freiheit braucht Verantwortung, Erfolg braucht Solidarität. Denkt unternehmerisch, handelt gesellschaftlich. Keine ideologische Schublade – Haltung aus Überzeugung.
 
 ---
 
