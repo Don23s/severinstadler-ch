@@ -3,188 +3,406 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manifest des Solidarischen Liberalismus – Severin Stadler.">
+  <meta name="description" content="Manifest – Solidarischer Liberalismus: Das Kreislaufmodell Schweiz. Ein neues politisches Modell für eine Wirtschaft im Dienst der Gesellschaft.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.severinstadler.ch/manifest.html">
-  <meta property="og:title" content="Manifest | Severin Stadler">
-  <meta property="og:description" content="Acht Thesen für eine Wirtschaft im Dienst der Gesellschaft.">
+  <meta property="og:title" content="Manifest – Solidarischer Liberalismus | Severin Stadler">
+  <meta property="og:description" content="Das Kreislaufmodell Schweiz. Version 1.0, Mai 2026.">
   <meta property="og:image" content="https://www.severinstadler.ch/assets/images/severin-stadler.jpg">
   <title>Manifest | Severin Stadler</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     html { scroll-behavior: smooth; }
 
-    /* ── Entwurf-Banner ── */
-    .entwurf-banner {
-      background: #FFF3CD;
-      border-bottom: 1px solid #F0D070;
-      color: #856404;
-      font-size: 0.8rem;
+    .version-banner {
+      background: var(--warm);
+      border-bottom: 1px solid var(--linie);
+      color: var(--grau);
+      font-size: 0.75rem;
       font-weight: 600;
       text-align: center;
-      padding: 0.5rem 1rem;
-      letter-spacing: 0.05em;
+      padding: 0.55rem 1rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
 
-    /* ── Manifest Hero ── */
     .manifest-hero {
-      padding: 6rem 2rem 3rem;
+      padding: 5rem 2rem 3rem;
       max-width: 760px;
       margin: 0 auto;
     }
 
-    .manifest-kicker {
+    .manifest-datum {
+      display: inline-block;
       font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rot);
+      border: 1px solid rgba(var(--rot-rgb), 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .manifest-titel {
+      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .manifest-untertitel {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      color: var(--grau);
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .manifest-intro {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 620px;
+      border-left: 3px solid var(--rot);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .manifest-meta {
+      font-size: 0.82rem;
+      color: var(--grau);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Solidaritätsdreieck ── */
+    .dreieck-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: 1px solid var(--linie);
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .dreieck-node {
+      padding: 1.75rem 1.5rem;
+      border-right: 1px solid var(--linie);
+    }
+
+    .dreieck-node:last-child { border-right: none; }
+
+    .dreieck-icon {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rot);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .dreieck-node h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .dreieck-node p {
+      font-size: 0.85rem;
+      color: var(--grau);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Zwei Wege ── */
+    .weg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .weg-card {
+      border: 1px solid var(--linie);
+      border-top: 3px solid var(--rot);
+      padding: 2rem;
+    }
+
+    .weg-card.weg-b { border-top-color: var(--dunkel); }
+
+    .weg-label {
+      font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--rot);
       display: block;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
     }
 
-    .manifest-titel {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.05;
-      margin-bottom: 2rem;
-      color: var(--text);
-    }
+    .weg-card.weg-b .weg-label { color: var(--text); }
 
-    .manifest-intro {
+    .weg-card h3 {
       font-size: 1.05rem;
-      color: var(--grau);
-      line-height: 1.7;
-      max-width: 600px;
-      border-left: 3px solid var(--rot);
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .manifest-meta {
-      font-size: 0.82rem;
-      color: #B0B0B0;
-      letter-spacing: 0.04em;
-      margin-top: 2rem;
-    }
-
-    /* ── Thesen ── */
-    .thesen {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 2rem 6rem;
-    }
-
-    .these {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 0 2.5rem;
-      padding: 3rem 0;
-      border-top: 1px solid var(--linie);
-      position: relative;
-    }
-
-    .these:first-child { border-top: 2px solid var(--rot); }
-
-    .these-nr {
-      font-family: 'Outfit', sans-serif;
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--linie);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      padding-top: 0.15rem;
-      user-select: none;
-    }
-
-    .these-titel {
-      font-size: 1.55rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
+      font-weight: 700;
       margin-bottom: 0.9rem;
       color: var(--text);
     }
 
-    .these-text {
-      font-size: 0.95rem;
+    .weg-card p {
+      font-size: 0.88rem;
       color: var(--grau);
       line-height: 1.7;
-      max-width: 560px;
+      margin-bottom: 0.65rem;
     }
 
-    /* ── Abschluss ── */
+    .weg-detail {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 0.65rem 0 0;
+      border-top: 1px solid var(--linie);
+      margin-top: 0.75rem;
+    }
+
+    /* ── Sektoren ── */
+    .sektor-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .sektor-badge {
+      display: flex;
+      flex-direction: column;
+      padding: 0.9rem 1.25rem;
+      border: 1px solid var(--linie);
+      border-left: 3px solid var(--rot);
+      background: var(--weiss);
+      min-width: 145px;
+    }
+
+    .sektor-badge .s-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .sektor-badge .s-sub {
+      font-size: 0.74rem;
+      color: var(--grau);
+    }
+
+    /* ── Fundamente ── */
+    .fundament-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .fundament-card {
+      border: 1px solid var(--linie);
+      padding: 1.75rem;
+    }
+
+    .f-autor {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--rot);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .f-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .f-kern {
+      font-size: 0.87rem;
+      color: var(--grau);
+      line-height: 1.65;
+      margin-bottom: 0.9rem;
+    }
+
+    .f-link {
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.6;
+      border-top: 1px solid var(--linie);
+      padding-top: 0.75rem;
+    }
+
+    .f-link-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rot);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── Partei-Grid ── */
+    .partei-grid {
+      border: 1px solid rgba(255,255,255,0.12);
+      max-width: 660px;
+      margin-top: 1.5rem;
+    }
+
+    .partei-item {
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .partei-item:last-child { border-bottom: none; }
+
+    .partei-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      padding-top: 0.1rem;
+    }
+
+    .partei-text {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Akkordeon ── */
+    .akkordeon {
+      max-width: 760px;
+      border-top: 1px solid var(--linie);
+    }
+
+    .akkordeon-item { border-bottom: 1px solid var(--linie); }
+
+    .akkordeon-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.15s;
+    }
+
+    .akkordeon-trigger:hover { color: var(--rot); }
+
+    .ak-nr {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--rot);
+      min-width: 1.8rem;
+      letter-spacing: 0.06em;
+    }
+
+    .ak-icon {
+      margin-left: auto;
+      font-size: 1.2rem;
+      color: var(--grau);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+
+    .akkordeon-item.open .ak-icon { transform: rotate(45deg); }
+
+    .akkordeon-body {
+      display: none;
+      padding: 0 0 1.5rem 2.8rem;
+      font-size: 0.9rem;
+      color: var(--grau);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    .akkordeon-item.open .akkordeon-body { display: block; }
+    .akkordeon-body p { margin-bottom: 0.9rem; }
+    .akkordeon-body p:last-child { margin-bottom: 0; }
+    .akkordeon-body h3 { font-size: 0.9rem; font-weight: 700; color: var(--text); margin: 1.2rem 0 0.4rem; }
+    .akkordeon-body ul { padding-left: 1.25rem; margin-bottom: 0.9rem; }
+    .akkordeon-body li { margin-bottom: 0.35rem; }
+    .akkordeon-body table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-bottom: 1rem; }
+    .akkordeon-body th { text-align: left; font-weight: 700; color: var(--text); border-bottom: 2px solid var(--linie); padding: 0.4rem 0.5rem; }
+    .akkordeon-body td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--linie); vertical-align: top; }
+
+    /* ── Schluss ── */
     .manifest-schluss {
       background: var(--text);
       color: #fff;
       padding: 5rem 2rem;
     }
 
-    .manifest-schluss-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
+    .manifest-schluss-inner { max-width: 760px; margin: 0 auto; }
 
     .manifest-schluss blockquote {
-      font-size: clamp(1.3rem, 3.5vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.35;
+      font-size: clamp(1.15rem, 2.8vw, 1.7rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.45;
       color: #fff;
       border: none;
       padding: 0;
-      margin: 0 0 2.5rem 0;
+      margin: 0 0 1.75rem 0;
     }
 
     .manifest-schluss blockquote::before { content: none; }
 
-    .manifest-unterschrift {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.5);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    .manifest-cta { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── Footer Info ── */
+    .manifest-footer-info {
+      background: var(--warm);
+      border-top: 1px solid var(--linie);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--grau);
+      line-height: 1.9;
     }
 
-    .manifest-unterschrift::before {
-      content: '';
-      display: inline-block;
-      width: 32px;
-      height: 2px;
-      background: var(--rot);
-      flex-shrink: 0;
-    }
-
-    .manifest-cta {
-      margin-top: 3rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    .manifest-footer-info strong { color: var(--text); }
 
     @media (max-width: 640px) {
-      .manifest-hero { padding: 4rem 1.25rem 2rem; }
-      .thesen { padding: 0 1.25rem 4rem; }
-      .these { grid-template-columns: 1fr; gap: 0.5rem; }
-      .these-nr { font-size: 1.8rem; }
+      .manifest-hero { padding: 3.5rem 1.25rem 2rem; }
+      .weg-grid { grid-template-columns: 1fr; }
+      .dreieck-grid { grid-template-columns: 1fr; }
+      .dreieck-node { border-right: none; border-bottom: 1px solid var(--linie); }
+      .dreieck-node:last-child { border-bottom: none; }
+      .partei-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .akkordeon-body { padding-left: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Diese Seite ist noch nicht verlinkt (Entwurf). -->
-  <!-- Sobald das Manifest abschliessend ausgearbeitet ist: -->
-  <!--   1. Platzhalter-Thesen unten ersetzen              -->
-  <!--   2. manifest-intro anpassen                        -->
-  <!--   3. Schluss-Zitat anpassen                         -->
-  <!--   4. Link in politik.html + index.html einbauen     -->
-  <!--   5. Entwurf-Banner entfernen                       -->
-
-  <div class="entwurf-banner">
-    Entwurf – diese Seite ist noch nicht öffentlich verlinkt
-  </div>
+  <div class="version-banner">Manifest – Version 1.0 &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Zur öffentlichen Diskussion freigegeben</div>
 
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
@@ -193,174 +411,200 @@
     </button>
     <div class="nav-links" id="navLinks">
       <a href="politik.html">Politik</a>
+      <a href="manifest.html" class="active">Manifest</a>
       <a href="kommunikation.html">Kommunikation</a>
       <a href="projekte.html">Projekte</a>
       <a href="kontakt.html">Kontakt</a>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       MANIFEST HERO
-       → manifest-kicker, manifest-titel und manifest-intro
-         können direkt hier angepasst werden.
-  ═══════════════════════════════════════════════════════════ -->
+  <!-- Hero -->
   <div class="manifest-hero">
-    <span class="manifest-kicker">Manifest · Solidarischer Liberalismus</span>
-    <h1 class="manifest-titel">Acht Thesen für eine Wirtschaft im Dienst der Gesellschaft.</h1>
+    <span class="manifest-datum">Mai 2026 – Entwurf zur öffentlichen Diskussion</span>
+    <h1 class="manifest-titel">Solidarischer Liberalismus</h1>
+    <p class="manifest-untertitel">Das Kreislaufmodell Schweiz</p>
     <p class="manifest-intro">
-      <!-- PLATZHALTER – Intro-Absatz anpassen -->
-      Die politischen Lager des 20. Jahrhunderts haben ausgedient. Nicht weil ihre Werte falsch waren –
-      sondern weil die Welt komplexer geworden ist, als ein einziges Modell erfassen kann.
-      Was wir brauchen, ist kein Kompromiss. Es ist eine neue Synthese.
+      Die Schweiz steht an einem Scheideweg. Wenn wir Wohlstand und Zusammenhalt bewahren wollen, brauchen wir ein neues Gleichgewicht zwischen Wirtschaft, Staat und Bevölkerung – einen <strong>sozialwirtschaftlichen Aufbruch</strong>, der alle drei Kräfte erstmals gemeinsam und vereint auftreten lässt.
     </p>
-    <div class="manifest-meta">
-      Severin Stadler · Bern, 2025
-      <!-- Datum anpassen wenn fertig -->
+    <div class="manifest-meta">Severin Stadler &nbsp;·&nbsp; Bern, Mai 2026</div>
+  </div>
+
+  <div class="haltung-band sans">
+    Solidarität &nbsp;·&nbsp; Freiheit &nbsp;·&nbsp; Verantwortung &nbsp;·&nbsp; Demokratie
+  </div>
+
+  <!-- 1. Ausgangslage -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label sans">Ausgangslage</span>
+      <h2>Warum es jetzt ein neues Denken braucht.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
+        Die politischen Modelle des 20. Jahrhunderts stossen an ihre Grenzen. Drei Entwicklungen machen ein neues Modell unausweichlich.
+      </p>
+      <div class="drei-grid" style="margin-top:2.5rem;">
+        <div class="drei-item">
+          <span class="nummer sans">Sozialstaat</span>
+          <h3>Steigende Kosten, knappe Mittel</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Demografischer Wandel und wachsende Ungleichheit belasten die öffentlichen Haushalte. Die Schere zwischen dem, was der Staat leisten soll, und dem, was er leisten kann, wird grösser.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Wirtschaft</span>
+          <h3>Mobile Konzerne, gebundene Gesellschaft</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Unternehmen können Standorte in Wochen verlagern. Bevölkerung und Staat können es nicht. Die Bindung zwischen wirtschaftlichem Erfolg und gesellschaftlicher Verantwortung ist brüchig geworden.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Demokratie</span>
+          <h3>Vertrauensverlust, Polarisierung</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Politische Polarisierung und Vertrauensverlust bedrohen die demokratische Kultur. Digitale Desinformation beschleunigt Spaltung. Die alte Langsamkeit der Demokratie schützt nicht mehr ausreichend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Das Solidaritätsdreieck -->
+  <section class="section section-warm">
+    <div class="container">
+      <span class="section-label sans">Das Modell</span>
+      <h2>Das Solidaritätsdreieck.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
+        Ein neuer Gesellschaftsvertrag zwischen drei Kräften – die nicht gegeneinander, sondern miteinander wirken.
+      </p>
+      <div class="dreieck-grid">
+        <div class="dreieck-node">
+          <span class="dreieck-icon">Bevölkerung</span>
+          <h3>Legitimität &amp; Arbeit</h3>
+          <p>Legitimiert das Gemeinwesen, zahlt Steuern, bringt Arbeit und Wissen ein. Erhält Teilhabe – als Anerkennung, dass wirtschaftlicher Erfolg immer ein gemeinsamer Erfolg ist.</p>
+        </div>
+        <div class="dreieck-node">
+          <span class="dreieck-icon">Unternehmen</span>
+          <h3>Wert &amp; Mitverantwortung</h3>
+          <p>Schafft Wert, Arbeitsplätze und Innovation. Trägt aktiv zur gesellschaftlichen Infrastruktur bei, die die eigene Grundlage bildet. Erhält Identität, Verwurzelung und Mitgestaltungsrecht.</p>
+        </div>
+        <div class="dreieck-node">
+          <span class="dreieck-icon">Staat</span>
+          <h3>Rahmen &amp; Balance</h3>
+          <p>Setzt den Rahmen, balanciert Ungleichgewichte und sichert die demokratische Kontrolle. Behält die Letztentscheidung – auch über die Verwendung des Solidaritätsbeitrags.</p>
+        </div>
+      </div>
+      <blockquote style="margin-top:1.5rem;">Solidarität meint nicht Mitleid. Sie meint die gegenseitige Anerkennung von Abhängigkeit.</blockquote>
+    </div>
+  </section>
+
+  <!-- 3. Zwei Wege -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label sans">Der Mechanismus</span>
+      <h2>Zwei Wege, ein Ziel.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
+        Alle Unternehmen, die in der Schweiz Bundessteuern entrichten, leisten einen Solidaritätsbeitrag von <strong>5 %</strong> – aufgeteilt in 3 % neu und 2 % Lenkungsrecht auf bestehende Steuer. Sie wählen, auf welchem Weg.
+      </p>
+      <div class="weg-grid">
+        <div class="weg-card weg-a">
+          <span class="weg-label">Weg A</span>
+          <h3>Regionale Investition</h3>
+          <p>Das Unternehmen investiert die 3 % direkt in seinem Einzugsgebiet: Kinderbetreuung, Gesundheitsangebote, Berufsbildung, lokale Infrastruktur.</p>
+          <p>Mitarbeitende können in den Entscheid einbezogen werden, wohin die Investition fliesst – das stärkt die Legitimation und vertieft die Verbindung zwischen Betrieb und Gemeinschaft.</p>
+          <div class="weg-detail">3 % Bundessteuer entfällt &nbsp;·&nbsp; 2 % Lenkungsrecht bleibt</div>
+        </div>
+        <div class="weg-card weg-b">
+          <span class="weg-label">Weg B</span>
+          <h3>Bundessteuer mit Sektorwahl</h3>
+          <p>Das Unternehmen zahlt den vollen Solidaritätsbeitrag als Bundessteuer und übt das vollständige 5 %-Lenkungsrecht aus: Es widmet seinen Beitrag einem oder mehreren gesellschaftlichen Sektoren.</p>
+          <p>Geeignet für überregional tätige Unternehmen ohne lokale Verwurzelung.</p>
+          <div class="weg-detail">3 % + 2 % &nbsp;→&nbsp; volle Sektorwahl auf Bundesebene</div>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--grau);margin-top:1.5rem;max-width:660px;">Das parlamentarische Korrektiv bleibt unberührt: Das Parlament behält die demokratische Letztentscheidung. Kernbereiche der sozialen Sicherheit stehen ausserhalb des Wettbewerbs um Unternehmensgunst.</p>
+    </div>
+  </section>
+
+  <!-- 4. Sektoren -->
+  <section class="section section-warm">
+    <div class="container">
+      <span class="section-label sans">Sektorwahl</span>
+      <h2>7 gesellschaftliche Sektoren.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:620px;">
+        Unternehmen können ihren Beitrag auf einen oder mehrere Sektoren lenken. Das Parlament berücksichtigt diese Zuordnung bei der Mittelplanung und begründet Abweichungen öffentlich.
+      </p>
+      <div class="sektor-grid" id="sektor-grid"></div>
+    </div>
+  </section>
+
+  <!-- 5. Fundamente -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label sans">Intellektuelle Wurzeln</span>
+      <h2>Die Fundamente, die tragen.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
+        Der Solidarische Liberalismus entsteht nicht im Vakuum. Er ist eine Synthese – eine Weiterführung von Denktraditionen, die jeweils wichtige Wahrheiten erkannt haben.
+      </p>
+      <div class="fundament-grid" id="fundament-grid"></div>
+    </div>
+  </section>
+
+  <!-- 6. Parteiübergreifend -->
+  <section class="section section-statement">
+    <div class="container">
+      <span class="section-label sans">Einordnung</span>
+      <h2>Für alle Lager – gegen kein Lager.</h2>
+      <p style="font-size:0.95rem;color:rgba(255,255,255,0.75);max-width:580px;margin-bottom:1.5rem;">Er ist nicht sozialistisch, weil er Markt, Eigenverantwortung und Freiheit respektiert. Er ist nicht rein kapitalistisch, weil er Unternehmen Pflichten im Gemeinwohl gibt. Er ist eine Synthese: <strong style="color:#fff;">Solidarität + Freiheit, Verantwortung + Demokratie.</strong></p>
+      <div class="partei-grid">
+        <div class="partei-item">
+          <span class="partei-label">SP · Grüne</span>
+          <p class="partei-text">Wie bleibt der Sozialstaat unter Globalisierung und steigenden Gesundheitskosten finanzierbar?</p>
+        </div>
+        <div class="partei-item">
+          <span class="partei-label">FDP</span>
+          <p class="partei-text">Wie wird die Wettbewerbsfähigkeit gesichert, ohne Unternehmen als Steuerlast zu behandeln?</p>
+        </div>
+        <div class="partei-item">
+          <span class="partei-label">Die Mitte</span>
+          <p class="partei-text">Wie bleibt der gesellschaftliche Zusammenhalt erhalten, während Wirtschaft und Politik auseinanderdriften?</p>
+        </div>
+        <div class="partei-item">
+          <span class="partei-label">GLP</span>
+          <p class="partei-text">Wie werden Nachhaltigkeit und Innovation systemisch verankert, wenn staatliche Programme unterfinanziert sind?</p>
+        </div>
+        <div class="partei-item">
+          <span class="partei-label">SVP</span>
+          <p class="partei-text">Wie wird nationale Eigenständigkeit und Standorttreue gesichert, wenn Konzerne mit Leichtigkeit abwandern?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Volltext -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label sans">Volltext</span>
+      <h2>Das vollständige Manifest.</h2>
+      <p style="font-size:0.9rem;color:var(--grau);max-width:580px;margin-bottom:2rem;">Alle Kapitel des Manifests V1.0, Mai 2026 – aufklappbar nach Kapitel. Enthält Hauptdokument und beide Anhänge.</p>
+      <div class="akkordeon" id="manifest-akkordeon"></div>
+    </div>
+  </section>
+
+  <!-- Aufruf -->
+  <div class="manifest-schluss">
+    <div class="manifest-schluss-inner">
+      <blockquote>„Solidarischer Liberalismus – das Kreislaufmodell Schweiz.<br>Die Willensnation 2.0: gemeinsam stark, frei und solidarisch."</blockquote>
+      <p style="color:rgba(255,255,255,0.72);font-size:0.95rem;max-width:560px;margin-bottom:0;">Wir rufen Politik, Wirtschaft, Sozialpartner und Bevölkerung auf, diesen neuen Weg zu beschreiten. Nicht als Kompromiss, sondern als Aufbruch.</p>
+      <div class="manifest-cta">
+        <a href="haltungskompass.html" class="btn" style="background:var(--rot);color:#fff;border-color:var(--rot);">Haltungskompass starten</a>
+        <a href="kontakt.html" class="btn" style="background:transparent;color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);">Kontakt aufnehmen</a>
+      </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       THESEN
-       → Jede <article class="these"> ist eine These.
-         these-nr: automatisch visuell (muss nicht geändert werden)
-         these-titel: die Kernaussage – kurz, prägnant, unvergesslich
-         these-text: ein bis drei Sätze Erklärung
-       → Thesen können hinzugefügt, entfernt oder umgeordnet werden.
-  ═══════════════════════════════════════════════════════════ -->
-  <section class="thesen">
-
-    <article class="these">
-      <div class="these-nr">01</div>
-      <div>
-        <h2 class="these-titel">Wirtschaft ist ein Werkzeug der Gesellschaft – nicht ihr Zweck.</h2>
-        <p class="these-text">
-          <!-- PLATZHALTER -->
-          Märkte sind das effektivste Instrument, das die Menschheit zur Koordination von Ressourcen entwickelt hat.
-          Aber ein Werkzeug hat keinen Eigenwert. Es dient – oder es schadet.
-          Eine Wirtschaft, die Menschen ausschliesst statt einzuschliessen, hat ihren Zweck verfehlt.
-        </p>
-      </div>
-    </article>
-
-    <article class="these">
-      <div class="these-nr">02</div>
-      <div>
-        <h2 class="these-titel">Freiheit ohne Verantwortung ist Willkür.</h2>
-        <p class="these-text">
-          <!-- PLATZHALTER -->
-          Wirtschaftliche Freiheit ist ein Grundwert – kein Privileg, das man missbrauchen darf.
-          Wer von offenen Märkten profitiert, trägt Mitverantwortung für das System, das diese Freiheit erst ermöglicht.
-          Verantwortung ist nicht die Einschränkung von Freiheit. Sie ist ihre Voraussetzung.
-        </p>
-      </div>
-    </article>
-
-    <article class="these">
-      <div class="these-nr">03</div>
-      <div>
-        <h2 class="these-titel">Der Staat ermöglicht – er bevormundet nicht.</h2>
-        <p class="diese-text">
-          <!-- PLATZHALTER -->
-          Gute Politik setzt faire Rahmenbedingungen: Regeln, die alle einhalten müssen,
-          und Investitionen dort, wo Märkte strukturell versagen.
-          Der Staat ist kein Unternehmer – aber er ist der Schiedsrichter, ohne den kein fairer Wettbewerb existiert.
-        </p>
-      </div>
-    </article>
-
-    <article class="these">
-      <div class="these-nr">04</div>
-      <div>
-        <h2 class="these-titel">Solidarität ist Stärke, nicht Schwäche.</h2>
-        <p class="these-text">
-          <!-- PLATZHALTER -->
-          Gesellschaften, die füreinander einstehen, sind stabiler, innovativer und wirtschaftlich erfolgreicher.
-          Sozialstaat und Wettbewerbsfähigkeit sind keine Gegensätze – sie bedingen einander.
-          Ein Netz, das Menschen auffängt, ist kein Hemmnis. Es ist der Boden, auf dem Risikobereitschaft wächst.
-        </p>
-      </div>
-    </article>
-
-    <article class="these">
-      <div class="these-nr">05</div>
-      <div>
-        <h2 class="these-titel">Haltung schlägt Ideologie.</h2>
-        <p class="these-text">
-          <!-- PLATZHALTER -->
-          Wer sich einem Lager verschreibt, hört auf zu denken.
-          Echte politische Arbeit beginnt mit Zuhören, Verstehen und dem ehrlichen Abwägen von Interessen –
-          nicht mit dem Anwenden einer vorgefertigten Weltformel.
-        </p>
-      </div>
-    </article>
-
-    <article class="these">
-      <div class="these-nr">06</div>
-      <div>
-        <h2 class="these-titel">Dialog ist mächtiger als Polarisierung.</h2>
-        <p class="these-text">
-          <!-- PLATZHALTER -->
-          Polarisierung ist bequem: Sie braucht keine Argumente, nur Feinde.
-          Dialog ist anstrengend – er verlangt, die Position des anderen wirklich zu verstehen.
-          Aber nur im Dialog entstehen Lösungen, die über eine Legislaturperiode hinaus tragen.
-        </p>
-      </div>
-    </article>
-
-    <article class="these">
-      <div class="these-nr">07</div>
-      <div>
-        <h2 class="these-titel">Bildung ist das Fundament aller Chancen.</h2>
-        <p class="these-text">
-          <!-- PLATZHALTER -->
-          Wer in Bildung investiert, investiert in alles: Gesundheit, Demokratie, Wirtschaftskraft, Zusammenhalt.
-          Bildungsgerechtigkeit ist keine linke Forderung – sie ist die effizienteste Wirtschaftspolitik,
-          die ein Staat betreiben kann.
-        </p>
-      </div>
-    </article>
-
-    <article class="these">
-      <div class="these-nr">08</div>
-      <div>
-        <h2 class="these-titel">Erfolg ohne Verantwortung ist Erosion.</h2>
-        <p class="these-text">
-          <!-- PLATZHALTER -->
-          Unternehmen, die kurzfristig optimieren auf Kosten von Menschen, Umwelt und Institutionen,
-          zerstören langfristig die Grundlagen ihres eigenen Erfolgs.
-          Nachhaltigkeit ist kein Idealismus. Sie ist kaufmännische Vernunft.
-        </p>
-      </div>
-    </article>
-
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       ABSCHLUSS
-       → Schluss-Zitat und Unterschrift anpassen
-  ═══════════════════════════════════════════════════════════ -->
-  <div class="manifest-schluss">
-    <div class="manifest-schluss-inner">
-      <blockquote>
-        <!-- PLATZHALTER – Abschluss-Zitat -->
-        „Wer Verantwortung übernimmt, verdient Freiheit.
-        Wer Freiheit beansprucht, schuldet Verantwortung."
-      </blockquote>
-      <div class="manifest-unterschrift">
-        Severin Stadler, Bern
-      </div>
-      <div class="manifest-cta">
-        <a href="haltungskompass.html" class="btn" style="background:var(--rot);color:#fff;border-color:var(--rot);">Haltungskompass starten</a>
-        <a href="politik.html" class="btn" style="background:transparent;color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);">Politische Haltung lesen</a>
-      </div>
-    </div>
+  <div class="manifest-footer-info">
+    <strong>Manifest – Version 1.0</strong> &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Severin Stadler, Bern<br>
+    Zur öffentlichen Diskussion freigegeben &nbsp;·&nbsp; <strong>Zur freien Weiterverbreitung mit Quellenangabe</strong>
   </div>
 
   <footer>
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2025</div>
+        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -369,6 +613,296 @@
     </div>
   </footer>
 
+  <script>
+  // ═══════════════════════════════════════════════════════════
+  // CONFIG – Inhalte hier anpassen wenn das Manifest sich verändert
+  // ═══════════════════════════════════════════════════════════
+
+  const SEKTOREN = [
+    { name: "Bildung",                sub: "Schulen, Berufsbildung, Weiterbildung" },
+    { name: "Gesundheit",             sub: "Versorgung, Prävention, Pflege" },
+    { name: "Forschung & Innovation", sub: "Grundlagenforschung, Technologie" },
+    { name: "Sicherheit",             sub: "Innere Sicherheit, Katastrophenschutz" },
+    { name: "Kultur",                 sub: "Kulturelles Erbe, Kulturförderung" },
+    { name: "Umwelt",                 sub: "Klimaschutz, Biodiversität, Energie" },
+    { name: "Soziales",               sub: "Integration, Armutsprävention, Zusammenhalt" }
+  ];
+
+  const FUNDAMENTE = [
+    {
+      name:       "Ordoliberalismus & Soziale Marktwirtschaft",
+      autoren:    "Eucken, Röpke, Erhard (1930er–1949)",
+      kern:       "Der Staat setzt den Rahmen, der Markt operiert darin frei. Wirtschaftliche Leistung und sozialer Ausgleich bedingen einander.",
+      verbindung: "Weg A formalisiert Röpkes Warnung vor der «Entwurzelung» von Unternehmen: Gesellschaftliche Mitverantwortung wird institutionell verankert."
+    },
+    {
+      name:       "Subsidiaritätsprinzip",
+      autoren:    "Quadragesimo Anno (1931) / Schweizer Föderalismus",
+      kern:       "Was auf der kleinstmöglichen Ebene entschieden werden kann, soll dort entschieden werden – staatliche Eingriffe sind subsidiär, nicht primär.",
+      verbindung: "Weg A ist das Subsidiaritätsprinzip in wirtschaftlicher Form: Unternehmen entscheiden lokal, Gemeinden profitieren direkt, der Bund setzt den Rahmen."
+    },
+    {
+      name:       "Rheinischer Kapitalismus",
+      autoren:    "Michel Albert, «Capitalisme contre capitalisme» (1991)",
+      kern:       "Unternehmen als gesellschaftliche Institutionen mit Verantwortung gegenüber Mitarbeitenden, Region und Gemeinschaft – nicht nur gegenüber Aktionären.",
+      verbindung: "Das Modell formalisiert diesen kulturellen Impuls: Es macht explizit, was im rheinischen Kapitalismus implizit war – und gibt ihm rechtlichen Ausdruck."
+    },
+    {
+      name:       "Freiheit als Befähigung",
+      autoren:    "Amartya Sen, «Development as Freedom» (1999)",
+      kern:       "Echte Freiheit setzt Kapazitäten voraus – Bildung, Gesundheit, wirtschaftliche Sicherheit. Wer diese nicht hat, ist formal frei, aber praktisch unfrei.",
+      verbindung: "Aus Steuerpflicht wird gestaltbare Mitverantwortung: Das Modell gibt Unternehmen echte Entscheidungsfreiheit darüber, wie und wohin sie beitragen."
+    },
+    {
+      name:       "Moralische Grenzen des Marktes",
+      autoren:    "Michael Sandel, «What Money Can't Buy» (2012)",
+      kern:       "Wenn jedes gesellschaftliche Gut einen Preis erhält, verliert die Gesellschaft die Fähigkeit, über Werte gemeinsam zu sprechen.",
+      verbindung: "Die Transparenzplattform erzeugt moralische Sprache: Unternehmen begründen öffentlich, wohin sie investieren – Haltung statt Preislogik."
+    },
+    {
+      name:       "Schweizer Willensnation",
+      autoren:    "Bundesverfassung 1848 / Föderalismus",
+      kern:       "Kein gemeinsames Volk, keine gemeinsame Sprache – sondern ein gemeinsamer Wille als Staatsgrundlage. Mitbestimmung und Ausgleich als zentrale Prinzipien.",
+      verbindung: "Der Solidarische Liberalismus erneuert diese DNA: Unternehmen werden zu Teilhabern der Willensnation – mit Verantwortung, ohne Stimmrecht."
+    }
+  ];
+
+  // ═══════════════════════════════════════════════════════════
+  // KAPITEL – Volltext Akkordeon
+  // Kapitel hinzufügen: { nr, titel, text (HTML-String) }
+  // ═══════════════════════════════════════════════════════════
+
+  const KAPITEL = [
+    {
+      nr: "1", titel: "Vom Problem zum Aufbruch",
+      text: `<p>Die Schweiz steht an einem Scheideweg.</p>
+<p>Die Kosten für den Sozialstaat steigen. Die Politik ringt in einer zunehmend polarisierten Gesellschaft darum, welche Bereiche wie unterstützt werden sollen – und oft passiert am Ende zu wenig. Zwischen Arbeitnehmenden und Arbeitgebenden wächst eine Kluft, die Reformen blockiert und Innovation lähmt.</p>
+<p>Zugleich verändert sich die Welt rasant. Unternehmen können ihre Standorte in wenigen Wochen verlagern. Steuereinnahmen fallen weg, Investitionen bleiben aus, und die Stabilität unserer Gesellschaft gerät ins Wanken.</p>
+<p>Wenn wir Wohlstand und Zusammenhalt bewahren wollen, brauchen wir ein neues Gleichgewicht zwischen Wirtschaft, Staat und Bevölkerung. Der Solidarische Liberalismus ist unsere Antwort: Er gibt Unternehmen Identität, Standorttreue und Mitgestaltungsrecht – ohne die Demokratie zu schwächen, sondern sie zu ergänzen.</p>
+<p>Dies ist kein grünes Projekt. Es ist keine Steuerreform. Es ist ein <strong>sozialwirtschaftlicher Aufbruch</strong>.</p>
+<h3>Der Anstoß wirkt auf drei Ebenen</h3>
+<p><strong>Das Gesetz als gemeinsamer Bezugspunkt:</strong> Die rechtliche Verankerung schafft erstmals einen institutionellen Rahmen, in dem Bevölkerung, Unternehmen und Staat explizit aufeinander bezogen werden.</p>
+<p><strong>Transparenz als öffentliche Positionierung:</strong> Die Sektorwahl der Unternehmen ist öffentlich einsehbar. Wo ein Unternehmen investiert, sagt etwas darüber aus, wer es ist und zu welcher Gesellschaft es sich bekennt.</p>
+<p><strong>Die Debatte als Beginn des Wandels:</strong> Bereits das Gespräch über dieses Modell ist ein Erfolg. Wer darüber diskutiert, denkt bereits in der neuen Logik.</p>`
+    },
+    {
+      nr: "1a", titel: "Warum braucht es ein neues Denken – gerade jetzt?",
+      text: `<p>Die Schweiz steht an einem historischen Wendepunkt. Die politischen Modelle des 20. Jahrhunderts haben Fortschritt ermöglicht, stossen aber zunehmend an ihre Grenzen.</p>
+<ul>
+  <li>Demografischer Wandel und soziale Ungleichheit gefährden den gesellschaftlichen Zusammenhalt.</li>
+  <li>Digitalisierung, Künstliche Intelligenz und Biotechnologie stellen unsere sozialen und politischen Grundannahmen infrage.</li>
+  <li>Politische Polarisierung und Vertrauensverlust bedrohen die demokratische Kultur.</li>
+  <li>Unternehmen sind mobiler denn je – Staaten und Bevölkerungen sind es nicht.</li>
+</ul>
+<p>Mit den alten Instrumenten lassen sich diese Probleme kaum mehr lösen. Es braucht einen pragmatischen Integrationsansatz, der die wertvollen Elemente der alten Theorien aufnimmt, aber ihre Grenzen überwindet – und eine positive Vision, die zeigt, wie Wirtschaft, Staat und Bevölkerung wieder in Balance finden können.</p>`
+    },
+    {
+      nr: "2", titel: "Die Grenzen der alten Ideologien & Die Fundamente, die tragen",
+      text: `<p>Die <strong>Sozialdemokratie</strong> schuf den Sozialstaat und brachte Sicherheit für Millionen. Doch ihre nationalen Antworten reichen heute oft nicht mehr aus, um globale Dynamiken zu steuern.</p>
+<p>Der <strong>Liberalismus</strong> setzte auf Freiheit und Unternehmertum und trug zum Wohlstand bei. Doch er unterschätzte die sozialen Kosten und die Ungleichheit, die daraus erwuchs.</p>
+<p>Der <strong>Neoliberalismus</strong> beschleunigte Globalisierung und Innovation, aber er löste die Bindungen zwischen Wirtschaft und Gesellschaft und machte Unternehmen hochmobil – während Bevölkerung und Staat an Ort gebunden blieben.</p>
+<p>Der Solidarische Liberalismus ist eine Synthese dieser Denktraditionen. Die sechs intellektuellen Fundamente (Ordoliberalismus, Subsidiarität, Rheinischer Kapitalismus, Sen, Sandel, Willensnation) sind in der Sektion «Intellektuelle Wurzeln» oben ausführlich beschrieben.</p>`
+    },
+    {
+      nr: "3", titel: "Die politischen Herausforderungen von heute",
+      text: `<p>Jede politische Kraft unserer Schweiz ringt mit Problemen, die sie allein nicht lösen kann:</p>
+<ul>
+  <li><strong>SP und Grüne</strong> fragen, wie der Sozialstaat unter Globalisierung, Fachkräftemangel und steigenden Gesundheitskosten finanzierbar bleibt.</li>
+  <li><strong>FDP</strong> sucht Wege, die Wettbewerbsfähigkeit des Standorts zu sichern, während Unternehmen Steuern zunehmend als Belastung empfinden.</li>
+  <li><strong>Die Mitte</strong> kämpft darum, den gesellschaftlichen Zusammenhalt zu bewahren und Brücken zwischen Wirtschaft, Politik und Bevölkerung zu bauen.</li>
+  <li><strong>GLP</strong> will Nachhaltigkeit und Innovation systemisch verankern, doch staatliche Programme bleiben unterfinanziert.</li>
+  <li><strong>SVP</strong> sorgt sich um nationale Eigenständigkeit und Standorttreue, während Konzerne mit Leichtigkeit abwandern könnten.</li>
+</ul>
+<p>Diese Herausforderungen lassen sich nicht im Gegeneinander lösen – sondern nur in einem neuen Miteinander.</p>`
+    },
+    {
+      nr: "4", titel: "Das Kreislaufmodell Schweiz – Leitprinzipien",
+      text: `<p>Wir schlagen einen neuen Gesellschaftsvertrag vor. Er gründet auf drei Kräften, die nicht gegeneinander, sondern miteinander wirken.</p>
+<h3>Das Solidaritätsdreieck</h3>
+<p><strong>Bevölkerung</strong> legitimiert das Gemeinwesen, zahlt Steuern, bringt Arbeit und Wissen ein.</p>
+<p><strong>Unternehmen</strong> schaffen Wert, Arbeitsplätze und Innovation – und tragen künftig aktiv zur gesellschaftlichen Infrastruktur bei, die ihre eigene Grundlage bildet.</p>
+<p><strong>Staat</strong> setzt den Rahmen, balanciert Ungleichgewichte und sichert die demokratische Kontrolle.</p>
+<h3>Was Solidarität hier bedeutet</h3>
+<p>Solidarität meint nicht Mitleid und nicht Almosen. Sie meint die <strong>gegenseitige Anerkennung von Abhängigkeit</strong>: Unternehmen erkennen an, dass ihr Erfolg auf Bildungssystemen, Infrastruktur, Sicherheit und der Arbeit der Bevölkerung beruht.</p>
+<h3>Unternehmen als Bürgerklasse</h3>
+<p>Unternehmen haben kein Stimmrecht an der Urne – das bleibt den Bürgerinnen und Bürgern vorbehalten. Aber sie übernehmen Verantwortung: durch nachweisbare Investitionen in das Gemeinwohl und ein Mitgestaltungsrecht bei der Verwendung ihres Solidaritätsbeitrags. Mitgestaltung ist keine Machtübernahme – das Parlament behält die demokratische Letztentscheidung.</p>`
+    },
+    {
+      nr: "5", titel: "Der Solidaritätsmechanismus – Zwei Wege, ein Ziel",
+      text: `<p>Alle Unternehmen, die in der Schweiz Bundessteuern entrichten, leisten einen Solidaritätsbeitrag bestehend aus zwei Komponenten:</p>
+<ul>
+  <li><strong>3 % neu:</strong> Ein zusätzlicher Solidarbeitrag auf den bundessteuerbaren Ertrag.</li>
+  <li><strong>2 % Lenkungsrecht:</strong> Das Recht, 2 % der bestehenden Bundessteuerleistung einem oder mehreren gesellschaftlichen Sektoren zu widmen.</li>
+</ul>
+<p>Zusammen ergibt das einen <strong>Solidaritätspool von 5 %</strong>. Der Solidaritätsbeitrag ergänzt die bestehenden Sozialabgaben (AHV, BVG, ALV) – er ersetzt oder reduziert sie nicht.</p>
+<h3>Weg A – Regionale Investition</h3>
+<p>Das Unternehmen investiert die 3 % direkt in seinem Einzugsgebiet (Kinderbetreuung, Berufsbildung, lokale Infrastruktur). Der 3 %-Bundessteuerbeitrag entfällt. Das 2 %-Lenkungsrecht auf Bundesebene bleibt erhalten. Mitarbeitende können einbezogen werden, wohin die regionale Investition fliesst.</p>
+<h3>Weg B – Bundessteuer mit Sektorwahl</h3>
+<p>Das Unternehmen zahlt den vollen Solidaritätsbeitrag als Bundessteuer und übt das vollständige 5 %-Lenkungsrecht aus – es widmet seinen Beitrag einem oder mehreren der 7 Sektoren auf Bundesebene.</p>
+<h3>Stufeneinführung</h3>
+<p><strong>Phase 1 (Einführungsjahr):</strong> 3 %-Solidaritätsbeitrag. Lenkungsrecht wird erstmals ausgeübt. Das 2 %-Lenkungsrecht auf bestehende Steuern tritt in Phase 2 in Kraft.</p>
+<p><strong>Phase 2 (ab Jahr 2):</strong> Das volle Modell tritt in Kraft. Weg A und Weg B stehen vollständig zur Verfügung.</p>`
+    },
+    {
+      nr: "6", titel: "Softfaktoren – Investition in die Gesellschaft",
+      text: `<p>Unternehmen auf Weg A investieren in Menschen und Gemeinschaft: Kinderbetreuung, Gesundheitsangebote, Berufsbildung, Lehrlingsprogramme, lokale Infrastruktur.</p>
+<h3>Zertifizierung</h3>
+<p>Was als gesellschaftlich wirksame Investition gilt, wird <strong>tripartitisch</strong> definiert: durch Vertreter des Staates, der Arbeitgeberverbände und der Gewerkschaften. Massgeblich ist der gesellschaftliche Nutzen – nicht, ob die eigenen Mitarbeitenden direkt profitieren.</p>
+<p><strong>Additives Prinzip:</strong> Als Softfaktor gilt ausschliesslich die Netto-Mehrleistung. Investitionen, die bereits als Betriebskosten steuerlich abgezogen wurden, dürfen nicht zusätzlich als Softfaktor geltend gemacht werden.</p>
+<h3>So profitieren alle</h3>
+<ul>
+  <li><strong>Gesellschaft</strong> erhält reale Investitionen in lokale Infrastruktur und Versorgung.</li>
+  <li><strong>Kantone und Gemeinden</strong> werden indirekt entlastet.</li>
+  <li><strong>Unternehmen</strong> steigern ihre Verwurzelung, Attraktivität als Arbeitgeber und Akzeptanz in der Gemeinschaft.</li>
+  <li><strong>Staat</strong> spart Kosten, weil gesellschaftliche Prävention die Soziallast mindert.</li>
+</ul>`
+    },
+    {
+      nr: "7", titel: "Die Schweiz als Willensnation 2.0",
+      text: `<p>Die Schweiz ist mehr als ein Staat – sie ist eine Willensnation. Seit ihren Anfängen lebt sie nicht von kultureller oder sprachlicher Einheit, sondern vom gemeinsamen Willen, trotz Vielfalt eine Zukunft zu gestalten.</p>
+<p>Heute stehen wir an einem ähnlichen Wendepunkt: Unternehmen sind global mobil. Bevölkerung und Staat sind ortsgebunden und tragen die Folgen. Das Risiko: eine wachsende Kluft zwischen Wirtschaft und Gesellschaft, die unsere Stabilität untergräbt.</p>
+<h3>Föderalismus als Stärke</h3>
+<p>Das Modell setzt auf Bundesebene an – dort, wo die direkte Bundessteuer gilt. Wenn Unternehmen auf Weg A regional investieren, entsteht ein indirekter Entlastungseffekt für Kantone und Gemeinden. Kein Eingriff in die Steuerhoheit der Kantone – aber ein realer Beitrag zu ihrer Handlungsfähigkeit.</p>
+<h3>Die Willensnation 2.0</h3>
+<p>Der Solidarische Liberalismus macht Unternehmen zu Teilhabern der Willensnation – nicht mit Stimmrecht, aber mit klarer Verantwortung. So entsteht die <strong>Willensnation 2.0</strong>: Bevölkerung, Unternehmen und Staat – drei Kräfte, die erstmals gemeinsam und vereint in voller Stärke auftreten.</p>`
+    },
+    {
+      nr: "8", titel: "Umsetzung – Stufenweise, schlank und demokratisch",
+      text: `<p>Der Solidarische Liberalismus setzt auf einfachen Zugang, klare Regeln und bewährte Technologie.</p>
+<h3>Digitale Plattform</h3>
+<p>Die Mitgestaltung der Unternehmen erfolgt digital – als <strong>Erweiterung des bestehenden Bundesportals EasyGov</strong>, schrittweise und ohne Neubeschaffung. Geschätzte Gesamtinvestitionen über fünf Jahre: CHF 25–55 Millionen – ein Bruchteil des jährlichen Solidaritätspools. Jedes Unternehmen meldet einmal jährlich: Weg A oder Weg B, Sektorpräferenz, Dokumentation der regionalen Investitionen.</p>
+<h3>Transparenz</h3>
+<p>Jede Entscheidung ist öffentlich einsehbar: Bürgerinnen und Bürger sehen, welche Unternehmen welche Sektoren stärken und welche Regionen welche Investitionen erhalten. Das schafft Vertrauen und Standortbindung.</p>
+<h3>Stufeneinführung</h3>
+<p><strong>Phase 1:</strong> 3 %-Solidaritätsbeitrag. Sektorpräferenzen werden erfasst und publiziert. Gesellschaftliches Signal: alle drei Akteure handeln erstmals gemeinsam.</p>
+<p><strong>Phase 2 (ab Jahr 2):</strong> Volle Aktivierung – 2 %-Lenkungsrecht, Weg A und Weg B vollständig verfügbar.</p>`
+    },
+    {
+      nr: "9", titel: "Die Vision",
+      text: `<p>Wir sehen eine Schweiz, in der Bevölkerung, Unternehmen und Staat nicht gegeneinander, sondern miteinander agieren:</p>
+<ul>
+  <li><strong>Unternehmen als Teil der Identität.</strong> Nicht nur Investoren auf Zeit, sondern Mitgestalter des Gemeinwesens – regional verwurzelt oder national engagiert.</li>
+  <li><strong>Wohlstand für alle.</strong> Ein Kreislauf, in dem die Beiträge von Bevölkerung, Unternehmen und Staat sich gegenseitig verstärken.</li>
+  <li><strong>Standorttreue als Prinzip.</strong> Wer hier tätig ist, investiert in die Grundlagen der Gesellschaft – und wird belohnt durch Stabilität, Fachkräfte und Vertrauen.</li>
+  <li><strong>Ein qualitativer Spitzenstandort.</strong> Nicht durch Dumping, sondern durch Investition in Bildung, Forschung, Gesundheit und Lebensqualität.</li>
+</ul>
+<p>Er ist nicht sozialistisch, weil er Markt, Eigenverantwortung und Freiheit respektiert. Er ist nicht rein kapitalistisch, weil er Unternehmen Pflichten im Gemeinwohl gibt. Er ist eine Synthese: <strong>Solidarität + Freiheit, Verantwortung + Demokratie.</strong></p>`
+    },
+    {
+      nr: "10", titel: "Unser Aufruf",
+      text: `<p>Wir rufen Politik, Wirtschaft, Sozialpartner und Bevölkerung auf, diesen neuen Weg zu beschreiten.</p>
+<ul>
+  <li><strong>Für eine Schweiz, die gemeinsam investiert</strong> – auf Bundesebene in die grossen Sektoren, regional in die eigene Gemeinschaft.</li>
+  <li><strong>Für eine Wirtschaft, die Verantwortung übernimmt</strong> – nicht als Pflichtübung, sondern als Ausdruck von Standorttreue und Mitgestaltungswillen.</li>
+  <li><strong>Für ein Parlament, das nachsteuert</strong> – informiert, faktenbasiert, demokratisch legitimiert.</li>
+  <li><strong>Für Sozialpartner, die Qualität sichern</strong> – als tripartitische Prüfinstanz.</li>
+  <li><strong>Für Kantone, die profitieren</strong> – mit mehr Spielraum durch regionale Investitionen.</li>
+  <li><strong>Für Mitarbeitende, die einbezogen werden</strong> – als Brücke zwischen Betrieb und Gemeinschaft.</li>
+</ul>
+<p>Solidarischer Liberalismus – das Kreislaufmodell Schweiz. Die Willensnation 2.0. Gemeinsam stark, frei und solidarisch.</p>`
+    },
+    {
+      nr: "A1", titel: "Anhang: Fiskalische Wirkungsrechnung",
+      text: `<p><em>Alle Zahlen sind Schätzungen auf Basis öffentlich verfügbarer BFS/EFV-Daten.</em></p>
+<h3>Jährliches Solidaritätsvolumen</h3>
+<table>
+  <tr><th>Jahr</th><th>Basis Bundessteuer</th><th>3 % neu</th><th>2 % Lenkung</th><th>Total Pool</th></tr>
+  <tr><td>Phase 1 (Jahr 1)</td><td>~CHF 10 Mrd.</td><td>~CHF 300–400 Mio.</td><td>–</td><td>~CHF 300–400 Mio.</td></tr>
+  <tr><td>Phase 2 (ab Jahr 2)</td><td>~CHF 10 Mrd.</td><td>~CHF 300–400 Mio.</td><td>~CHF 200 Mio.</td><td>~CHF 500–600 Mio.</td></tr>
+</table>
+<h3>Aufteilung im Gleichgewicht (Schätzung: 55 % Weg A / 45 % Weg B)</h3>
+<table>
+  <tr><th>Kanal</th><th>Jährlich</th><th>Wirkungsebene</th></tr>
+  <tr><td>Weg A – Regionale Investitionen</td><td>~CHF 165–220 Mio.</td><td>Kantone / Gemeinden</td></tr>
+  <tr><td>Weg B – Bundessektor-Lenkung (3 %)</td><td>~CHF 135–180 Mio.</td><td>Bund / Sektoren</td></tr>
+  <tr><td>2 % Lenkungsrecht (bestehend)</td><td>~CHF 200 Mio.</td><td>Bund / Sektoren</td></tr>
+</table>
+<h3>Plattformkosten</h3>
+<table>
+  <tr><th>Phase</th><th>Investition</th><th>Timeline</th></tr>
+  <tr><td>Phase 1 (EasyGov-Erweiterung)</td><td>CHF 5–15 Mio.</td><td>12–18 Monate</td></tr>
+  <tr><td>Phase 2 (Vollausbau + API ESTV)</td><td>CHF 20–40 Mio.</td><td>+24–36 Monate</td></tr>
+  <tr><td><strong>Total 5 Jahre</strong></td><td><strong>CHF 25–55 Mio.</strong></td><td></td></tr>
+</table>
+<p>Plattformkosten = ca. 5–10 % eines Jahres-Solidaritätspools. Investition amortisiert sich im ersten Betriebsjahr.</p>`
+    },
+    {
+      nr: "A2", titel: "Anhang: Gesetzliche Grundlagen und verfassungsrechtliche Präzisierungen",
+      text: `<p><em>Dieser Anhang richtet sich an Fachpersonen aus Recht, Steuerpolitik und Gesetzgebung. Vor einer parlamentarischen Initiative ist eine vertiefte rechtliche Prüfung durch Staatsrechtler und die zuständigen Bundesbehörden (EFD, SECO, ESTV) erforderlich.</em></p>
+<h3>1. Verfassungsrechtliche Verankerung</h3>
+<p>Die direkte Bundessteuer ist in <strong>Art. 128 BV</strong> verankert. Der Solidaritätsmechanismus erfordert eine eigenständige verfassungsrechtliche Grundlage.</p>
+<p><strong>Option A:</strong> Ergänzung von Art. 128 BV – neuer Absatz ermächtigt den Bund, von juristischen Personen einen Solidaritätsbeitrag zu erheben.<br>
+<strong>Option B:</strong> Neuer Art. 128a BV «Solidaritätsbeitrag der Unternehmen» – stärkt die eigenständige Legitimation als gesellschaftspolitisches Instrument.</p>
+<p><strong>Gesetzgebungspfad:</strong> Volksinitiative oder parlamentarische Initiative → obligatorisches Referendum (doppeltes Mehr) → Ausführungsgesetz → ESTV-Vollzugsverordnung, EasyGov-Erweiterungsverordnung.</p>
+<h3>2. Steuerrechtliche Präzisierungen</h3>
+<p>Der Solidaritätsbeitrag von 3 % bemisst sich nach dem <strong>steuerbaren Reingewinn</strong> gemäss Art. 58–68 DBG. <strong>Beispiel:</strong> CHF 800'000 steuerbarer Reingewinn → CHF 24'000 Solidaritätsbeitrag (3 %).</p>
+<p><strong>Doppelverwertungsverbot:</strong> Weg-A-Investitionen, die bereits als Betriebskosten steuerlich abgezogen wurden, können nicht als Solidarbeitrag angerechnet werden.</p>
+<p><strong>Konzerne:</strong> Das Modell gilt auf Ebene der einzelnen juristischen Person – nicht konsolidiert.</p>
+<h3>3. OECD Pillar 2 / Globale Mindeststeuer</h3>
+<p>Die Schweiz hat per 1. Januar 2024 die globale Mindeststeuer (MinStG, SR 642.23) eingeführt. Der Solidarische Liberalismus steht nicht im Widerspruch zu Pillar 2. Die steuerliche Behandlung von Weg-A-Investitionen unter den GloBE-Regeln bedarf einer technischen Prüfung durch die ESTV in Koordination mit der OECD.</p>
+<h3>4. Tripartitische Zertifizierungskommission</h3>
+<p>Orientiert sich an bewährten Schweizer Institutionen (EKF, NAV). Zusammensetzung: EFD/SECO + Economiesuisse/SGV + SGB/Travail.Suisse. Konsensprinzip; Stichentscheid durch Bundesvertreter bei Nichteinigung. Beschwerde beim Bundesverwaltungsgericht (BVGer).</p>
+<h3>5. Datenschutz</h3>
+<p>Juristische Personen geniessen keinen DSG-Schutz im engeren Sinne. Die öffentliche Transparenz der Unternehmensentscheidungen ist rechtlich unproblematisch. Für Einzelunternehmen empfiehlt sich eine angepasste Transparenzregel (aggregierte Darstellung ab Umsatzschwelle).</p>`
+    }
+  ];
+
+  // ═══════════════════════════════════════════════════════════
+  // RENDER
+  // ═══════════════════════════════════════════════════════════
+
+  function renderSektoren() {
+    const el = document.getElementById('sektor-grid');
+    if (!el) return;
+    el.innerHTML = SEKTOREN.map(s =>
+      `<div class="sektor-badge"><span class="s-name">${s.name}</span><span class="s-sub">${s.sub}</span></div>`
+    ).join('');
+  }
+
+  function renderFundamente() {
+    const el = document.getElementById('fundament-grid');
+    if (!el) return;
+    el.innerHTML = FUNDAMENTE.map(f => `
+      <div class="fundament-card">
+        <span class="f-autor">${f.autoren}</span>
+        <div class="f-name">${f.name}</div>
+        <p class="f-kern">${f.kern}</p>
+        <div class="f-link">
+          <span class="f-link-label">Verbindung zum Modell</span>
+          ${f.verbindung}
+        </div>
+      </div>`
+    ).join('');
+  }
+
+  function renderAkkordeon() {
+    const el = document.getElementById('manifest-akkordeon');
+    if (!el) return;
+    el.innerHTML = KAPITEL.map((k, i) => `
+      <div class="akkordeon-item">
+        <button class="akkordeon-trigger" data-index="${i}">
+          <span class="ak-nr">${k.nr}</span>
+          <span>${k.titel}</span>
+          <span class="ak-icon">+</span>
+        </button>
+        <div class="akkordeon-body">${k.text}</div>
+      </div>`
+    ).join('');
+
+    el.addEventListener('click', function(e) {
+      const trigger = e.target.closest('.akkordeon-trigger');
+      if (!trigger) return;
+      const item = trigger.closest('.akkordeon-item');
+      const wasOpen = item.classList.contains('open');
+      el.querySelectorAll('.akkordeon-item.open').forEach(x => x.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  }
+
+  renderSektoren();
+  renderFundamente();
+  renderAkkordeon();
+  </script>
   <script src="assets/main.js"></script>
 </body>
 </html>

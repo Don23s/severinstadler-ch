@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Severin Stadler – Unternehmer, Politiker, Vordenker des Solidarischen Liberalismus. Innovation, Kommunikation, gesellschaftliche Verantwortung.">
+  <meta name="description" content="Severin Stadler – SP-Mitglied, Unternehmer und Berater aus Bern. Solidarischer Liberalismus: Wirtschaft im Dienst der Gesellschaft.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.severinstadler.ch/">
   <meta property="og:title" content="Severin Stadler | Politik & Unternehmen">
@@ -44,6 +44,7 @@
   <div class="nav-links" id="navLinks">
 
     <a href="politik.html">Politik</a>
+    <a href="manifest.html">Manifest</a>
     <a href="kommunikation.html">Kommunikation</a>
     <a href="projekte.html">Projekte</a>
     <a href="kontakt.html">Kontakt</a>
@@ -56,7 +57,7 @@
       <img src="assets/images/severin-stadler.jpg" alt="Severin Stadler">
     </div>
     <div class="hero-text">
-      <p class="kicker">Unternehmer · Berater · SP-Mitglied · Bern</p>
+      <p class="kicker">SP-Mitglied · Unternehmer · Berater · Bern</p>
       <h1>
         <strong>Wirtschaft</strong> im Dienst<br>
         der <strong>Gesellschaft.</strong>
@@ -80,12 +81,6 @@
     Solidarischer Liberalismus &nbsp;·&nbsp;
     Wirtschaft als Werkzeug der Gesellschaft &nbsp;·&nbsp;
     Dialog statt Polarisierung
-  </div>
-
-  <!-- Kurzfassung -->
-  <div class="tldr-box">
-    <span class="tldr-label">Kurzfassung</span>
-    <p>Severin Stadler berät Unternehmen, vertritt Interessen und unterstützt Startups. Als SP-Mitglied aus Bern bringt er diese Erfahrungen in politische Überzeugungen ein – die er auf dieser Seite teilt und laufend weiterentwickelt. Sein Ansatz: <strong>Solidarischer Liberalismus</strong> – Wirtschaft und Gesellschaft nicht als Gegensätze, sondern als Verbündete.</p>
   </div>
 
   <!-- Drei Pfeiler -->
@@ -179,17 +174,6 @@
     </div>
   </section>
 
-  <!-- Impulse -->
-  <section class="section">
-    <div class="container">
-      <span class="section-label">Impulse</span>
-      <h2 style="max-width:600px;">Was mich gerade beschäftigt.</h2>
-      <p style="font-size:0.9rem;color:var(--grau);max-width:580px;margin-bottom:2rem;">Gedanken aus meiner täglichen Arbeit – in Beratungen, der Interessensvertretung und der Startup-Entwicklung. Unfertig, im Werden, zur Diskussion.</p>
-      <div class="projekt-grid" id="impulse-grid"></div>
-      <p style="margin-top:1.5rem;font-size:0.85rem;"><a href="politik.html" style="color:var(--rot);font-weight:600;text-decoration:none;">→ Zur politischen Haltung</a></p>
-    </div>
-  </section>
-
   <!-- Schwerpunkte -->
   <section class="section section-warm">
     <div class="container">
@@ -226,7 +210,7 @@
         <div class="footer-brand"><span></span>Severin Stadler</div>
         <div class="footer-links">
           <a href="impressum.html">Impressum</a>
-          &nbsp;·&nbsp; © 2025
+          &nbsp;·&nbsp; © 2026
         </div>
       </div>
       <div class="footer-social">
@@ -238,49 +222,6 @@
     </div>
   </footer>
 
-  <script>
-  // ─────────────────────────────────────────────────────────────
-  // IMPULSE – hier neue Gedanken hinzufügen oder bestehende bearbeiten
-  // Felder: titel, kontext, text, datum, link (optional)
-  // kontext: "Beratung" | "Politik" | "Startup" | "Gesellschaft"
-  // ─────────────────────────────────────────────────────────────
-  const IMPULSE = [
-    {
-      titel:   "Warum der Schweizer Kompromiss zu wenig ist",
-      kontext: "Politik",
-      text:    "In Verhandlungen erlebe ich immer wieder dasselbe Muster: Beide Seiten gehen mit dem Ziel rein, einen Kompromiss zu finden – und erzielen deshalb kein optimales Ergebnis. Win-Win ist möglich, wenn man bereit ist, die Interessen der anderen Seite wirklich zu verstehen.",
-      datum:   "Mai 2025",
-      link:    "politik.html"
-    },
-    {
-      titel:   "Startups brauchen keine Förderung – sie brauchen Rahmenbedingungen",
-      kontext: "Startup",
-      text:    "Staatliche Unterstützung für Startups klingt gut, führt aber oft zu Abhängigkeit. Was Gründerinnen wirklich brauchen: klare Spielregeln, schnelle Bewilligungen und ein Umfeld, das Scheitern erlaubt. Förderung ist die zweitbeste Lösung.",
-      datum:   "April 2025",
-      link:    "projekte.html"
-    },
-    {
-      titel:   "Direkte Demokratie im digitalen Zeitalter",
-      kontext: "Gesellschaft",
-      text:    "Die Trägheit unserer direkten Demokratie war lange eine Stärke. Heute, mit globalen Informationsströmen und gezielter Desinformation, reicht Trägheit nicht mehr. Wir brauchen neue Formen des strukturierten Dialogs – bevor wir abstimmen.",
-      datum:   "März 2025",
-      link:    "kommunikation.html"
-    }
-  ];
-
-  (function renderImpulse() {
-    const grid = document.getElementById('impulse-grid');
-    if (!grid) return;
-    grid.innerHTML = IMPULSE.map(imp => `
-      <div class="projekt-card" style="cursor:default;">
-        <span class="p-kicker">${imp.kontext} · ${imp.datum}</span>
-        <h3>${imp.titel}</h3>
-        <p>${imp.text}</p>
-        ${imp.link ? `<a href="${imp.link}" class="pfeil" style="text-decoration:none;">→ Mehr erfahren</a>` : ''}
-      </div>
-    `).join('');
-  })();
-  </script>
   <script src="assets/main.js"></script>
 </body>
 </html>
