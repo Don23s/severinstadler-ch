@@ -78,6 +78,14 @@ Unternehmer (Sublingua, Fizzi & the Prof!) und SP-Politiker aus Bern. Vertritt d
 
 ---
 
+## Nachträgliche Klärungen (Vertiefung)
+
+| Thema | Entscheid |
+|---|---|
+| Bilder Unterseiten | 1 Situationsfoto pro Seite (Podium, Bern, Gespräch) – nicht text-only |
+| Ich-Stimme | Fliesstext = Erste Person. TL;DR-Boxen = redaktionell (3rd person). Kein Mix im Fliesstext. |
+| Startseite-Rolle | Neutrale Visitenkarte – kein Manifest. Unterseiten sind die Bühnen. |
+
 ## Warnsignale (Design-Anti-Patterns)
 
 - Zu viele Farben oder Farbverläufe → widerspricht Profil

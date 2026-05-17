@@ -1,5 +1,5 @@
 /* ── Google Font ── */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,6 +24,7 @@
   --max-w:  1100px;
   --footer-text: #666666;
   --footer-link: #555555;
+  --rot-rgb: 201, 23, 42;
 }
 
 body {
@@ -165,7 +166,7 @@ nav a.active { color: var(--rot); border-bottom-color: var(--rot); }
 .hero-split .hero-text .lead {
   color: var(--grau);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.7;
   max-width: 380px;
   margin-bottom: 2.5rem;
@@ -242,8 +243,8 @@ nav a.active { color: var(--rot); border-bottom-color: var(--rot); }
   padding: 0.9rem 2rem;
   text-align: center;
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -275,7 +276,7 @@ nav a.active { color: var(--rot); border-bottom-color: var(--rot); }
 
 h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
@@ -339,7 +340,7 @@ p:last-child { margin-bottom: 0; }
 
 .projekt-card:hover {
   border-color: var(--rot);
-  box-shadow: 0 4px 24px rgba(201, 23, 42, 0.08);
+  box-shadow: 0 4px 24px rgba(var(--rot-rgb), 0.08);
 }
 
 .projekt-card .p-kicker {
