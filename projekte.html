@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>html {{ scroll-behavior: smooth; }}</style>
+  <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
@@ -46,7 +47,7 @@
     Innovation · Bildung · Gesellschaft
   </div>
 
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container">
       <span class="section-label sans">Warum diese Projekte</span>
       <h2>Was ich glaube, muss ich auch tun können.</h2>
@@ -59,9 +60,9 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container-wide" style="padding: 0 2.5rem;">
-      <div class="projekt-grid">
+      <div class="projekt-grid" data-stagger>
 
         <a href="sublingua.html" class="projekt-card">
           <span class="p-kicker">EdTech · Neuropsychologie</span>
@@ -91,7 +92,7 @@
     </div>
   </section>
 
-  <section class="section section-warm">
+  <section class="section section-warm" data-reveal>
     <div class="container">
       <span class="section-label">Gemeinsamer Antrieb</span>
       <h2>Bildung ist politisch.</h2>
@@ -118,5 +119,6 @@
   </footer>
 
   <script src="assets/main.js"></script>
+  <script src="assets/animations.js"></script>
 </body>
 </html>

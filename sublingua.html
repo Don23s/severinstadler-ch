@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>html {{ scroll-behavior: smooth; }}</style>
+  <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
@@ -46,7 +47,7 @@
     Neuropsychologie · Sprachenlernen · Subliminale Stimulation
   </div>
 
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container">
       <div class="badges">
         <span class="badge">EdTech</span>
@@ -70,7 +71,7 @@
     </div>
   </section>
 
-  <section class="section section-warm">
+  <section class="section section-warm" data-reveal>
     <div class="container">
       <span class="section-label">Wie es funktioniert</span>
       <h2>Drei Schritte. Ein Prinzip.</h2>
@@ -98,12 +99,12 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container">
       <span class="section-label">Roadmap</span>
       <h2>Wo wir stehen.</h2>
 
-      <div class="drei-grid">
+      <div class="drei-grid" data-stagger>
         <div class="drei-item">
           <span class="nummer">Phase 1</span>
           <h3>Pilotversuch</h3>
@@ -142,5 +143,6 @@
   </footer>
 
   <script src="assets/main.js"></script>
+  <script src="assets/animations.js"></script>
 </body>
 </html>

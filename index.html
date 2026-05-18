@@ -33,6 +33,7 @@
       .bewegt-item:last-child { border-bottom:none; }
     }
   </style>
+  <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
@@ -71,7 +72,7 @@
         <a href="politik.html">Politische Haltung</a>
         <a href="kommunikation.html">Kommunikation</a>
         <a href="projekte.html">Projekte</a>
-        <a href="haltungskompass.html" style="color:var(--rot);font-weight:600;">→ Haltungskompass</a>
+        <a href="haltungskompass.html" class="nav-accent">→ Haltungskompass</a>
       </nav>
     </div>
   </section>
@@ -84,7 +85,7 @@
   </div>
 
   <!-- Drei Pfeiler -->
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container">
       <span class="section-label sans">Haltung</span>
       <h2>Ein neues Gleichgewicht zwischen Wirtschaft, Staat und Bevölkerung.</h2>
@@ -94,7 +95,7 @@
       </p>
     </div>
     <div class="container-wide" style="margin-top: 2.5rem;">
-      <div class="drei-grid">
+      <div class="drei-grid" data-stagger>
         <div class="drei-item">
           <span class="nummer sans">01 · Wirtschaft</span>
           <h3>Freiheit mit Konsequenz</h3>
@@ -124,7 +125,7 @@
   </section>
 
   <!-- Kernüberzeugung – dunkel -->
-  <section class="section section-dunkel">
+  <section class="section section-dunkel" data-reveal>
     <div class="container">
       <span class="section-label sans">Was mich antreibt</span>
       <blockquote>
@@ -142,7 +143,7 @@
   </section>
 
   <!-- Was mich bewegt -->
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container">
       <span class="section-label">Was mich bewegt</span>
       <div class="bewegt-grid">
@@ -175,13 +176,13 @@
   </section>
 
   <!-- Schwerpunkte -->
-  <section class="section section-warm">
+  <section class="section section-warm" data-reveal>
     <div class="container">
       <span class="section-label sans">Schwerpunkte</span>
       <h2>Wo ich wirke.</h2>
     </div>
     <div class="container-wide" style="margin-top: 0; padding: 0 2rem 5rem;">
-      <div class="projekt-grid">
+      <div class="projekt-grid" data-stagger>
         <a href="politik.html" class="projekt-card">
           <span class="p-kicker sans">Politik</span>
           <h3>Solidarischer Liberalismus</h3>
@@ -223,5 +224,6 @@
   </footer>
 
   <script src="assets/main.js"></script>
+  <script src="assets/animations.js"></script>
 </body>
 </html>

@@ -15,6 +15,148 @@
   <style>
     html { scroll-behavior: smooth; }
 
+    /* ── Reading Progress Bar ── */
+    #manifest-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--rot);
+      width: 0%;
+      z-index: 1001;
+      transition: width 0.08s linear;
+      pointer-events: none;
+    }
+
+    /* ── Chapter Nav Sidebar (Desktop ≥1200px) ── */
+    .manifest-chapnav {
+      position: fixed;
+      left: 1.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .chapnav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--grau);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .chapnav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--linie);
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .chapnav-label {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .manifest-chapnav:hover .chapnav-label { opacity: 1; }
+    .chapnav-item.active .chapnav-label { opacity: 1; }
+
+    .chapnav-item.active { color: var(--rot); }
+    .chapnav-item.active .chapnav-dot {
+      background: var(--rot);
+      transform: scale(1.5);
+    }
+
+    @media (max-width: 1199px) { .manifest-chapnav { display: none; } }
+
+    /* ── Float Button + Overlay (Mobile / Tablet) ── */
+    .chapnav-float {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      background: var(--text);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      z-index: 200;
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    @media (max-width: 1199px) { .chapnav-float { display: flex; } }
+
+    .chapnav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 300;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .chapnav-overlay.open { display: flex; }
+
+    .chapnav-sheet {
+      background: #fff;
+      width: 100%;
+      max-width: 500px;
+      padding: 1.75rem 1.5rem 2rem;
+    }
+
+    .chapnav-sheet-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grau);
+      margin-bottom: 1rem;
+    }
+
+    .chapnav-sheet a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--linie);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    .chapnav-sheet a:last-child { border-bottom: none; }
+    .chapnav-sheet a:hover { color: var(--rot); }
+
+    .chapnav-sheet a .sheet-nr {
+      color: var(--rot);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      min-width: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    /* ── Version Banner ── */
     .version-banner {
       background: var(--warm);
       border-bottom: 1px solid var(--linie);
@@ -27,6 +169,7 @@
       text-transform: uppercase;
     }
 
+    /* ── Hero ── */
     .manifest-hero {
       padding: 5rem 2rem 3rem;
       max-width: 760px;
@@ -77,6 +220,46 @@
       font-size: 0.82rem;
       color: var(--grau);
       letter-spacing: 0.03em;
+    }
+
+    /* ── Kurzfassung ── */
+    .kurzfassung-box {
+      background: var(--warm);
+      border-left: 4px solid var(--rot);
+      padding: 2rem 2.5rem;
+      margin: 2rem 0 1.5rem;
+      max-width: 700px;
+      line-height: 1.82;
+    }
+
+    .kurzfassung-box p {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 1.1rem;
+    }
+
+    .kurzfassung-box p:last-child { margin-bottom: 0; }
+
+    .kurzfassung-footnote {
+      font-size: 0.83rem;
+      color: var(--grau);
+      max-width: 600px;
+      line-height: 1.7;
+      font-style: italic;
+      margin-top: 0;
+    }
+
+    /* ── Pull-Quote ── */
+    .pull-quote {
+      border-left: 4px solid var(--rot);
+      padding: 0.75rem 1.5rem;
+      margin: 2rem 0;
+      max-width: 620px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.55;
+      letter-spacing: -0.01em;
     }
 
     /* ── Solidaritätsdreieck ── */
@@ -210,6 +393,12 @@
     .fundament-card {
       border: 1px solid var(--linie);
       padding: 1.75rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .fundament-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
     }
 
     .f-autor {
@@ -351,6 +540,7 @@
     .akkordeon-body table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-bottom: 1rem; }
     .akkordeon-body th { text-align: left; font-weight: 700; color: var(--text); border-bottom: 2px solid var(--linie); padding: 0.4rem 0.5rem; }
     .akkordeon-body td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--linie); vertical-align: top; }
+    .akkordeon-body tr:nth-child(even) td { background: var(--warm); }
 
     /* ── Schluss ── */
     .manifest-schluss {
@@ -389,6 +579,17 @@
 
     .manifest-footer-info strong { color: var(--text); }
 
+    /* ── Reading Time ── */
+    .reading-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--grau);
+      margin-top: 0.75rem;
+      letter-spacing: 0.03em;
+    }
+
     @media (max-width: 640px) {
       .manifest-hero { padding: 3.5rem 1.25rem 2rem; }
       .weg-grid { grid-template-columns: 1fr; }
@@ -397,10 +598,14 @@
       .dreieck-node:last-child { border-bottom: none; }
       .partei-item { grid-template-columns: 1fr; gap: 0.2rem; }
       .akkordeon-body { padding-left: 1.5rem; }
+      .kurzfassung-box { padding: 1.5rem; }
     }
   </style>
+  <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
+
+  <div id="manifest-progress"></div>
 
   <div class="version-banner">Manifest – Version 1.0 &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Zur öffentlichen Diskussion freigegeben</div>
 
@@ -418,6 +623,57 @@
     </div>
   </nav>
 
+  <!-- Sticky Chapter Nav (Desktop) -->
+  <nav class="manifest-chapnav" id="manifest-chapnav" aria-label="Kapitelnavigation">
+    <a href="#kurzfassung" class="chapnav-item" data-section="kurzfassung">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Kurzfassung</span>
+    </a>
+    <a href="#ausgangslage" class="chapnav-item" data-section="ausgangslage">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Ausgangslage</span>
+    </a>
+    <a href="#das-modell" class="chapnav-item" data-section="das-modell">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Das Modell</span>
+    </a>
+    <a href="#mechanismus" class="chapnav-item" data-section="mechanismus">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Mechanismus</span>
+    </a>
+    <a href="#sektoren" class="chapnav-item" data-section="sektoren">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Sektoren</span>
+    </a>
+    <a href="#fundamente" class="chapnav-item" data-section="fundamente">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Fundamente</span>
+    </a>
+    <a href="#einordnung" class="chapnav-item" data-section="einordnung">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Einordnung</span>
+    </a>
+    <a href="#volltext" class="chapnav-item" data-section="volltext">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Volltext</span>
+    </a>
+    <a href="#aufruf" class="chapnav-item" data-section="aufruf">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Aufruf</span>
+    </a>
+  </nav>
+
+  <!-- Float Button + Overlay (Mobile / Tablet) -->
+  <button class="chapnav-float" id="chapnav-float-btn" aria-label="Kapitel wählen">
+    ≡ &nbsp;Kapitel
+  </button>
+
+  <div class="chapnav-overlay" id="chapnav-overlay" role="dialog" aria-modal="true">
+    <div class="chapnav-sheet">
+      <div class="chapnav-sheet-title">Kapitel</div>
+      <a href="#kurzfassung"><span class="sheet-nr">Kurz</span>Kurzfassung</a>
+      <a href="#ausgangslage"><span class="sheet-nr">1/1a</span>Ausgangslage</a>
+      <a href="#das-modell"><span class="sheet-nr">Modell</span>Das Solidaritätsdreieck</a>
+      <a href="#mechanismus"><span class="sheet-nr">5</span>Zwei Wege, ein Ziel</a>
+      <a href="#sektoren"><span class="sheet-nr">7</span>Gesellschaftliche Sektoren</a>
+      <a href="#fundamente"><span class="sheet-nr">2</span>Intellektuelle Fundamente</a>
+      <a href="#einordnung"><span class="sheet-nr">3/9</span>Politische Einordnung</a>
+      <a href="#volltext"><span class="sheet-nr">1–10</span>Volltext Akkordeon</a>
+      <a href="#aufruf"><span class="sheet-nr">10</span>Unser Aufruf</a>
+    </div>
+  </div>
+
   <!-- Hero -->
   <div class="manifest-hero">
     <span class="manifest-datum">Mai 2026 – Entwurf zur öffentlichen Diskussion</span>
@@ -427,14 +683,30 @@
       Die Schweiz steht an einem Scheideweg. Wenn wir Wohlstand und Zusammenhalt bewahren wollen, brauchen wir ein neues Gleichgewicht zwischen Wirtschaft, Staat und Bevölkerung – einen <strong>sozialwirtschaftlichen Aufbruch</strong>, der alle drei Kräfte erstmals gemeinsam und vereint auftreten lässt.
     </p>
     <div class="manifest-meta">Severin Stadler &nbsp;·&nbsp; Bern, Mai 2026</div>
+    <div class="reading-time">&#9679; ca. 15 Minuten Lesezeit</div>
   </div>
 
   <div class="haltung-band sans">
     Solidarität &nbsp;·&nbsp; Freiheit &nbsp;·&nbsp; Verantwortung &nbsp;·&nbsp; Demokratie
   </div>
 
+  <!-- Kurzfassung -->
+  <section class="section" id="kurzfassung" data-section="kurzfassung" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Kurzfassung</span>
+      <h2>Das Modell auf einen Blick.</h2>
+      <div class="kurzfassung-box">
+        <p>Die Schweiz steht vor einem strukturellen Problem: Der Sozialstaat wird teurer, die Unternehmen mobiler – und die Kluft zwischen Wirtschaft und Gesellschaft wächst. Unternehmen entrichten Steuern, aber gestalten nicht; der Staat verteilt, aber ohne die Wirtschaft einzubinden.</p>
+        <p>Der Solidarische Liberalismus schlägt einen neuen Gesellschaftsvertrag vor: Alle Unternehmen mit Bundessteuerpflicht leisten einen Solidaritätsbeitrag von <strong>5 % ihres steuerbaren Reingewinns</strong> – und entscheiden selbst, wie er eingesetzt wird. Wer regional investiert (Weg A), zahlt keine neue Bundessteuer und behält das Recht, seinen bestehenden Steueranteil einem gesellschaftlichen Sektor zu widmen; wer den Bund beauftragt (Weg B), erhält das vollständige Mitgestaltungsrecht über sieben Sektoren: Bildung, Gesundheit, Forschung, Sicherheit, Kultur, Umwelt und Soziales.</p>
+        <p>Das Parlament berücksichtigt die Unternehmenspräferenzen und begründet Abweichungen öffentlich – so entsteht ein Kreislauf, in dem Wirtschaft, Staat und Bevölkerung erstmals gemeinsam Verantwortung tragen.</p>
+        <p><strong>Dies ist kein Bruch mit dem Schweizer Weg, sondern seine Weiterentwicklung.</strong> Wir rufen Politik, Wirtschaft und Gesellschaft auf, diesen Aufbruch gemeinsam zu gestalten.</p>
+      </div>
+      <p class="kurzfassung-footnote">Das vollständige Manifest mit allen Kapiteln findet sich im Abschnitt «Volltext» weiter unten. Rechtliche und steuerrechtliche Präzisierungen sind im separaten Anhang A2 dokumentiert.</p>
+    </div>
+  </section>
+
   <!-- 1. Ausgangslage -->
-  <section class="section">
+  <section class="section section-warm" id="ausgangslage" data-section="ausgangslage" data-reveal>
     <div class="container">
       <span class="section-label sans">Ausgangslage</span>
       <h2>Warum es jetzt ein neues Denken braucht.</h2>
@@ -462,7 +734,7 @@
   </section>
 
   <!-- 2. Das Solidaritätsdreieck -->
-  <section class="section section-warm">
+  <section class="section" id="das-modell" data-section="das-modell" data-reveal>
     <div class="container">
       <span class="section-label sans">Das Modell</span>
       <h2>Das Solidaritätsdreieck.</h2>
@@ -486,12 +758,12 @@
           <p>Setzt den Rahmen, balanciert Ungleichgewichte und sichert die demokratische Kontrolle. Behält die Letztentscheidung – auch über die Verwendung des Solidaritätsbeitrags.</p>
         </div>
       </div>
-      <blockquote style="margin-top:1.5rem;">Solidarität meint nicht Mitleid. Sie meint die gegenseitige Anerkennung von Abhängigkeit.</blockquote>
+      <blockquote class="pull-quote">Solidarität meint nicht Mitleid. Sie meint die gegenseitige Anerkennung von Abhängigkeit.</blockquote>
     </div>
   </section>
 
   <!-- 3. Zwei Wege -->
-  <section class="section">
+  <section class="section section-warm" id="mechanismus" data-section="mechanismus" data-reveal>
     <div class="container">
       <span class="section-label sans">Der Mechanismus</span>
       <h2>Zwei Wege, ein Ziel.</h2>
@@ -519,7 +791,7 @@
   </section>
 
   <!-- 4. Sektoren -->
-  <section class="section section-warm">
+  <section class="section" id="sektoren" data-section="sektoren" data-reveal>
     <div class="container">
       <span class="section-label sans">Sektorwahl</span>
       <h2>7 gesellschaftliche Sektoren.</h2>
@@ -531,19 +803,19 @@
   </section>
 
   <!-- 5. Fundamente -->
-  <section class="section">
+  <section class="section section-warm" id="fundamente" data-section="fundamente" data-reveal>
     <div class="container">
       <span class="section-label sans">Intellektuelle Wurzeln</span>
       <h2>Die Fundamente, die tragen.</h2>
       <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
-        Der Solidarische Liberalismus entsteht nicht im Vakuum. Er ist eine Synthese – eine Weiterführung von Denktraditionen, die jeweils wichtige Wahrheiten erkannt haben.
+        Der Solidarische Liberalismus entsteht nicht im Vakuum. Er ist eine Synthese – eine Weiterführung von Denktraditionen, die jeweils wichtige Wahrheiten erkannt haben, aber keine vollständige Antwort auf die Fragen des 21. Jahrhunderts geben.
       </p>
       <div class="fundament-grid" id="fundament-grid"></div>
     </div>
   </section>
 
   <!-- 6. Parteiübergreifend -->
-  <section class="section section-statement">
+  <section class="section section-statement" id="einordnung" data-section="einordnung" data-reveal>
     <div class="container">
       <span class="section-label sans">Einordnung</span>
       <h2>Für alle Lager – gegen kein Lager.</h2>
@@ -573,8 +845,8 @@
     </div>
   </section>
 
-  <!-- 7. Volltext -->
-  <section class="section">
+  <!-- 7. Volltext Akkordeon -->
+  <section class="section" id="volltext" data-section="volltext" data-reveal>
     <div class="container">
       <span class="section-label sans">Volltext</span>
       <h2>Das vollständige Manifest.</h2>
@@ -584,7 +856,7 @@
   </section>
 
   <!-- Aufruf -->
-  <div class="manifest-schluss">
+  <div class="manifest-schluss" id="aufruf" data-section="aufruf">
     <div class="manifest-schluss-inner">
       <blockquote>„Solidarischer Liberalismus – das Kreislaufmodell Schweiz.<br>Die Willensnation 2.0: gemeinsam stark, frei und solidarisch."</blockquote>
       <p style="color:rgba(255,255,255,0.72);font-size:0.95rem;max-width:560px;margin-bottom:0;">Wir rufen Politik, Wirtschaft, Sozialpartner und Bevölkerung auf, diesen neuen Weg zu beschreiten. Nicht als Kompromiss, sondern als Aufbruch.</p>
@@ -667,11 +939,6 @@
     }
   ];
 
-  // ═══════════════════════════════════════════════════════════
-  // KAPITEL – Volltext Akkordeon
-  // Kapitel hinzufügen: { nr, titel, text (HTML-String) }
-  // ═══════════════════════════════════════════════════════════
-
   const KAPITEL = [
     {
       nr: "1", titel: "Vom Problem zum Aufbruch",
@@ -731,7 +998,7 @@
       nr: "5", titel: "Der Solidaritätsmechanismus – Zwei Wege, ein Ziel",
       text: `<p>Alle Unternehmen, die in der Schweiz Bundessteuern entrichten, leisten einen Solidaritätsbeitrag bestehend aus zwei Komponenten:</p>
 <ul>
-  <li><strong>3 % neu:</strong> Ein zusätzlicher Solidarbeitrag auf den bundessteuerbaren Ertrag.</li>
+  <li><strong>3 % neu:</strong> Ein zusätzlicher Solidarbeitrag auf den bundessteuerbaren Ertrag (Reingewinn nach steuerlichen Abzügen – nicht auf Umsatz oder Bruttomarge).</li>
   <li><strong>2 % Lenkungsrecht:</strong> Das Recht, 2 % der bestehenden Bundessteuerleistung einem oder mehreren gesellschaftlichen Sektoren zu widmen.</li>
 </ul>
 <p>Zusammen ergibt das einen <strong>Solidaritätspool von 5 %</strong>. Der Solidaritätsbeitrag ergänzt die bestehenden Sozialabgaben (AHV, BVG, ALV) – er ersetzt oder reduziert sie nicht.</p>
@@ -739,6 +1006,8 @@
 <p>Das Unternehmen investiert die 3 % direkt in seinem Einzugsgebiet (Kinderbetreuung, Berufsbildung, lokale Infrastruktur). Der 3 %-Bundessteuerbeitrag entfällt. Das 2 %-Lenkungsrecht auf Bundesebene bleibt erhalten. Mitarbeitende können einbezogen werden, wohin die regionale Investition fliesst.</p>
 <h3>Weg B – Bundessteuer mit Sektorwahl</h3>
 <p>Das Unternehmen zahlt den vollen Solidaritätsbeitrag als Bundessteuer und übt das vollständige 5 %-Lenkungsrecht aus – es widmet seinen Beitrag einem oder mehreren der 7 Sektoren auf Bundesebene.</p>
+<h3>Parlamentarisches Korrektiv</h3>
+<p>Wenn einzelne Sektoren bevorzugt, andere gemieden werden, bleibt das Parlament das demokratische Gegengewicht. Bestimmte Kernbereiche – Sozialhilfe, Invalidenversicherung, Grundversorgung – werden per parlamentarischem Beschluss als nicht verhandelbar definiert.</p>
 <h3>Stufeneinführung</h3>
 <p><strong>Phase 1 (Einführungsjahr):</strong> 3 %-Solidaritätsbeitrag. Lenkungsrecht wird erstmals ausgeübt. Das 2 %-Lenkungsrecht auf bestehende Steuern tritt in Phase 2 in Kraft.</p>
 <p><strong>Phase 2 (ab Jahr 2):</strong> Das volle Modell tritt in Kraft. Weg A und Weg B stehen vollständig zur Verfügung.</p>`
@@ -752,7 +1021,7 @@
 <h3>So profitieren alle</h3>
 <ul>
   <li><strong>Gesellschaft</strong> erhält reale Investitionen in lokale Infrastruktur und Versorgung.</li>
-  <li><strong>Kantone und Gemeinden</strong> werden indirekt entlastet.</li>
+  <li><strong>Kantone und Gemeinden</strong> werden indirekt entlastet: privat finanzierte Angebote schaffen öffentlichen Spielraum.</li>
   <li><strong>Unternehmen</strong> steigern ihre Verwurzelung, Attraktivität als Arbeitgeber und Akzeptanz in der Gemeinschaft.</li>
   <li><strong>Staat</strong> spart Kosten, weil gesellschaftliche Prävention die Soziallast mindert.</li>
 </ul>`
@@ -763,6 +1032,7 @@
 <p>Heute stehen wir an einem ähnlichen Wendepunkt: Unternehmen sind global mobil. Bevölkerung und Staat sind ortsgebunden und tragen die Folgen. Das Risiko: eine wachsende Kluft zwischen Wirtschaft und Gesellschaft, die unsere Stabilität untergräbt.</p>
 <h3>Föderalismus als Stärke</h3>
 <p>Das Modell setzt auf Bundesebene an – dort, wo die direkte Bundessteuer gilt. Wenn Unternehmen auf Weg A regional investieren, entsteht ein indirekter Entlastungseffekt für Kantone und Gemeinden. Kein Eingriff in die Steuerhoheit der Kantone – aber ein realer Beitrag zu ihrer Handlungsfähigkeit.</p>
+<p>Der Solidarische Liberalismus ist kein Instrument zur umfassenden Lösung regionaler Ungleichgewichte. Er ist ein Weg, wie Wirtschaft und Gesellschaft dort, wo sie einander begegnen, nachhaltig zusammenwachsen können.</p>
 <h3>Die Willensnation 2.0</h3>
 <p>Der Solidarische Liberalismus macht Unternehmen zu Teilhabern der Willensnation – nicht mit Stimmrecht, aber mit klarer Verantwortung. So entsteht die <strong>Willensnation 2.0</strong>: Bevölkerung, Unternehmen und Staat – drei Kräfte, die erstmals gemeinsam und vereint in voller Stärke auftreten.</p>`
     },
@@ -775,7 +1045,8 @@
 <p>Jede Entscheidung ist öffentlich einsehbar: Bürgerinnen und Bürger sehen, welche Unternehmen welche Sektoren stärken und welche Regionen welche Investitionen erhalten. Das schafft Vertrauen und Standortbindung.</p>
 <h3>Stufeneinführung</h3>
 <p><strong>Phase 1:</strong> 3 %-Solidaritätsbeitrag. Sektorpräferenzen werden erfasst und publiziert. Gesellschaftliches Signal: alle drei Akteure handeln erstmals gemeinsam.</p>
-<p><strong>Phase 2 (ab Jahr 2):</strong> Volle Aktivierung – 2 %-Lenkungsrecht, Weg A und Weg B vollständig verfügbar.</p>`
+<p><strong>Phase 2 (ab Jahr 2):</strong> Volle Aktivierung – 2 %-Lenkungsrecht, Weg A und Weg B vollständig verfügbar.</p>
+<p><em>Die rechtliche Verankerung, der Gesetzgebungspfad und steuerrechtliche Präzisierungen sind im Anhang A2 dokumentiert.</em></p>`
     },
     {
       nr: "9", titel: "Die Vision",
@@ -799,11 +1070,12 @@
   <li><strong>Für Kantone, die profitieren</strong> – mit mehr Spielraum durch regionale Investitionen.</li>
   <li><strong>Für Mitarbeitende, die einbezogen werden</strong> – als Brücke zwischen Betrieb und Gemeinschaft.</li>
 </ul>
+<p>Der Solidarische Liberalismus ist ein Instrument – eines unter mehreren, die eine Gesellschaft braucht. Aber er ist ein Instrument, das bisher gefehlt hat: eines, das Wirtschaft, Staat und Bevölkerung in gemeinsamer Verantwortung vereint.</p>
 <p>Solidarischer Liberalismus – das Kreislaufmodell Schweiz. Die Willensnation 2.0. Gemeinsam stark, frei und solidarisch.</p>`
     },
     {
       nr: "A1", titel: "Anhang: Fiskalische Wirkungsrechnung",
-      text: `<p><em>Alle Zahlen sind Schätzungen auf Basis öffentlich verfügbarer BFS/EFV-Daten.</em></p>
+      text: `<p><em>Alle Zahlen sind Schätzungen auf Basis öffentlich verfügbarer BFS/EFV-Daten (Bundessteuern auf Unternehmensgewinne).</em></p>
 <h3>Jährliches Solidaritätsvolumen</h3>
 <table>
   <tr><th>Jahr</th><th>Basis Bundessteuer</th><th>3 % neu</th><th>2 % Lenkung</th><th>Total Pool</th></tr>
@@ -902,7 +1174,58 @@
   renderSektoren();
   renderFundamente();
   renderAkkordeon();
+
+  // ═══════════════════════════════════════════════════════════
+  // READING PROGRESS BAR
+  // ═══════════════════════════════════════════════════════════
+
+  const progressBar = document.getElementById('manifest-progress');
+  window.addEventListener('scroll', function() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    progressBar.style.width = Math.min(progress, 100) + '%';
+  }, { passive: true });
+
+  // ═══════════════════════════════════════════════════════════
+  // SCROLL SPY – Chapter Nav
+  // ═══════════════════════════════════════════════════════════
+
+  const chapNavItems = document.querySelectorAll('.chapnav-item[data-section]');
+  const sections = document.querySelectorAll('[data-section]');
+
+  const spyObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const id = entry.target.dataset.section;
+        chapNavItems.forEach(function(item) {
+          item.classList.toggle('active', item.dataset.section === id);
+        });
+      }
+    });
+  }, { rootMargin: '-35% 0px -55% 0px' });
+
+  sections.forEach(function(s) { spyObserver.observe(s); });
+
+  // ═══════════════════════════════════════════════════════════
+  // FLOAT BUTTON – Mobile Chapter Nav
+  // ═══════════════════════════════════════════════════════════
+
+  const floatBtn = document.getElementById('chapnav-float-btn');
+  const overlay = document.getElementById('chapnav-overlay');
+
+  floatBtn.addEventListener('click', function() {
+    overlay.classList.add('open');
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+
+  overlay.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() { overlay.classList.remove('open'); });
+  });
   </script>
   <script src="assets/main.js"></script>
+  <script src="assets/animations.js"></script>
 </body>
 </html>
