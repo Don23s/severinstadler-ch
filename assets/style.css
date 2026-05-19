@@ -773,3 +773,30 @@ nav .nav-links a.active::after {
     transition: none;
   }
 }
+
+/* ── Language Switcher ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin-left: 1rem;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--grau);
+  cursor: pointer;
+  padding: 0.2rem 0.3rem;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+.lang-btn:hover { color: var(--rot); }
+.lang-btn.active { color: var(--rot); background: var(--rot-licht); }
+
+@media (max-width: 768px) {
+  .lang-switcher { margin-left: 0; margin-top: 0.5rem; }
+}

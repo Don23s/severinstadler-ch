@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "politik": "Politica",
+    "manifest": "Manifesto",
+    "kommunikation": "Comunicazione",
+    "projekte": "Progetti",
+    "kontakt": "Contatto"
+  },
+  "hero": {
+    "kicker": "Membro PS · Imprenditore · Consulente · Berna",
+    "h1": "<strong>L'economia</strong> al servizio<br>della <strong>società.</strong>",
+    "lead": "La libertà richiede responsabilità. Il successo richiede solidarietà. Quello che osservo ogni giorno nel mio lavoro: economia e società non sono in contrasto – dipendono l'una dall'altra.",
+    "nav": {
+      "politik": "Posizione politica",
+      "kommunikation": "Comunicazione",
+      "projekte": "Progetti",
+      "haltungskompass": "→ Bussola dei valori"
+    }
+  },
+  "band": "Liberalismo solidale · L'economia come strumento della società · Dialogo invece di polarizzazione",
+  "haltung": {
+    "label": "Posizione",
+    "h2": "Un nuovo equilibrio tra economia, Stato e popolazione.",
+    "lead": "I vecchi campi ideologici stanno raggiungendo i loro limiti. Serve un modello che costruisca ponti invece di fossati."
+  },
+  "p1": {
+    "nr": "01 · Economia",
+    "h3": "Libertà con conseguenze",
+    "p": "Le imprese devono svilupparsi liberamente – con la disponibilità ad assumersi una responsabilità sociale. Non come obbligo, ma come atteggiamento."
+  },
+  "p2": {
+    "nr": "02 · Politica",
+    "h3": "Condizioni quadro, non tutela",
+    "p": "Lo Stato fissa regole del gioco eque e investe dove i mercati falliscono. Permette – non dirige."
+  },
+  "p3": {
+    "nr": "03 · Società",
+    "h3": "Partecipazione per tutti",
+    "p": "Il successo economico non è fine a se stesso. Deve offrire alle persone sicurezza, opportunità e qualità di vita."
+  },
+  "antreibt": {
+    "label": "Cosa mi spinge",
+    "quote": "«Chi si assume responsabilità merita libertà. Chi si limita a ottimizzare contribuisce all'erosione sociale.»",
+    "p": "Sono membro del PS – eppure credo nella libertà economica. Vivo questa apparente contraddizione ogni giorno: nelle consulenze, nella rappresentanza degli interessi, nel contatto con le startup e la politica. La risposta non risiede nell'ideologia, ma nel dialogo.",
+    "btn": "Leggi la mia posizione politica"
+  },
+  "bewegt": {
+    "label": "Cosa mi muove"
+  },
+  "b1": {
+    "nr": "Persone",
+    "h3": "Capire prima di giudicare",
+    "p": "Come neuropsicologo ho imparato: dietro ogni posizione c'è un bisogno. Chi capisce la persona può parlargli – anche se non si è della stessa opinione. Questo principio guida le mie conversazioni e il modo in cui valuto le posizioni politiche.",
+    "link": "Comunicazione →"
+  },
+  "b2": {
+    "nr": "Sistemi",
+    "h3": "Dati invece di ideologia",
+    "p": "Cinque anni di data science presso l'ufficio di comunicazione sul riciclaggio di denaro mi hanno insegnato una cosa: le buone decisioni richiedono evidenza, non ideologia. A volte «non ancora deciso» è la risposta più precisa – e questo non è una debolezza.",
+    "link": "Posizione politica →"
+  },
+  "b3": {
+    "nr": "Società",
+    "h3": "Win-win invece di compromesso",
+    "p": "Come membro del PS vivo ogni giorno che i bisogni fondamentali di tutti i partiti sono più simili di quanto la retorica lasci supporre. La differenza non sta nel cosa, ma nel come. Cerco il denominatore comune – non come compromesso, ma come punto di partenza.",
+    "link": "Posizione politica →"
+  },
+  "b4": {
+    "nr": "Costruzione",
+    "h3": "Parlare è bene. Costruire è meglio.",
+    "p": "Con Sublingua e Fizzi &amp; the Prof! costruisco cose di cui avrei avuto bisogno io stesso: ripensare l'apprendimento, rendere il sapere accessibile. Le convinzioni che non si mettono in pratica sono solo opinioni.",
+    "link": "Progetti →"
+  },
+  "sp": {
+    "label": "Ambiti d'azione",
+    "h2": "Dove agisco."
+  },
+  "k1": {
+    "kicker": "Politica",
+    "h3": "Liberalismo solidale",
+    "p": "Dialogo prima della polarizzazione. L'economia al servizio della società. Responsabilità invece di ideologia.",
+    "pfeil": "→ Scopri di più"
+  },
+  "k2": {
+    "kicker": "Comunicazione",
+    "h3": "Creare chiarezza",
+    "p": "La fiducia nasce da una comunicazione consapevole – non per caso.",
+    "pfeil": "→ Scopri di più"
+  },
+  "k3": {
+    "kicker": "Progetti",
+    "h3": "Sublingua &amp; Fizzi",
+    "p": "Ripensare l'istruzione – con la neuropsicologia, l'animazione e il vero piacere di apprendere.",
+    "pfeil": "→ Scopri di più"
+  },
+  "footer": {
+    "impressum": "Note legali"
+  }
+}

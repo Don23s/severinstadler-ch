@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "politik": "Politics",
+    "manifest": "Manifesto",
+    "kommunikation": "Communication",
+    "projekte": "Projects",
+    "kontakt": "Contact"
+  },
+  "hero": {
+    "kicker": "SP Member · Entrepreneur · Consultant · Bern",
+    "h1": "<strong>Economy</strong> in service<br>of <strong>society.</strong>",
+    "lead": "Freedom requires responsibility. Success requires solidarity. What I observe daily in my work: economy and society are not opposites – they depend on each other.",
+    "nav": {
+      "politik": "Political stance",
+      "kommunikation": "Communication",
+      "projekte": "Projects",
+      "haltungskompass": "→ Values compass"
+    }
+  },
+  "band": "Solidary liberalism · Economy as a tool of society · Dialogue instead of polarisation",
+  "haltung": {
+    "label": "Stance",
+    "h2": "A new balance between economy, state and society.",
+    "lead": "The old ideological camps are reaching their limits. We need a model that builds bridges instead of trenches."
+  },
+  "p1": {
+    "nr": "01 · Economy",
+    "h3": "Freedom with consequences",
+    "p": "Companies should develop freely – with the readiness to bear social responsibility. Not as a constraint, but as an attitude."
+  },
+  "p2": {
+    "nr": "02 · Politics",
+    "h3": "Framework conditions, not paternalism",
+    "p": "The state sets fair rules and invests where markets fail. It enables – it does not direct."
+  },
+  "p3": {
+    "nr": "03 · Society",
+    "h3": "Participation for all",
+    "p": "Economic success is not an end in itself. It should provide people with security, opportunities and quality of life."
+  },
+  "antreibt": {
+    "label": "What drives me",
+    "quote": "\"Those who take responsibility deserve freedom. Those who only optimise contribute to social erosion.\"",
+    "p": "I am an SP member – and yet I believe in economic freedom. I experience this apparent contradiction every day: in consultations, in advocacy, in contact with startups and politics. The answer lies not in ideology, but in dialogue.",
+    "btn": "Read my political stance"
+  },
+  "bewegt": {
+    "label": "What moves me"
+  },
+  "b1": {
+    "nr": "People",
+    "h3": "Understand before judging",
+    "p": "As a neuropsychologist I have learned: behind every position lies a need. Whoever understands the person can talk to them – even if you don't share the same opinion. This principle shapes how I conduct conversations and how I assess political positions.",
+    "link": "Communication →"
+  },
+  "b2": {
+    "nr": "Systems",
+    "h3": "Data instead of ideology",
+    "p": "Five years of data science at the anti-money laundering reporting office taught me one thing: good decisions need evidence, not ideology. Sometimes 'not yet decided' is the most precise answer – and that is not a weakness.",
+    "link": "Political stance →"
+  },
+  "b3": {
+    "nr": "Society",
+    "h3": "Win-win instead of compromise",
+    "p": "As an SP member I experience daily that the fundamental needs of all parties are more similar than the rhetoric suggests. The difference lies not in the what, but in the how. I look for the common denominator – not as a compromise, but as a starting point.",
+    "link": "Political stance →"
+  },
+  "b4": {
+    "nr": "Building",
+    "h3": "Talking is good. Building is better.",
+    "p": "With Sublingua and Fizzi &amp; the Prof! I am building things I would have needed myself: rethinking learning, making knowledge accessible. Convictions you don't act on are merely opinions.",
+    "link": "Projects →"
+  },
+  "sp": {
+    "label": "Focus areas",
+    "h2": "Where I make an impact."
+  },
+  "k1": {
+    "kicker": "Politics",
+    "h3": "Solidary liberalism",
+    "p": "Dialogue before polarisation. Economy in service of society. Responsibility instead of ideology.",
+    "pfeil": "→ Learn more"
+  },
+  "k2": {
+    "kicker": "Communication",
+    "h3": "Creating clarity",
+    "p": "Trust is built through conscious communication – not by chance.",
+    "pfeil": "→ Learn more"
+  },
+  "k3": {
+    "kicker": "Projects",
+    "h3": "Sublingua &amp; Fizzi",
+    "p": "Rethinking education – with neuropsychology, animation and genuine joy of learning.",
+    "pfeil": "→ Learn more"
+  },
+  "footer": {
+    "impressum": "Legal notice"
+  }
+}

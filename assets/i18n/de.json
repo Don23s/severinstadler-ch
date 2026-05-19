@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "politik": "Politik",
+    "manifest": "Manifest",
+    "kommunikation": "Kommunikation",
+    "projekte": "Projekte",
+    "kontakt": "Kontakt"
+  },
+  "hero": {
+    "kicker": "SP-Mitglied · Unternehmer · Berater · Bern",
+    "h1": "<strong>Wirtschaft</strong> im Dienst<br>der <strong>Gesellschaft.</strong>",
+    "lead": "Freiheit braucht Verantwortung. Erfolg braucht Solidarität. Was ich in meiner Arbeit täglich beobachte: Wirtschaft und Gesellschaft sind kein Gegensatz – sie sind aufeinander angewiesen.",
+    "nav": {
+      "politik": "Politische Haltung",
+      "kommunikation": "Kommunikation",
+      "projekte": "Projekte",
+      "haltungskompass": "→ Haltungskompass"
+    }
+  },
+  "band": "Solidarischer Liberalismus · Wirtschaft als Werkzeug der Gesellschaft · Dialog statt Polarisierung",
+  "haltung": {
+    "label": "Haltung",
+    "h2": "Ein neues Gleichgewicht zwischen Wirtschaft, Staat und Bevölkerung.",
+    "lead": "Die alten ideologischen Lager stossen an ihre Grenzen. Es braucht ein Modell, das Brücken baut statt Gräben."
+  },
+  "p1": {
+    "nr": "01 · Wirtschaft",
+    "h3": "Freiheit mit Konsequenz",
+    "p": "Unternehmen sollen sich frei entwickeln – mit der Bereitschaft, gesellschaftliche Verantwortung zu tragen. Nicht als Zwang, sondern als Haltung."
+  },
+  "p2": {
+    "nr": "02 · Politik",
+    "h3": "Rahmenbedingungen, nicht Bevormundung",
+    "p": "Der Staat setzt faire Spielregeln und investiert dort, wo Märkte versagen. Er ermöglicht – er dirigiert nicht."
+  },
+  "p3": {
+    "nr": "03 · Gesellschaft",
+    "h3": "Teilhabe für alle",
+    "p": "Wirtschaftlicher Erfolg ist kein Selbstzweck. Er soll Menschen Sicherheit, Chancen und Lebensqualität ermöglichen."
+  },
+  "antreibt": {
+    "label": "Was mich antreibt",
+    "quote": "„Wer Verantwortung übernimmt, verdient Freiheit. Wer nur optimiert, trägt seinen Teil zur gesellschaftlichen Erosion bei."",
+    "p": "Ich bin SP-Mitglied – und glaube trotzdem an wirtschaftliche Freiheit. Diesen scheinbaren Widerspruch erlebe ich täglich: in Beratungen, in der Interessensvertretung, im Kontakt mit Startups und der Politik. Die Antwort liegt nicht in der Ideologie, sondern im Gespräch.",
+    "btn": "Politische Haltung lesen"
+  },
+  "bewegt": {
+    "label": "Was mich bewegt"
+  },
+  "b1": {
+    "nr": "Menschen",
+    "h3": "Verstehen vor Urteilen",
+    "p": "Als Neuropsychologe habe ich gelernt: Hinter jeder Position steckt ein Bedürfnis. Wer den Menschen versteht, kann mit ihm sprechen – auch wenn man nicht einer Meinung ist. Dieser Grundsatz prägt, wie ich Gespräche führe und wie ich politische Haltungen beurteile.",
+    "link": "Kommunikation →"
+  },
+  "b2": {
+    "nr": "Systeme",
+    "h3": "Daten statt Ideologie",
+    "p": "Fünf Jahre Datascience bei der Meldestelle für Geldwäscherei haben mir eines beigebracht: Gute Entscheide brauchen Evidenz, keine Ideologie. Manchmal ist «noch nicht entschieden» die präziseste Antwort – und das ist keine Schwäche.",
+    "link": "Politische Haltung →"
+  },
+  "b3": {
+    "nr": "Gesellschaft",
+    "h3": "Win-Win statt Kompromiss",
+    "p": "Als SP-Mitglied erlebe ich täglich, dass grundlegende Bedürfnisse aller Parteien ähnlicher sind als die Rhetorik vermuten lässt. Der Unterschied liegt nicht im Was, sondern im Wie. Ich suche den gemeinsamen Nenner – nicht als Kompromiss, sondern als Ausgangspunkt.",
+    "link": "Politische Haltung →"
+  },
+  "b4": {
+    "nr": "Aufbau",
+    "h3": "Reden ist gut. Schaffen ist besser.",
+    "p": "Mit Sublingua und Fizzi &amp; the Prof! baue ich an Dingen, die ich selbst gebraucht hätte: Lernen neu denken, Wissen zugänglich machen. Überzeugungen, die man nicht umsetzt, sind nur Meinungen.",
+    "link": "Projekte →"
+  },
+  "sp": {
+    "label": "Schwerpunkte",
+    "h2": "Wo ich wirke."
+  },
+  "k1": {
+    "kicker": "Politik",
+    "h3": "Solidarischer Liberalismus",
+    "p": "Dialog vor Polarisierung. Wirtschaft im Dienst der Gesellschaft. Verantwortung statt Ideologie.",
+    "pfeil": "→ Mehr erfahren"
+  },
+  "k2": {
+    "kicker": "Kommunikation",
+    "h3": "Klarheit schaffen",
+    "p": "Vertrauen entsteht durch bewusste Kommunikation – nicht durch Zufall.",
+    "pfeil": "→ Mehr erfahren"
+  },
+  "k3": {
+    "kicker": "Projekte",
+    "h3": "Sublingua &amp; Fizzi",
+    "p": "Bildung neu denken – mit Neuropsychologie, Animation und echter Lernfreude.",
+    "pfeil": "→ Mehr erfahren"
+  },
+  "footer": {
+    "impressum": "Impressum"
+  }
+}

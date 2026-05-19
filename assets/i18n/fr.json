@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "politik": "Politique",
+    "manifest": "Manifeste",
+    "kommunikation": "Communication",
+    "projekte": "Projets",
+    "kontakt": "Contact"
+  },
+  "hero": {
+    "kicker": "Membre PS · Entrepreneur · Conseiller · Berne",
+    "h1": "<strong>L'économie</strong> au service<br>de la <strong>société.</strong>",
+    "lead": "La liberté exige la responsabilité. Le succès exige la solidarité. Ce que j'observe chaque jour dans mon travail: l'économie et la société ne s'opposent pas – elles sont interdépendantes.",
+    "nav": {
+      "politik": "Position politique",
+      "kommunikation": "Communication",
+      "projekte": "Projets",
+      "haltungskompass": "→ Boussole des valeurs"
+    }
+  },
+  "band": "Libéralisme solidaire · L'économie comme outil de la société · Dialogue plutôt que polarisation",
+  "haltung": {
+    "label": "Position",
+    "h2": "Un nouvel équilibre entre économie, État et population.",
+    "lead": "Les anciens camps idéologiques atteignent leurs limites. Il faut un modèle qui construit des ponts plutôt que des fossés."
+  },
+  "p1": {
+    "nr": "01 · Économie",
+    "h3": "Liberté avec conséquences",
+    "p": "Les entreprises doivent se développer librement – avec la disposition d'assumer une responsabilité sociale. Pas comme une contrainte, mais comme une attitude."
+  },
+  "p2": {
+    "nr": "02 · Politique",
+    "h3": "Des conditions-cadres, pas de tutelle",
+    "p": "L'État fixe des règles du jeu équitables et investit là où les marchés échouent. Il permet – il ne dirige pas."
+  },
+  "p3": {
+    "nr": "03 · Société",
+    "h3": "Participation pour tous",
+    "p": "Le succès économique n'est pas une fin en soi. Il doit offrir aux personnes sécurité, opportunités et qualité de vie."
+  },
+  "antreibt": {
+    "label": "Ce qui me motive",
+    "quote": "«Celui qui assume des responsabilités mérite la liberté. Celui qui ne fait qu'optimiser contribue à l'érosion sociale.»",
+    "p": "Je suis membre du PS – et je crois pourtant à la liberté économique. Je vis cette contradiction apparente au quotidien: dans les conseils, dans la représentation des intérêts, dans le contact avec les startups et la politique. La réponse ne réside pas dans l'idéologie, mais dans le dialogue.",
+    "btn": "Lire ma position politique"
+  },
+  "bewegt": {
+    "label": "Ce qui me touche"
+  },
+  "b1": {
+    "nr": "Personnes",
+    "h3": "Comprendre avant de juger",
+    "p": "En tant que neuropsychologue, j'ai appris: derrière chaque position se cache un besoin. Qui comprend la personne peut lui parler – même si on n'est pas du même avis. Ce principe guide mes conversations et ma façon de juger les positions politiques.",
+    "link": "Communication →"
+  },
+  "b2": {
+    "nr": "Systèmes",
+    "h3": "Les données plutôt que l'idéologie",
+    "p": "Cinq ans de data science au service de la lutte contre le blanchiment m'ont appris une chose: les bonnes décisions nécessitent des preuves, pas de l'idéologie. Parfois «pas encore décidé» est la réponse la plus précise – et ce n'est pas une faiblesse.",
+    "link": "Position politique →"
+  },
+  "b3": {
+    "nr": "Société",
+    "h3": "Gagnant-gagnant plutôt que compromis",
+    "p": "En tant que membre du PS, je vis chaque jour que les besoins fondamentaux de tous les partis sont plus similaires que la rhétorique ne le laisse supposer. La différence ne réside pas dans le quoi, mais dans le comment. Je cherche le dénominateur commun – non comme compromis, mais comme point de départ.",
+    "link": "Position politique →"
+  },
+  "b4": {
+    "nr": "Construction",
+    "h3": "Parler c'est bien. Construire c'est mieux.",
+    "p": "Avec Sublingua et Fizzi &amp; the Prof! je construis des choses dont j'aurais moi-même eu besoin: repenser l'apprentissage, rendre le savoir accessible. Les convictions qu'on ne met pas en pratique ne sont que des opinions.",
+    "link": "Projets →"
+  },
+  "sp": {
+    "label": "Domaines d'action",
+    "h2": "Où j'agis."
+  },
+  "k1": {
+    "kicker": "Politique",
+    "h3": "Libéralisme solidaire",
+    "p": "Dialogue avant polarisation. L'économie au service de la société. Responsabilité plutôt qu'idéologie.",
+    "pfeil": "→ En savoir plus"
+  },
+  "k2": {
+    "kicker": "Communication",
+    "h3": "Créer de la clarté",
+    "p": "La confiance naît d'une communication consciente – pas par hasard.",
+    "pfeil": "→ En savoir plus"
+  },
+  "k3": {
+    "kicker": "Projets",
+    "h3": "Sublingua &amp; Fizzi",
+    "p": "Repenser l'éducation – avec la neuropsychologie, l'animation et un vrai plaisir d'apprendre.",
+    "pfeil": "→ En savoir plus"
+  },
+  "footer": {
+    "impressum": "Mentions légales"
+  }
+}
