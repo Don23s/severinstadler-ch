@@ -62,19 +62,19 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="politik.html">Politik</a>
-    <a href="manifest.html">Manifest</a>
-      <a href="kommunikation.html">Kommunikation</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="kontakt.html" class="active">Kontakt</a>
+      <a href="politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" class="active" data-i18n="nav.kontakt">Kontakt</a>
     </div>
   </nav>
 
   <div class="page-hero">
     <div class="container">
-      <span class="kicker">Kontakt</span>
-      <h1>Lass uns reden.</h1>
-      <p class="sub">Ob politisches Engagement, Zusammenarbeit bei Projekten oder einfach ein Austausch – ich freue mich über Nachrichten.</p>
+      <span class="kicker" data-i18n="kontakt.kicker">Kontakt</span>
+      <h1 data-i18n="kontakt.h1">Lass uns reden.</h1>
+      <p class="sub" data-i18n="kontakt.sub">Ob politisches Engagement, Zusammenarbeit bei Projekten oder einfach ein Austausch – ich freue mich über Nachrichten.</p>
     </div>
   </div>
 
@@ -83,40 +83,40 @@
 
       <!-- Formular -->
       <div>
-        <span class="section-label">Schreib mir</span>
+        <span class="section-label" data-i18n="kontakt.schreib">Schreib mir</span>
         <form action="https://formspree.io/f/xnnqkzbg" method="POST" id="kontaktForm">
           <input type="hidden" name="_subject" value="Neue Nachricht von severinstadler.ch">
           <input type="hidden" name="_next" value="https://www.severinstadler.ch/kontakt.html?success=true">
 
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Dein Name" required>
+            <label for="name" data-i18n="kontakt.label_name">Name</label>
+            <input type="text" id="name" name="name" data-i18n-placeholder="kontakt.placeholder_name" placeholder="Dein Name" required>
           </div>
 
           <div class="form-group">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" placeholder="deine@email.ch" required>
+            <label for="email" data-i18n="kontakt.label_email">E-Mail</label>
+            <input type="email" id="email" name="email" data-i18n-placeholder="kontakt.placeholder_email" placeholder="deine@email.ch" required>
           </div>
 
           <div class="form-group">
-            <label for="thema">Thema</label>
+            <label for="thema" data-i18n="kontakt.label_thema">Thema</label>
             <select id="thema" name="thema">
-              <option value="">Bitte wählen...</option>
-              <option value="Politik">Politik & Gesellschaft</option>
-              <option value="Kommunikation">Kommunikation & Beratung</option>
-              <option value="Sublingua">Sublingua</option>
-              <option value="Fizzi">Fizzi & the Prof!</option>
-              <option value="Anderes">Anderes</option>
+              <option value="" data-i18n="kontakt.thema_default">Bitte wählen...</option>
+              <option value="Politik" data-i18n="kontakt.thema_politik">Politik & Gesellschaft</option>
+              <option value="Kommunikation" data-i18n="kontakt.thema_komm">Kommunikation & Beratung</option>
+              <option value="Sublingua" data-i18n="kontakt.thema_sub">Sublingua</option>
+              <option value="Fizzi" data-i18n="kontakt.thema_fizzi">Fizzi & the Prof!</option>
+              <option value="Anderes" data-i18n="kontakt.thema_andere">Anderes</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="nachricht">Nachricht</label>
-            <textarea id="nachricht" name="nachricht" placeholder="Was liegt dir auf dem Herzen?" required></textarea>
+            <label for="nachricht" data-i18n="kontakt.label_nachricht">Nachricht</label>
+            <textarea id="nachricht" name="nachricht" data-i18n-placeholder="kontakt.placeholder_nachricht" placeholder="Was liegt dir auf dem Herzen?" required></textarea>
           </div>
 
-          <button type="submit" class="btn" style="width: 100%; text-align: center;">Nachricht senden</button>
-          <div class="form-success" id="formSuccess">
+          <button type="submit" class="btn" style="width: 100%; text-align: center;" data-i18n="kontakt.senden">Nachricht senden</button>
+          <div class="form-success" id="formSuccess" data-i18n="kontakt.success">
             Danke für deine Nachricht – ich melde mich bald.
           </div>
         </form>
@@ -124,7 +124,7 @@
 
       <!-- Kontaktinfo -->
       <div>
-        <span class="section-label">Direkt</span>
+        <span class="section-label" data-i18n="kontakt.direkt">Direkt</span>
         <div style="display: grid; gap: 2rem; margin-top: 0.5rem;">
           <div>
             <h3>E-Mail</h3>
@@ -146,7 +146,7 @@
           </div>
           <div style="border-top: 1px solid var(--linie); padding-top: 2rem;">
             <h3>Standort</h3>
-            <p style="font-size: 0.95rem; color: var(--grau);">Bern, Schweiz</p>
+            <p style="font-size: 0.95rem; color: var(--grau);" data-i18n="kontakt.standort">Bern, Schweiz</p>
           </div>
         </div>
       </div>
@@ -158,7 +158,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -169,8 +169,8 @@
 
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
   <script>
-    // Formspree Success Detection
     if (window.location.search.includes('success=true')) {
       document.getElementById('formSuccess').style.display = 'block';
       document.getElementById('kontaktForm').style.display = 'none';

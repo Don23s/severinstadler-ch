@@ -191,22 +191,23 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="politik.html" class="active">Politik</a>
-      <a href="kommunikation.html">Kommunikation</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="politik.html" class="active" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
     </div>
   </nav>
 
   <div class="page-hero">
     <div class="container">
-      <span class="kicker">Interaktiv · Politik</span>
-      <h1>Haltungskompass.</h1>
-      <p class="sub">6 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du – und wo stehe ich?</p>
+      <span class="kicker" data-i18n="kompass.kicker">Interaktiv · Politik</span>
+      <h1 data-i18n="kompass.h1">Haltungskompass.</h1>
+      <p class="sub" data-i18n="kompass.sub">6 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du – und wo stehe ich?</p>
     </div>
   </div>
 
-  <div class="haltung-band sans">
+  <div class="haltung-band sans" data-i18n="kompass.band">
     Wirtschaft &nbsp;·&nbsp; Solidarität &nbsp;·&nbsp; Gesellschaft
   </div>
 
@@ -225,7 +226,7 @@
   <!-- Ergebnis-Bereich (initial versteckt) -->
   <section class="section" id="ergebnis-bereich" style="display:none;">
     <div class="container">
-      <span class="section-label sans">Dein Ergebnis</span>
+      <span class="section-label sans" data-i18n="kompass.section_result">Dein Ergebnis</span>
       <div class="kompass-wrap" style="margin-top:2rem;">
         <div class="kompass-svg-wrap">
           <svg id="kompassSvg" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -239,7 +240,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -250,106 +251,235 @@
 
   <script>
   // ══════════════════════════════════════════════════════════════════
+  // HALTUNGSKOMPASS – Mehrsprachige Konfiguration
+  // ══════════════════════════════════════════════════════════════════
+  const _lang = (localStorage.getItem('ss_lang') || navigator.language || 'de').slice(0, 2);
+
+  const TEXTS = {
+    de: {
+      frageVon: (n, t) => `Frage ${n} von ${t}`,
+      deinQuadrant: 'Dein Quadrant',
+      uebereinstimmung: n => `Übereinstimmung mit Severin: ${n}&thinsp;%`,
+      aehnlTexte: [
+        'Ihr teilt eine sehr ähnliche Grundhaltung.',
+        'Es gibt Gemeinsamkeiten – und interessante Unterschiede.',
+        'Ihr habt klar unterschiedliche Schwerpunkte – genau das macht Dialog wertvoll.'
+      ],
+      severinInfo: 'Severin steht für den <em>Solidarischen Liberalismus</em> – wirtschaftliche Freiheit als Werkzeug der Gesellschaft.',
+      btnPolitik: 'Politische Haltung lesen',
+      btnNeu: 'Nochmals',
+      duLabel: 'Du',
+      achsen: { x: { links: 'Staatswirtschaft', rechts: 'Freier Markt' }, y: { unten: 'Individuell', oben: 'Solidarisch' } },
+      quadranten: {
+        obenLinks:  { name: 'Sozialdemokratie',         beschreibung: 'Du setzt auf einen starken, aktiven Staat und Umverteilung als Fundament des gesellschaftlichen Zusammenhalts. Wirtschaftliche Effizienz ist dir wichtig – aber nie auf Kosten der Schwächsten.' },
+        obenRechts: { name: 'Solidarischer Liberalismus', beschreibung: 'Du glaubst an wirtschaftliche Freiheit und soziale Verantwortung gleichzeitig. Märkte sollen sich entfalten können – aber im Dienst der Gesellschaft, nicht gegen sie.' },
+        untenLinks: { name: 'Nationalkonservatismus',   beschreibung: 'Du bevorzugst Schutz, Stabilität und klare Grenzen – wirtschaftlich wie gesellschaftlich. Bewährtes hat für dich einen hohen Wert.' },
+        untenRechts:{ name: 'Rechtsliberalismus',       beschreibung: 'Du setzt auf individuelle Freiheit und minimalen Staatseinsatz. Der Markt löst Probleme besser als Bürokratie – Eigenverantwortung steht im Vordergrund.' }
+      },
+      fragen: [
+        { text: 'Wie viel Steuern sollen grosse Unternehmen zahlen?', antworten: [
+          { text: 'Weniger – hohe Steuern hemmen Wachstum und Innovation.', x: +2, y: -1 },
+          { text: 'Fair und proportional zu ihrer gesellschaftlichen Verantwortung.', x: +1, y: +2 },
+          { text: 'Mehr – grosse Gewinne müssen stärker umverteilt werden.', x: -2, y: +2 }
+        ]},
+        { text: 'Was denkst du über den Sozialstaat?', antworten: [
+          { text: 'Er ist zu grosszügig – er schafft Abhängigkeit statt Eigenverantwortung.', x: +1, y: -2 },
+          { text: 'Er ist richtig – aber muss effizienter und zielgenauer werden.', x: +1, y: +1 },
+          { text: 'Er ist zu schwach – wir brauchen mehr Absicherung für alle.', x: -1, y: +2 }
+        ]},
+        { text: 'Wie soll der Klimawandel bekämpft werden?', antworten: [
+          { text: 'Durch Marktmechanismen – ohne staatliche Eingriffe in die Wirtschaft.', x: +2, y: -1 },
+          { text: 'Mit klugen Regeln, die Wirtschaft und Umwelt gleichzeitig stärken.', x: +1, y: +2 },
+          { text: 'Mit klaren Verboten und Gesetzen – auch wenn es kurzfristig kostet.', x: -2, y: +2 }
+        ]},
+        { text: 'Wer soll Bildung organisieren und finanzieren?', antworten: [
+          { text: 'Der Markt – Wettbewerb und Eigenverantwortung bringen mehr Qualität.', x: +2, y: -2 },
+          { text: 'Der Staat – gute Bildung für alle ist die beste Wirtschaftspolitik.', x:  0, y: +2 },
+          { text: 'Der Staat vollständig und kostenlos – Bildung darf kein Privileg sein.', x: -1, y: +1 }
+        ]},
+        { text: 'Wie stehst du zu Regulierungen im Arbeitsmarkt?', antworten: [
+          { text: 'Weniger Regulierung – Flexibilität nützt Arbeitgebern wie Arbeitnehmern.', x: +2, y: -1 },
+          { text: 'Faire Mindeststandards – nicht zu viel, nicht zu wenig.', x: +1, y: +1 },
+          { text: 'Starke Arbeitnehmerrechte und Gewerkschaften sind unverzichtbar.', x: -2, y: +2 }
+        ]},
+        { text: 'Was ist der Hauptzweck eines erfolgreichen Unternehmens?', antworten: [
+          { text: 'Gewinn erwirtschaften – das schafft langfristig Wohlstand für alle.', x: +2, y: -2 },
+          { text: 'Wert schaffen – für Aktionäre, Mitarbeitende und die Gesellschaft.', x: +1, y: +2 },
+          { text: 'Der Gesellschaft dienen – Profit ist Mittel zum Zweck, nicht Selbstzweck.', x: -1, y: +2 }
+        ]}
+      ]
+    },
+    fr: {
+      frageVon: (n, t) => `Question ${n} sur ${t}`,
+      deinQuadrant: 'Ton quadrant',
+      uebereinstimmung: n => `Accord avec Severin : ${n}&thinsp;%`,
+      aehnlTexte: [
+        'Vous partagez une attitude de fond très similaire.',
+        'Il y a des points communs – et des différences intéressantes.',
+        'Vous avez clairement des priorités différentes – c\'est précisément ce qui rend le dialogue précieux.'
+      ],
+      severinInfo: 'Severin défend le <em>Libéralisme solidaire</em> – la liberté économique au service de la société.',
+      btnPolitik: 'Lire ma position politique',
+      btnNeu: 'Recommencer',
+      duLabel: 'Toi',
+      achsen: { x: { links: 'Économie étatique', rechts: 'Libre marché' }, y: { unten: 'Individuel', oben: 'Solidaire' } },
+      quadranten: {
+        obenLinks:  { name: 'Social-démocratie',    beschreibung: 'Tu mises sur un État fort et actif et une redistribution comme fondement de la cohésion sociale. L\'efficacité économique est importante – mais jamais au détriment des plus faibles.' },
+        obenRechts: { name: 'Libéralisme solidaire', beschreibung: 'Tu crois simultanément en la liberté économique et la responsabilité sociale. Les marchés doivent pouvoir se développer – mais au service de la société, pas contre elle.' },
+        untenLinks: { name: 'Conservatisme national', beschreibung: 'Tu préfères la protection, la stabilité et des frontières claires – économiquement et socialement. Ce qui a fait ses preuves a une grande valeur pour toi.' },
+        untenRechts:{ name: 'Libéralisme de droite', beschreibung: 'Tu mises sur la liberté individuelle et une intervention étatique minimale. Le marché résout les problèmes mieux que la bureaucratie – la responsabilité individuelle est au premier plan.' }
+      },
+      fragen: [
+        { text: 'Combien d\'impôts les grandes entreprises doivent-elles payer?', antworten: [
+          { text: 'Moins – des impôts élevés freinent la croissance et l\'innovation.', x: +2, y: -1 },
+          { text: 'Équitablement et proportionnellement à leur responsabilité sociale.', x: +1, y: +2 },
+          { text: 'Plus – les grands bénéfices doivent être davantage redistribués.', x: -2, y: +2 }
+        ]},
+        { text: 'Que penses-tu de l\'État social?', antworten: [
+          { text: 'Il est trop généreux – il crée de la dépendance plutôt que la responsabilité individuelle.', x: +1, y: -2 },
+          { text: 'Il est juste – mais doit devenir plus efficace et mieux ciblé.', x: +1, y: +1 },
+          { text: 'Il est trop faible – nous avons besoin de plus de protection pour tous.', x: -1, y: +2 }
+        ]},
+        { text: 'Comment faut-il lutter contre le changement climatique?', antworten: [
+          { text: 'Par des mécanismes de marché – sans interventions étatiques dans l\'économie.', x: +2, y: -1 },
+          { text: 'Avec des règles intelligentes qui renforcent simultanément l\'économie et l\'environnement.', x: +1, y: +2 },
+          { text: 'Avec des interdictions et des lois claires – même si cela coûte à court terme.', x: -2, y: +2 }
+        ]},
+        { text: 'Qui doit organiser et financer l\'éducation?', antworten: [
+          { text: 'Le marché – la concurrence et la responsabilité individuelle apportent plus de qualité.', x: +2, y: -2 },
+          { text: 'L\'État – une bonne éducation pour tous est la meilleure politique économique.', x: 0, y: +2 },
+          { text: 'L\'État entièrement et gratuitement – l\'éducation ne doit pas être un privilège.', x: -1, y: +1 }
+        ]},
+        { text: 'Quelle est ta position sur la réglementation du marché du travail?', antworten: [
+          { text: 'Moins de réglementation – la flexibilité profite aux employeurs comme aux employés.', x: +2, y: -1 },
+          { text: 'Des normes minimales équitables – ni trop, ni trop peu.', x: +1, y: +1 },
+          { text: 'Des droits des travailleurs et des syndicats forts sont indispensables.', x: -2, y: +2 }
+        ]},
+        { text: 'Quel est le but principal d\'une entreprise prospère?', antworten: [
+          { text: 'Générer des bénéfices – cela crée de la prospérité pour tous à long terme.', x: +2, y: -2 },
+          { text: 'Créer de la valeur – pour les actionnaires, les employés et la société.', x: +1, y: +2 },
+          { text: 'Servir la société – le profit est un moyen, pas une fin en soi.', x: -1, y: +2 }
+        ]}
+      ]
+    },
+    it: {
+      frageVon: (n, t) => `Domanda ${n} di ${t}`,
+      deinQuadrant: 'Il tuo quadrante',
+      uebereinstimmung: n => `Corrispondenza con Severin: ${n}&thinsp;%`,
+      aehnlTexte: [
+        'Condividete un atteggiamento di fondo molto simile.',
+        'Ci sono punti in comune – e differenze interessanti.',
+        'Avete chiaramente priorità diverse – è proprio questo che rende il dialogo prezioso.'
+      ],
+      severinInfo: 'Severin sostiene il <em>Liberalismo solidale</em> – la libertà economica al servizio della società.',
+      btnPolitik: 'Leggi la mia posizione politica',
+      btnNeu: 'Ricominciare',
+      duLabel: 'Tu',
+      achsen: { x: { links: 'Economia statale', rechts: 'Libero mercato' }, y: { unten: 'Individuale', oben: 'Solidale' } },
+      quadranten: {
+        obenLinks:  { name: 'Socialdemocrazia',    beschreibung: 'Punti su uno Stato forte e attivo e sulla ridistribuzione come fondamento della coesione sociale. L\'efficienza economica è importante – ma mai a scapito dei più deboli.' },
+        obenRechts: { name: 'Liberalismo solidale', beschreibung: 'Credi simultaneamente nella libertà economica e nella responsabilità sociale. I mercati devono potersi sviluppare – ma al servizio della società, non contro di essa.' },
+        untenLinks: { name: 'Conservatorismo nazionale', beschreibung: 'Preferisci protezione, stabilità e confini chiari – economicamente e socialmente. Ciò che ha dato buoni risultati ha un grande valore per te.' },
+        untenRechts:{ name: 'Liberalismo di destra', beschreibung: 'Punti sulla libertà individuale e un intervento statale minimo. Il mercato risolve i problemi meglio della burocrazia – la responsabilità individuale è in primo piano.' }
+      },
+      fragen: [
+        { text: 'Quante tasse devono pagare le grandi aziende?', antworten: [
+          { text: 'Meno – le tasse elevate frenano la crescita e l\'innovazione.', x: +2, y: -1 },
+          { text: 'In modo equo e proporzionale alla loro responsabilità sociale.', x: +1, y: +2 },
+          { text: 'Di più – i grandi profitti devono essere maggiormente redistribuiti.', x: -2, y: +2 }
+        ]},
+        { text: 'Cosa pensi dello Stato sociale?', antworten: [
+          { text: 'È troppo generoso – crea dipendenza invece di responsabilità individuale.', x: +1, y: -2 },
+          { text: 'È giusto – ma deve diventare più efficiente e mirato.', x: +1, y: +1 },
+          { text: 'È troppo debole – abbiamo bisogno di più protezione per tutti.', x: -1, y: +2 }
+        ]},
+        { text: 'Come si deve combattere il cambiamento climatico?', antworten: [
+          { text: 'Attraverso meccanismi di mercato – senza interventi statali nell\'economia.', x: +2, y: -1 },
+          { text: 'Con regole intelligenti che rafforzano contemporaneamente economia e ambiente.', x: +1, y: +2 },
+          { text: 'Con divieti e leggi chiare – anche se costa a breve termine.', x: -2, y: +2 }
+        ]},
+        { text: 'Chi deve organizzare e finanziare l\'istruzione?', antworten: [
+          { text: 'Il mercato – la concorrenza e la responsabilità individuale portano più qualità.', x: +2, y: -2 },
+          { text: 'Lo Stato – una buona istruzione per tutti è la migliore politica economica.', x: 0, y: +2 },
+          { text: 'Lo Stato interamente e gratuitamente – l\'istruzione non può essere un privilegio.', x: -1, y: +1 }
+        ]},
+        { text: 'Qual è la tua posizione sulla regolamentazione del mercato del lavoro?', antworten: [
+          { text: 'Meno regolamentazione – la flessibilità avvantaggia sia datori di lavoro che lavoratori.', x: +2, y: -1 },
+          { text: 'Standard minimi equi – né troppo, né troppo poco.', x: +1, y: +1 },
+          { text: 'Diritti dei lavoratori forti e sindacati sono indispensabili.', x: -2, y: +2 }
+        ]},
+        { text: 'Qual è lo scopo principale di un\'azienda di successo?', antworten: [
+          { text: 'Generare profitto – questo crea prosperità per tutti a lungo termine.', x: +2, y: -2 },
+          { text: 'Creare valore – per azionisti, dipendenti e la società.', x: +1, y: +2 },
+          { text: 'Servire la società – il profitto è un mezzo, non un fine in sé.', x: -1, y: +2 }
+        ]}
+      ]
+    },
+    en: {
+      frageVon: (n, t) => `Question ${n} of ${t}`,
+      deinQuadrant: 'Your quadrant',
+      uebereinstimmung: n => `Match with Severin: ${n}&thinsp;%`,
+      aehnlTexte: [
+        'You share a very similar fundamental outlook.',
+        'There are commonalities – and interesting differences.',
+        'You have clearly different priorities – that\'s precisely what makes dialogue valuable.'
+      ],
+      severinInfo: 'Severin stands for <em>Solidary Liberalism</em> – economic freedom as a tool of society.',
+      btnPolitik: 'Read political position',
+      btnNeu: 'Try again',
+      duLabel: 'You',
+      achsen: { x: { links: 'State economy', rechts: 'Free market' }, y: { unten: 'Individual', oben: 'Solidary' } },
+      quadranten: {
+        obenLinks:  { name: 'Social Democracy',    beschreibung: 'You rely on a strong, active state and redistribution as the foundation of social cohesion. Economic efficiency matters – but never at the expense of the most vulnerable.' },
+        obenRechts: { name: 'Solidary Liberalism',  beschreibung: 'You believe in economic freedom and social responsibility at the same time. Markets should be able to flourish – but in service of society, not against it.' },
+        untenLinks: { name: 'National Conservatism', beschreibung: 'You prefer protection, stability and clear boundaries – economically and socially. What has proven itself has high value for you.' },
+        untenRechts:{ name: 'Right-wing Liberalism', beschreibung: 'You rely on individual freedom and minimal state intervention. The market solves problems better than bureaucracy – personal responsibility comes first.' }
+      },
+      fragen: [
+        { text: 'How much tax should large companies pay?', antworten: [
+          { text: 'Less – high taxes inhibit growth and innovation.', x: +2, y: -1 },
+          { text: 'Fairly and proportionally to their social responsibility.', x: +1, y: +2 },
+          { text: 'More – large profits must be redistributed more strongly.', x: -2, y: +2 }
+        ]},
+        { text: 'What do you think about the welfare state?', antworten: [
+          { text: 'It\'s too generous – it creates dependency rather than individual responsibility.', x: +1, y: -2 },
+          { text: 'It\'s right – but needs to become more efficient and better targeted.', x: +1, y: +1 },
+          { text: 'It\'s too weak – we need more social protection for everyone.', x: -1, y: +2 }
+        ]},
+        { text: 'How should climate change be addressed?', antworten: [
+          { text: 'Through market mechanisms – without state intervention in the economy.', x: +2, y: -1 },
+          { text: 'With smart regulations that strengthen both the economy and the environment.', x: +1, y: +2 },
+          { text: 'With clear bans and laws – even if it costs in the short term.', x: -2, y: +2 }
+        ]},
+        { text: 'Who should organise and finance education?', antworten: [
+          { text: 'The market – competition and individual responsibility bring more quality.', x: +2, y: -2 },
+          { text: 'The state – good education for all is the best economic policy.', x: 0, y: +2 },
+          { text: 'The state, entirely and free of charge – education must not be a privilege.', x: -1, y: +1 }
+        ]},
+        { text: 'What is your position on labour market regulation?', antworten: [
+          { text: 'Less regulation – flexibility benefits both employers and employees.', x: +2, y: -1 },
+          { text: 'Fair minimum standards – not too much, not too little.', x: +1, y: +1 },
+          { text: 'Strong workers\' rights and trade unions are indispensable.', x: -2, y: +2 }
+        ]},
+        { text: 'What is the main purpose of a successful company?', antworten: [
+          { text: 'Generate profit – this creates long-term prosperity for everyone.', x: +2, y: -2 },
+          { text: 'Create value – for shareholders, employees and society.', x: +1, y: +2 },
+          { text: 'Serve society – profit is a means, not an end in itself.', x: -1, y: +2 }
+        ]}
+      ]
+    }
+  };
+
+  const T = TEXTS[_lang in TEXTS ? _lang : 'de'];
+
+  // ══════════════════════════════════════════════════════════════════
   // HALTUNGSKOMPASS – Konfiguration
-  //
-  // Hier kannst du alles anpassen:
-  //   - CONFIG.severin      → Severins Position (0–100 pro Achse)
-  //   - CONFIG.fragen       → Fragen und Antworten hinzufügen / ändern
-  //   - CONFIG.quadranten   → Labels und Beschreibungen der 4 Felder
-  //   - CONFIG.achsen       → Beschriftungen der X- und Y-Achse
-  //
-  // Scoring pro Antwort:
-  //   x → Wirtschaftsfreiheit: -2 (Staatswirtschaft) bis +2 (Freier Markt)
-  //   y → Solidarität:         -2 (individuell)       bis +2 (solidarisch)
   // ══════════════════════════════════════════════════════════════════
   const CONFIG = {
-
-    // Severins eigene Position auf dem Kompass (0–100)
-    // 0 = ganz links/unten, 100 = ganz rechts/oben
-    severin: {
-      x: 72,   // Wirtschaftsfreiheit: leicht rechtsliberal
-      y: 78,   // Solidarität: klar solidarisch
-      label: "Severin"
-    },
-
-    // Achsenbeschriftungen
-    achsen: {
-      x: { links: "Staatswirtschaft", rechts: "Freier Markt" },
-      y: { unten: "Individuell",      oben: "Solidarisch"    }
-    },
-
-    // 4 Quadranten: Name + Beschreibung (erscheint im Ergebnis-Text)
-    quadranten: {
-      obenLinks: {
-        name: "Sozialdemokratie",
-        beschreibung: "Du setzt auf einen starken, aktiven Staat und Umverteilung als Fundament des gesellschaftlichen Zusammenhalts. Wirtschaftliche Effizienz ist dir wichtig – aber nie auf Kosten der Schwächsten."
-      },
-      obenRechts: {
-        name: "Solidarischer Liberalismus",
-        beschreibung: "Du glaubst an wirtschaftliche Freiheit und soziale Verantwortung gleichzeitig. Märkte sollen sich entfalten können – aber im Dienst der Gesellschaft, nicht gegen sie."
-      },
-      untenLinks: {
-        name: "Nationalkonservatismus",
-        beschreibung: "Du bevorzugst Schutz, Stabilität und klare Grenzen – wirtschaftlich wie gesellschaftlich. Bewährtes hat für dich einen hohen Wert."
-      },
-      untenRechts: {
-        name: "Rechtsliberalismus",
-        beschreibung: "Du setzt auf individuelle Freiheit und minimalen Staatseinsatz. Der Markt löst Probleme besser als Bürokratie – Eigenverantwortung steht im Vordergrund."
-      }
-    },
-
-    // Fragen – beliebig erweiterbar
-    // Jede Antwort hat x und y (-2 bis +2)
-    fragen: [
-      {
-        text: "Wie viel Steuern sollen grosse Unternehmen zahlen?",
-        antworten: [
-          { text: "Weniger – hohe Steuern hemmen Wachstum und Innovation.", x: +2, y: -1 },
-          { text: "Fair und proportional zu ihrer gesellschaftlichen Verantwortung.", x: +1, y: +2 },
-          { text: "Mehr – grosse Gewinne müssen stärker umverteilt werden.", x: -2, y: +2 }
-        ]
-      },
-      {
-        text: "Was denkst du über den Sozialstaat?",
-        antworten: [
-          { text: "Er ist zu grosszügig – er schafft Abhängigkeit statt Eigenverantwortung.", x: +1, y: -2 },
-          { text: "Er ist richtig – aber muss effizienter und zielgenauer werden.", x: +1, y: +1 },
-          { text: "Er ist zu schwach – wir brauchen mehr Absicherung für alle.", x: -1, y: +2 }
-        ]
-      },
-      {
-        text: "Wie soll der Klimawandel bekämpft werden?",
-        antworten: [
-          { text: "Durch Marktmechanismen – ohne staatliche Eingriffe in die Wirtschaft.", x: +2, y: -1 },
-          { text: "Mit klugen Regeln, die Wirtschaft und Umwelt gleichzeitig stärken.", x: +1, y: +2 },
-          { text: "Mit klaren Verboten und Gesetzen – auch wenn es kurzfristig kostet.", x: -2, y: +2 }
-        ]
-      },
-      {
-        text: "Wer soll Bildung organisieren und finanzieren?",
-        antworten: [
-          { text: "Der Markt – Wettbewerb und Eigenverantwortung bringen mehr Qualität.", x: +2, y: -2 },
-          { text: "Der Staat – gute Bildung für alle ist die beste Wirtschaftspolitik.", x:  0, y: +2 },
-          { text: "Der Staat vollständig und kostenlos – Bildung darf kein Privileg sein.", x: -1, y: +1 }
-        ]
-      },
-      {
-        text: "Wie stehst du zu Regulierungen im Arbeitsmarkt?",
-        antworten: [
-          { text: "Weniger Regulierung – Flexibilität nützt Arbeitgebern wie Arbeitnehmern.", x: +2, y: -1 },
-          { text: "Faire Mindeststandards – nicht zu viel, nicht zu wenig.", x: +1, y: +1 },
-          { text: "Starke Arbeitnehmerrechte und Gewerkschaften sind unverzichtbar.", x: -2, y: +2 }
-        ]
-      },
-      {
-        text: "Was ist der Hauptzweck eines erfolgreichen Unternehmens?",
-        antworten: [
-          { text: "Gewinn erwirtschaften – das schafft langfristig Wohlstand für alle.", x: +2, y: -2 },
-          { text: "Wert schaffen – für Aktionäre, Mitarbeitende und die Gesellschaft.", x: +1, y: +2 },
-          { text: "Der Gesellschaft dienen – Profit ist Mittel zum Zweck, nicht Selbstzweck.", x: -1, y: +2 }
-        ]
-      }
-    ]
+    severin: { x: 72, y: 78, label: 'Severin' },
+    achsen:     T.achsen,
+    quadranten: T.quadranten,
+    fragen:     T.fragen
   };
 
   // ══════════════════════════════════════════════════════════════════
@@ -358,7 +488,7 @@
   let aktFrage = 0;
   let pktX = 0;
   let pktY = 0;
-  const MAX = CONFIG.fragen.length * 2; // max ±2 pro Frage
+  const MAX = CONFIG.fragen.length * 2;
 
   function norm(punkte) {
     return Math.round(((punkte + MAX) / (MAX * 2)) * 100);
@@ -383,7 +513,7 @@
 
     document.getElementById('quizInhalt').innerHTML = `
       <div class="quiz-slide">
-        <div class="quiz-zaehler">Frage ${aktFrage + 1} von ${CONFIG.fragen.length}</div>
+        <div class="quiz-zaehler">${T.frageVon(aktFrage + 1, CONFIG.fragen.length)}</div>
         <div class="quiz-frage-text">${f.text}</div>
         <div class="quiz-antworten">${btnHTML}</div>
       </div>
@@ -418,80 +548,57 @@
 
     const dist      = Math.sqrt(Math.pow(userX - sev.x, 2) + Math.pow(userY - sev.y, 2));
     const aehnl     = Math.max(0, Math.round(100 - dist));
-    const aehnlText = aehnl >= 70
-      ? 'Ihr teilt eine sehr ähnliche Grundhaltung.'
-      : aehnl >= 45
-        ? 'Es gibt Gemeinsamkeiten – und interessante Unterschiede.'
-        : 'Ihr habt klar unterschiedliche Schwerpunkte – genau das macht Dialog wertvoll.';
+    const aehnlText = aehnl >= 70 ? T.aehnlTexte[0] : aehnl >= 45 ? T.aehnlTexte[1] : T.aehnlTexte[2];
 
-    // SVG Kompass
     const W = 400, H = 440;
-    const px = 54, py = 30;            // padding
-    const cw = W - 2 * px;            // chart width:  292
-    const ch = H - py - 72;           // chart height: 338
+    const px = 54, py = 30;
+    const cw = W - 2 * px;
+    const ch = H - py - 72;
     const toX = v => px + (v / 100) * cw;
-    const toY = v => (py + ch) - (v / 100) * ch;  // Y invertiert
+    const toY = v => (py + ch) - (v / 100) * ch;
     const mx = toX(50), my = toY(50);
     const ux = toX(userX), uy = toY(userY);
     const sx = toX(sev.x), sy = toY(sev.y);
 
     document.getElementById('kompassSvg').innerHTML = `
-      <!-- Quadrant-Hintergründe -->
       <rect x="${px}" y="${py}" width="${cw/2}" height="${ch/2}" fill="#EBF5FB" opacity="0.55"/>
       <rect x="${mx}" y="${py}" width="${cw/2}" height="${ch/2}" fill="#FDF2F3" opacity="0.7"/>
       <rect x="${px}" y="${my}" width="${cw/2}" height="${ch/2}" fill="#F5F5F5" opacity="0.45"/>
       <rect x="${mx}" y="${my}" width="${cw/2}" height="${ch/2}" fill="#FFFBF0" opacity="0.45"/>
-
-      <!-- Rahmen -->
       <rect x="${px}" y="${py}" width="${cw}" height="${ch}" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-
-      <!-- Mittelachsen -->
       <line x1="${mx}" y1="${py}" x2="${mx}" y2="${py+ch}" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>
       <line x1="${px}" y1="${my}" x2="${px+cw}" y2="${my}" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>
-
-      <!-- Quadranten-Labels -->
-      <text x="${px+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">Sozialdemokratie</text>
-      <text x="${mx+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#C9172A" font-weight="700">Solidarischer Liberalismus</text>
-      <text x="${px+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">Nationalkonservatismus</text>
-      <text x="${mx+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">Rechtsliberalismus</text>
-
-      <!-- Y-Achsen-Labels -->
+      <text x="${px+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">${T.quadranten.obenLinks.name}</text>
+      <text x="${mx+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#C9172A" font-weight="700">${T.quadranten.obenRechts.name}</text>
+      <text x="${px+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">${T.quadranten.untenLinks.name}</text>
+      <text x="${mx+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">${T.quadranten.untenRechts.name}</text>
       <text x="${px + cw/2}" y="${py - 10}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">↑ ${CONFIG.achsen.y.oben}</text>
       <text x="${px + cw/2}" y="${py + ch + 16}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">${CONFIG.achsen.y.unten} ↓</text>
-
-      <!-- X-Achsen-Labels -->
       <text x="${px}" y="${py + ch + 34}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF">← ${CONFIG.achsen.x.links}</text>
       <text x="${px + cw}" y="${py + ch + 34}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="end">${CONFIG.achsen.x.rechts} →</text>
-
-      <!-- Verbindungslinie -->
       <line x1="${ux}" y1="${uy}" x2="${sx}" y2="${sy}" stroke="#C9172A" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35"/>
-
-      <!-- Severin Punkt -->
       <circle cx="${sx}" cy="${sy}" r="9" fill="white" stroke="#C9172A" stroke-width="2"/>
       <circle cx="${sx}" cy="${sy}" r="4.5" fill="#C9172A"/>
       <text x="${sx + 13}" y="${sy + 4}" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700">${sev.label}</text>
-
-      <!-- User Punkt (pulsierend) -->
       <circle cx="${ux}" cy="${uy}" r="12" fill="#C9172A" opacity="0.12">
         <animate attributeName="r" values="9;16;9" dur="2.2s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0.15;0.04;0.15" dur="2.2s" repeatCount="indefinite"/>
       </circle>
       <circle cx="${ux}" cy="${uy}" r="7" fill="#C9172A"/>
-      <text x="${ux}" y="${uy - 13}" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700" text-anchor="middle">Du</text>
+      <text x="${ux}" y="${uy - 13}" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700" text-anchor="middle">${T.duLabel}</text>
     `;
 
-    // Ergebnis-Text
     document.getElementById('ergebnisText').innerHTML = `
-      <span class="ergebnis-lage">Dein Quadrant</span>
+      <span class="ergebnis-lage">${T.deinQuadrant}</span>
       <div class="ergebnis-titel">${quad.name}</div>
       <p class="ergebnis-text">${quad.beschreibung}</p>
       <div class="ergebnis-vergleich">
-        <strong>Übereinstimmung mit Severin: ${aehnl}&thinsp;%</strong><br>
-        ${aehnlText} Severin steht für den <em>Solidarischen Liberalismus</em> – wirtschaftliche Freiheit als Werkzeug der Gesellschaft.
+        <strong>${T.uebereinstimmung(aehnl)}</strong><br>
+        ${aehnlText} ${T.severinInfo}
       </div>
       <div class="ergebnis-cta">
-        <a href="politik.html" class="btn">Politische Haltung lesen</a>
-        <button class="btn-neu" onclick="neustart()">Nochmals</button>
+        <a href="politik.html" class="btn">${T.btnPolitik}</a>
+        <button class="btn-neu" onclick="neustart()">${T.btnNeu}</button>
       </div>
     `;
 
@@ -516,5 +623,6 @@
   </script>
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

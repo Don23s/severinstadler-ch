@@ -32,6 +32,11 @@
       var val = get(data, key);
       if (val) el.setAttribute('href', val);
     });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      var val = get(data, key);
+      if (val) el.setAttribute('placeholder', val);
+    });
   }
 
   function setLang(lang, data) {

@@ -6,32 +6,31 @@
   <title>Impressum | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <style>html {{ scroll-behavior: smooth; }}</style>
+  <style>html { scroll-behavior: smooth; }</style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-
-    <a href="politik.html">Politik</a>
-    <a href="manifest.html">Manifest</a>
-    <a href="kommunikation.html">Kommunikation</a>
-    <a href="projekte.html">Projekte</a>
-    <a href="kontakt.html">Kontakt</a>
-  </div>
-</nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </div>
+  </nav>
 
   <section class="section" style="padding-top:5rem;">
     <div class="container">
-      <span class="section-label sans">Rechtliches</span>
-      <h2>Impressum</h2>
+      <span class="section-label sans" data-i18n="impressum.label">Rechtliches</span>
+      <h2 data-i18n="impressum.h2">Impressum</h2>
       <div style="font-size:0.95rem;color:var(--grau);display:grid;gap:2rem;max-width:500px;margin-top:2rem;">
         <div>
-          <h3>Verantwortlich für den Inhalt</h3>
+          <h3 data-i18n="impressum.verantwortlich">Verantwortlich für den Inhalt</h3>
           <p>Severin Stadler<br>Bern, Schweiz</p>
         </div>
         <div>
@@ -39,12 +38,12 @@
           <p><a href="mailto:severin23stadler@gmail.com" style="color:var(--rot);">severin23stadler@gmail.com</a></p>
         </div>
         <div>
-          <h3>Haftungsausschluss</h3>
-          <p>Alle Inhalte dieser Website wurden sorgfältig geprüft. Für die Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen.</p>
+          <h3 data-i18n="impressum.haftung_h">Haftungsausschluss</h3>
+          <p data-i18n="impressum.haftung_p">Alle Inhalte dieser Website wurden sorgfältig geprüft. Für die Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen.</p>
         </div>
         <div>
-          <h3>Urheberrecht</h3>
-          <p>© 2026 Severin Stadler. Alle Rechte vorbehalten.</p>
+          <h3 data-i18n="impressum.urheberrecht_h">Urheberrecht</h3>
+          <p data-i18n="impressum.urheberrecht_p">© 2026 Severin Stadler. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </div>
@@ -54,7 +53,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -64,5 +63,6 @@
   </footer>
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

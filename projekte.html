@@ -15,46 +15,45 @@
   <title>Projekte | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <style>html {{ scroll-behavior: smooth; }}</style>
+  <style>html { scroll-behavior: smooth; }</style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-
-    <a href="politik.html">Politik</a>
-    <a href="manifest.html">Manifest</a>
-    <a href="kommunikation.html">Kommunikation</a>
-    <a href="projekte.html" class="active">Projekte</a>
-    <a href="kontakt.html">Kontakt</a>
-  </div>
-</nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" class="active" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </div>
+  </nav>
 
   <div class="page-hero">
     <div class="container">
-      <span class="kicker">Projekte</span>
-      <h1>Ideen, die bewegen.</h1>
-      <p class="sub">Bildung verdient denselben Innovationsgeist wie Unterhaltung. Hier entstehen konkrete Antworten darauf.</p>
+      <span class="kicker" data-i18n="projekte.kicker">Projekte</span>
+      <h1 data-i18n="projekte.h1">Ideen, die bewegen.</h1>
+      <p class="sub" data-i18n="projekte.sub">Bildung verdient denselben Innovationsgeist wie Unterhaltung. Hier entstehen konkrete Antworten darauf.</p>
     </div>
   </div>
 
-  <div class="haltung-band">
+  <div class="haltung-band" data-i18n="projekte.band">
     Innovation · Bildung · Gesellschaft
   </div>
 
   <section class="section" data-reveal>
     <div class="container">
-      <span class="section-label sans">Warum diese Projekte</span>
-      <h2>Was ich glaube, muss ich auch tun können.</h2>
-      <p style="font-size:0.95rem;max-width:660px;margin-bottom:1.25rem;">
+      <span class="section-label sans" data-i18n="projekte.warum_label">Warum diese Projekte</span>
+      <h2 data-i18n="projekte.warum_h2">Was ich glaube, muss ich auch tun können.</h2>
+      <p style="font-size:0.95rem;max-width:660px;margin-bottom:1.25rem;" data-i18n="projekte.warum_p1">
         Ich vertrete politisch, dass Bildung ein öffentliches Gut ist – und dass dort investiert werden soll, wo Märkte alleine versagen. Gleichzeitig glaube ich als Unternehmer, dass Innovation nicht auf staatliche Initiative warten darf. Sublingua und Fizzi & the Prof! sind meine Antwort auf diesen Anspruch: konkrete Umsetzungen dessen, was ich als Neuropsychologe über Lernen weiss – und was ich politisch für richtig halte.
       </p>
-      <p style="font-size:0.95rem;max-width:660px;">
+      <p style="font-size:0.95rem;max-width:660px;" data-i18n="projekte.warum_p2">
         Beide Projekte entstehen nicht aus Marktanalysen, sondern aus Erfahrung. Ich hätte diese Angebote selbst gebraucht. Das ist für mich die solidarischste Form von Unternehmertum: etwas schaffen, das man selbst vermisst hat – und es zugänglich machen.
       </p>
     </div>
@@ -65,27 +64,27 @@
       <div class="projekt-grid" data-stagger>
 
         <a href="sublingua.html" class="projekt-card">
-          <span class="p-kicker">EdTech · Neuropsychologie</span>
+          <span class="p-kicker" data-i18n="projekte.k1_kicker">EdTech · Neuropsychologie</span>
           <h3>Sublingua</h3>
-          <p>Mit unbewusster Stimulation bewusst Gelerntes vertieft vernetzen. Neuropsychologie trifft Sprachenlernen.</p>
+          <p data-i18n="projekte.k1_p">Mit unbewusster Stimulation bewusst Gelerntes vertieft vernetzen. Neuropsychologie trifft Sprachenlernen.</p>
           <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <span class="badge">Neuropsychologie</span>
-            <span class="badge">EdTech</span>
-            <span class="badge">In Entwicklung</span>
+            <span class="badge" data-i18n="projekte.k1_badge1">Neuropsychologie</span>
+            <span class="badge" data-i18n="projekte.k1_badge2">EdTech</span>
+            <span class="badge" data-i18n="projekte.k1_badge3">In Entwicklung</span>
           </div>
-          <span class="pfeil">→ Mehr erfahren</span>
+          <span class="pfeil" data-i18n="projekte.k1_pfeil">→ Mehr erfahren</span>
         </a>
 
         <a href="fizzi-und-der-prof.html" class="projekt-card">
-          <span class="p-kicker">Animation · Lernvideos</span>
+          <span class="p-kicker" data-i18n="projekte.k2_kicker">Animation · Lernvideos</span>
           <h3>Fizzi &amp; the Prof!</h3>
-          <p>Lernen für alle Altersgruppen – durch Identifikation mit Figuren, positive Fehlerkultur und ruhige Atmosphäre.</p>
+          <p data-i18n="projekte.k2_p">Lernen für alle Altersgruppen – durch Identifikation mit Figuren, positive Fehlerkultur und ruhige Atmosphäre.</p>
           <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <span class="badge">Animation</span>
-            <span class="badge">Alle Altersgruppen</span>
-            <span class="badge">In Produktion</span>
+            <span class="badge" data-i18n="projekte.k2_badge1">Animation</span>
+            <span class="badge" data-i18n="projekte.k2_badge2">Alle Altersgruppen</span>
+            <span class="badge" data-i18n="projekte.k2_badge3">In Produktion</span>
           </div>
-          <span class="pfeil">→ Mehr erfahren</span>
+          <span class="pfeil" data-i18n="projekte.k2_pfeil">→ Mehr erfahren</span>
         </a>
 
       </div>
@@ -94,12 +93,12 @@
 
   <section class="section section-warm" data-reveal>
     <div class="container">
-      <span class="section-label">Gemeinsamer Antrieb</span>
-      <h2>Bildung ist politisch.</h2>
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 620px; margin-bottom: 1rem;">
+      <span class="section-label" data-i18n="projekte.antrieb_label">Gemeinsamer Antrieb</span>
+      <h2 data-i18n="projekte.antrieb_h2">Bildung ist politisch.</h2>
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 620px; margin-bottom: 1rem;" data-i18n="projekte.antrieb_p1">
         Die Unterhaltungsindustrie investiert Milliarden in Aufmerksamkeit – Bildung verdient denselben Anspruch. Wer Chancengleichheit ernst nimmt, muss auch an der Qualität des Angebots arbeiten, nicht nur an seiner Zugänglichkeit.
       </p>
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 620px;">
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 620px;" data-i18n="projekte.antrieb_p2">
         Sublingua und Fizzi & the Prof! sind der Versuch, das zu tun. Nicht als Lückenbüsser für staatliches Versagen – sondern als Beweis, dass es geht.
       </p>
     </div>
@@ -109,7 +108,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -120,5 +119,6 @@
 
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

@@ -15,57 +15,56 @@
   <title>Sublingua | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <style>html {{ scroll-behavior: smooth; }}</style>
+  <style>html { scroll-behavior: smooth; }</style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-
-    <a href="politik.html">Politik</a>
-    <a href="manifest.html">Manifest</a>
-    <a href="kommunikation.html">Kommunikation</a>
-    <a href="projekte.html" class="active">Projekte</a>
-    <a href="kontakt.html">Kontakt</a>
-  </div>
-</nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" class="active" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </div>
+  </nav>
 
   <div class="page-hero">
     <div class="container">
-      <span class="kicker">Projekt · EdTech</span>
+      <span class="kicker" data-i18n="sublingua.kicker">Projekt · EdTech</span>
       <h1>Sublingua</h1>
-      <p class="sub">Mit unbewusster Stimulation bewusst Gelerntes vertieft vernetzen.</p>
+      <p class="sub" data-i18n="sublingua.sub">Mit unbewusster Stimulation bewusst Gelerntes vertieft vernetzen.</p>
     </div>
   </div>
 
-  <div class="haltung-band">
+  <div class="haltung-band" data-i18n="sublingua.band">
     Neuropsychologie · Sprachenlernen · Subliminale Stimulation
   </div>
 
   <section class="section" data-reveal>
     <div class="container">
       <div class="badges">
-        <span class="badge">EdTech</span>
-        <span class="badge">Neuropsychologie</span>
-        <span class="badge">In Entwicklung</span>
+        <span class="badge" data-i18n="sublingua.badge1">EdTech</span>
+        <span class="badge" data-i18n="sublingua.badge2">Neuropsychologie</span>
+        <span class="badge" data-i18n="sublingua.badge3">In Entwicklung</span>
       </div>
 
-      <span class="section-label">Die Idee</span>
-      <h2>Das Gehirn lernt auch, wenn wir es nicht merken.</h2>
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;">
+      <span class="section-label" data-i18n="sublingua.idee_label">Die Idee</span>
+      <h2 data-i18n="sublingua.idee_h2">Das Gehirn lernt auch, wenn wir es nicht merken.</h2>
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;" data-i18n="sublingua.idee_p1">
         Sublingua nutzt moderne neuropsychologische Forschung, um Lernen effizienter zu gestalten. Durch subliminale Stimulation – unbewusste Reize im Alltag – wird bewusst Gelerntes tiefer im Gedächtnis verankert und besser vernetzt.
       </p>
 
-      <blockquote>
+      <blockquote data-i18n="sublingua.idee_quote">
         Wie kann das Gehirn auch ausserhalb aktiver Lernphasen effektiv trainiert werden?
       </blockquote>
 
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;">
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;" data-i18n="sublingua.idee_p2">
         Das Projekt entstand aus dem Studium der Neuropsychologie, Wahrnehmung und Sozialpsychologie an der Universität Bern – und der Überzeugung, dass Bildung mehr kann als sie heute tut.
       </p>
     </div>
@@ -73,26 +72,26 @@
 
   <section class="section section-warm" data-reveal>
     <div class="container">
-      <span class="section-label">Wie es funktioniert</span>
-      <h2>Drei Schritte. Ein Prinzip.</h2>
+      <span class="section-label" data-i18n="sublingua.funktioniert_label">Wie es funktioniert</span>
+      <h2 data-i18n="sublingua.funktioniert_h2">Drei Schritte. Ein Prinzip.</h2>
 
       <ol class="steps" style="margin-top: 2rem; max-width: 600px;">
         <li>
           <div>
-            <strong>Bewusstes Lernen</strong>
-            <p style="font-size: 0.9rem; color: var(--grau); margin-top: 0.3rem;">Reguläre Lernphase – Sprachkurs, Unterricht, eigenständiges Üben.</p>
+            <strong data-i18n="sublingua.step1_h">Bewusstes Lernen</strong>
+            <p style="font-size: 0.9rem; color: var(--grau); margin-top: 0.3rem;" data-i18n="sublingua.step1_p">Reguläre Lernphase – Sprachkurs, Unterricht, eigenständiges Üben.</p>
           </div>
         </li>
         <li>
           <div>
-            <strong>Subliminale Stimulation</strong>
-            <p style="font-size: 0.9rem; color: var(--grau); margin-top: 0.3rem;">Unbewusste Reize im Alltag verankern das Gelernte – ohne zusätzlichen Aufwand.</p>
+            <strong data-i18n="sublingua.step2_h">Subliminale Stimulation</strong>
+            <p style="font-size: 0.9rem; color: var(--grau); margin-top: 0.3rem;" data-i18n="sublingua.step2_p">Unbewusste Reize im Alltag verankern das Gelernte – ohne zusätzlichen Aufwand.</p>
           </div>
         </li>
         <li>
           <div>
-            <strong>Tiefere Vernetzung</strong>
-            <p style="font-size: 0.9rem; color: var(--grau); margin-top: 0.3rem;">Das Gehirn verknüpft aktiv und passiv Gelerntes – nahtlose Integration in den Alltag.</p>
+            <strong data-i18n="sublingua.step3_h">Tiefere Vernetzung</strong>
+            <p style="font-size: 0.9rem; color: var(--grau); margin-top: 0.3rem;" data-i18n="sublingua.step3_p">Das Gehirn verknüpft aktiv und passiv Gelerntes – nahtlose Integration in den Alltag.</p>
           </div>
         </li>
       </ol>
@@ -101,30 +100,30 @@
 
   <section class="section" data-reveal>
     <div class="container">
-      <span class="section-label">Roadmap</span>
-      <h2>Wo wir stehen.</h2>
+      <span class="section-label" data-i18n="sublingua.roadmap_label">Roadmap</span>
+      <h2 data-i18n="sublingua.roadmap_h2">Wo wir stehen.</h2>
 
       <div class="drei-grid" data-stagger>
         <div class="drei-item">
           <span class="nummer">Phase 1</span>
-          <h3>Pilotversuch</h3>
-          <p style="font-size: 0.88rem; color: var(--grau);">Zusammenarbeit mit Sprachschulen nach regulären Kursen.</p>
+          <h3 data-i18n="sublingua.phase1_h">Pilotversuch</h3>
+          <p style="font-size: 0.88rem; color: var(--grau);" data-i18n="sublingua.phase1_p">Zusammenarbeit mit Sprachschulen nach regulären Kursen.</p>
         </div>
         <div class="drei-item">
           <span class="nummer">Phase 2</span>
-          <h3>App-Entwicklung</h3>
-          <p style="font-size: 0.88rem; color: var(--grau);">Individualisierte App, anpassbar an unterschiedliche Lernbedürfnisse.</p>
+          <h3 data-i18n="sublingua.phase2_h">App-Entwicklung</h3>
+          <p style="font-size: 0.88rem; color: var(--grau);" data-i18n="sublingua.phase2_p">Individualisierte App, anpassbar an unterschiedliche Lernbedürfnisse.</p>
         </div>
         <div class="drei-item">
           <span class="nummer">Phase 3</span>
-          <h3>Skalierung</h3>
-          <p style="font-size: 0.88rem; color: var(--grau);">Erweiterung auf weitere Lernbereiche über Sprachenlernen hinaus.</p>
+          <h3 data-i18n="sublingua.phase3_h">Skalierung</h3>
+          <p style="font-size: 0.88rem; color: var(--grau);" data-i18n="sublingua.phase3_p">Erweiterung auf weitere Lernbereiche über Sprachenlernen hinaus.</p>
         </div>
       </div>
 
       <div style="margin-top: 2.5rem;">
-        <a href="https://www.sublingua.ch" class="btn" target="_blank" rel="noopener">sublingua.ch besuchen</a>
-        <a href="projekte.html" class="btn btn-outline">← Alle Projekte</a>
+        <a href="https://www.sublingua.ch" class="btn" target="_blank" rel="noopener" data-i18n="sublingua.btn_visit">sublingua.ch besuchen</a>
+        <a href="projekte.html" class="btn btn-outline" data-i18n="sublingua.btn_back">← Alle Projekte</a>
       </div>
     </div>
   </section>
@@ -133,7 +132,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -144,5 +143,6 @@
 
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

@@ -15,59 +15,58 @@
   <title>Politik | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <style>html {{ scroll-behavior: smooth; }}</style>
+  <style>html { scroll-behavior: smooth; }</style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="politik.html" class="active" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </div>
+  </nav>
 
-    <a href="politik.html" class="active">Politik</a>
-    <a href="manifest.html">Manifest</a>
-    <a href="kommunikation.html">Kommunikation</a>
-    <a href="projekte.html">Projekte</a>
-    <a href="kontakt.html">Kontakt</a>
-  </div>
-</nav>
-
-    <div class="page-hero">
+  <div class="page-hero">
     <div class="container">
-      <span class="kicker">Politische Haltung</span>
-      <h1>Für eine Politik, welche zuerst zuhört,<br>versteht und dann gemeinsam bewegt.</h1>
-      <p class="sub">Ich bin SP-Mitglied und glaube an wirtschaftliche Freiheit. Das ist kein Widerspruch – es ist die Grundlage meines Denkens. Solidarischer Liberalismus ist keine Parteifrage. Es ist eine Haltung, die links wie rechts funktioniert.</p>
+      <span class="kicker" data-i18n="politik.kicker">Politische Haltung</span>
+      <h1 data-i18n="politik.h1" data-i18n-html>Für eine Politik, welche zuerst zuhört,<br>versteht und dann gemeinsam bewegt.</h1>
+      <p class="sub" data-i18n="politik.sub">Ich bin SP-Mitglied und glaube an wirtschaftliche Freiheit. Das ist kein Widerspruch – es ist die Grundlage meines Denkens. Solidarischer Liberalismus ist keine Parteifrage. Es ist eine Haltung, die links wie rechts funktioniert.</p>
     </div>
   </div>
 
-  <div class="haltung-band sans">
+  <div class="haltung-band sans" data-i18n="politik.band">
     Solidarischer Liberalismus &nbsp;·&nbsp; Brücken statt Gräben &nbsp;·&nbsp; Verantwortung statt Ideologie
   </div>
 
   <section class="section" data-reveal>
     <div class="container">
-      <span class="section-label sans">Ausgangslage</span>
-      <h2>Gesellschaft ist kein Nullsummenspiel.</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:660px;">
+      <span class="section-label sans" data-i18n="politik.ausgangslage_label">Ausgangslage</span>
+      <h2 data-i18n="politik.ausgangslage_h2">Gesellschaft ist kein Nullsummenspiel.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:660px;" data-i18n="politik.ausgangslage_p">
         Die politischen Modelle des 20. Jahrhunderts stossen an ihre Grenzen. Klimawandel, Digitalisierung, demografischer Wandel und wachsende Ungleichheit verlangen ein neues Denken.
       </p>
       <div class="drei-grid" style="margin-top:3rem;">
         <div class="drei-item">
-          <span class="nummer sans">Sozialdemokratie</span>
-          <h3>Stärke: Sozialstaat</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Sicherheit und Chancen für alle. Aber nationale Antworten reichen für globale Dynamiken nicht mehr aus.</p>
+          <span class="nummer sans" data-i18n="politik.sd_nr">Sozialdemokratie</span>
+          <h3 data-i18n="politik.sd_h3">Stärke: Sozialstaat</h3>
+          <p style="font-size:0.88rem;color:var(--grau);" data-i18n="politik.sd_p">Sicherheit und Chancen für alle. Aber nationale Antworten reichen für globale Dynamiken nicht mehr aus.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Liberalismus</span>
-          <h3>Stärke: Freiheit</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Unternehmertum und Wohlstand. Aber die sozialen Kosten wurden unterschätzt.</p>
+          <span class="nummer sans" data-i18n="politik.lib_nr">Liberalismus</span>
+          <h3 data-i18n="politik.lib_h3">Stärke: Freiheit</h3>
+          <p style="font-size:0.88rem;color:var(--grau);" data-i18n="politik.lib_p">Unternehmertum und Wohlstand. Aber die sozialen Kosten wurden unterschätzt.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Solidarischer Liberalismus</span>
-          <h3>Synthese: Brücken bauen</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Freiheit mit Konsequenz. Wirtschaft als Werkzeug der Gesellschaft – nicht als Gegner.</p>
+          <span class="nummer sans" data-i18n="politik.sl_nr">Solidarischer Liberalismus</span>
+          <h3 data-i18n="politik.sl_h3">Synthese: Brücken bauen</h3>
+          <p style="font-size:0.88rem;color:var(--grau);" data-i18n="politik.sl_p">Freiheit mit Konsequenz. Wirtschaft als Werkzeug der Gesellschaft – nicht als Gegner.</p>
         </div>
       </div>
     </div>
@@ -75,21 +74,21 @@
 
   <section class="section section-statement" data-reveal>
     <div class="container">
-      <span class="section-label sans">Kernthesen</span>
-      <h2>Was ich für richtig halte.</h2>
-      <blockquote>Verantwortung ist kein Gegensatz zu Freiheit – sie ist ihre Bedingung.</blockquote>
+      <span class="section-label sans" data-i18n="politik.kernthesen_label">Kernthesen</span>
+      <h2 data-i18n="politik.kernthesen_h2">Was ich für richtig halte.</h2>
+      <blockquote data-i18n="politik.kernthesen_quote">Verantwortung ist kein Gegensatz zu Freiheit – sie ist ihre Bedingung.</blockquote>
       <div style="display:grid;gap:2rem;margin-top:2rem;max-width:660px;">
         <div>
-          <h3 style="color:var(--weiss);">Wirtschaft im Dienst der Gesellschaft</h3>
-          <p style="font-size:0.92rem;color:rgba(255,255,255,0.8);">Wirtschaft ist ein Werkzeug – zur Ermöglichung von Lebensqualität, Stabilität und Innovation. Unternehmen, die gesellschaftlichen Nutzen stiften, verdienen die stärksten Rahmenbedingungen.</p>
+          <h3 style="color:var(--weiss);" data-i18n="politik.th1_h">Wirtschaft im Dienst der Gesellschaft</h3>
+          <p style="font-size:0.92rem;color:rgba(255,255,255,0.8);" data-i18n="politik.th1_p">Wirtschaft ist ein Werkzeug – zur Ermöglichung von Lebensqualität, Stabilität und Innovation. Unternehmen, die gesellschaftlichen Nutzen stiften, verdienen die stärksten Rahmenbedingungen.</p>
         </div>
         <div>
-          <h3 style="color:var(--weiss);">Haltung statt Ideologie</h3>
-          <p style="font-size:0.92rem;color:rgba(255,255,255,0.8);">Solidarischer Liberalismus ist keine linke oder rechte Idee. Unternehmerische Freiheit und soziale Verantwortung schliessen sich nicht aus – sie bedingen sich. Wer das akzeptiert, kann diesen Ansatz unabhängig von seiner Parteizugehörigkeit vertreten.</p>
+          <h3 style="color:var(--weiss);" data-i18n="politik.th2_h">Haltung statt Ideologie</h3>
+          <p style="font-size:0.92rem;color:rgba(255,255,255,0.8);" data-i18n="politik.th2_p">Solidarischer Liberalismus ist keine linke oder rechte Idee. Unternehmerische Freiheit und soziale Verantwortung schliessen sich nicht aus – sie bedingen sich. Wer das akzeptiert, kann diesen Ansatz unabhängig von seiner Parteizugehörigkeit vertreten.</p>
         </div>
         <div>
-          <h3 style="color:var(--weiss);">Dialog statt Polarisierung</h3>
-          <p style="font-size:0.92rem;color:rgba(255,255,255,0.8);">Komplexe Systeme brauchen Dialog, Differenzierung und Lernbereitschaft. In meiner Arbeit beobachte ich täglich: Die grundlegenden Bedürfnisse aller Parteien sind ähnlicher als die Rhetorik vermuten lässt.</p>
+          <h3 style="color:var(--weiss);" data-i18n="politik.th3_h">Dialog statt Polarisierung</h3>
+          <p style="font-size:0.92rem;color:rgba(255,255,255,0.8);" data-i18n="politik.th3_p">Komplexe Systeme brauchen Dialog, Differenzierung und Lernbereitschaft. In meiner Arbeit beobachte ich täglich: Die grundlegenden Bedürfnisse aller Parteien sind ähnlicher als die Rhetorik vermuten lässt.</p>
         </div>
       </div>
     </div>
@@ -97,50 +96,48 @@
 
   <section class="section section-warm" data-reveal>
     <div class="container">
-      <span class="section-label sans">Der Dreiklang</span>
-      <h2>Wie es funktioniert.</h2>
+      <span class="section-label sans" data-i18n="politik.dreiklang_label">Der Dreiklang</span>
+      <h2 data-i18n="politik.dreiklang_h2">Wie es funktioniert.</h2>
       <div class="drei-grid">
         <div class="drei-item">
-          <span class="nummer sans">Politik</span>
-          <h3>Faire Rahmenbedingungen</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Schafft Spielregeln, die Fairness und Stabilität ermöglichen. Ermöglicht – dirigiert nicht.</p>
+          <span class="nummer sans" data-i18n="politik.dr1_nr">Politik</span>
+          <h3 data-i18n="politik.dr1_h3">Faire Rahmenbedingungen</h3>
+          <p style="font-size:0.88rem;color:var(--grau);" data-i18n="politik.dr1_p">Schafft Spielregeln, die Fairness und Stabilität ermöglichen. Ermöglicht – dirigiert nicht.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Wirtschaft</span>
-          <h3>Gesellschaftliche Mitverantwortung</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Verantwortung über den reinen Gewinn hinaus. Standorttreue als Stärke, nicht Schwäche.</p>
+          <span class="nummer sans" data-i18n="politik.dr2_nr">Wirtschaft</span>
+          <h3 data-i18n="politik.dr2_h3">Gesellschaftliche Mitverantwortung</h3>
+          <p style="font-size:0.88rem;color:var(--grau);" data-i18n="politik.dr2_p">Verantwortung über den reinen Gewinn hinaus. Standorttreue als Stärke, nicht Schwäche.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Bevölkerung</span>
-          <h3>Aktive Partizipation</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Partizipiert, kontrolliert und gestaltet aktiv mit. Demokratie als Alltagspraxis.</p>
+          <span class="nummer sans" data-i18n="politik.dr3_nr">Bevölkerung</span>
+          <h3 data-i18n="politik.dr3_h3">Aktive Partizipation</h3>
+          <p style="font-size:0.88rem;color:var(--grau);" data-i18n="politik.dr3_p">Partizipiert, kontrolliert und gestaltet aktiv mit. Demokratie als Alltagspraxis.</p>
         </div>
       </div>
-      <blockquote style="margin-top:3rem;">Wirkung entsteht durch Haltung, nicht durch Zwang.</blockquote>
+      <blockquote style="margin-top:3rem;" data-i18n="politik.dreiklang_quote">Wirkung entsteht durch Haltung, nicht durch Zwang.</blockquote>
     </div>
   </section>
 
-  <!-- Manifest CTA -->
   <section class="section" data-reveal>
     <div class="container" style="text-align:center;">
-      <span class="section-label sans">Vertiefung</span>
-      <h2>Das vollständige Konzept.</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:520px;margin:0 auto 2rem;">
+      <span class="section-label sans" data-i18n="politik.manifest_label">Vertiefung</span>
+      <h2 data-i18n="politik.manifest_h2">Das vollständige Konzept.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:520px;margin:0 auto 2rem;" data-i18n="politik.manifest_p">
         Ich habe den Solidarischen Liberalismus ausgearbeitet: mit Mechanismus, Sektoren, historischen Wurzeln und rechtlichen Grundlagen. Version 1.0, Mai 2026.
       </p>
-      <a href="manifest.html" class="btn">Manifest lesen</a>
+      <a href="manifest.html" class="btn" data-i18n="politik.manifest_btn">Manifest lesen</a>
     </div>
   </section>
 
-  <!-- Haltungskompass CTA -->
   <section class="section section-warm" data-reveal>
     <div class="container" style="text-align:center;">
-      <span class="section-label sans">Interaktiv</span>
-      <h2>Wo stehst du?</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:520px;margin:0 auto 2rem;">
+      <span class="section-label sans" data-i18n="politik.kompass_label">Interaktiv</span>
+      <h2 data-i18n="politik.kompass_h2">Wo stehst du?</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:520px;margin:0 auto 2rem;" data-i18n="politik.kompass_p">
         6 Fragen zu Wirtschaft und Gesellschaft – und du siehst auf einem Kompass, wie deine Haltung mit meiner verglichen ist.
       </p>
-      <a href="haltungskompass.html" class="btn">Haltungskompass starten</a>
+      <a href="haltungskompass.html" class="btn" data-i18n="politik.kompass_btn">Haltungskompass starten</a>
     </div>
   </section>
 
@@ -148,7 +145,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -158,5 +155,6 @@
   </footer>
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

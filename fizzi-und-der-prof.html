@@ -15,55 +15,54 @@
   <title>Fizzi &amp; the Prof! | Severin Stadler</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <style>html {{ scroll-behavior: smooth; }}</style>
+  <style>html { scroll-behavior: smooth; }</style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-
-    <a href="politik.html">Politik</a>
-    <a href="manifest.html">Manifest</a>
-    <a href="kommunikation.html">Kommunikation</a>
-    <a href="projekte.html" class="active">Projekte</a>
-    <a href="kontakt.html">Kontakt</a>
-  </div>
-</nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" class="active" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </div>
+  </nav>
 
   <div class="page-hero">
     <div class="container">
-      <span class="kicker">Projekt · Animation &amp; Bildung</span>
+      <span class="kicker" data-i18n="fizzi.kicker">Projekt · Animation &amp; Bildung</span>
       <h1>Fizzi &amp; the Prof!</h1>
-      <p class="sub">Lernen ist keine Pflicht – es ist ein Abenteuer.</p>
+      <p class="sub" data-i18n="fizzi.sub">Lernen ist keine Pflicht – es ist ein Abenteuer.</p>
     </div>
   </div>
 
-  <div class="haltung-band">
+  <div class="haltung-band" data-i18n="fizzi.band">
     Identifikation · Ruhige Atmosphäre · Positive Fehlerkultur · Alle Altersgruppen
   </div>
 
   <section class="section" data-reveal>
     <div class="container">
       <div class="badges">
-        <span class="badge">Animation</span>
-        <span class="badge">Alle Altersgruppen</span>
-        <span class="badge">In Produktion</span>
+        <span class="badge" data-i18n="fizzi.badge1">Animation</span>
+        <span class="badge" data-i18n="fizzi.badge2">Alle Altersgruppen</span>
+        <span class="badge" data-i18n="fizzi.badge3">In Produktion</span>
       </div>
 
-      <span class="section-label">Die Idee</span>
-      <h2>Lernen scheitert selten am Inhalt.</h2>
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;">
+      <span class="section-label" data-i18n="fizzi.idee_label">Die Idee</span>
+      <h2 data-i18n="fizzi.idee_h2">Lernen scheitert selten am Inhalt.</h2>
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;" data-i18n="fizzi.idee_p">
         Es scheitert an der Haltung. Zu viel Druck, zu wenig Bedeutung, zu wenig Verbindung.
         Fizzi &amp; the Prof! baut Brücken: zwischen Wissensvermittlung und echtem Erleben,
         zwischen Figur und Zuschauer, zwischen Schule und der Lust am Verstehen.
       </p>
 
-      <blockquote>
+      <blockquote data-i18n="fizzi.idee_quote">
         Bildung verdient denselben Innovationsgeist wie Unterhaltung.
       </blockquote>
     </div>
@@ -71,9 +70,9 @@
 
   <section class="section section-warm" data-reveal>
     <div class="container">
-      <span class="section-label">Die Figuren</span>
-      <h2>Charaktere, mit denen man mitfühlt.</h2>
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 560px; margin-bottom: 2rem;">
+      <span class="section-label" data-i18n="fizzi.figuren_label">Die Figuren</span>
+      <h2 data-i18n="fizzi.figuren_h2">Charaktere, mit denen man mitfühlt.</h2>
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 560px; margin-bottom: 2rem;" data-i18n="fizzi.figuren_p">
         Die Serie lebt von Figuren, die echte Lernmomente verkörpern – Neugier, Zweifel, Freude, Erkenntnis.
       </p>
 
@@ -81,22 +80,22 @@
         <div class="figur-card">
           <span class="emoji">🦊</span>
           <h3>Fizzi</h3>
-          <p>Junger Fuchs. Neugierig, mutig, manchmal unsicher. Steht für den Lernenden in uns allen.</p>
+          <p data-i18n="fizzi.fizzi_p">Junger Fuchs. Neugierig, mutig, manchmal unsicher. Steht für den Lernenden in uns allen.</p>
         </div>
         <div class="figur-card">
           <span class="emoji">🐦</span>
           <h3>Pico</h3>
-          <p>Kleiner blauer Vogel. Leiser Begleiter, sanfter Witz, immer an Fizzis Seite.</p>
+          <p data-i18n="fizzi.pico_p">Kleiner blauer Vogel. Leiser Begleiter, sanfter Witz, immer an Fizzis Seite.</p>
         </div>
         <div class="figur-card">
           <span class="emoji">🦊🎓</span>
           <h3>Prof. Pino</h3>
-          <p>Älterer Fuchs mit Brille. Ruhiger Lehrpol – erklärt ohne Druck, fragt statt zu fordern.</p>
+          <p data-i18n="fizzi.prof_p">Älterer Fuchs mit Brille. Ruhiger Lehrpol – erklärt ohne Druck, fragt statt zu fordern.</p>
         </div>
         <div class="figur-card">
           <span class="emoji">🦉</span>
           <h3>Maana</h3>
-          <p>Weise Eule. Erscheint selten – und wenn, dann mit Gewicht und tiefer Bedeutung.</p>
+          <p data-i18n="fizzi.maana_p">Weise Eule. Erscheint selten – und wenn, dann mit Gewicht und tiefer Bedeutung.</p>
         </div>
       </div>
     </div>
@@ -104,9 +103,9 @@
 
   <section class="section" data-reveal>
     <div class="container">
-      <span class="section-label">Stil &amp; Atmosphäre</span>
-      <h2>Eine Welt, in der man durchatmen darf.</h2>
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;">
+      <span class="section-label" data-i18n="fizzi.stil_label">Stil &amp; Atmosphäre</span>
+      <h2 data-i18n="fizzi.stil_h2">Eine Welt, in der man durchatmen darf.</h2>
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 640px;" data-i18n="fizzi.stil_p">
         Weicher Farbstiftstil, ruhige Naturtöne, warme Kontraste. Keine Reizüberflutung,
         keine schnellen Schnitte. Die Umgebungen – Fuchsbau, Lernplatz unter dem Baum,
         Lichtung, Traumwald – geben Sicherheit und Orientierung.
@@ -116,47 +115,47 @@
 
   <section class="section section-warm" data-reveal>
     <div class="container">
-      <span class="section-label">Zielgruppe</span>
-      <h2>Für alle Altersgruppen.</h2>
-      <p style="font-size: 0.95rem; color: var(--grau); max-width: 560px; margin-bottom: 2rem;">
+      <span class="section-label" data-i18n="fizzi.zielgruppe_label">Zielgruppe</span>
+      <h2 data-i18n="fizzi.zielgruppe_h2">Für alle Altersgruppen.</h2>
+      <p style="font-size: 0.95rem; color: var(--grau); max-width: 560px; margin-bottom: 2rem;" data-i18n="fizzi.zielgruppe_p">
         Lernen hört nicht auf. Fizzi &amp; the Prof! wächst mit den Zuschauern mit.
       </p>
 
       <div class="phasen">
-        <div class="phase"><strong>Phase 1</strong>4–7 Jahre · Mathematik-Grundlagen</div>
-        <div class="phase"><strong>Phase 2</strong>7–11 Jahre · Primarschule</div>
-        <div class="phase"><strong>Phase 3</strong>11–15 Jahre · Sekundarstufe</div>
-        <div class="phase"><strong>Phase 4</strong>15–18 Jahre · Jugendliche</div>
-        <div class="phase"><strong>Phase 5</strong>18+ Jahre · Erwachsene</div>
+        <div class="phase"><strong>Phase 1</strong><span data-i18n="fizzi.phase1">4–7 Jahre · Mathematik-Grundlagen</span></div>
+        <div class="phase"><strong>Phase 2</strong><span data-i18n="fizzi.phase2">7–11 Jahre · Primarschule</span></div>
+        <div class="phase"><strong>Phase 3</strong><span data-i18n="fizzi.phase3">11–15 Jahre · Sekundarstufe</span></div>
+        <div class="phase"><strong>Phase 4</strong><span data-i18n="fizzi.phase4">15–18 Jahre · Jugendliche</span></div>
+        <div class="phase"><strong>Phase 5</strong><span data-i18n="fizzi.phase5">18+ Jahre · Erwachsene</span></div>
       </div>
     </div>
   </section>
 
   <section class="section section-statement" data-reveal>
     <div class="container">
-      <span class="section-label" style="color: rgba(255,255,255,0.6);">Warum es funktioniert</span>
+      <span class="section-label" style="color: rgba(255,255,255,0.6);" data-i18n="fizzi.warum_label">Warum es funktioniert</span>
       <div class="drei-grid" style="border-color: rgba(255,255,255,0.15); margin-top: 1.5rem;">
         <div class="drei-item" style="border-color: rgba(255,255,255,0.15);">
           <span class="nummer" style="color: rgba(255,255,255,0.5);">01</span>
-          <h3 style="color: #fff;">Identifikation</h3>
-          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.7);">Figuren, die man mag und in denen man sich erkennt.</p>
+          <h3 style="color: #fff;" data-i18n="fizzi.wf1_h">Identifikation</h3>
+          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.7);" data-i18n="fizzi.wf1_p">Figuren, die man mag und in denen man sich erkennt.</p>
         </div>
         <div class="drei-item" style="border-color: rgba(255,255,255,0.15);">
           <span class="nummer" style="color: rgba(255,255,255,0.5);">02</span>
-          <h3 style="color: #fff;">Ruhige Stimmung</h3>
-          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.7);">Kein Stress, kein Tempo-Druck. Lernen darf langsam sein.</p>
+          <h3 style="color: #fff;" data-i18n="fizzi.wf2_h">Ruhige Stimmung</h3>
+          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.7);" data-i18n="fizzi.wf2_p">Kein Stress, kein Tempo-Druck. Lernen darf langsam sein.</p>
         </div>
         <div class="drei-item" style="border-color: rgba(255,255,255,0.15);">
           <span class="nummer" style="color: rgba(255,255,255,0.5);">03</span>
-          <h3 style="color: #fff;">Positive Fehlerkultur</h3>
-          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.7);">Fizzi irrt sich. Und lernt daraus. Das ist der Punkt.</p>
+          <h3 style="color: #fff;" data-i18n="fizzi.wf3_h">Positive Fehlerkultur</h3>
+          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.7);" data-i18n="fizzi.wf3_p">Fizzi irrt sich. Und lernt daraus. Das ist der Punkt.</p>
         </div>
       </div>
 
       <div style="margin-top: 2.5rem;">
-        <a href="fizzi-lernkonzept.html" class="btn" style="margin-right:0.75rem;">Lernkonzept entdecken</a>
-        <a href="https://www.youtube.com/@FizziAndTheProf" class="btn" style="background: #fff; color: var(--rot);" target="_blank" rel="noopener">YouTube-Kanal</a>
-        <a href="projekte.html" class="btn btn-outline" style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3);">← Alle Projekte</a>
+        <a href="fizzi-lernkonzept.html" class="btn" style="margin-right:0.75rem;" data-i18n="fizzi.btn_konzept">Lernkonzept entdecken</a>
+        <a href="https://www.youtube.com/@FizziAndTheProf" class="btn" style="background: #fff; color: var(--rot);" target="_blank" rel="noopener" data-i18n="fizzi.btn_yt">YouTube-Kanal</a>
+        <a href="projekte.html" class="btn btn-outline" style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3);" data-i18n="fizzi.btn_back">← Alle Projekte</a>
       </div>
     </div>
   </section>
@@ -165,7 +164,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -176,5 +175,6 @@
 
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

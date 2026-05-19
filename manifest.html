@@ -607,7 +607,7 @@
 
   <div id="manifest-progress"></div>
 
-  <div class="version-banner">Manifest – Version 1.0 &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Zur öffentlichen Diskussion freigegeben</div>
+  <div class="version-banner" data-i18n="manifest.version_banner">Manifest – Version 1.0 &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Zur öffentlichen Diskussion freigegeben</div>
 
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
@@ -615,11 +615,11 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="politik.html">Politik</a>
-      <a href="manifest.html" class="active">Manifest</a>
-      <a href="kommunikation.html">Kommunikation</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" class="active" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
     </div>
   </nav>
 
@@ -655,13 +655,13 @@
   </nav>
 
   <!-- Float Button + Overlay (Mobile / Tablet) -->
-  <button class="chapnav-float" id="chapnav-float-btn" aria-label="Kapitel wählen">
+  <button class="chapnav-float" id="chapnav-float-btn" aria-label="Kapitel wählen" data-i18n="manifest.float_btn">
     ≡ &nbsp;Kapitel
   </button>
 
   <div class="chapnav-overlay" id="chapnav-overlay" role="dialog" aria-modal="true">
     <div class="chapnav-sheet">
-      <div class="chapnav-sheet-title">Kapitel</div>
+      <div class="chapnav-sheet-title" data-i18n="manifest.chapnav_title">Kapitel</div>
       <a href="#kurzfassung"><span class="sheet-nr">Kurz</span>Kurzfassung</a>
       <a href="#ausgangslage"><span class="sheet-nr">1/1a</span>Ausgangslage</a>
       <a href="#das-modell"><span class="sheet-nr">Modell</span>Das Solidaritätsdreieck</a>
@@ -686,7 +686,7 @@
     <div class="reading-time">&#9679; ca. 15 Minuten Lesezeit</div>
   </div>
 
-  <div class="haltung-band sans">
+  <div class="haltung-band sans" data-i18n="manifest.band">
     Solidarität &nbsp;·&nbsp; Freiheit &nbsp;·&nbsp; Verantwortung &nbsp;·&nbsp; Demokratie
   </div>
 
@@ -861,13 +861,13 @@
       <blockquote>„Solidarischer Liberalismus – das Kreislaufmodell Schweiz.<br>Die Willensnation 2.0: gemeinsam stark, frei und solidarisch."</blockquote>
       <p style="color:rgba(255,255,255,0.72);font-size:0.95rem;max-width:560px;margin-bottom:0;">Wir rufen Politik, Wirtschaft, Sozialpartner und Bevölkerung auf, diesen neuen Weg zu beschreiten. Nicht als Kompromiss, sondern als Aufbruch.</p>
       <div class="manifest-cta">
-        <a href="haltungskompass.html" class="btn" style="background:var(--rot);color:#fff;border-color:var(--rot);">Haltungskompass starten</a>
-        <a href="kontakt.html" class="btn" style="background:transparent;color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);">Kontakt aufnehmen</a>
+        <a href="haltungskompass.html" class="btn" style="background:var(--rot);color:#fff;border-color:var(--rot);" data-i18n="manifest.aufruf_btn1">Haltungskompass starten</a>
+        <a href="kontakt.html" class="btn" style="background:transparent;color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);" data-i18n="manifest.aufruf_btn2">Kontakt aufnehmen</a>
       </div>
     </div>
   </div>
 
-  <div class="manifest-footer-info">
+  <div class="manifest-footer-info" data-i18n-html="manifest.footer_info">
     <strong>Manifest – Version 1.0</strong> &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Severin Stadler, Bern<br>
     Zur öffentlichen Diskussion freigegeben &nbsp;·&nbsp; <strong>Zur freien Weiterverbreitung mit Quellenangabe</strong>
   </div>
@@ -876,7 +876,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -890,15 +890,51 @@
   // CONFIG – Inhalte hier anpassen wenn das Manifest sich verändert
   // ═══════════════════════════════════════════════════════════
 
-  const SEKTOREN = [
-    { name: "Bildung",                sub: "Schulen, Berufsbildung, Weiterbildung" },
-    { name: "Gesundheit",             sub: "Versorgung, Prävention, Pflege" },
-    { name: "Forschung & Innovation", sub: "Grundlagenforschung, Technologie" },
-    { name: "Sicherheit",             sub: "Innere Sicherheit, Katastrophenschutz" },
-    { name: "Kultur",                 sub: "Kulturelles Erbe, Kulturförderung" },
-    { name: "Umwelt",                 sub: "Klimaschutz, Biodiversität, Energie" },
-    { name: "Soziales",               sub: "Integration, Armutsprävention, Zusammenhalt" }
-  ];
+  const _mlang = (localStorage.getItem('ss_lang') || navigator.language || 'de').slice(0, 2);
+
+  const SEKTOREN_LANGS = {
+    de: [
+      { name: "Bildung",                sub: "Schulen, Berufsbildung, Weiterbildung" },
+      { name: "Gesundheit",             sub: "Versorgung, Prävention, Pflege" },
+      { name: "Forschung & Innovation", sub: "Grundlagenforschung, Technologie" },
+      { name: "Sicherheit",             sub: "Innere Sicherheit, Katastrophenschutz" },
+      { name: "Kultur",                 sub: "Kulturelles Erbe, Kulturförderung" },
+      { name: "Umwelt",                 sub: "Klimaschutz, Biodiversität, Energie" },
+      { name: "Soziales",               sub: "Integration, Armutsprävention, Zusammenhalt" }
+    ],
+    fr: [
+      { name: "Formation",              sub: "Écoles, formation professionnelle, formation continue" },
+      { name: "Santé",                  sub: "Soins, prévention, aide aux personnes âgées" },
+      { name: "Recherche & Innovation", sub: "Recherche fondamentale, technologie" },
+      { name: "Sécurité",               sub: "Sécurité intérieure, protection civile" },
+      { name: "Culture",                sub: "Patrimoine culturel, promotion de la culture" },
+      { name: "Environnement",          sub: "Protection du climat, biodiversité, énergie" },
+      { name: "Social",                 sub: "Intégration, prévention de la pauvreté, cohésion" }
+    ],
+    it: [
+      { name: "Formazione",             sub: "Scuole, formazione professionale, formazione continua" },
+      { name: "Salute",                 sub: "Assistenza, prevenzione, cura" },
+      { name: "Ricerca & Innovazione",  sub: "Ricerca di base, tecnologia" },
+      { name: "Sicurezza",              sub: "Sicurezza interna, protezione civile" },
+      { name: "Cultura",                sub: "Patrimonio culturale, promozione della cultura" },
+      { name: "Ambiente",               sub: "Protezione del clima, biodiversità, energia" },
+      { name: "Sociale",                sub: "Integrazione, prevenzione della povertà, coesione" }
+    ],
+    en: [
+      { name: "Education",              sub: "Schools, vocational training, continuing education" },
+      { name: "Health",                 sub: "Care, prevention, nursing" },
+      { name: "Research & Innovation",  sub: "Basic research, technology" },
+      { name: "Security",               sub: "Internal security, civil protection" },
+      { name: "Culture",                sub: "Cultural heritage, cultural promotion" },
+      { name: "Environment",            sub: "Climate protection, biodiversity, energy" },
+      { name: "Social",                 sub: "Integration, poverty prevention, cohesion" }
+    ]
+  };
+
+  const SEKTOREN = SEKTOREN_LANGS[_mlang in SEKTOREN_LANGS ? _mlang : 'de'];
+
+  const _verbindungLabel = { de: 'Verbindung zum Modell', fr: 'Lien avec le modèle', it: 'Collegamento con il modello', en: 'Connection to the model' };
+  const VERBINDUNG_LABEL = _verbindungLabel[_mlang in _verbindungLabel ? _mlang : 'de'];
 
   const FUNDAMENTE = [
     {
@@ -1140,7 +1176,7 @@
         <div class="f-name">${f.name}</div>
         <p class="f-kern">${f.kern}</p>
         <div class="f-link">
-          <span class="f-link-label">Verbindung zum Modell</span>
+          <span class="f-link-label">${VERBINDUNG_LABEL}</span>
           ${f.verbindung}
         </div>
       </div>`
@@ -1227,5 +1263,6 @@
   </script>
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>
