@@ -20,7 +20,7 @@
     .bewegt-grid { display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--linie); margin-top:2rem; }
     .bewegt-item { padding:2rem; border-right:1px solid var(--linie); border-bottom:1px solid var(--linie); }
     .bewegt-item:nth-child(even) { border-right:none; }
-    .bewegt-item:nth-child(3), .bewegt-item:nth-child(4) { border-bottom:none; }
+    .bewegt-item:nth-child(5) { border-bottom:none; border-right:none; }
     .bewegt-nr { font-size:0.68rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--rot); display:block; margin-bottom:0.75rem; }
     .bewegt-item h3 { margin-bottom:0.6rem; }
     .bewegt-item p { font-size:0.9rem; color:var(--grau); line-height:1.65; }
@@ -29,7 +29,6 @@
     @media (max-width:640px) {
       .bewegt-grid { grid-template-columns:1fr; }
       .bewegt-item { border-right:none; }
-      .bewegt-item:nth-child(3) { border-bottom:1px solid var(--linie); }
       .bewegt-item:last-child { border-bottom:none; }
     }
   </style>
@@ -170,6 +169,11 @@
           <h3 data-i18n="b4.h3">Reden ist gut. Schaffen ist besser.</h3>
           <p data-i18n="b4.p">Mit Sublingua und Fizzi &amp; the Prof! baue ich an Dingen, die ich selbst gebraucht hätte: Lernen neu denken, Wissen zugänglich machen. Überzeugungen, die man nicht umsetzt, sind nur Meinungen.</p>
           <a href="projekte.html" class="bewegt-link" data-i18n="b4.link">Projekte →</a>
+        </div>
+        <div class="bewegt-item">
+          <span class="bewegt-nr" data-i18n="b5.nr">Alltag</span>
+          <h3 data-i18n="b5.h3">Geerdet bleiben.</h3>
+          <p data-i18n="b5.p">Mein Hund hält mich geerdet. Wer täglich einem Wesen vertrauen muss, das keine Sprache spricht, lernt anders zuzuhören.</p>
         </div>
       </div>
     </div>

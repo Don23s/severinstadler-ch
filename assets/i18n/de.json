@@ -40,7 +40,7 @@
   },
   "antreibt": {
     "label": "Was mich antreibt",
-    "quote": "„Wer Verantwortung übernimmt, verdient Freiheit. Wer nur optimiert, trägt seinen Teil zur gesellschaftlichen Erosion bei."",
+    "quote": "„Wer Verantwortung übernimmt, verdient Freiheit. Wer nur optimiert, trägt seinen Teil zur gesellschaftlichen Erosion bei.\"",
     "p": "Ich bin SP-Mitglied – und glaube trotzdem an wirtschaftliche Freiheit. Diesen scheinbaren Widerspruch erlebe ich täglich: in Beratungen, in der Interessensvertretung, im Kontakt mit Startups und der Politik. Die Antwort liegt nicht in der Ideologie, sondern im Gespräch.",
     "btn": "Politische Haltung lesen"
   },
@@ -70,6 +70,11 @@
     "h3": "Reden ist gut. Schaffen ist besser.",
     "p": "Mit Sublingua und Fizzi &amp; the Prof! baue ich an Dingen, die ich selbst gebraucht hätte: Lernen neu denken, Wissen zugänglich machen. Überzeugungen, die man nicht umsetzt, sind nur Meinungen.",
     "link": "Projekte →"
+  },
+  "b5": {
+    "nr": "Alltag",
+    "h3": "Geerdet bleiben.",
+    "p": "Mein Hund hält mich geerdet. Wer täglich einem Wesen vertrauen muss, das keine Sprache spricht, lernt anders zuzuhören."
   },
   "sp": {
     "label": "Schwerpunkte",
@@ -268,7 +273,7 @@
     "kicker": "Kommunikation",
     "h1": "Klarheit schaffen.<br>Vertrauen aufbauen.<br>Lösungen ermöglichen.",
     "sub": "Kommunikation geht über Worte hinaus – sie manifestiert sich in Haltung, Struktur und Aufmerksamkeit.",
-    "band": "„Man kann nicht nicht kommunizieren." – Paul Watzlawick",
+    "band": "„Man kann nicht nicht kommunizieren.\" – Paul Watzlawick",
     "haltung_label": "Haltung",
     "haltung_h2": "Warum Kommunikation politisch ist.",
     "haltung_p1": "Ich erlebe täglich, wie gut gemeinte Gespräche scheitern – nicht weil Positionen unvereinbar wären, sondern weil Kommunikation fehlt. In der Schweiz ist das keine persönliche Schwäche, sondern ein strukturelles Problem: Wir sind eine Willensnation – kein gemeinsames Volk, keine gemeinsame Sprache, kein gemeinsames Erbe – sondern ein gemeinsamer Wille. Dieser Wille braucht Pflege. Er entsteht nicht von allein, und er stirbt, wenn wir aufhören, miteinander zu sprechen.",
