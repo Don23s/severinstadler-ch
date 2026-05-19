@@ -9,32 +9,37 @@
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-    <a href="/index.html" class="brand"><span></span>Severin Stadler</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
 
-    <a href="/kommunikation.html">Kommunikation</a>
-    <a href="/politik.html">Politik</a>
-    <a href="/projekte.html">Projekte</a>
-  </div>
-</nav>
+  <nav>
+    <a href="/index.html" class="brand"><span></span>Severin Stadler</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="/politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="/manifest.html" data-i18n="nav.manifest">Manifest</a>
+      <a href="/kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="/projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a href="/kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </div>
+  </nav>
+
   <section class="section" style="min-height: 70vh; display: flex; align-items: center;">
     <div class="container" style="text-align: center;">
       <div style="font-size: 5rem; font-weight: 800; color: var(--rot); line-height: 1; margin-bottom: 1rem;">404</div>
-      <h2 style="margin-bottom: 1rem;">Diese Seite existiert nicht.</h2>
-      <p style="color: var(--grau); font-size: 0.95rem; margin-bottom: 2rem;">
+      <h2 style="margin-bottom: 1rem;" data-i18n="notfound.h2">Diese Seite existiert nicht.</h2>
+      <p style="color: var(--grau); font-size: 0.95rem; margin-bottom: 2rem;" data-i18n="notfound.p">
         Vielleicht wurde der Link verschoben oder es hat sich ein Tippfehler eingeschlichen.
       </p>
-      <a href="/index.html" class="btn">Zur Startseite</a>
+      <a href="/index.html" class="btn" data-i18n="notfound.btn">Zur Startseite</a>
     </div>
   </section>
+
   <footer>
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="/impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="/impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -42,7 +47,10 @@
       </div>
     </div>
   </footer>
-  <script src="assets/main.js"></script>
-  <script src="assets/animations.js"></script>
+
+  <script src="/assets/main.js"></script>
+  <script src="/assets/animations.js"></script>
+  <script src="/assets/i18n.js"></script>
+
 </body>
 </html>

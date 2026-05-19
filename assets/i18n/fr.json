@@ -368,6 +368,20 @@
     "aufruf_btn1": "Lancer la boussole de valeurs",
     "aufruf_btn2": "Prendre contact",
     "footer_info": "<strong>Manifeste – Version 1.0</strong> &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Severin Stadler, Berne<br>Ouvert à la discussion publique &nbsp;·&nbsp; <strong>Libre diffusion avec indication de la source</strong>",
-    "verbindung_label": "Lien avec le modèle"
+    "verbindung_label": "Lien avec le modèle",
+    "nav_kurzfassung": "Résumé",
+    "nav_ausgangslage": "Point de départ",
+    "nav_modell": "Le modèle",
+    "nav_mechanismus": "Mécanisme",
+    "nav_sektoren": "Secteurs",
+    "nav_fundamente": "Fondements",
+    "nav_einordnung": "Positionnement",
+    "nav_volltext": "Texte intégral",
+    "nav_aufruf": "Appel"
+  },
+  "notfound": {
+    "h2": "Cette page n'existe pas.",
+    "p": "Le lien a peut-être été déplacé ou il s'est glissé une faute de frappe.",
+    "btn": "Retour à l'accueil"
   }
 }

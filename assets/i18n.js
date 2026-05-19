@@ -57,6 +57,11 @@
       });
   }
 
+  function switchLang(lang) {
+    localStorage.setItem(STORAGE_KEY, lang);
+    location.reload();
+  }
+
   function buildSwitcher() {
     var nav = document.querySelector('nav .nav-links');
     if (!nav) return;
@@ -68,7 +73,7 @@
       btn.dataset.lang = l;
       btn.textContent = l.toUpperCase();
       btn.setAttribute('aria-label', 'Language ' + l);
-      btn.addEventListener('click', function() { loadAndApply(l); });
+      btn.addEventListener('click', function() { switchLang(l); });
       switcher.appendChild(btn);
     });
     nav.appendChild(switcher);

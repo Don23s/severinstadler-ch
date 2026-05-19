@@ -368,6 +368,20 @@
     "aufruf_btn1": "Avviare la bussola dei valori",
     "aufruf_btn2": "Prendere contatto",
     "footer_info": "<strong>Manifesto – Versione 1.0</strong> &nbsp;·&nbsp; Maggio 2026 &nbsp;·&nbsp; Severin Stadler, Berna<br>Pubblicato per la discussione pubblica &nbsp;·&nbsp; <strong>Libera diffusione con indicazione della fonte</strong>",
-    "verbindung_label": "Collegamento con il modello"
+    "verbindung_label": "Collegamento con il modello",
+    "nav_kurzfassung": "Riepilogo",
+    "nav_ausgangslage": "Punto di partenza",
+    "nav_modell": "Il modello",
+    "nav_mechanismus": "Meccanismo",
+    "nav_sektoren": "Settori",
+    "nav_fundamente": "Fondamenti",
+    "nav_einordnung": "Inquadramento",
+    "nav_volltext": "Testo completo",
+    "nav_aufruf": "Appello"
+  },
+  "notfound": {
+    "h2": "Questa pagina non esiste.",
+    "p": "Forse il link è stato spostato o si è insinuato un errore di battitura.",
+    "btn": "Alla pagina iniziale"
   }
 }

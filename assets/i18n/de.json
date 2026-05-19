@@ -368,6 +368,20 @@
     "aufruf_btn1": "Haltungskompass starten",
     "aufruf_btn2": "Kontakt aufnehmen",
     "footer_info": "<strong>Manifest – Version 1.0</strong> &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Severin Stadler, Bern<br>Zur öffentlichen Diskussion freigegeben &nbsp;·&nbsp; <strong>Zur freien Weiterverbreitung mit Quellenangabe</strong>",
-    "verbindung_label": "Verbindung zum Modell"
+    "verbindung_label": "Verbindung zum Modell",
+    "nav_kurzfassung": "Kurzfassung",
+    "nav_ausgangslage": "Ausgangslage",
+    "nav_modell": "Das Modell",
+    "nav_mechanismus": "Mechanismus",
+    "nav_sektoren": "Sektoren",
+    "nav_fundamente": "Fundamente",
+    "nav_einordnung": "Einordnung",
+    "nav_volltext": "Volltext",
+    "nav_aufruf": "Aufruf"
+  },
+  "notfound": {
+    "h2": "Diese Seite existiert nicht.",
+    "p": "Vielleicht wurde der Link verschoben oder es hat sich ein Tippfehler eingeschlichen.",
+    "btn": "Zur Startseite"
   }
 }

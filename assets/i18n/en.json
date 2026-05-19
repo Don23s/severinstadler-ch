@@ -368,6 +368,20 @@
     "aufruf_btn1": "Start values compass",
     "aufruf_btn2": "Get in touch",
     "footer_info": "<strong>Manifesto – Version 1.0</strong> &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Severin Stadler, Bern<br>Released for public discussion &nbsp;·&nbsp; <strong>Free redistribution with attribution</strong>",
-    "verbindung_label": "Connection to the model"
+    "verbindung_label": "Connection to the model",
+    "nav_kurzfassung": "Summary",
+    "nav_ausgangslage": "Starting point",
+    "nav_modell": "The model",
+    "nav_mechanismus": "Mechanism",
+    "nav_sektoren": "Sectors",
+    "nav_fundamente": "Foundations",
+    "nav_einordnung": "Classification",
+    "nav_volltext": "Full text",
+    "nav_aufruf": "Call to action"
+  },
+  "notfound": {
+    "h2": "This page does not exist.",
+    "p": "Maybe the link was moved or there's a typo somewhere.",
+    "btn": "Go to homepage"
   }
 }
