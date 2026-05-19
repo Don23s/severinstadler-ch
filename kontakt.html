@@ -129,7 +129,7 @@
           <div>
             <h3>E-Mail</h3>
             <p style="font-size: 0.95rem; color: var(--grau);">
-              <a href="mailto:severin23stadler@gmail.com" style="color: var(--rot); text-decoration: none; font-weight: 500;">severin23stadler@gmail.com</a>
+              <a id="email-link" href="#" style="color: var(--rot); text-decoration: none; font-weight: 500;"></a>
             </p>
           </div>
           <div>
@@ -172,6 +172,13 @@
   <script src="assets/animations.js"></script>
   <script src="assets/i18n.js"></script>
   <script>
+    (function() {
+      var u = 'severin23stadler';
+      var d = 'gmail.com';
+      var el = document.getElementById('email-link');
+      el.href = 'mailto:' + u + '@' + d;
+      el.textContent = u + '@' + d;
+    })();
     if (window.location.search.includes('success=true')) {
       document.getElementById('formSuccess').style.display = 'block';
       document.getElementById('kontaktForm').style.display = 'none';

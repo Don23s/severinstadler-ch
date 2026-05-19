@@ -68,9 +68,9 @@ nav.nav--dark a:not(.brand) { color: rgba(255, 255, 255, 0.6); }
 nav.nav--dark a:not(.brand):hover { color: #fff; }
 nav.nav--dark a.active { color: #fff; border-bottom-color: #fff; }
 nav.nav--dark .nav-toggle span { background: #fff; }
-nav.nav--dark .lang-btn { color: rgba(255, 255, 255, 0.55); }
-nav.nav--dark .lang-btn:hover { color: #fff; }
-nav.nav--dark .lang-btn.active { color: #fff; background: rgba(255, 255, 255, 0.14); }
+nav.nav--dark .lang-btn { color: rgba(255, 255, 255, 0.45); }
+nav.nav--dark .lang-btn:hover { color: #fff; opacity: 1; }
+nav.nav--dark .lang-btn.active { color: #fff; background: rgba(255, 255, 255, 0.14); opacity: 1; }
 
 .nav-links {
   display: flex;
@@ -803,14 +803,14 @@ nav .nav-links a.active::after {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--grau);
+  color: rgba(17,17,17,0.45);
   cursor: pointer;
   padding: 0.2rem 0.3rem;
   border-radius: 3px;
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.15s, background 0.15s, opacity 0.15s;
 }
-.lang-btn:hover { color: var(--rot); }
-.lang-btn.active { color: var(--rot); background: var(--rot-licht); }
+.lang-btn:hover { color: var(--rot); opacity: 1; }
+.lang-btn.active { color: var(--rot); background: var(--rot-licht); opacity: 1; }
 
 @media (max-width: 768px) {
   .lang-switcher { margin-left: 0; margin-top: 0.5rem; }
