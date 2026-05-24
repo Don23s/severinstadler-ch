@@ -685,6 +685,16 @@
 
     /* ── Print / PDF ── */
     @media print {
+      /* Reveal-Animationen aufheben: alle Inhalte sichtbar */
+      [data-reveal],
+      [data-stagger],
+      [data-stagger] > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      /* UI-Elemente ausblenden */
       #manifest-progress,
       .version-banner,
       nav,
@@ -692,34 +702,78 @@
       .chapnav-float,
       .chapnav-overlay,
       .manifest-share,
-      .manifest-footer-info,
-      footer,
-      [data-reveal] { display: block !important; opacity: 1 !important; transform: none !important; }
+      .haltung-band,
+      footer { display: none !important; }
 
-      nav, #manifest-progress, .manifest-chapnav, .chapnav-float, .chapnav-overlay { display: none !important; }
+      /* Grundtypografie */
+      body { font-size: 11pt; color: #111; background: #fff; }
+      a { color: inherit; text-decoration: none; }
 
-      body { font-size: 11pt; color: #111; }
+      /* Seitenränder */
+      @page { margin: 2.2cm 2.8cm 2.5cm; }
+      @page :first { margin-top: 1.5cm; }
 
-      .manifest-hero { padding: 2rem 0 1.5rem; }
-      .manifest-titel { font-size: 2rem; }
-      .manifest-untertitel { font-size: 1.1rem; }
+      /* Hero */
+      .manifest-hero { padding: 1rem 0 1.5rem; max-width: 100%; margin: 0; }
+      .manifest-datum { border-color: var(--rot); }
+      .manifest-titel { font-size: 2.2rem; }
+      .manifest-untertitel { font-size: 1.15rem; }
+      .manifest-intro { border-left: 3px solid var(--rot); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-      .section, .section-statement, .section-warm { page-break-inside: avoid; padding: 1.5rem 0; }
-      .section-statement { background: #111 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .manifest-schluss { background: #111 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      /* Container */
+      .container { max-width: 100%; padding: 0; }
+
+      /* Sektionen: dunkle Hintergründe → weiss mit rotem Akzent */
+      .section, .section-warm { padding: 1.5rem 0; break-inside: avoid; }
+      .section-statement {
+        background: #fff !important;
+        border-top: 3px solid #111;
+        border-bottom: 1px solid #ddd;
+        padding: 1.5rem 0;
+        break-inside: avoid;
+      }
+      .section-statement h2,
+      .section-statement h3 { color: #111 !important; }
+      .section-statement p,
+      .section-statement blockquote { color: #333 !important; }
+      .section-statement blockquote { border-left-color: var(--rot); }
+
       .section-warm { background: #f7f4f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-      .haltung-band { display: none; }
-      .container { max-width: 100%; padding: 0 1.5rem; }
+      /* Schluss */
+      .manifest-schluss {
+        background: #fff !important;
+        border-top: 3px solid #111;
+        padding: 2rem 2.8cm;
+        break-inside: avoid;
+      }
+      .manifest-schluss blockquote,
+      .manifest-schluss p { color: #111 !important; }
 
-      .drei-grid { grid-template-columns: 1fr 1fr 1fr; }
+      /* Grids: 2 Spalten statt 3 (besser auf A4) */
+      .drei-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .quellen-grid { grid-template-columns: 1fr 1fr; }
 
-      .manifest-footer-info { display: block !important; }
+      /* Nicht-Sondern */
+      .nicht-sondern { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
 
-      @page {
-        margin: 2cm 2.5cm;
-        @bottom-right { content: "Manifest – Solidarischer Liberalismus · Severin Stadler · " counter(page); font-size: 8pt; color: #999; }
+      /* Pull-Quotes */
+      .pull-quote { break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      /* Footer-Info bleibt sichtbar */
+      .manifest-footer-info {
+        display: block !important;
+        border-top: 1px solid #ddd;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: #999;
+      }
+
+      /* Seitennummer unten rechts (Chrome/Edge) */
+      .manifest-footer-info::after {
+        content: " · Seite " counter(page);
+        color: #bbb;
       }
     }
   </style>
