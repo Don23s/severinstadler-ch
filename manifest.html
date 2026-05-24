@@ -64,17 +64,17 @@
     }
 
     .chapnav-label {
-      opacity: 1;
+      opacity: 0;
       color: var(--rot);
       background: rgba(255, 255, 255, 0.5);
       padding: 0.15rem 0.45rem;
       border-radius: 2px;
-      transition: background 0.2s, font-weight 0.15s;
+      transition: opacity 0.2s;
     }
 
     .chapnav-item.active { color: var(--rot); }
     .chapnav-item.active .chapnav-label {
-      background: rgba(255, 255, 255, 0.85);
+      opacity: 1;
       font-weight: 800;
     }
     .chapnav-item.active .chapnav-dot {
