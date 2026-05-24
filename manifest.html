@@ -601,15 +601,40 @@
       letter-spacing: 0.03em;
     }
 
+    /* ── Nicht / Sondern Callout ── */
+    .nicht-sondern {
+      background: var(--warm);
+      border-left: 3px solid var(--rot);
+      padding: 1rem 1.5rem;
+      margin: 1.75rem 0;
+      max-width: 660px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .nicht-sondern p { margin: 0.2rem 0; }
+    .nicht-sondern .nicht { color: var(--grau); }
+    .nicht-sondern .sondern { font-weight: 600; color: var(--text); }
+
+    /* ── Quellen ── */
+    .quellen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 2rem;
+      margin-top: 2rem;
+      max-width: 760px;
+    }
+    .quellen-item {
+      font-size: 0.82rem;
+      color: var(--grau);
+      line-height: 1.5;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--linie);
+    }
+    .quellen-item strong { color: var(--text); }
+
     @media (max-width: 640px) {
       .manifest-hero { padding: 3.5rem 1.25rem 2rem; }
-      .weg-grid { grid-template-columns: 1fr; }
-      .dreieck-grid { grid-template-columns: 1fr; }
-      .dreieck-node { border-right: none; border-bottom: 1px solid var(--linie); }
-      .dreieck-node:last-child { border-bottom: none; }
-      .partei-item { grid-template-columns: 1fr; gap: 0.2rem; }
-      .akkordeon-body { padding-left: 1.5rem; }
-      .kurzfassung-box { padding: 1.5rem; }
+      .quellen-grid { grid-template-columns: 1fr; }
     }
   </style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
@@ -618,7 +643,7 @@
 
   <div id="manifest-progress"></div>
 
-  <div class="version-banner" data-i18n="manifest.version_banner">Manifest – Version 1.0 &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Zur öffentlichen Diskussion freigegeben</div>
+  <div class="version-banner">Manifest – Version 3.0 &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Entwurf zur Diskussion</div>
 
   <nav>
     <a href="index.html" class="brand"><span></span>Severin Stadler</a>
@@ -636,258 +661,326 @@
 
   <!-- Sticky Chapter Nav (Desktop) -->
   <nav class="manifest-chapnav" id="manifest-chapnav" aria-label="Kapitelnavigation">
-    <a href="#kurzfassung" class="chapnav-item" data-section="kurzfassung">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_kurzfassung">Kurzfassung</span>
+    <a href="#einleitung" class="chapnav-item" data-section="einleitung">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Willensnation</span>
     </a>
-    <a href="#ausgangslage" class="chapnav-item" data-section="ausgangslage">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_ausgangslage">Ausgangslage</span>
+    <a href="#methode" class="chapnav-item" data-section="methode">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Ermöglichungspolitik</span>
     </a>
-    <a href="#das-modell" class="chapnav-item" data-section="das-modell">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_modell">Das Modell</span>
+    <a href="#werkzeug1" class="chapnav-item" data-section="werkzeug1">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Sol. Liberalismus</span>
     </a>
-    <a href="#mechanismus" class="chapnav-item" data-section="mechanismus">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_mechanismus">Mechanismus</span>
+    <a href="#gesundheit" class="chapnav-item" data-section="gesundheit">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Gesundheit</span>
     </a>
-    <a href="#sektoren" class="chapnav-item" data-section="sektoren">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_sektoren">Sektoren</span>
+    <a href="#wohnen" class="chapnav-item" data-section="wohnen">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Wohnen</span>
     </a>
-    <a href="#fundamente" class="chapnav-item" data-section="fundamente">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_fundamente">Fundamente</span>
+    <a href="#bildung" class="chapnav-item" data-section="bildung">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Bildung</span>
     </a>
-    <a href="#einordnung" class="chapnav-item" data-section="einordnung">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_einordnung">Einordnung</span>
+    <a href="#finanzierung" class="chapnav-item" data-section="finanzierung">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Finanzierung</span>
     </a>
-    <a href="#volltext" class="chapnav-item" data-section="volltext">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_volltext">Volltext</span>
+    <a href="#werkzeug2" class="chapnav-item" data-section="werkzeug2">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Konstr. Demokratie</span>
+    </a>
+    <a href="#demokratie" class="chapnav-item" data-section="demokratie">
+      <span class="chapnav-dot"></span><span class="chapnav-label">Bedürfnis &amp; Sicherheit</span>
     </a>
     <a href="#aufruf" class="chapnav-item" data-section="aufruf">
-      <span class="chapnav-dot"></span><span class="chapnav-label" data-i18n="manifest.nav_aufruf">Aufruf</span>
+      <span class="chapnav-dot"></span><span class="chapnav-label">Einladung</span>
     </a>
   </nav>
 
   <!-- Float Button + Overlay (Mobile / Tablet) -->
-  <button class="chapnav-float" id="chapnav-float-btn" aria-label="Kapitel wählen" data-i18n="manifest.float_btn">
+  <button class="chapnav-float" id="chapnav-float-btn" aria-label="Kapitel wählen">
     ≡ &nbsp;Kapitel
   </button>
 
   <div class="chapnav-overlay" id="chapnav-overlay" role="dialog" aria-modal="true">
     <div class="chapnav-sheet">
-      <div class="chapnav-sheet-title" data-i18n="manifest.chapnav_title">Kapitel</div>
-      <a href="#kurzfassung"><span class="sheet-nr">Kurz</span><span data-i18n="manifest.nav_kurzfassung">Kurzfassung</span></a>
-      <a href="#ausgangslage"><span class="sheet-nr">1/1a</span><span data-i18n="manifest.nav_ausgangslage">Ausgangslage</span></a>
-      <a href="#das-modell"><span class="sheet-nr">Modell</span><span data-i18n="manifest.nav_modell">Das Solidaritätsdreieck</span></a>
-      <a href="#mechanismus"><span class="sheet-nr">5</span><span data-i18n="manifest.nav_mechanismus">Zwei Wege, ein Ziel</span></a>
-      <a href="#sektoren"><span class="sheet-nr">7</span><span data-i18n="manifest.nav_sektoren">Gesellschaftliche Sektoren</span></a>
-      <a href="#fundamente"><span class="sheet-nr">2</span><span data-i18n="manifest.nav_fundamente">Intellektuelle Fundamente</span></a>
-      <a href="#einordnung"><span class="sheet-nr">3/9</span><span data-i18n="manifest.nav_einordnung">Politische Einordnung</span></a>
-      <a href="#volltext"><span class="sheet-nr">1–10</span><span data-i18n="manifest.nav_volltext">Volltext Akkordeon</span></a>
-      <a href="#aufruf"><span class="sheet-nr">10</span><span data-i18n="manifest.nav_aufruf">Unser Aufruf</span></a>
+      <div class="chapnav-sheet-title">Kapitel</div>
+      <a href="#einleitung"><span class="sheet-nr">1</span><span>Willensnation</span></a>
+      <a href="#methode"><span class="sheet-nr">2</span><span>Ermöglichungspolitik</span></a>
+      <a href="#werkzeug1"><span class="sheet-nr">3</span><span>Solidarischer Liberalismus</span></a>
+      <a href="#gesundheit"><span class="sheet-nr">4</span><span>Gesundheit</span></a>
+      <a href="#wohnen"><span class="sheet-nr">5</span><span>Wohnen</span></a>
+      <a href="#bildung"><span class="sheet-nr">6</span><span>Bildung</span></a>
+      <a href="#finanzierung"><span class="sheet-nr">7</span><span>Finanzierung</span></a>
+      <a href="#werkzeug2"><span class="sheet-nr">8</span><span>Konstruktive Demokratie</span></a>
+      <a href="#demokratie"><span class="sheet-nr">9</span><span>Bedürfnis &amp; Sicherheit</span></a>
+      <a href="#aufruf"><span class="sheet-nr">10</span><span>Einladung</span></a>
     </div>
   </div>
 
   <!-- Hero -->
   <div class="manifest-hero">
-    <span class="manifest-datum">Mai 2026 – Entwurf zur öffentlichen Diskussion</span>
+    <span class="manifest-datum">Mai 2026 – Version 3.0</span>
     <h1 class="manifest-titel">Solidarischer Liberalismus</h1>
-    <p class="manifest-untertitel">Das Kreislaufmodell Schweiz</p>
+    <p class="manifest-untertitel">Eine Methode. Zwei Werkzeuge. Eine Schweiz.</p>
     <p class="manifest-intro">
-      Die Schweiz steht an einem Scheideweg. Wenn wir Wohlstand und Zusammenhalt bewahren wollen, brauchen wir ein neues Gleichgewicht zwischen Wirtschaft, Staat und Bevölkerung – einen <strong>sozialwirtschaftlichen Aufbruch</strong>, der alle drei Kräfte erstmals gemeinsam und vereint auftreten lässt.
+      Die Schweiz entstand nicht durch eine gemeinsame Sprache, Ethnie oder Religion. Sie entstand durch eine Entscheidung: gemeinsam zu leben. Dieser Wille ist unser Fundament — und der Boden, auf dem alle Werkzeuge dieses Manifests stehen.
     </p>
     <div class="manifest-meta">Severin Stadler &nbsp;·&nbsp; Bern, Mai 2026</div>
-    <div class="reading-time">&#9679; ca. 15 Minuten Lesezeit</div>
+    <div class="reading-time">&#9679; ca. 12 Minuten Lesezeit</div>
   </div>
 
-  <div class="haltung-band sans" data-i18n="manifest.band">
-    Solidarität &nbsp;·&nbsp; Freiheit &nbsp;·&nbsp; Verantwortung &nbsp;·&nbsp; Demokratie
+  <div class="haltung-band sans">
+    Ermöglichungspolitik &nbsp;·&nbsp; Solidarischer Liberalismus &nbsp;·&nbsp; Konstruktive Demokratie
   </div>
 
-  <!-- Kurzfassung -->
-  <section class="section" id="kurzfassung" data-section="kurzfassung" data-reveal>
+  <!-- 1. Einleitung – Willensnation -->
+  <section class="section section-statement" id="einleitung" data-section="einleitung" data-reveal>
     <div class="container">
-      <span class="section-label sans">Kurzfassung</span>
-      <h2>Das Modell auf einen Blick.</h2>
-      <div class="kurzfassung-box">
-        <p>Die Schweiz steht vor einem strukturellen Problem: Der Sozialstaat wird teurer, die Unternehmen mobiler – und die Kluft zwischen Wirtschaft und Gesellschaft wächst. Unternehmen entrichten Steuern, aber gestalten nicht; der Staat verteilt, aber ohne die Wirtschaft einzubinden.</p>
-        <p>Der Solidarische Liberalismus schlägt einen neuen Gesellschaftsvertrag vor: Alle Unternehmen mit Bundessteuerpflicht leisten einen Solidaritätsbeitrag von <strong>5 % ihres steuerbaren Reingewinns</strong> – und entscheiden selbst, wie er eingesetzt wird. Wer regional investiert (Weg A), zahlt keine neue Bundessteuer und behält das Recht, seinen bestehenden Steueranteil einem gesellschaftlichen Sektor zu widmen; wer den Bund beauftragt (Weg B), erhält das vollständige Mitgestaltungsrecht über sieben Sektoren: Bildung, Gesundheit, Forschung, Sicherheit, Kultur, Umwelt und Soziales.</p>
-        <p>Das Parlament berücksichtigt die Unternehmenspräferenzen und begründet Abweichungen öffentlich – so entsteht ein Kreislauf, in dem Wirtschaft, Staat und Bevölkerung erstmals gemeinsam Verantwortung tragen.</p>
-        <p><strong>Dies ist kein Bruch mit dem Schweizer Weg, sondern seine Weiterentwicklung.</strong> Wir rufen Politik, Wirtschaft und Gesellschaft auf, diesen Aufbruch gemeinsam zu gestalten.</p>
-      </div>
-      <p class="kurzfassung-footnote">Das vollständige Manifest mit allen Kapiteln findet sich im Abschnitt «Volltext» weiter unten. Rechtliche und steuerrechtliche Präzisierungen sind im separaten Anhang A2 dokumentiert.</p>
+      <span class="section-label sans">Fundament</span>
+      <h2>Die Willensnation.</h2>
+      <p style="font-size:1rem;color:rgba(255,255,255,0.8);max-width:660px;line-height:1.8;margin-bottom:1.5rem;">Die Schweiz ist ein Sonderfall der Weltgeschichte. Sie entstand nicht durch eine gemeinsame Sprache — sie hat vier. Nicht durch eine gemeinsame Religion — sie hat viele. Nicht durch ethnische Gemeinsamkeit — sie hat keine. Die Schweiz entstand durch eine Entscheidung: gemeinsam zu leben.</p>
+      <blockquote>«Une nation est un plébiscite de tous les jours.»<br><span style="font-size:0.8rem;font-weight:400;opacity:0.7;">— Ernest Renan, 1882</span></blockquote>
+      <p style="font-size:1rem;color:rgba(255,255,255,0.8);max-width:660px;line-height:1.8;margin-top:1.5rem;">Die Schweiz lebt das — durch direkte Demokratie, durch Kantonsvielfalt, durch die tägliche Wahl, Teil dieses Projekts zu sein. Das ist keine Sentimentalität. Es ist das einzige Fundament, das in einer pluralistischen, mobilen, digitalisierten Gesellschaft wirklich trägt.</p>
+      <p style="font-size:1.05rem;font-weight:600;color:#fff;margin-top:2rem;line-height:1.6;">Herkunft kann man nicht wählen.<br>Den Willen zur Gemeinschaft schon.</p>
     </div>
   </section>
 
-  <!-- 1. Ausgangslage -->
-  <section class="section section-warm" id="ausgangslage" data-section="ausgangslage" data-reveal>
+  <!-- 2. Methode – Ermöglichungspolitik -->
+  <section class="section section-warm" id="methode" data-section="methode" data-reveal>
     <div class="container">
-      <span class="section-label sans">Ausgangslage</span>
-      <h2>Warum es jetzt ein neues Denken braucht.</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
-        Die politischen Modelle des 20. Jahrhunderts stossen an ihre Grenzen. Drei Entwicklungen machen ein neues Modell unausweichlich.
-      </p>
+      <span class="section-label sans">Die Methode</span>
+      <h2>Ermöglichungspolitik.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">Isaiah Berlin unterschied 1958 zwei Formen von Freiheit: die negative — nicht gehindert werden — und die positive — tatsächlich befähigt sein zu handeln. Beide sind notwendig. Ermöglichungspolitik nimmt beide ernst.</p>
       <div class="drei-grid" style="margin-top:2.5rem;">
         <div class="drei-item">
-          <span class="nummer sans">Sozialstaat</span>
-          <h3>Steigende Kosten, knappe Mittel</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Demografischer Wandel und wachsende Ungleichheit belasten die öffentlichen Haushalte. Die Schere zwischen dem, was der Staat leisten soll, und dem, was er leisten kann, wird grösser.</p>
+          <span class="nummer sans">01</span>
+          <h3>Ermöglichen statt Verbieten</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Der Staat macht das Richtige attraktiv — er zwingt nicht. Anreize vor Verboten.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Wirtschaft</span>
-          <h3>Mobile Konzerne, gebundene Gesellschaft</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Unternehmen können Standorte in Wochen verlagern. Bevölkerung und Staat können es nicht. Die Bindung zwischen wirtschaftlichem Erfolg und gesellschaftlicher Verantwortung ist brüchig geworden.</p>
+          <span class="nummer sans">02</span>
+          <h3>Verbinden statt Abgrenzen</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Kleinste Gemeinsamkeiten sind Baumaterial, keine Schwäche. Dialog vor Position.</p>
         </div>
         <div class="drei-item">
-          <span class="nummer sans">Demokratie</span>
-          <h3>Vertrauensverlust, Polarisierung</h3>
-          <p style="font-size:0.88rem;color:var(--grau);">Politische Polarisierung und Vertrauensverlust bedrohen die demokratische Kultur. Digitale Desinformation beschleunigt Spaltung. Die alte Langsamkeit der Demokratie schützt nicht mehr ausreichend.</p>
+          <span class="nummer sans">03</span>
+          <h3>Evidenz statt Ideologie</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Was wirkt, zählt — unabhängig davon, woher die Idee kommt. Wirkung vor Herkunft.</p>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--grau);max-width:640px;margin-top:2rem;border-left:2px solid var(--linie);padding-left:1rem;">Dieser Ansatz funktioniert nur, wenn strukturelle Machtungleichgewichte — Lobbyismus, Kapitalmacht, Informationsasymmetrien — durch Transparenzpflichten und institutionelle Gegengewichte adressiert werden. Ermöglichungspolitik ist kein Vertrauen auf guten Willen. Sie ist ein Rahmen, der guten Willen nicht voraussetzen muss.</p>
+    </div>
+  </section>
+
+  <!-- 3. Werkzeug 1 – Solidarischer Liberalismus -->
+  <section class="section" id="werkzeug1" data-section="werkzeug1" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Werkzeug 1</span>
+      <h2>Solidarischer Liberalismus. <span style="font-weight:400;color:var(--grau);">Die wirtschaftliche Linse.</span></h2>
+      <p style="font-size:0.8rem;font-weight:700;color:var(--rot);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.5rem;">Kernfrage: Wie organisieren wir Märkte und Wohlstand?</p>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;margin-bottom:1.5rem;">Märkte sind Werkzeuge. Ein Hammer entscheidet nicht, was gebaut wird — das tut die Gesellschaft. Wirtschaftliche Freiheit ist kein Selbstzweck. Sie ist das wirksamste Mittel, das wir kennen, um Wohlstand zu schaffen — wenn sie eingebettet bleibt in gesellschaftliche Verantwortung. Wo diese Einbettung fehlt, entsteht nicht Freiheit, sondern Extraktion.</p>
+      <blockquote class="pull-quote">«To allow the market mechanism to be sole director of the fate of human beings and their natural environment would result in the demolition of society.»<br><span style="font-size:0.78rem;font-weight:400;color:var(--grau);">— Karl Polanyi, The Great Transformation (1944)</span></blockquote>
+      <p style="font-size:0.88rem;color:var(--grau);max-width:640px;">Elinor Ostrom zeigte empirisch — wofür sie 2009 den Nobelpreis erhielt — dass Gemeinschaftsgüter weder durch den Staat allein noch durch den Markt allein nachhaltig verwaltet werden. Gemeinschaften, die ihre eigenen Regeln entwickeln, sind resilienter als beides. Das ist das Fundament des Solidarischen Liberalismus.</p>
+    </div>
+  </section>
+
+  <!-- 4. Gesundheit -->
+  <section class="section section-warm" id="gesundheit" data-section="gesundheit" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Gesundheit</span>
+      <h2>Prävention als gesellschaftliche Investition.</h2>
+      <div class="nicht-sondern">
+        <p><span class="nicht">Nicht:</span> Rationierung vs. Vollversicherung.</p>
+        <p><span class="sondern">Sondern:</span> Wer gesund lebt, entlastet alle — und verdient einen solidarischen Rückfluss.</p>
+      </div>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;">Geoffrey Rose zeigte 1992: Kleine Risikoverschiebungen in der gesamten Bevölkerung wirken stärker als intensive Behandlung weniger Hochrisikopersonen. Michael Marmots Forschung belegt: Gesundheit folgt einem sozialen Gradienten — Lebensbedingungen bestimmen den Gesundheitszustand stärker als medizinische Versorgung. Prävention ist Sozialpolitik. Und sie rechnet sich.</p>
+      <h3 style="margin-top:2rem;margin-bottom:0.75rem;font-size:1rem;">Der Mechanismus</h3>
+      <p style="font-size:0.88rem;color:var(--grau);max-width:640px;">Die Teilnahme ist freiwillig. Wer mitmacht, erteilt seiner Krankenkasse die Einwilligung, Präventionsleistungen zu erfassen — die Krankenkasse hält diese Daten bereits, sie verlassen den Versicherer nie namentlich. Anonymisierte Aggregate gehen an den Bund. Dieser bewertet den gesellschaftlichen Nutzen und gibt einen Kickback an die Krankenkassen zurück — als Prämienreduktion an die teilnehmenden Versicherten.</p>
+      <p style="font-size:0.82rem;color:var(--grau);max-width:640px;margin-top:1rem;border-left:2px solid var(--linie);padding-left:1rem;">Kein neues Überwachungssystem. Bestehende Strukturen, neu genutzt. Die Umsetzung erfordert eine gesetzliche Grundlage für die anonymisierte Bundesaggregation — eine parlamentarische Aufgabe, kein technisches Hindernis.</p>
+      <p style="font-size:0.78rem;color:var(--grau);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--linie);">Vorbild: Singapurs Healthy365-Programm — staatlich koordiniertes Präventionssystem mit direktem finanziellem Rückfluss an Teilnehmende, seit 2015 in Betrieb.</p>
+    </div>
+  </section>
+
+  <!-- 5. Wohnen -->
+  <section class="section" id="wohnen" data-section="wohnen" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Wohnen</span>
+      <h2>Lebensraum statt Rendite.</h2>
+      <div class="nicht-sondern">
+        <p><span class="nicht">Nicht:</span> Mieterschutz vs. Eigentumsfreiheit.</p>
+        <p><span class="sondern">Sondern:</span> Bauen, wo Gemeinschaft entsteht, verdient staatliche Unterstützung.</p>
+      </div>
+      <blockquote class="pull-quote">«The networks of civic engagement foster norms of generalized reciprocity and encourage the emergence of social trust.»<br><span style="font-size:0.78rem;font-weight:400;color:var(--grau);">— Robert Putnam, Bowling Alone (2000)</span></blockquote>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;">Putnam zeigte empirisch: gemeinsame Räume und Nachbarschaftsstrukturen sind Fundament demokratischer Teilhabe. Wie wir wohnen, bestimmt wie wir uns begegnen — oder ob wir es überhaupt tun.</p>
+      <h3 style="margin-top:2rem;margin-bottom:1rem;font-size:1rem;">Förderkriterien (nach Jane Jacobs)</h3>
+      <div class="drei-grid">
+        <div class="drei-item">
+          <span class="nummer sans">Mischnutzung</span>
+          <p style="font-size:0.88rem;color:var(--grau);">Wohnen, Gewerbe und Gemeinschaftsflächen in einem Projekt.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Gesellschaftsbezug</span>
+          <p style="font-size:0.88rem;color:var(--grau);">Einbezug von Quartierbevölkerung, Vereinen und lokaler Wirtschaft.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Nachhaltigkeit</span>
+          <p style="font-size:0.88rem;color:var(--grau);">Ökologisch und sozial — Langzeitperspektive statt kurzfristiger Rendite.</p>
+        </div>
+      </div>
+      <p style="font-size:0.88rem;color:var(--grau);max-width:640px;margin-top:1.5rem;">Kein Verbot — ein Anreiz. Wer baut, wo Gemeinschaft entsteht, erhält staatliche Unterstützung.</p>
+    </div>
+  </section>
+
+  <!-- 6. Bildung -->
+  <section class="section section-warm" id="bildung" data-section="bildung" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Bildung</span>
+      <h2>Befähigung statt Zertifikat.</h2>
+      <div class="nicht-sondern">
+        <p><span class="nicht">Nicht:</span> Staatsschule vs. Privatschule.</p>
+        <p><span class="sondern">Sondern:</span> Jede Bildungsform, die Menschen befähigt, autonom und solidarisch zu leben, verdient Unterstützung.</p>
+      </div>
+      <blockquote class="pull-quote">«Development can be seen as a process of expanding the real freedoms that people enjoy.»<br><span style="font-size:0.78rem;font-weight:400;color:var(--grau);">— Amartya Sen, Development as Freedom (1999), Nobelpreis 1998</span></blockquote>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;">Bildung ist nicht das, was in Schulen passiert. Bildung ist alles, was Menschen befähigt — zu denken, zu entscheiden, beizutragen. Howard Gardner zeigte 1983, dass Lernfähigkeit in vielen Formen erscheint, weit über das hinaus, was klassische Schulen messen.</p>
+      <div class="drei-grid" style="margin-top:2.5rem;">
+        <div class="drei-item">
+          <span class="nummer sans">Persönliches Bildungskonto</span>
+          <h3>Staatliches Guthaben für alle</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Aktivierbar für formale und informale Lernwege — nicht gebunden an Institutionen, sondern an nachgewiesene Befähigung.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Informale Anerkennung</span>
+          <h3>Freiwilligenarbeit als Kompetenz</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Selbststudium, Nachbarschaftsprojekte, Betreuungsarbeit schaffen Kompetenzen. Wer sie nachweist, erhält staatliche Anerkennung.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Vorbild</span>
+          <h3>SkillsFuture Singapur</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Staatliches Bildungsguthaben für alle Bürgerinnen, einsetzbar für formale wie informale Weiterbildung — von der OECD als Modell ausgezeichnet.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. Das Solidaritätsdreieck -->
-  <section class="section" id="das-modell" data-section="das-modell" data-reveal>
+  <!-- 7. Finanzierung -->
+  <section class="section" id="finanzierung" data-section="finanzierung" data-reveal>
     <div class="container">
-      <span class="section-label sans">Das Modell</span>
-      <h2>Das Solidaritätsdreieck.</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
-        Ein neuer Gesellschaftsvertrag zwischen drei Kräften – die nicht gegeneinander, sondern miteinander wirken.
-      </p>
-      <div class="dreieck-grid">
-        <div class="dreieck-node">
-          <span class="dreieck-icon">Bevölkerung</span>
-          <h3>Legitimität &amp; Arbeit</h3>
-          <p>Legitimiert das Gemeinwesen, zahlt Steuern, bringt Arbeit und Wissen ein. Erhält Teilhabe – als Anerkennung, dass wirtschaftlicher Erfolg immer ein gemeinsamer Erfolg ist.</p>
+      <span class="section-label sans">Finanzierung</span>
+      <h2>Gemeinsam investieren, gemeinsam profitieren.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">Kein Vorschlag ohne Finanzierungslogik. Die drei beschriebenen Bereiche brauchen keine neue Steuer. Sie brauchen eine neue Architektur.</p>
+      <div class="drei-grid" style="margin-top:2.5rem;">
+        <div class="drei-item">
+          <span class="nummer sans">Kreis 1 · Staat · 30–40 %</span>
+          <h3>Grundausstattung</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Keine Neuausgaben, sondern Umschichtung: Bestehende Bildungs- und Sozialausgaben werden auf wirkungsbasierte Mechanismen ausgerichtet. Der Staat finanziert das Bildungskonto, die Analyse-Plattform und die Anreize für Lebensraum-Projekte.</p>
         </div>
-        <div class="dreieck-node">
-          <span class="dreieck-icon">Unternehmen</span>
-          <h3>Wert &amp; Mitverantwortung</h3>
-          <p>Schafft Wert, Arbeitsplätze und Innovation. Trägt aktiv zur gesellschaftlichen Infrastruktur bei, die die eigene Grundlage bildet. Erhält Identität, Verwurzelung und Mitgestaltungsrecht.</p>
+        <div class="drei-item">
+          <span class="nummer sans">Kreis 2 · Unternehmen · 40–50 %</span>
+          <h3>Co-Investor mit Wahlrecht</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Unternehmen entrichten einen Solidarteil — mit echtem Gestaltungsrecht. Sie können ihren Beitrag in Mitarbeitende (Gesundheit, Bildung) oder lokale Projekte lenken. Wer nachweisbar investiert, profitiert: tiefere Lohnnebenkosten, Steuererleichterungen, Vorrang bei öffentlichen Aufträgen.</p>
         </div>
-        <div class="dreieck-node">
-          <span class="dreieck-icon">Staat</span>
-          <h3>Rahmen &amp; Balance</h3>
-          <p>Setzt den Rahmen, balanciert Ungleichgewichte und sichert die demokratische Kontrolle. Behält die Letztentscheidung – auch über die Verwendung des Solidaritätsbeitrags.</p>
+        <div class="drei-item">
+          <span class="nummer sans">Kreis 3 · Gesellschaft · 20–30 %</span>
+          <h3>Kollektivinvestoren</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Pensionskassen verwalten über 1,2 Billionen Franken. Sie suchen stabile Langzeitrenditen. Zertifizierte Sozialinfrastruktur ist investierbar, staatlich mitgarantiert und lokal verankert — ergänzt durch Genossenschaftsmodelle und Social Impact Bonds.</p>
         </div>
       </div>
-      <blockquote class="pull-quote">Solidarität meint nicht Mitleid. Sie meint die gegenseitige Anerkennung von Abhängigkeit.</blockquote>
+      <blockquote class="pull-quote" style="margin-top:2.5rem;">Nicht: Staat besteuert → Bürger empfängt.<br>Sondern: Staat, Unternehmen und Gesellschaft investieren gemeinsam in messbare soziale Erträge — und alle drei profitieren.</blockquote>
+      <p style="font-size:0.82rem;color:var(--grau);max-width:640px;border-left:2px solid var(--linie);padding-left:1rem;margin-top:1.5rem;">Die Zertifizierung sozialer Erträge erfolgt durch eine unabhängige, pluralistisch besetzte Stelle — mit Vertreterinnen aus Wissenschaft, Zivilgesellschaft und Kantonen. Das verhindert, dass Unternehmen soziale Wirkung behaupten, ohne sie zu erbringen.</p>
     </div>
   </section>
 
-  <!-- 3. Zwei Wege -->
-  <section class="section section-warm" id="mechanismus" data-section="mechanismus" data-reveal>
+  <!-- 8. Werkzeug 2 – Konstruktive Demokratie -->
+  <section class="section section-statement" id="werkzeug2" data-section="werkzeug2" data-reveal>
     <div class="container">
-      <span class="section-label sans">Der Mechanismus</span>
-      <h2>Zwei Wege, ein Ziel.</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
-        Alle Unternehmen, die in der Schweiz Bundessteuern entrichten, leisten einen Solidaritätsbeitrag von <strong>5 %</strong> – aufgeteilt in 3 % neu und 2 % Lenkungsrecht auf bestehende Steuer. Sie wählen, auf welchem Weg.
-      </p>
-      <div class="weg-grid">
-        <div class="weg-card weg-a">
-          <span class="weg-label">Weg A</span>
-          <h3>Regionale Investition</h3>
-          <p>Das Unternehmen investiert die 3 % direkt in seinem Einzugsgebiet: Kinderbetreuung, Gesundheitsangebote, Berufsbildung, lokale Infrastruktur.</p>
-          <p>Mitarbeitende können in den Entscheid einbezogen werden, wohin die Investition fliesst – das stärkt die Legitimation und vertieft die Verbindung zwischen Betrieb und Gemeinschaft.</p>
-          <div class="weg-detail">3 % Bundessteuer entfällt &nbsp;·&nbsp; 2 % Lenkungsrecht bleibt</div>
+      <span class="section-label sans">Werkzeug 2</span>
+      <h2>Konstruktive Demokratie. <span style="font-weight:400;opacity:0.65;">Die prozessuale Linse.</span></h2>
+      <p style="font-size:0.8rem;font-weight:700;color:rgba(201,23,42,0.85);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.5rem;">Kernfrage: Wie treffen wir gemeinsam Entscheide?</p>
+      <p style="font-size:1rem;color:rgba(255,255,255,0.8);max-width:640px;line-height:1.8;margin-bottom:1.25rem;">Hinter jeder politischen Position steckt ein Bedürfnis. Wer das Bedürfnis versteht, kann Brücken bauen — auch wenn er die Position ablehnt. Die Neuropsychologie lehrt uns: Positionen sind Strategien, keine Identitäten. Sie verändern sich, wenn Bedürfnisse gehört werden.</p>
+      <p style="font-size:1rem;color:rgba(255,255,255,0.8);max-width:640px;line-height:1.8;">Jürgen Habermas hat das philosophisch präzisiert: Legitime Entscheide entstehen nicht durch die lautere Stimme oder den grösseren Druck — sondern durch das Gespräch, in dem das bessere Argument zählt. James Fishkin hat es empirisch belegt: Wenn Bürgerinnen und Bürger mit ausgewogenen Informationen deliberieren, verschieben sich ihre Positionen in Richtung Gemeinsamkeit. Das ist keine Theorie. Es ist gemessen.</p>
+    </div>
+  </section>
+
+  <!-- 9. Demokratie – Bedürfnis-Frühwarnsystem + Sicherheit -->
+  <section class="section" id="demokratie" data-section="demokratie" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Bedürfnis-Frühwarnsystem</span>
+      <h2>Verstehen, bevor Lager entstehen.</h2>
+      <div class="nicht-sondern">
+        <p><span class="nicht">Nicht:</span> Volksinitiative vs. Repräsentation.</p>
+        <p><span class="sondern">Sondern:</span> Bedürfnisse verstehen, bevor sie zu Lagern werden.</p>
+      </div>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;">Eli Pariser hat den Begriff der Filterblase geprägt: Algorithmen und Homogenität verstärken bestehende Überzeugungen, isolieren uns voneinander und radikalisieren ohne Absicht. Das Gegenmittel ist nicht Zensur — es ist strukturierte Begegnung. Der Staat kann diese ermöglichen.</p>
+      <div class="drei-grid" style="margin-top:2.5rem;">
+        <div class="drei-item">
+          <span class="nummer sans">Breite</span>
+          <h3>Online-Bedürfnisanalysen</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Der Staat führt kontinuierliche, sektorspezifische Befragungen durch — nicht zu Lösungen, sondern zu Bedürfnissen. Ergebnisse werden transparent veröffentlicht: regional, kantonal, national vergleichbar.</p>
         </div>
-        <div class="weg-card weg-b">
-          <span class="weg-label">Weg B</span>
-          <h3>Bundessteuer mit Sektorwahl</h3>
-          <p>Das Unternehmen zahlt den vollen Solidaritätsbeitrag als Bundessteuer und übt das vollständige 5 %-Lenkungsrecht aus: Es widmet seinen Beitrag einem oder mehreren gesellschaftlichen Sektoren.</p>
-          <p>Geeignet für überregional tätige Unternehmen ohne lokale Verwurzelung.</p>
-          <div class="weg-detail">3 % + 2 % &nbsp;→&nbsp; volle Sektorwahl auf Bundesebene</div>
+        <div class="drei-item">
+          <span class="nummer sans">Tiefe</span>
+          <h3>Deliberative Bürgergruppen</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Zufällig zusammengesetzte Gruppen erarbeiten das Warum hinter den Bedürfnissen. Keine Entscheidungsmacht — aber qualitative Tiefe. Informierte Bürgerinnen finden mehr Gemeinsamkeiten als uninformierte. Das ist das konsistente Ergebnis jahrzehntelanger Forschung.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Sichtbarkeit</span>
+          <h3>Gemeinsamkeitsplattform</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Eine öffentlich einsehbare Plattform macht sichtbar, wo Gruppen, Kantone und Regionen übereinstimmen — auch wenn sie in der Rhetorik divergieren. Nicht: wer hat recht. Sondern: wo sind wir uns näher als wir dachten? Redaktionelle Unabhängigkeit und dezentrale Trägerschaft schützen vor Instrumentalisierung.</p>
         </div>
       </div>
-      <p style="font-size:0.82rem;color:var(--grau);margin-top:1.5rem;max-width:660px;">Das parlamentarische Korrektiv bleibt unberührt: Das Parlament behält die demokratische Letztentscheidung. Kernbereiche der sozialen Sicherheit stehen ausserhalb des Wettbewerbs um Unternehmensgunst.</p>
-    </div>
-  </section>
-
-  <!-- 4. Sektoren -->
-  <section class="section" id="sektoren" data-section="sektoren" data-reveal>
-    <div class="container">
-      <span class="section-label sans">Sektorwahl</span>
-      <h2>7 gesellschaftliche Sektoren.</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:620px;">
-        Unternehmen können ihren Beitrag auf einen oder mehrere Sektoren lenken. Das Parlament berücksichtigt diese Zuordnung bei der Mittelplanung und begründet Abweichungen öffentlich.
-      </p>
-      <div class="sektor-grid" id="sektor-grid"></div>
-    </div>
-  </section>
-
-  <!-- 5. Fundamente -->
-  <section class="section section-warm" id="fundamente" data-section="fundamente" data-reveal>
-    <div class="container">
-      <span class="section-label sans">Intellektuelle Wurzeln</span>
-      <h2>Die Fundamente, die tragen.</h2>
-      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;">
-        Der Solidarische Liberalismus entsteht nicht im Vakuum. Er ist eine Synthese – eine Weiterführung von Denktraditionen, die jeweils wichtige Wahrheiten erkannt haben, aber keine vollständige Antwort auf die Fragen des 21. Jahrhunderts geben.
-      </p>
-      <div class="fundament-grid" id="fundament-grid"></div>
-    </div>
-  </section>
-
-  <!-- 6. Parteiübergreifend -->
-  <section class="section section-statement" id="einordnung" data-section="einordnung" data-reveal>
-    <div class="container">
-      <span class="section-label sans">Einordnung</span>
-      <h2>Für alle Lager – gegen kein Lager.</h2>
-      <p style="font-size:0.95rem;color:rgba(255,255,255,0.75);max-width:580px;margin-bottom:1.5rem;">Er ist nicht sozialistisch, weil er Markt, Eigenverantwortung und Freiheit respektiert. Er ist nicht rein kapitalistisch, weil er Unternehmen Pflichten im Gemeinwohl gibt. Er ist eine Synthese: <strong style="color:#fff;">Solidarität + Freiheit, Verantwortung + Demokratie.</strong></p>
-      <div class="partei-grid">
-        <div class="partei-item">
-          <span class="partei-label">SP · Grüne</span>
-          <p class="partei-text">Wie bleibt der Sozialstaat unter Globalisierung und steigenden Gesundheitskosten finanzierbar?</p>
-        </div>
-        <div class="partei-item">
-          <span class="partei-label">FDP</span>
-          <p class="partei-text">Wie wird die Wettbewerbsfähigkeit gesichert, ohne Unternehmen als Steuerlast zu behandeln?</p>
-        </div>
-        <div class="partei-item">
-          <span class="partei-label">Die Mitte</span>
-          <p class="partei-text">Wie bleibt der gesellschaftliche Zusammenhalt erhalten, während Wirtschaft und Politik auseinanderdriften?</p>
-        </div>
-        <div class="partei-item">
-          <span class="partei-label">GLP</span>
-          <p class="partei-text">Wie werden Nachhaltigkeit und Innovation systemisch verankert, wenn staatliche Programme unterfinanziert sind?</p>
-        </div>
-        <div class="partei-item">
-          <span class="partei-label">SVP</span>
-          <p class="partei-text">Wie wird nationale Eigenständigkeit und Standorttreue gesichert, wenn Konzerne mit Leichtigkeit abwandern?</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. Volltext Akkordeon -->
-  <section class="section" id="volltext" data-section="volltext" data-reveal>
-    <div class="container">
-      <span class="section-label sans">Volltext</span>
-      <h2>Das vollständige Manifest.</h2>
-      <p style="font-size:0.9rem;color:var(--grau);max-width:580px;margin-bottom:2rem;">Alle Kapitel des Manifests V1.0, Mai 2026 – aufklappbar nach Kapitel. Enthält Hauptdokument und beide Anhänge.</p>
-      <div class="akkordeon" id="manifest-akkordeon"></div>
+      <p style="font-size:0.78rem;color:var(--grau);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--linie);">Vorbild: Der Irische Bürger:innen-Rat (2016–2018) — beide Volksabstimmungen wurden angenommen. Die OECD dokumentierte den Prozess 2020 als globales Referenzmodell.</p>
+      <h3 style="margin-top:3rem;margin-bottom:0.75rem;font-size:1rem;">Sicherheit: Zusammenhalt als Fundament</h3>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;">Sicherheit entsteht nicht allein durch Bewaffnung — sie entsteht durch Zusammenhalt. Innere Sicherheit gründet auf Vertrauen in Institutionen, auf sozialer Kohäsion, auf dem Gefühl, dass der Staat für alle da ist. Eine Gesellschaft, in der Prävention funktioniert, Bildung zugänglich ist und Bedürfnisse gehört werden, ist resilienter gegen innere Spaltung.</p>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;margin-top:1rem;">Äussere Sicherheit: Die Schweiz ist Willensnation — und damit geborene Vermittlerin. Ihre Neutralität ist kein Rückzug aus der Welt, sondern eine aktive Brückenfunktion. Sicherheit durch Diplomatie, durch das Angebot, Gesprächspartnerin zu sein — das ist die schweizerische Stärke.</p>
     </div>
   </section>
 
   <!-- Aufruf -->
   <div class="manifest-schluss" id="aufruf" data-section="aufruf">
     <div class="manifest-schluss-inner">
-      <blockquote>„Solidarischer Liberalismus – das Kreislaufmodell Schweiz.<br>Die Willensnation 2.0: gemeinsam stark, frei und solidarisch."</blockquote>
-      <p style="color:rgba(255,255,255,0.72);font-size:0.95rem;max-width:560px;margin-bottom:0;">Wir rufen Politik, Wirtschaft, Sozialpartner und Bevölkerung auf, diesen neuen Weg zu beschreiten. Nicht als Kompromiss, sondern als Aufbruch.</p>
+      <blockquote>Dies ist kein Parteiprogramm.<br>Es wird niemanden vollständig überzeugen — und das ist gewollt.<br>Die Frage ist nicht: Stimmst du allem zu?<br>Die Frage ist: Findest du dich irgendwo darin wieder?</blockquote>
+      <p style="color:rgba(255,255,255,0.72);font-size:0.95rem;max-width:560px;margin-bottom:1.5rem;">Bring es ein. In dein Gespräch am Tisch. In deine Stimme an der Urne. In deine Entscheide als Unternehmerin, als Mitarbeitender, als Nachbarin, als Bürger. Dieser Ansatz lebt nicht auf dieser Seite. Er lebt dort, wo Menschen gemeinsam etwas bauen.</p>
+      <p style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:2rem;">1291. 1848. Heute wieder.</p>
       <div class="manifest-cta">
-        <a href="haltungskompass.html" class="btn" style="background:var(--rot);color:#fff;border-color:var(--rot);" data-i18n="manifest.aufruf_btn1">Haltungskompass starten</a>
-        <a href="kontakt.html" class="btn" style="background:transparent;color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);" data-i18n="manifest.aufruf_btn2">Kontakt aufnehmen</a>
+        <a href="haltungskompass.html" class="btn" style="background:var(--rot);color:#fff;border-color:var(--rot);">Haltungskompass starten</a>
+        <a href="kontakt.html" class="btn" style="background:transparent;color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);">Kontakt aufnehmen</a>
       </div>
     </div>
   </div>
 
-  <div class="manifest-footer-info" data-i18n="manifest.footer_info" data-i18n-html>
-    <strong>Manifest – Version 1.0</strong> &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Severin Stadler, Bern<br>
-    Zur öffentlichen Diskussion freigegeben &nbsp;·&nbsp; <strong>Zur freien Weiterverbreitung mit Quellenangabe</strong>
+  <!-- Quellen -->
+  <section class="section section-warm">
+    <div class="container">
+      <span class="section-label sans">Quellen &amp; Vertiefung</span>
+      <h2>Für alle, die tiefer gehen wollen.</h2>
+      <div class="quellen-grid">
+        <div class="quellen-item"><strong>Arendt, Hannah</strong> — The Origins of Totalitarianism (1951)</div>
+        <div class="quellen-item"><strong>Berlin, Isaiah</strong> — Two Concepts of Liberty (1958)</div>
+        <div class="quellen-item"><strong>Fishkin, James</strong> — When the People Speak (2009)</div>
+        <div class="quellen-item"><strong>Gardner, Howard</strong> — Frames of Mind (1983)</div>
+        <div class="quellen-item"><strong>Habermas, Jürgen</strong> — Theorie des kommunikativen Handelns (1981)</div>
+        <div class="quellen-item"><strong>Jacobs, Jane</strong> — The Death and Life of Great American Cities (1961)</div>
+        <div class="quellen-item"><strong>Marmot, Michael</strong> — Fair Society, Healthy Lives (2010)</div>
+        <div class="quellen-item"><strong>OECD</strong> — Innovative Citizen Participation (2020)</div>
+        <div class="quellen-item"><strong>Ostrom, Elinor</strong> — Governing the Commons (1990), Nobelpreis 2009</div>
+        <div class="quellen-item"><strong>Pariser, Eli</strong> — The Filter Bubble (2011)</div>
+        <div class="quellen-item"><strong>Polanyi, Karl</strong> — The Great Transformation (1944)</div>
+        <div class="quellen-item"><strong>Putnam, Robert</strong> — Bowling Alone (2000)</div>
+        <div class="quellen-item"><strong>Renan, Ernest</strong> — Qu'est-ce qu'une nation? (1882)</div>
+        <div class="quellen-item"><strong>Rose, Geoffrey</strong> — The Strategy of Preventive Medicine (1992)</div>
+        <div class="quellen-item"><strong>Sen, Amartya</strong> — Development as Freedom (1999), Nobelpreis 1998</div>
+        <div class="quellen-item"><strong>Sunstein, Cass</strong> — #Republic (2017)</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="manifest-footer-info">
+    <strong>Manifest – Version 3.0</strong> &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; Severin Stadler, Bern<br>
+    Entwurf zur Diskussion &nbsp;·&nbsp; <strong>Zur freien Weiterverbreitung mit Quellenangabe</strong>
   </div>
 
   <footer>
     <div class="footer-inner">
       <div>
         <div class="footer-brand"><span></span>Severin Stadler</div>
-        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; &copy; 2026</div>
       </div>
       <div class="footer-social">
         <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
@@ -897,332 +990,7 @@
   </footer>
 
   <script>
-  // ═══════════════════════════════════════════════════════════
-  // CONFIG – Inhalte hier anpassen wenn das Manifest sich verändert
-  // ═══════════════════════════════════════════════════════════
-
-  const _mlang = (localStorage.getItem('ss_lang') || navigator.language || 'de').slice(0, 2);
-
-  const SEKTOREN_LANGS = {
-    de: [
-      { name: "Bildung",                sub: "Schulen, Berufsbildung, Weiterbildung" },
-      { name: "Gesundheit",             sub: "Versorgung, Prävention, Pflege" },
-      { name: "Forschung & Innovation", sub: "Grundlagenforschung, Technologie" },
-      { name: "Sicherheit",             sub: "Innere Sicherheit, Katastrophenschutz" },
-      { name: "Kultur",                 sub: "Kulturelles Erbe, Kulturförderung" },
-      { name: "Umwelt",                 sub: "Klimaschutz, Biodiversität, Energie" },
-      { name: "Soziales",               sub: "Integration, Armutsprävention, Zusammenhalt" }
-    ],
-    fr: [
-      { name: "Formation",              sub: "Écoles, formation professionnelle, formation continue" },
-      { name: "Santé",                  sub: "Soins, prévention, aide aux personnes âgées" },
-      { name: "Recherche & Innovation", sub: "Recherche fondamentale, technologie" },
-      { name: "Sécurité",               sub: "Sécurité intérieure, protection civile" },
-      { name: "Culture",                sub: "Patrimoine culturel, promotion de la culture" },
-      { name: "Environnement",          sub: "Protection du climat, biodiversité, énergie" },
-      { name: "Social",                 sub: "Intégration, prévention de la pauvreté, cohésion" }
-    ],
-    it: [
-      { name: "Formazione",             sub: "Scuole, formazione professionale, formazione continua" },
-      { name: "Salute",                 sub: "Assistenza, prevenzione, cura" },
-      { name: "Ricerca & Innovazione",  sub: "Ricerca di base, tecnologia" },
-      { name: "Sicurezza",              sub: "Sicurezza interna, protezione civile" },
-      { name: "Cultura",                sub: "Patrimonio culturale, promozione della cultura" },
-      { name: "Ambiente",               sub: "Protezione del clima, biodiversità, energia" },
-      { name: "Sociale",                sub: "Integrazione, prevenzione della povertà, coesione" }
-    ],
-    en: [
-      { name: "Education",              sub: "Schools, vocational training, continuing education" },
-      { name: "Health",                 sub: "Care, prevention, nursing" },
-      { name: "Research & Innovation",  sub: "Basic research, technology" },
-      { name: "Security",               sub: "Internal security, civil protection" },
-      { name: "Culture",                sub: "Cultural heritage, cultural promotion" },
-      { name: "Environment",            sub: "Climate protection, biodiversity, energy" },
-      { name: "Social",                 sub: "Integration, poverty prevention, cohesion" }
-    ]
-  };
-
-  const SEKTOREN = SEKTOREN_LANGS[_mlang in SEKTOREN_LANGS ? _mlang : 'de'];
-
-  const _verbindungLabel = { de: 'Verbindung zum Modell', fr: 'Lien avec le modèle', it: 'Collegamento con il modello', en: 'Connection to the model' };
-  const VERBINDUNG_LABEL = _verbindungLabel[_mlang in _verbindungLabel ? _mlang : 'de'];
-
-  const FUNDAMENTE = [
-    {
-      name:       "Ordoliberalismus & Soziale Marktwirtschaft",
-      autoren:    "Eucken, Röpke, Erhard (1930er–1949)",
-      kern:       "Der Staat setzt den Rahmen, der Markt operiert darin frei. Wirtschaftliche Leistung und sozialer Ausgleich bedingen einander.",
-      verbindung: "Weg A formalisiert Röpkes Warnung vor der «Entwurzelung» von Unternehmen: Gesellschaftliche Mitverantwortung wird institutionell verankert."
-    },
-    {
-      name:       "Subsidiaritätsprinzip",
-      autoren:    "Quadragesimo Anno (1931) / Schweizer Föderalismus",
-      kern:       "Was auf der kleinstmöglichen Ebene entschieden werden kann, soll dort entschieden werden – staatliche Eingriffe sind subsidiär, nicht primär.",
-      verbindung: "Weg A ist das Subsidiaritätsprinzip in wirtschaftlicher Form: Unternehmen entscheiden lokal, Gemeinden profitieren direkt, der Bund setzt den Rahmen."
-    },
-    {
-      name:       "Rheinischer Kapitalismus",
-      autoren:    "Michel Albert, «Capitalisme contre capitalisme» (1991)",
-      kern:       "Unternehmen als gesellschaftliche Institutionen mit Verantwortung gegenüber Mitarbeitenden, Region und Gemeinschaft – nicht nur gegenüber Aktionären.",
-      verbindung: "Das Modell formalisiert diesen kulturellen Impuls: Es macht explizit, was im rheinischen Kapitalismus implizit war – und gibt ihm rechtlichen Ausdruck."
-    },
-    {
-      name:       "Freiheit als Befähigung",
-      autoren:    "Amartya Sen, «Development as Freedom» (1999)",
-      kern:       "Echte Freiheit setzt Kapazitäten voraus – Bildung, Gesundheit, wirtschaftliche Sicherheit. Wer diese nicht hat, ist formal frei, aber praktisch unfrei.",
-      verbindung: "Aus Steuerpflicht wird gestaltbare Mitverantwortung: Das Modell gibt Unternehmen echte Entscheidungsfreiheit darüber, wie und wohin sie beitragen."
-    },
-    {
-      name:       "Moralische Grenzen des Marktes",
-      autoren:    "Michael Sandel, «What Money Can't Buy» (2012)",
-      kern:       "Wenn jedes gesellschaftliche Gut einen Preis erhält, verliert die Gesellschaft die Fähigkeit, über Werte gemeinsam zu sprechen.",
-      verbindung: "Die Transparenzplattform erzeugt moralische Sprache: Unternehmen begründen öffentlich, wohin sie investieren – Haltung statt Preislogik."
-    },
-    {
-      name:       "Schweizer Willensnation",
-      autoren:    "Bundesverfassung 1848 / Föderalismus",
-      kern:       "Kein gemeinsames Volk, keine gemeinsame Sprache – sondern ein gemeinsamer Wille als Staatsgrundlage. Mitbestimmung und Ausgleich als zentrale Prinzipien.",
-      verbindung: "Der Solidarische Liberalismus erneuert diese DNA: Unternehmen werden zu Teilhabern der Willensnation – mit Verantwortung, ohne Stimmrecht."
-    }
-  ];
-
-  const KAPITEL = [
-    {
-      nr: "1", titel: "Vom Problem zum Aufbruch",
-      text: `<p>Die Schweiz steht an einem Scheideweg.</p>
-<p>Die Kosten für den Sozialstaat steigen. Die Politik ringt in einer zunehmend polarisierten Gesellschaft darum, welche Bereiche wie unterstützt werden sollen – und oft passiert am Ende zu wenig. Zwischen Arbeitnehmenden und Arbeitgebenden wächst eine Kluft, die Reformen blockiert und Innovation lähmt.</p>
-<p>Zugleich verändert sich die Welt rasant. Unternehmen können ihre Standorte in wenigen Wochen verlagern. Steuereinnahmen fallen weg, Investitionen bleiben aus, und die Stabilität unserer Gesellschaft gerät ins Wanken.</p>
-<p>Wenn wir Wohlstand und Zusammenhalt bewahren wollen, brauchen wir ein neues Gleichgewicht zwischen Wirtschaft, Staat und Bevölkerung. Der Solidarische Liberalismus ist unsere Antwort: Er gibt Unternehmen Identität, Standorttreue und Mitgestaltungsrecht – ohne die Demokratie zu schwächen, sondern sie zu ergänzen.</p>
-<p>Dies ist kein grünes Projekt. Es ist keine Steuerreform. Es ist ein <strong>sozialwirtschaftlicher Aufbruch</strong>.</p>
-<h3>Der Anstoss wirkt auf drei Ebenen</h3>
-<p><strong>Das Gesetz als gemeinsamer Bezugspunkt:</strong> Die rechtliche Verankerung schafft erstmals einen institutionellen Rahmen, in dem Bevölkerung, Unternehmen und Staat explizit aufeinander bezogen werden.</p>
-<p><strong>Transparenz als öffentliche Positionierung:</strong> Die Sektorwahl der Unternehmen ist öffentlich einsehbar. Wo ein Unternehmen investiert, sagt etwas darüber aus, wer es ist und zu welcher Gesellschaft es sich bekennt.</p>
-<p><strong>Die Debatte als Beginn des Wandels:</strong> Bereits das Gespräch über dieses Modell ist ein Erfolg. Wer darüber diskutiert, denkt bereits in der neuen Logik.</p>`
-    },
-    {
-      nr: "1a", titel: "Warum braucht es ein neues Denken – gerade jetzt?",
-      text: `<p>Die Schweiz steht an einem historischen Wendepunkt. Die politischen Modelle des 20. Jahrhunderts haben Fortschritt ermöglicht, stossen aber zunehmend an ihre Grenzen.</p>
-<ul>
-  <li>Demografischer Wandel und soziale Ungleichheit gefährden den gesellschaftlichen Zusammenhalt.</li>
-  <li>Digitalisierung, Künstliche Intelligenz und Biotechnologie stellen unsere sozialen und politischen Grundannahmen infrage.</li>
-  <li>Politische Polarisierung und Vertrauensverlust bedrohen die demokratische Kultur.</li>
-  <li>Unternehmen sind mobiler denn je – Staaten und Bevölkerungen sind es nicht.</li>
-</ul>
-<p>Mit den alten Instrumenten lassen sich diese Probleme kaum mehr lösen. Es braucht einen pragmatischen Integrationsansatz, der die wertvollen Elemente der alten Theorien aufnimmt, aber ihre Grenzen überwindet – und eine positive Vision, die zeigt, wie Wirtschaft, Staat und Bevölkerung wieder in Balance finden können.</p>`
-    },
-    {
-      nr: "2", titel: "Die Grenzen der alten Ideologien & Die Fundamente, die tragen",
-      text: `<p>Die <strong>Sozialdemokratie</strong> schuf den Sozialstaat und brachte Sicherheit für Millionen. Doch ihre nationalen Antworten reichen heute oft nicht mehr aus, um globale Dynamiken zu steuern.</p>
-<p>Der <strong>Liberalismus</strong> setzte auf Freiheit und Unternehmertum und trug zum Wohlstand bei. Doch er unterschätzte die sozialen Kosten und die Ungleichheit, die daraus erwuchs.</p>
-<p>Der <strong>Neoliberalismus</strong> beschleunigte Globalisierung und Innovation, aber er löste die Bindungen zwischen Wirtschaft und Gesellschaft und machte Unternehmen hochmobil – während Bevölkerung und Staat an Ort gebunden blieben.</p>
-<p>Der Solidarische Liberalismus ist eine Synthese dieser Denktraditionen. Die sechs intellektuellen Fundamente (Ordoliberalismus, Subsidiarität, Rheinischer Kapitalismus, Sen, Sandel, Willensnation) sind in der Sektion «Intellektuelle Wurzeln» oben ausführlich beschrieben.</p>`
-    },
-    {
-      nr: "3", titel: "Die politischen Herausforderungen von heute",
-      text: `<p>Jede politische Kraft unserer Schweiz ringt mit Problemen, die sie allein nicht lösen kann:</p>
-<ul>
-  <li><strong>SP und Grüne</strong> fragen, wie der Sozialstaat unter Globalisierung, Fachkräftemangel und steigenden Gesundheitskosten finanzierbar bleibt.</li>
-  <li><strong>FDP</strong> sucht Wege, die Wettbewerbsfähigkeit des Standorts zu sichern, während Unternehmen Steuern zunehmend als Belastung empfinden.</li>
-  <li><strong>Die Mitte</strong> kämpft darum, den gesellschaftlichen Zusammenhalt zu bewahren und Brücken zwischen Wirtschaft, Politik und Bevölkerung zu bauen.</li>
-  <li><strong>GLP</strong> will Nachhaltigkeit und Innovation systemisch verankern, doch staatliche Programme bleiben unterfinanziert.</li>
-  <li><strong>SVP</strong> sorgt sich um nationale Eigenständigkeit und Standorttreue, während Konzerne mit Leichtigkeit abwandern könnten.</li>
-</ul>
-<p>Diese Herausforderungen lassen sich nicht im Gegeneinander lösen – sondern nur in einem neuen Miteinander.</p>`
-    },
-    {
-      nr: "4", titel: "Das Kreislaufmodell Schweiz – Leitprinzipien",
-      text: `<p>Wir schlagen einen neuen Gesellschaftsvertrag vor. Er gründet auf drei Kräften, die nicht gegeneinander, sondern miteinander wirken.</p>
-<h3>Das Solidaritätsdreieck</h3>
-<p><strong>Bevölkerung</strong> legitimiert das Gemeinwesen, zahlt Steuern, bringt Arbeit und Wissen ein.</p>
-<p><strong>Unternehmen</strong> schaffen Wert, Arbeitsplätze und Innovation – und tragen künftig aktiv zur gesellschaftlichen Infrastruktur bei, die ihre eigene Grundlage bildet.</p>
-<p><strong>Staat</strong> setzt den Rahmen, balanciert Ungleichgewichte und sichert die demokratische Kontrolle.</p>
-<h3>Was Solidarität hier bedeutet</h3>
-<p>Solidarität meint nicht Mitleid und nicht Almosen. Sie meint die <strong>gegenseitige Anerkennung von Abhängigkeit</strong>: Unternehmen erkennen an, dass ihr Erfolg auf Bildungssystemen, Infrastruktur, Sicherheit und der Arbeit der Bevölkerung beruht.</p>
-<h3>Unternehmen als Bürgerklasse</h3>
-<p>Unternehmen haben kein Stimmrecht an der Urne – das bleibt den Bürgerinnen und Bürgern vorbehalten. Aber sie übernehmen Verantwortung: durch nachweisbare Investitionen in das Gemeinwohl und ein Mitgestaltungsrecht bei der Verwendung ihres Solidaritätsbeitrags. Mitgestaltung ist keine Machtübernahme – das Parlament behält die demokratische Letztentscheidung.</p>`
-    },
-    {
-      nr: "5", titel: "Der Solidaritätsmechanismus – Zwei Wege, ein Ziel",
-      text: `<p>Alle Unternehmen, die in der Schweiz Bundessteuern entrichten, leisten einen Solidaritätsbeitrag bestehend aus zwei Komponenten:</p>
-<ul>
-  <li><strong>3 % neu:</strong> Ein zusätzlicher Solidarbeitrag auf den bundessteuerbaren Ertrag (Reingewinn nach steuerlichen Abzügen – nicht auf Umsatz oder Bruttomarge).</li>
-  <li><strong>2 % Lenkungsrecht:</strong> Das Recht, 2 % der bestehenden Bundessteuerleistung einem oder mehreren gesellschaftlichen Sektoren zu widmen.</li>
-</ul>
-<p>Zusammen ergibt das einen <strong>Solidaritätspool von 5 %</strong>. Der Solidaritätsbeitrag ergänzt die bestehenden Sozialabgaben (AHV, BVG, ALV) – er ersetzt oder reduziert sie nicht.</p>
-<h3>Weg A – Regionale Investition</h3>
-<p>Das Unternehmen investiert die 3 % direkt in seinem Einzugsgebiet (Kinderbetreuung, Berufsbildung, lokale Infrastruktur). Der 3 %-Bundessteuerbeitrag entfällt. Das 2 %-Lenkungsrecht auf Bundesebene bleibt erhalten. Mitarbeitende können einbezogen werden, wohin die regionale Investition fliesst.</p>
-<h3>Weg B – Bundessteuer mit Sektorwahl</h3>
-<p>Das Unternehmen zahlt den vollen Solidaritätsbeitrag als Bundessteuer und übt das vollständige 5 %-Lenkungsrecht aus – es widmet seinen Beitrag einem oder mehreren der 7 Sektoren auf Bundesebene.</p>
-<h3>Parlamentarisches Korrektiv</h3>
-<p>Wenn einzelne Sektoren bevorzugt, andere gemieden werden, bleibt das Parlament das demokratische Gegengewicht. Bestimmte Kernbereiche – Sozialhilfe, Invalidenversicherung, Grundversorgung – werden per parlamentarischem Beschluss als nicht verhandelbar definiert.</p>
-<h3>Stufeneinführung</h3>
-<p><strong>Phase 1 (Einführungsjahr):</strong> 3 %-Solidaritätsbeitrag. Lenkungsrecht wird erstmals ausgeübt. Das 2 %-Lenkungsrecht auf bestehende Steuern tritt in Phase 2 in Kraft.</p>
-<p><strong>Phase 2 (ab Jahr 2):</strong> Das volle Modell tritt in Kraft. Weg A und Weg B stehen vollständig zur Verfügung.</p>`
-    },
-    {
-      nr: "6", titel: "Softfaktoren – Investition in die Gesellschaft",
-      text: `<p>Unternehmen auf Weg A investieren in Menschen und Gemeinschaft: Kinderbetreuung, Gesundheitsangebote, Berufsbildung, Lehrlingsprogramme, lokale Infrastruktur.</p>
-<h3>Zertifizierung</h3>
-<p>Was als gesellschaftlich wirksame Investition gilt, wird <strong>tripartitisch</strong> definiert: durch Vertreter des Staates, der Arbeitgeberverbände und der Gewerkschaften. Massgeblich ist der gesellschaftliche Nutzen – nicht, ob die eigenen Mitarbeitenden direkt profitieren.</p>
-<p><strong>Additives Prinzip:</strong> Als Softfaktor gilt ausschliesslich die Netto-Mehrleistung. Investitionen, die bereits als Betriebskosten steuerlich abgezogen wurden, dürfen nicht zusätzlich als Softfaktor geltend gemacht werden.</p>
-<h3>So profitieren alle</h3>
-<ul>
-  <li><strong>Gesellschaft</strong> erhält reale Investitionen in lokale Infrastruktur und Versorgung.</li>
-  <li><strong>Kantone und Gemeinden</strong> werden indirekt entlastet: privat finanzierte Angebote schaffen öffentlichen Spielraum.</li>
-  <li><strong>Unternehmen</strong> steigern ihre Verwurzelung, Attraktivität als Arbeitgeber und Akzeptanz in der Gemeinschaft.</li>
-  <li><strong>Staat</strong> spart Kosten, weil gesellschaftliche Prävention die Soziallast mindert.</li>
-</ul>`
-    },
-    {
-      nr: "7", titel: "Die Schweiz als Willensnation 2.0",
-      text: `<p>Die Schweiz ist mehr als ein Staat – sie ist eine Willensnation. Seit ihren Anfängen lebt sie nicht von kultureller oder sprachlicher Einheit, sondern vom gemeinsamen Willen, trotz Vielfalt eine Zukunft zu gestalten.</p>
-<p>Heute stehen wir an einem ähnlichen Wendepunkt: Unternehmen sind global mobil. Bevölkerung und Staat sind ortsgebunden und tragen die Folgen. Das Risiko: eine wachsende Kluft zwischen Wirtschaft und Gesellschaft, die unsere Stabilität untergräbt.</p>
-<h3>Föderalismus als Stärke</h3>
-<p>Das Modell setzt auf Bundesebene an – dort, wo die direkte Bundessteuer gilt. Wenn Unternehmen auf Weg A regional investieren, entsteht ein indirekter Entlastungseffekt für Kantone und Gemeinden. Kein Eingriff in die Steuerhoheit der Kantone – aber ein realer Beitrag zu ihrer Handlungsfähigkeit.</p>
-<p>Der Solidarische Liberalismus ist kein Instrument zur umfassenden Lösung regionaler Ungleichgewichte. Er ist ein Weg, wie Wirtschaft und Gesellschaft dort, wo sie einander begegnen, nachhaltig zusammenwachsen können.</p>
-<h3>Die Willensnation 2.0</h3>
-<p>Der Solidarische Liberalismus macht Unternehmen zu Teilhabern der Willensnation – nicht mit Stimmrecht, aber mit klarer Verantwortung. So entsteht die <strong>Willensnation 2.0</strong>: Bevölkerung, Unternehmen und Staat – drei Kräfte, die erstmals gemeinsam und vereint in voller Stärke auftreten.</p>`
-    },
-    {
-      nr: "8", titel: "Umsetzung – Stufenweise, schlank und demokratisch",
-      text: `<p>Der Solidarische Liberalismus setzt auf einfachen Zugang, klare Regeln und bewährte Technologie.</p>
-<h3>Digitale Plattform</h3>
-<p>Die Mitgestaltung der Unternehmen erfolgt digital – als <strong>Erweiterung des bestehenden Bundesportals EasyGov</strong>, schrittweise und ohne Neubeschaffung. Geschätzte Gesamtinvestitionen über fünf Jahre: CHF 25–55 Millionen – ein Bruchteil des jährlichen Solidaritätspools. Jedes Unternehmen meldet einmal jährlich: Weg A oder Weg B, Sektorpräferenz, Dokumentation der regionalen Investitionen.</p>
-<h3>Transparenz</h3>
-<p>Jede Entscheidung ist öffentlich einsehbar: Bürgerinnen und Bürger sehen, welche Unternehmen welche Sektoren stärken und welche Regionen welche Investitionen erhalten. Das schafft Vertrauen und Standortbindung.</p>
-<h3>Stufeneinführung</h3>
-<p><strong>Phase 1:</strong> 3 %-Solidaritätsbeitrag. Sektorpräferenzen werden erfasst und publiziert. Gesellschaftliches Signal: alle drei Akteure handeln erstmals gemeinsam.</p>
-<p><strong>Phase 2 (ab Jahr 2):</strong> Volle Aktivierung – 2 %-Lenkungsrecht, Weg A und Weg B vollständig verfügbar.</p>
-<p><em>Die rechtliche Verankerung, der Gesetzgebungspfad und steuerrechtliche Präzisierungen sind im Anhang A2 dokumentiert.</em></p>`
-    },
-    {
-      nr: "9", titel: "Die Vision",
-      text: `<p>Wir sehen eine Schweiz, in der Bevölkerung, Unternehmen und Staat nicht gegeneinander, sondern miteinander agieren:</p>
-<ul>
-  <li><strong>Unternehmen als Teil der Identität.</strong> Nicht nur Investoren auf Zeit, sondern Mitgestalter des Gemeinwesens – regional verwurzelt oder national engagiert.</li>
-  <li><strong>Wohlstand für alle.</strong> Ein Kreislauf, in dem die Beiträge von Bevölkerung, Unternehmen und Staat sich gegenseitig verstärken.</li>
-  <li><strong>Standorttreue als Prinzip.</strong> Wer hier tätig ist, investiert in die Grundlagen der Gesellschaft – und wird belohnt durch Stabilität, Fachkräfte und Vertrauen.</li>
-  <li><strong>Ein qualitativer Spitzenstandort.</strong> Nicht durch Dumping, sondern durch Investition in Bildung, Forschung, Gesundheit und Lebensqualität.</li>
-</ul>
-<p>Er ist nicht sozialistisch, weil er Markt, Eigenverantwortung und Freiheit respektiert. Er ist nicht rein kapitalistisch, weil er Unternehmen Pflichten im Gemeinwohl gibt. Er ist eine Synthese: <strong>Solidarität + Freiheit, Verantwortung + Demokratie.</strong></p>`
-    },
-    {
-      nr: "10", titel: "Unser Aufruf",
-      text: `<p>Wir rufen Politik, Wirtschaft, Sozialpartner und Bevölkerung auf, diesen neuen Weg zu beschreiten.</p>
-<ul>
-  <li><strong>Für eine Schweiz, die gemeinsam investiert</strong> – auf Bundesebene in die grossen Sektoren, regional in die eigene Gemeinschaft.</li>
-  <li><strong>Für eine Wirtschaft, die Verantwortung übernimmt</strong> – nicht als Pflichtübung, sondern als Ausdruck von Standorttreue und Mitgestaltungswillen.</li>
-  <li><strong>Für ein Parlament, das nachsteuert</strong> – informiert, faktenbasiert, demokratisch legitimiert.</li>
-  <li><strong>Für Sozialpartner, die Qualität sichern</strong> – als tripartitische Prüfinstanz.</li>
-  <li><strong>Für Kantone, die profitieren</strong> – mit mehr Spielraum durch regionale Investitionen.</li>
-  <li><strong>Für Mitarbeitende, die einbezogen werden</strong> – als Brücke zwischen Betrieb und Gemeinschaft.</li>
-</ul>
-<p>Der Solidarische Liberalismus ist ein Instrument – eines unter mehreren, die eine Gesellschaft braucht. Aber er ist ein Instrument, das bisher gefehlt hat: eines, das Wirtschaft, Staat und Bevölkerung in gemeinsamer Verantwortung vereint.</p>
-<p>Solidarischer Liberalismus – das Kreislaufmodell Schweiz. Die Willensnation 2.0. Gemeinsam stark, frei und solidarisch.</p>`
-    },
-    {
-      nr: "A1", titel: "Anhang: Fiskalische Wirkungsrechnung",
-      text: `<p><em>Alle Zahlen sind Schätzungen auf Basis öffentlich verfügbarer BFS/EFV-Daten (Bundessteuern auf Unternehmensgewinne).</em></p>
-<h3>Jährliches Solidaritätsvolumen</h3>
-<table>
-  <tr><th>Jahr</th><th>Basis Bundessteuer</th><th>3 % neu</th><th>2 % Lenkung</th><th>Total Pool</th></tr>
-  <tr><td>Phase 1 (Jahr 1)</td><td>~CHF 10 Mrd.</td><td>~CHF 300–400 Mio.</td><td>–</td><td>~CHF 300–400 Mio.</td></tr>
-  <tr><td>Phase 2 (ab Jahr 2)</td><td>~CHF 10 Mrd.</td><td>~CHF 300–400 Mio.</td><td>~CHF 200 Mio.</td><td>~CHF 500–600 Mio.</td></tr>
-</table>
-<h3>Aufteilung im Gleichgewicht (Schätzung: 55 % Weg A / 45 % Weg B)</h3>
-<table>
-  <tr><th>Kanal</th><th>Jährlich</th><th>Wirkungsebene</th></tr>
-  <tr><td>Weg A – Regionale Investitionen</td><td>~CHF 165–220 Mio.</td><td>Kantone / Gemeinden</td></tr>
-  <tr><td>Weg B – Bundessektor-Lenkung (3 %)</td><td>~CHF 135–180 Mio.</td><td>Bund / Sektoren</td></tr>
-  <tr><td>2 % Lenkungsrecht (bestehend)</td><td>~CHF 200 Mio.</td><td>Bund / Sektoren</td></tr>
-</table>
-<h3>Plattformkosten</h3>
-<table>
-  <tr><th>Phase</th><th>Investition</th><th>Timeline</th></tr>
-  <tr><td>Phase 1 (EasyGov-Erweiterung)</td><td>CHF 5–15 Mio.</td><td>12–18 Monate</td></tr>
-  <tr><td>Phase 2 (Vollausbau + API ESTV)</td><td>CHF 20–40 Mio.</td><td>+24–36 Monate</td></tr>
-  <tr><td><strong>Total 5 Jahre</strong></td><td><strong>CHF 25–55 Mio.</strong></td><td></td></tr>
-</table>
-<p>Plattformkosten = ca. 5–10 % eines Jahres-Solidaritätspools. Investition amortisiert sich im ersten Betriebsjahr.</p>`
-    },
-    {
-      nr: "A2", titel: "Anhang: Gesetzliche Grundlagen und verfassungsrechtliche Präzisierungen",
-      text: `<p><em>Dieser Anhang richtet sich an Fachpersonen aus Recht, Steuerpolitik und Gesetzgebung. Vor einer parlamentarischen Initiative ist eine vertiefte rechtliche Prüfung durch Staatsrechtler und die zuständigen Bundesbehörden (EFD, SECO, ESTV) erforderlich.</em></p>
-<h3>1. Verfassungsrechtliche Verankerung</h3>
-<p>Die direkte Bundessteuer ist in <strong>Art. 128 BV</strong> verankert. Der Solidaritätsmechanismus erfordert eine eigenständige verfassungsrechtliche Grundlage.</p>
-<p><strong>Option A:</strong> Ergänzung von Art. 128 BV – neuer Absatz ermächtigt den Bund, von juristischen Personen einen Solidaritätsbeitrag zu erheben.<br>
-<strong>Option B:</strong> Neuer Art. 128a BV «Solidaritätsbeitrag der Unternehmen» – stärkt die eigenständige Legitimation als gesellschaftspolitisches Instrument.</p>
-<p><strong>Gesetzgebungspfad:</strong> Volksinitiative oder parlamentarische Initiative → obligatorisches Referendum (doppeltes Mehr) → Ausführungsgesetz → ESTV-Vollzugsverordnung, EasyGov-Erweiterungsverordnung.</p>
-<h3>2. Steuerrechtliche Präzisierungen</h3>
-<p>Der Solidaritätsbeitrag von 3 % bemisst sich nach dem <strong>steuerbaren Reingewinn</strong> gemäss Art. 58–68 DBG. <strong>Beispiel:</strong> CHF 800'000 steuerbarer Reingewinn → CHF 24'000 Solidaritätsbeitrag (3 %).</p>
-<p><strong>Doppelverwertungsverbot:</strong> Weg-A-Investitionen, die bereits als Betriebskosten steuerlich abgezogen wurden, können nicht als Solidarbeitrag angerechnet werden.</p>
-<p><strong>Konzerne:</strong> Das Modell gilt auf Ebene der einzelnen juristischen Person – nicht konsolidiert.</p>
-<h3>3. OECD Pillar 2 / Globale Mindeststeuer</h3>
-<p>Die Schweiz hat per 1. Januar 2024 die globale Mindeststeuer (MinStG, SR 642.23) eingeführt. Der Solidarische Liberalismus steht nicht im Widerspruch zu Pillar 2. Die steuerliche Behandlung von Weg-A-Investitionen unter den GloBE-Regeln bedarf einer technischen Prüfung durch die ESTV in Koordination mit der OECD.</p>
-<h3>4. Tripartitische Zertifizierungskommission</h3>
-<p>Orientiert sich an bewährten Schweizer Institutionen (EKF, NAV). Zusammensetzung: EFD/SECO + Economiesuisse/SGV + SGB/Travail.Suisse. Konsensprinzip; Stichentscheid durch Bundesvertreter bei Nichteinigung. Beschwerde beim Bundesverwaltungsgericht (BVGer).</p>
-<h3>5. Datenschutz</h3>
-<p>Juristische Personen geniessen keinen DSG-Schutz im engeren Sinne. Die öffentliche Transparenz der Unternehmensentscheidungen ist rechtlich unproblematisch. Für Einzelunternehmen empfiehlt sich eine angepasste Transparenzregel (aggregierte Darstellung ab Umsatzschwelle).</p>`
-    }
-  ];
-
-  // ═══════════════════════════════════════════════════════════
-  // RENDER
-  // ═══════════════════════════════════════════════════════════
-
-  function renderSektoren() {
-    const el = document.getElementById('sektor-grid');
-    if (!el) return;
-    el.innerHTML = SEKTOREN.map(s =>
-      `<div class="sektor-badge"><span class="s-name">${s.name}</span><span class="s-sub">${s.sub}</span></div>`
-    ).join('');
-  }
-
-  function renderFundamente() {
-    const el = document.getElementById('fundament-grid');
-    if (!el) return;
-    el.innerHTML = FUNDAMENTE.map(f => `
-      <div class="fundament-card">
-        <span class="f-autor">${f.autoren}</span>
-        <div class="f-name">${f.name}</div>
-        <p class="f-kern">${f.kern}</p>
-        <div class="f-link">
-          <span class="f-link-label">${VERBINDUNG_LABEL}</span>
-          ${f.verbindung}
-        </div>
-      </div>`
-    ).join('');
-  }
-
-  function renderAkkordeon() {
-    const el = document.getElementById('manifest-akkordeon');
-    if (!el) return;
-    el.innerHTML = KAPITEL.map((k, i) => `
-      <div class="akkordeon-item">
-        <button class="akkordeon-trigger" data-index="${i}">
-          <span class="ak-nr">${k.nr}</span>
-          <span>${k.titel}</span>
-          <span class="ak-icon">+</span>
-        </button>
-        <div class="akkordeon-body">${k.text}</div>
-      </div>`
-    ).join('');
-
-    el.addEventListener('click', function(e) {
-      const trigger = e.target.closest('.akkordeon-trigger');
-      if (!trigger) return;
-      const item = trigger.closest('.akkordeon-item');
-      const wasOpen = item.classList.contains('open');
-      el.querySelectorAll('.akkordeon-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  }
-
-  renderSektoren();
-  renderFundamente();
-  renderAkkordeon();
-
-  // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════════
   // READING PROGRESS BAR
   // ═══════════════════════════════════════════════════════════
 
