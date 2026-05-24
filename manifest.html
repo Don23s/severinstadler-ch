@@ -39,6 +39,17 @@
       flex-direction: column;
       gap: 0.5rem;
     }
+    /* Vertikale Track-Linie durch alle Dots */
+    .manifest-chapnav::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 3px;
+      bottom: 3px;
+      width: 2px;
+      background: var(--linie);
+      border-radius: 1px;
+    }
 
     .chapnav-item {
       display: flex;
@@ -1227,20 +1238,20 @@
   // ═══════════════════════════════════════════════════════════
 
   const chapNavItems = document.querySelectorAll('.chapnav-item[data-section]');
-  const sections = document.querySelectorAll('[data-section]');
+  const sections = document.querySelectorAll('[data-section]:not(.chapnav-item)');
 
-  const spyObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        const id = entry.target.dataset.section;
-        chapNavItems.forEach(function(item) {
-          item.classList.toggle('active', item.dataset.section === id);
-        });
-      }
+  function updateChapNav() {
+    const threshold = window.scrollY + window.innerHeight * 0.4;
+    let activeId = null;
+    sections.forEach(function(s) {
+      if (s.offsetTop <= threshold) activeId = s.dataset.section;
     });
-  }, { rootMargin: '-35% 0px -55% 0px' });
-
-  sections.forEach(function(s) { spyObserver.observe(s); });
+    chapNavItems.forEach(function(item) {
+      item.classList.toggle('active', item.dataset.section === activeId);
+    });
+  }
+  window.addEventListener('scroll', updateChapNav, { passive: true });
+  updateChapNav();
 
   // ═══════════════════════════════════════════════════════════
   // DARK NAV – Wechsel auf weisse Schrift über dunklen Sektionen
