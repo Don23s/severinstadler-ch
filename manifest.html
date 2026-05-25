@@ -1192,27 +1192,42 @@
   }, { passive: true });
 
   // ═══════════════════════════════════════════════════════════
-  // SCROLL SPY – Chapter Nav
+  // SCROLL SPY – Chapter Nav (IntersectionObserver)
   // ═══════════════════════════════════════════════════════════
 
   const chapNavItems = document.querySelectorAll('.chapnav-item[data-section]');
   const sections = document.querySelectorAll('[data-section]:not(.chapnav-item)');
   const chapNavEl = document.getElementById('manifest-chapnav');
-  const darkSections = new Set(['einleitung', 'werkzeug2', 'aufruf']);
+  const darkSectionIds = new Set(['einleitung', 'werkzeug2', 'aufruf']);
 
-  function updateChapNav() {
-    const threshold = window.innerHeight * 0.88;
+  // Track which sections are currently in the top half of the viewport
+  const visibleSections = new Set();
+
+  function applyActiveSection() {
+    // Last section (DOM order) that's in the visible set = active
     let activeId = null;
     sections.forEach(function(s) {
-      if (s.getBoundingClientRect().top <= threshold) activeId = s.dataset.section;
+      if (visibleSections.has(s)) activeId = s.dataset.section;
     });
     chapNavItems.forEach(function(item) {
       item.classList.toggle('active', item.dataset.section === activeId);
     });
-    chapNavEl.classList.toggle('chapnav--on-dark', darkSections.has(activeId));
+    chapNavEl.classList.toggle('chapnav--on-dark', darkSectionIds.has(activeId));
   }
-  window.addEventListener('scroll', updateChapNav, { passive: true });
-  updateChapNav();
+
+  // rootMargin '0px 0px -50% 0px': fires when section top crosses viewport midpoint
+  var sectionSpy = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        visibleSections.add(entry.target);
+      } else {
+        visibleSections.delete(entry.target);
+      }
+    });
+    applyActiveSection();
+  }, { rootMargin: '0px 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(function(s) { sectionSpy.observe(s); });
 
   // ═══════════════════════════════════════════════════════════
   // DARK NAV – Wechsel auf weisse Schrift über dunklen Sektionen
