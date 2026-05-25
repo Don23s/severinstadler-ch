@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zahlen und Berechnungsgrundlagen – Manifest Solidarischer Liberalismus. Transparente Dokumentation aller Finanzzahlen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.severinstadler.ch/transparenz.html">
+  <meta property="og:title" content="Zahlen & Quellen | Severin Stadler">
+  <meta property="og:description" content="Transparente Herleitung aller Finanzzahlen aus dem Manifest Solidarischer Liberalismus.">
+  <title>Zahlen & Quellen | Severin Stadler</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .transparenz-hero {
+      padding: 5rem 2rem 2.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .zahl-block {
+      border-top: 2px solid var(--linie);
+      padding: 3rem 0 2.5rem;
+      max-width: 720px;
+      scroll-margin-top: 80px;
+    }
+
+    .zahl-block:first-of-type { border-top: none; }
+
+    .zahl-kicker {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rot);
+      margin-bottom: 0.5rem;
+    }
+
+    .zahl-headline {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+      line-height: 1.1;
+    }
+
+    .zahl-kontext {
+      font-size: 0.82rem;
+      color: var(--grau);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .transparenz-block {
+      background: var(--warm);
+      border-left: 3px solid var(--rot);
+      padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .transparenz-block h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grau);
+      margin-bottom: 0.5rem;
+    }
+
+    .rechenweg {
+      border: 1px solid var(--linie);
+      border-radius: 2px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: var(--grau);
+    }
+
+    .rechenweg strong { color: var(--text); }
+
+    .rechenweg .summe {
+      border-top: 1px solid var(--linie);
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .warnung {
+      background: #fff8e1;
+      border-left: 3px solid #f59e0b;
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: #78350f;
+      line-height: 1.7;
+      margin: 1.25rem 0;
+    }
+
+    .warnung strong { color: #92400e; }
+
+    .quelle-box {
+      font-size: 0.8rem;
+      color: var(--grau);
+      border-top: 1px solid var(--linie);
+      padding-top: 1rem;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .quelle-box a { color: var(--rot); }
+
+    .zurueck-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--grau);
+      text-decoration: none;
+      margin-bottom: 3rem;
+      transition: color 0.15s;
+    }
+    .zurueck-link:hover { color: var(--rot); }
+
+    @media (max-width: 640px) {
+      .transparenz-hero { padding: 3.5rem 1.25rem 2rem; }
+      .zahl-block { padding: 2rem 1.25rem 1.5rem; }
+    }
+  </style>
+  <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="brand"><span></span>Severin Stadler</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="politik.html">Politik</a>
+      <a href="manifest.html" class="active">Manifest</a>
+      <a href="kommunikation.html">Kommunikation</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <div class="transparenz-hero">
+    <a href="manifest.html#finanzierung" class="zurueck-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Zurück zum Manifest
+    </a>
+    <span style="display:block;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--rot);margin-bottom:0.75rem;">Zahlen &amp; Quellen</span>
+    <h1 style="font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:1rem;">Transparenz ist kein Anhang.<br>Sie ist der Anspruch.</h1>
+    <p style="font-size:1rem;color:var(--grau);max-width:600px;line-height:1.8;border-left:3px solid var(--rot);padding-left:1.25rem;">Jede Finanzzahl im Manifest ist hier vollständig hergeleitet — mit Quelle, Berechnungsweg, enthaltenen und ausgeschlossenen Posten sowie methodischen Einschränkungen. Was hier nicht steht, darf nicht behauptet werden.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- ════════════════════════════════════════════ -->
+      <div class="zahl-block" id="sozialausgaben">
+        <div class="zahl-kicker">Zahl 1 · Sozialausgaben Schweiz</div>
+        <div class="zahl-headline">~170 Milliarden Franken</div>
+        <div class="zahl-kontext">Verwendet im Manifest: «Das Schweizer Sozialversicherungssystem verteilt jährlich über 170 Milliarden Franken.»</div>
+
+        <div class="transparenz-block">
+          <h4>Quelle</h4>
+          Bundesamt für Sozialversicherungen (BSV) / Office fédéral des assurances sociales (OFAS): <em>Gesamtrechnung der Sozialen Sicherheit (GRSS)</em>, Ausgabe 2021. Die GRSS erfasst alle institutionellen Sozialleistungen der Schweiz nach der europäischen ESSPROS-Methodik (European System of integrated Social PROtection Statistics).
+        </div>
+
+        <div class="rechenweg">
+          <strong>Enthaltene Bereiche (Erhebungsjahr 2021, in Mrd. CHF, gerundet):</strong><br>
+          AHV – Alters- und Hinterlassenenversicherung &nbsp;·&nbsp; ca. 45,0<br>
+          BV – Berufliche Vorsorge (Rentenleistungen, 2. Säule) &nbsp;·&nbsp; ca. 38,0<br>
+          KV – Obligatorische Krankenversicherung (OKP) &nbsp;·&nbsp; ca. 36,0<br>
+          IV – Invalidenversicherung &nbsp;·&nbsp; ca. 9,4<br>
+          EL – Ergänzungsleistungen zu AHV/IV &nbsp;·&nbsp; ca. 5,3<br>
+          UV – Unfallversicherung &nbsp;·&nbsp; ca. 5,6<br>
+          ALV – Arbeitslosenversicherung &nbsp;·&nbsp; ca. 5,1<br>
+          Sozialhilfe (Kantone/Gemeinden) &nbsp;·&nbsp; ca. 3,0<br>
+          FamZ, EO, weitere &nbsp;·&nbsp; ca. 7,6<br>
+          <div class="summe">Total GRSS 2021: ca. CHF 160–175 Milliarden</div>
+        </div>
+
+        <div class="warnung">
+          <strong>Methodische Einschränkung:</strong> Die einzelnen Positionen sind Annäherungswerte, da die GRSS einige Leistungen konsolidiert ausweist und Doppelzählungen zwischen Sozialwerken ausschliesst. Der publizierte Gesamtwert variiert je nach Abgrenzung zwischen ca. CHF 163 Mrd. (enge Definition) und CHF 181 Mrd. (weite Definition inkl. Steuererleichterungen). Im Manifest wird «über 170 Milliarden» als konservativer Mittelwert verwendet. <strong>Nicht enthalten:</strong> Freiwillige Unternehmensleistungen, private Zusatzversicherungen, 3. Säule.
+        </div>
+
+        <div class="quelle-box">
+          BSV, Gesamtrechnung der Sozialen Sicherheit 2021 — publiziert auf <a href="https://www.bsv.admin.ch" target="_blank" rel="noopener">bsv.admin.ch</a><br>
+          ESSPROS-Methodik: Eurostat, <em>European System of integrated Social PROtection Statistics</em>, Ausgabe 2012.
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <div class="zahl-block" id="modellquoten">
+        <div class="zahl-kicker">Zahl 2 · Dreikreis-Finanzierung</div>
+        <div class="zahl-headline">30–40 % / 40–50 % / 20–30 %</div>
+        <div class="zahl-kontext">Verwendet im Manifest: Staat (Kreis 1), Unternehmen (Kreis 2), Gesellschaft/Pensionskassen (Kreis 3).</div>
+
+        <div class="warnung">
+          <strong>Wichtiger Hinweis:</strong> Diese Prozentbereiche sind <strong>normative Zielkorridore</strong> — keine empirischen Ist-Werte. Sie beschreiben, wie sich ein zukünftiges Finanzierungsmodell zusammensetzen sollte, nicht wie es heute bereits ist. Die konkreten Prozentwerte müssen in einem politischen Prozess mit aktuellen Daten präzisiert werden.
+        </div>
+
+        <div class="transparenz-block">
+          <h4>Ausgangslage Schweiz (Status quo 2022)</h4>
+          Arbeitgeberanteil AHV: 5,3% der AHV-pflichtigen Lohnsumme<br>
+          Arbeitgeberanteil ALV: 1,1% der Lohnsumme<br>
+          Unfallversicherung (Berufsunfall, Arbeitgeberanteil): 1–3% (branchenabhängig)<br>
+          BVG-Beiträge (Arbeitgeber trägt mind. 50% der Gesamtbeiträge)<br>
+          <strong>Total bestehende Arbeitgeberbeiträge: ca. 10–15% der Lohnsumme</strong>
+        </div>
+
+        <div class="rechenweg">
+          <strong>Herleitung Kreis 2 (Unternehmen, 40–50%):</strong><br>
+          Der vorgeschlagene Unternehmensanteil wäre keine Zusatzsteuer, sondern eine Umschichtung bestehender Sozialabgaben mit Gestaltungsrecht. Die 40–50% beziehen sich auf den <em>Anteil am Gesamtvolumen des Modells</em> — nicht auf den Prozentsatz der Lohnsumme.<br><br>
+          <strong>Herleitung Kreis 1 (Staat, 30–40%):</strong><br>
+          Basiert auf der Annahme, dass bestehende Bildungs- und Sozialausgaben (ca. CHF 40–50 Mrd. relevanter Anteil) auf wirkungsbasierte Mechanismen umgelenkt werden — ohne Mehrausgaben.<br><br>
+          <strong>Herleitung Kreis 3 (Gesellschaft, 20–30%):</strong><br>
+          Richtwert basierend auf dem Volumen, das realistischerweise über Pensionskassen und Social Impact Bonds mobilisierbar wäre — analog zu bestehenden ESG-Allokationen (heute ca. 5–8% der PK-Portfolios).
+        </div>
+
+        <div class="rechenweg">
+          <strong>Internationale Vergleiche (Orientierungspunkte):</strong><br>
+          Dänemark (Flexicurity): Unternehmen tragen ~28% der Gesamtsozialkosten<br>
+          Singapur (SkillsFuture): Unternehmen finanzieren ~50% der Weiterbildungskosten direkt<br>
+          UK (Green Investment Bank): ~60% private / ~40% öffentliche Finanzierung<br>
+          <div class="summe">Fazit: Die Korridore 30–50% für Unternehmen sind international verankert, aber CH-spezifisch noch nicht empirisch kalibriert.</div>
+        </div>
+
+        <div class="quelle-box">
+          AHV/ALV-Beitragssätze: BSV, <em>Beiträge an die AHV, IV, EO und ALV</em>, Stand 2022.<br>
+          Singapur SkillsFuture: SkillsFuture Singapore, <em>Annual Report 2022/23</em>.<br>
+          Dänemark: OECD, <em>Benefits, Taxes and Wages</em>, 2022 Edition.<br>
+          UK Green Investment Bank: HM Treasury, <em>Green Investment Bank Annual Report</em>, 2016.
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <div class="zahl-block" id="pensionskassen">
+        <div class="zahl-kicker">Zahl 3 · Pensionskassen Schweiz</div>
+        <div class="zahl-headline">1,2 Billionen Franken</div>
+        <div class="zahl-kontext">Verwendet im Manifest: «Pensionskassen verwalten in der Schweiz über 1,2 Billionen Franken.»</div>
+
+        <div class="transparenz-block">
+          <h4>Quelle</h4>
+          OAK BV (Oberaufsichtskommission Berufliche Vorsorge): <em>Jahresbericht 2022</em>. Ergänzend: Bundesamt für Statistik (BFS), <em>Pensionskassenstatistik 2021</em>.
+        </div>
+
+        <div class="rechenweg">
+          <strong>Exakter Wert:</strong><br>
+          OAK BV, Stichtag 31.12.2022: CHF 1'143 Milliarden (= 1,143 Billionen CHF)<br>
+          BFS, Pensionskassenstatistik 2021: CHF 1'136 Milliarden<br>
+          <div class="summe">Im Manifest verwendet: «über 1,2 Billionen» — leicht gerundet nach oben. Korrekte Formulierung wäre «rund 1,1 bis 1,2 Billionen».</div>
+        </div>
+
+        <div class="rechenweg">
+          <strong>Anlagestrategie Schweizer PKs (Durchschnitt 2022):</strong><br>
+          Aktien (CH + international): ~32%<br>
+          Obligationen: ~28%<br>
+          Immobilien: ~23%<br>
+          Alternative Anlagen (inkl. Infrastruktur): ~12%<br>
+          Liquidität: ~5%<br>
+          <div class="summe">Relevanz fürs Modell: «Zertifizierte Sozialinfrastruktur» würde unter Immobilien oder Alternative Anlagen fallen — ein bereits bedeutender Allokationsbereich.</div>
+        </div>
+
+        <div class="warnung">
+          <strong>Nicht enthalten:</strong> AHV-Ausgleichsfonds (1. Säule, ca. CHF 46 Mrd.), Freizügigkeitsguthaben (ca. CHF 60 Mrd.), Säule 3a (Schätzung ca. CHF 130 Mrd.). Die genannte Zahl bezieht sich ausschliesslich auf die registrierten Vorsorgeeinrichtungen der 2. Säule (BVG/LPP).
+        </div>
+
+        <div class="quelle-box">
+          OAK BV, <em>Jahresbericht 2022</em> — <a href="https://www.oak-bv.admin.ch" target="_blank" rel="noopener">oak-bv.admin.ch</a><br>
+          BFS, <em>Pensionskassenstatistik 2021</em> — <a href="https://www.bfs.admin.ch" target="_blank" rel="noopener">bfs.admin.ch</a>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <div class="zahl-block" id="social-impact-bonds">
+        <div class="zahl-kicker">Zahl 4 · Social Impact Bonds</div>
+        <div class="zahl-headline">über 200 Projekte weltweit</div>
+        <div class="zahl-kontext">Verwendet im Manifest: «[…] seither wurden weltweit über 200 Projekte umgesetzt.»</div>
+
+        <div class="transparenz-block">
+          <h4>Quelle</h4>
+          Government Outcomes Lab (GO Lab), University of Oxford: <em>Social Impact Bond Database</em>, Stand 2023. Das GO Lab unterhält die umfassendste öffentlich zugängliche Datenbank zu ergebnisbasierten Finanzierungsinstrumenten weltweit.
+        </div>
+
+        <div class="rechenweg">
+          <strong>Exakter Wert (GO Lab, 2023):</strong><br>
+          276 vertraglich abgeschlossene Impact-Bond-Projekte in 40 Ländern<br>
+          Gesamtvolumen: USD ~6,5 Milliarden<br>
+          Davon aktiv: ~130 Projekte<br>
+          <div class="summe">Im Manifest verwendet: «über 200» — konservative, korrekte Aussage.</div>
+        </div>
+
+        <div class="rechenweg">
+          <strong>Definition Social Impact Bond (SIB):</strong><br>
+          Private Investoren finanzieren ein soziales Programm vor. Der öffentliche Auftraggeber zahlt zurück — aber nur bei nachgewiesenem Erreichen vorher definierter Ziele (Outcomes). Das Investitionsrisiko trägt der private Investor vollständig.<br><br>
+          <strong>Erstes Projekt: Peterborough Prison, UK, 2010</strong><br>
+          Ziel: Reduktion der Rückfälligkeit von Strafgefangenen um 7,5% ggü. Kontrollgruppe<br>
+          Ergebnis: 9% Reduktion — Ziel übertroffen<br>
+          Kapital vollständig zurückgezahlt + Rendite an Investoren
+        </div>
+
+        <div class="warnung">
+          <strong>Kritische Einordnung:</strong> Social Impact Bonds sind <strong>kein Allheilmittel</strong>. Bekannte Einschränkungen: (1) Hohe Transaktionskosten durch komplexe Vertragsstrukturen. (2) Risiko der Outcome-Manipulation: Programme werden auf messbare Ziele optimiert, nicht auf gesellschaftlichen Gesamtnutzen. (3) Begrenzte Skalierbarkeit bei komplexen sozialen Problemen. Das Manifest sieht SIBs als <strong>Ergänzungsinstrument</strong>, nicht als Hauptfinanzierungsweg.
+        </div>
+
+        <div class="rechenweg">
+          <strong>Schweizer Kontext (Stand 2026):</strong><br>
+          Erste Pilotprojekte wurden von Innosuisse und einzelnen Kantonen (Bern, Zürich) untersucht. Kein flächendeckendes Modell vorhanden. Das Modell im Manifest setzt auf einen schrittweisen Aufbau — beginnend mit 2–3 Piloten in unterschiedlichen Politikbereichen.
+        </div>
+
+        <div class="quelle-box">
+          GO Lab, University of Oxford: <em>Social Impact Bond Database</em> — <a href="https://golab.bsg.ox.ac.uk" target="_blank" rel="noopener">golab.bsg.ox.ac.uk</a><br>
+          Peterborough SIB: Ministry of Justice UK, <em>Payment by Results Pilots: Interim Report</em>, 2014.<br>
+          OECD: <em>Understanding Social Impact Bonds</em>, OECD Working Paper, 2016.
+        </div>
+      </div>
+
+      <!-- Abschluss -->
+      <div style="border-top:2px solid var(--linie);padding-top:2.5rem;margin-top:1rem;max-width:640px;">
+        <p style="font-size:0.9rem;color:var(--grau);line-height:1.8;margin-bottom:1.5rem;">Diese Seite wird bei Aktualisierungen des Manifests laufend nachgeführt. Fehler, veraltete Quellen oder fehlende Berechnungsschritte können direkt gemeldet werden.</p>
+        <a href="kontakt.html" class="btn">Fehler oder Ergänzung melden</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span></span>Severin Stadler</div>
+        <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; © 2026</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.linkedin.com/in/severin-stadler-055a5519a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/main.js"></script>
+  <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
+</body>
+</html>
