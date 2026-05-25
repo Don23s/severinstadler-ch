@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Haltungskompass – 6 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du?">
+  <meta name="description" content="Haltungskompass – 12 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du politisch?">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.severinstadler.ch/haltungskompass.html">
   <meta property="og:title" content="Haltungskompass | Severin Stadler">
-  <meta property="og:description" content="6 Fragen. Wo stehst du politisch – und wo stehe ich? Vergleiche deine Haltung mit dem Solidarischen Liberalismus.">
+  <meta property="og:description" content="12 Fragen. Wo stehst du politisch – und wo stehe ich? Vergleiche deine Haltung mit dem Solidarischen Liberalismus.">
   <meta property="og:image" content="https://www.severinstadler.ch/assets/images/severin-stadler.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Haltungskompass | Severin Stadler">
-  <meta name="twitter:description" content="6 Fragen. Wo stehst du politisch?">
+  <meta name="twitter:description" content="12 Fragen. Wo stehst du politisch?">
   <title>Haltungskompass | Severin Stadler</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="assets/style.css">
@@ -50,30 +50,36 @@
     }
 
     .quiz-frage-text {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.025em;
-      margin-bottom: 2rem;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .quiz-likert-hint {
+      font-size: 0.78rem;
+      color: var(--grau);
+      margin-bottom: 1.75rem;
     }
 
     .quiz-antworten {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.6rem;
     }
 
     .quiz-btn {
       background: var(--weiss);
       border: 1.5px solid var(--linie);
       border-radius: 4px;
-      padding: 1.1rem 1.5rem;
+      padding: 0.95rem 1.5rem;
       text-align: left;
       cursor: pointer;
       font-family: 'Outfit', system-ui, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.4;
       transition: border-color 0.15s, background 0.15s, transform 0.1s;
       width: 100%;
     }
@@ -172,13 +178,53 @@
 
     .btn-neu:hover { border-color: var(--rot); color: var(--rot); }
 
+    /* ── Share Bar ── */
+    .share-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--linie);
+      align-items: center;
+    }
+
+    .share-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grau);
+      width: 100%;
+      margin-bottom: 0.1rem;
+    }
+
+    .btn-share {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 2px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      line-height: 1;
+    }
+
+    .btn-share:hover { opacity: 0.82; }
+    .btn-share-x  { background: #000; color: #fff; }
+    .btn-share-wa { background: #25D366; color: #fff; }
+    .btn-share-li { background: #0077B5; color: #fff; }
+
     @media (max-width: 900px) {
       .kompass-wrap { grid-template-columns: 1fr; gap: 2rem; }
       .kompass-svg-wrap svg { max-width: 360px; }
     }
 
     @media (max-width: 640px) {
-      .quiz-frage-text { font-size: 1.15rem; }
+      .quiz-frage-text { font-size: 1.1rem; }
     }
   </style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
@@ -203,7 +249,7 @@
     <div class="container">
       <span class="kicker" data-i18n="kompass.kicker">Interaktiv · Politik</span>
       <h1 data-i18n="kompass.h1">Haltungskompass.</h1>
-      <p class="sub" data-i18n="kompass.sub">6 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du – und wo stehe ich?</p>
+      <p class="sub" data-i18n="kompass.sub">12 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du – und wo stehe ich?</p>
     </div>
   </div>
 
@@ -251,13 +297,18 @@
 
   <script>
   // ══════════════════════════════════════════════════════════════════
-  // HALTUNGSKOMPASS – Mehrsprachige Konfiguration
+  // HALTUNGSKOMPASS 2.0 – Konfiguration (Mehrsprachig, 12 Fragen, Likert)
   // ══════════════════════════════════════════════════════════════════
   const _lang = (localStorage.getItem('ss_lang') || navigator.language || 'de').slice(0, 2);
+
+  // fragen: dx = wirtschaftliche Achse (+freier Markt / −Staatseingriff)
+  //         dy = soziale Achse (+solidarisch / −individuell)
+  // Likert-Gewichte: [1, 0.5, 0, -0.5, -1] (stimmt völlig → stimmt gar nicht)
 
   const TEXTS = {
     de: {
       frageVon: (n, t) => `Frage ${n} von ${t}`,
+      hinweis: 'Beurteil das folgende Statement:',
       deinQuadrant: 'Dein Quadrant',
       uebereinstimmung: n => `Übereinstimmung mit Severin: ${n}&thinsp;%`,
       aehnlTexte: [
@@ -269,48 +320,34 @@
       btnPolitik: 'Politische Haltung lesen',
       btnNeu: 'Nochmals',
       duLabel: 'Du',
+      shareLabel: 'Ergebnis teilen',
+      shareText: q => `Mein Haltungskompass-Ergebnis: ${q}. Finde deins!`,
+      likert: ['Stimmt völlig', 'Stimmt eher', 'Neutral', 'Stimmt eher nicht', 'Stimmt gar nicht'],
       achsen: { x: { links: 'Staatswirtschaft', rechts: 'Freier Markt' }, y: { unten: 'Individuell', oben: 'Solidarisch' } },
       quadranten: {
-        obenLinks:  { name: 'Sozialdemokratie',         beschreibung: 'Du setzt auf einen starken, aktiven Staat und Umverteilung als Fundament des gesellschaftlichen Zusammenhalts. Wirtschaftliche Effizienz ist dir wichtig – aber nie auf Kosten der Schwächsten.' },
+        obenLinks:  { name: 'Sozialdemokratie',          beschreibung: 'Du setzt auf einen starken, aktiven Staat und Umverteilung als Fundament des gesellschaftlichen Zusammenhalts. Wirtschaftliche Effizienz ist dir wichtig – aber nie auf Kosten der Schwächsten.' },
         obenRechts: { name: 'Solidarischer Liberalismus', beschreibung: 'Du glaubst an wirtschaftliche Freiheit und soziale Verantwortung gleichzeitig. Märkte sollen sich entfalten können – aber im Dienst der Gesellschaft, nicht gegen sie.' },
-        untenLinks: { name: 'Nationalkonservatismus',   beschreibung: 'Du bevorzugst Schutz, Stabilität und klare Grenzen – wirtschaftlich wie gesellschaftlich. Bewährtes hat für dich einen hohen Wert.' },
-        untenRechts:{ name: 'Rechtsliberalismus',       beschreibung: 'Du setzt auf individuelle Freiheit und minimalen Staatseinsatz. Der Markt löst Probleme besser als Bürokratie – Eigenverantwortung steht im Vordergrund.' }
+        untenLinks: { name: 'Nationalkonservatismus',    beschreibung: 'Du bevorzugst Schutz, Stabilität und klare Grenzen – wirtschaftlich wie gesellschaftlich. Bewährtes hat für dich einen hohen Wert.' },
+        untenRechts: { name: 'Rechtsliberalismus',       beschreibung: 'Du setzt auf individuelle Freiheit und minimalen Staatseinsatz. Der Markt löst Probleme besser als Bürokratie – Eigenverantwortung steht im Vordergrund.' }
       },
       fragen: [
-        { text: 'Wie viel Steuern sollen grosse Unternehmen zahlen?', antworten: [
-          { text: 'Weniger – hohe Steuern hemmen Wachstum und Innovation.', x: +2, y: -1 },
-          { text: 'Fair und proportional zu ihrer gesellschaftlichen Verantwortung.', x: +1, y: +2 },
-          { text: 'Mehr – grosse Gewinne müssen stärker umverteilt werden.', x: -2, y: +2 }
-        ]},
-        { text: 'Was denkst du über den Sozialstaat?', antworten: [
-          { text: 'Er ist zu grosszügig – er schafft Abhängigkeit statt Eigenverantwortung.', x: +1, y: -2 },
-          { text: 'Er ist richtig – aber muss effizienter und zielgenauer werden.', x: +1, y: +1 },
-          { text: 'Er ist zu schwach – wir brauchen mehr Absicherung für alle.', x: -1, y: +2 }
-        ]},
-        { text: 'Wie soll der Klimawandel bekämpft werden?', antworten: [
-          { text: 'Durch Marktmechanismen – ohne staatliche Eingriffe in die Wirtschaft.', x: +2, y: -1 },
-          { text: 'Mit klugen Regeln, die Wirtschaft und Umwelt gleichzeitig stärken.', x: +1, y: +2 },
-          { text: 'Mit klaren Verboten und Gesetzen – auch wenn es kurzfristig kostet.', x: -2, y: +2 }
-        ]},
-        { text: 'Wer soll Bildung organisieren und finanzieren?', antworten: [
-          { text: 'Der Markt – Wettbewerb und Eigenverantwortung bringen mehr Qualität.', x: +2, y: -2 },
-          { text: 'Der Staat – gute Bildung für alle ist die beste Wirtschaftspolitik.', x:  0, y: +2 },
-          { text: 'Der Staat vollständig und kostenlos – Bildung darf kein Privileg sein.', x: -1, y: +1 }
-        ]},
-        { text: 'Wie stehst du zu Regulierungen im Arbeitsmarkt?', antworten: [
-          { text: 'Weniger Regulierung – Flexibilität nützt Arbeitgebern wie Arbeitnehmern.', x: +2, y: -1 },
-          { text: 'Faire Mindeststandards – nicht zu viel, nicht zu wenig.', x: +1, y: +1 },
-          { text: 'Starke Arbeitnehmerrechte und Gewerkschaften sind unverzichtbar.', x: -2, y: +2 }
-        ]},
-        { text: 'Was ist der Hauptzweck eines erfolgreichen Unternehmens?', antworten: [
-          { text: 'Gewinn erwirtschaften – das schafft langfristig Wohlstand für alle.', x: +2, y: -2 },
-          { text: 'Wert schaffen – für Aktionäre, Mitarbeitende und die Gesellschaft.', x: +1, y: +2 },
-          { text: 'Der Gesellschaft dienen – Profit ist Mittel zum Zweck, nicht Selbstzweck.', x: -1, y: +2 }
-        ]}
+        { text: 'Wirtschaftliche Freiheit und soziale Verantwortung verstärken sich gegenseitig – sie sind kein Widerspruch.', dx: 2, dy: 2 },
+        { text: 'Grosse Unternehmen würden mehr in die Gesellschaft investieren, wenn sie Steuern als Mitgestaltung statt als staatliche Last begreifen.', dx: 1, dy: 2 },
+        { text: 'Der freie Markt löst gesellschaftliche Probleme besser als staatliche Eingriffe.', dx: 2, dy: -1 },
+        { text: 'Wohnen ist ein Grundbedürfnis – der freie Markt kann es ohne staatliche Eingriffe nicht sichern.', dx: -2, dy: 2 },
+        { text: 'Wer mehr leistet, soll davon profitieren – Umverteilung hemmt Leistungsbereitschaft.', dx: 2, dy: -2 },
+        { text: 'Bildung und Weiterbildung sollen für alle zugänglich und weitgehend staatlich finanziert sein.', dx: -1, dy: 2 },
+        { text: 'Klimaschutz gelingt am effektivsten über marktwirtschaftliche Anreize, nicht über Verbote.', dx: 2, dy: 0 },
+        { text: 'Zuwanderung ist für die Schweiz langfristig wirtschaftlich und gesellschaftlich eine Bereicherung.', dx: 1, dy: 1 },
+        { text: 'Unternehmen sollen nicht nur Gewinn erzielen, sondern auch Verantwortung für Gesellschaft und Umwelt übernehmen.', dx: 1, dy: 2 },
+        { text: 'Bewährte Traditionen und Institutionen zu schützen ist wichtiger als schnelle gesellschaftliche Veränderung.', dx: -1, dy: -2 },
+        { text: 'Grundversorgung in Gesundheit und Pflege darf nicht gewinnorientiert sein.', dx: -2, dy: 2 },
+        { text: 'Für die Herausforderungen von morgen brauchen wir mehr Dialog zwischen Staat, Wirtschaft und Zivilgesellschaft.', dx: 0, dy: 2 }
       ]
     },
     fr: {
       frageVon: (n, t) => `Question ${n} sur ${t}`,
+      hinweis: 'Évaluez l\'affirmation suivante :',
       deinQuadrant: 'Ton quadrant',
       uebereinstimmung: n => `Accord avec Severin : ${n}&thinsp;%`,
       aehnlTexte: [
@@ -322,48 +359,34 @@
       btnPolitik: 'Lire ma position politique',
       btnNeu: 'Recommencer',
       duLabel: 'Toi',
+      shareLabel: 'Partager le résultat',
+      shareText: q => `Mon résultat de la boussole : ${q}. Découvrez le vôtre !`,
+      likert: ['Tout à fait d\'accord', 'Plutôt d\'accord', 'Neutre', 'Plutôt pas d\'accord', 'Pas d\'accord'],
       achsen: { x: { links: 'Économie étatique', rechts: 'Libre marché' }, y: { unten: 'Individuel', oben: 'Solidaire' } },
       quadranten: {
         obenLinks:  { name: 'Social-démocratie',    beschreibung: 'Tu mises sur un État fort et actif et une redistribution comme fondement de la cohésion sociale. L\'efficacité économique est importante – mais jamais au détriment des plus faibles.' },
         obenRechts: { name: 'Libéralisme solidaire', beschreibung: 'Tu crois simultanément en la liberté économique et la responsabilité sociale. Les marchés doivent pouvoir se développer – mais au service de la société, pas contre elle.' },
         untenLinks: { name: 'Conservatisme national', beschreibung: 'Tu préfères la protection, la stabilité et des frontières claires – économiquement et socialement. Ce qui a fait ses preuves a une grande valeur pour toi.' },
-        untenRechts:{ name: 'Libéralisme de droite', beschreibung: 'Tu mises sur la liberté individuelle et une intervention étatique minimale. Le marché résout les problèmes mieux que la bureaucratie – la responsabilité individuelle est au premier plan.' }
+        untenRechts: { name: 'Libéralisme de droite', beschreibung: 'Tu mises sur la liberté individuelle et une intervention étatique minimale. Le marché résout les problèmes mieux que la bureaucratie – la responsabilité individuelle est au premier plan.' }
       },
       fragen: [
-        { text: 'Combien d\'impôts les grandes entreprises doivent-elles payer?', antworten: [
-          { text: 'Moins – des impôts élevés freinent la croissance et l\'innovation.', x: +2, y: -1 },
-          { text: 'Équitablement et proportionnellement à leur responsabilité sociale.', x: +1, y: +2 },
-          { text: 'Plus – les grands bénéfices doivent être davantage redistribués.', x: -2, y: +2 }
-        ]},
-        { text: 'Que penses-tu de l\'État social?', antworten: [
-          { text: 'Il est trop généreux – il crée de la dépendance plutôt que la responsabilité individuelle.', x: +1, y: -2 },
-          { text: 'Il est juste – mais doit devenir plus efficace et mieux ciblé.', x: +1, y: +1 },
-          { text: 'Il est trop faible – nous avons besoin de plus de protection pour tous.', x: -1, y: +2 }
-        ]},
-        { text: 'Comment faut-il lutter contre le changement climatique?', antworten: [
-          { text: 'Par des mécanismes de marché – sans interventions étatiques dans l\'économie.', x: +2, y: -1 },
-          { text: 'Avec des règles intelligentes qui renforcent simultanément l\'économie et l\'environnement.', x: +1, y: +2 },
-          { text: 'Avec des interdictions et des lois claires – même si cela coûte à court terme.', x: -2, y: +2 }
-        ]},
-        { text: 'Qui doit organiser et financer l\'éducation?', antworten: [
-          { text: 'Le marché – la concurrence et la responsabilité individuelle apportent plus de qualité.', x: +2, y: -2 },
-          { text: 'L\'État – une bonne éducation pour tous est la meilleure politique économique.', x: 0, y: +2 },
-          { text: 'L\'État entièrement et gratuitement – l\'éducation ne doit pas être un privilège.', x: -1, y: +1 }
-        ]},
-        { text: 'Quelle est ta position sur la réglementation du marché du travail?', antworten: [
-          { text: 'Moins de réglementation – la flexibilité profite aux employeurs comme aux employés.', x: +2, y: -1 },
-          { text: 'Des normes minimales équitables – ni trop, ni trop peu.', x: +1, y: +1 },
-          { text: 'Des droits des travailleurs et des syndicats forts sont indispensables.', x: -2, y: +2 }
-        ]},
-        { text: 'Quel est le but principal d\'une entreprise prospère?', antworten: [
-          { text: 'Générer des bénéfices – cela crée de la prospérité pour tous à long terme.', x: +2, y: -2 },
-          { text: 'Créer de la valeur – pour les actionnaires, les employés et la société.', x: +1, y: +2 },
-          { text: 'Servir la société – le profit est un moyen, pas une fin en soi.', x: -1, y: +2 }
-        ]}
+        { text: 'La liberté économique et la responsabilité sociale se renforcent mutuellement – elles ne sont pas contradictoires.', dx: 2, dy: 2 },
+        { text: 'Les grandes entreprises investiraient davantage dans la société si elles percevaient les impôts comme une participation active plutôt que comme une charge étatique.', dx: 1, dy: 2 },
+        { text: 'Le marché libre résout les problèmes sociaux mieux que les interventions étatiques.', dx: 2, dy: -1 },
+        { text: 'Le logement est un besoin fondamental – le marché libre ne peut pas le garantir sans intervention de l\'État.', dx: -2, dy: 2 },
+        { text: 'Celui qui produit davantage doit en bénéficier – la redistribution freine la motivation à la performance.', dx: 2, dy: -2 },
+        { text: 'La formation initiale et continue doit être accessible à tous et largement financée par l\'État.', dx: -1, dy: 2 },
+        { text: 'La protection du climat réussit mieux par des incitations de marché que par des interdictions.', dx: 2, dy: 0 },
+        { text: 'L\'immigration est à long terme un enrichissement économique et social pour la Suisse.', dx: 1, dy: 1 },
+        { text: 'Les entreprises ne doivent pas seulement générer des bénéfices, mais aussi assumer une responsabilité envers la société et l\'environnement.', dx: 1, dy: 2 },
+        { text: 'Protéger les traditions et les institutions éprouvées est plus important que le changement social rapide.', dx: -1, dy: -2 },
+        { text: 'Les soins de santé et la prise en charge de base ne doivent pas être orientés vers le profit.', dx: -2, dy: 2 },
+        { text: 'Pour les défis de demain, nous avons besoin de plus de dialogue entre l\'État, l\'économie et la société civile.', dx: 0, dy: 2 }
       ]
     },
     it: {
       frageVon: (n, t) => `Domanda ${n} di ${t}`,
+      hinweis: 'Valuta la seguente affermazione:',
       deinQuadrant: 'Il tuo quadrante',
       uebereinstimmung: n => `Corrispondenza con Severin: ${n}&thinsp;%`,
       aehnlTexte: [
@@ -375,48 +398,34 @@
       btnPolitik: 'Leggi la mia posizione politica',
       btnNeu: 'Ricominciare',
       duLabel: 'Tu',
+      shareLabel: 'Condividi il risultato',
+      shareText: q => `Il mio risultato della bussola: ${q}. Scopri il tuo!`,
+      likert: ['Pienamente d\'accordo', 'Piuttosto d\'accordo', 'Neutro', 'Piuttosto no', 'Non d\'accordo'],
       achsen: { x: { links: 'Economia statale', rechts: 'Libero mercato' }, y: { unten: 'Individuale', oben: 'Solidale' } },
       quadranten: {
-        obenLinks:  { name: 'Socialdemocrazia',    beschreibung: 'Punti su uno Stato forte e attivo e sulla ridistribuzione come fondamento della coesione sociale. L\'efficienza economica è importante – ma mai a scapito dei più deboli.' },
-        obenRechts: { name: 'Liberalismo solidale', beschreibung: 'Credi simultaneamente nella libertà economica e nella responsabilità sociale. I mercati devono potersi sviluppare – ma al servizio della società, non contro di essa.' },
+        obenLinks:  { name: 'Socialdemocrazia',       beschreibung: 'Punti su uno Stato forte e attivo e sulla ridistribuzione come fondamento della coesione sociale. L\'efficienza economica è importante – ma mai a scapito dei più deboli.' },
+        obenRechts: { name: 'Liberalismo solidale',   beschreibung: 'Credi simultaneamente nella libertà economica e nella responsabilità sociale. I mercati devono potersi sviluppare – ma al servizio della società, non contro di essa.' },
         untenLinks: { name: 'Conservatorismo nazionale', beschreibung: 'Preferisci protezione, stabilità e confini chiari – economicamente e socialmente. Ciò che ha dato buoni risultati ha un grande valore per te.' },
-        untenRechts:{ name: 'Liberalismo di destra', beschreibung: 'Punti sulla libertà individuale e un intervento statale minimo. Il mercato risolve i problemi meglio della burocrazia – la responsabilità individuale è in primo piano.' }
+        untenRechts: { name: 'Liberalismo di destra', beschreibung: 'Punti sulla libertà individuale e un intervento statale minimo. Il mercato risolve i problemi meglio della burocrazia – la responsabilità individuale è in primo piano.' }
       },
       fragen: [
-        { text: 'Quante tasse devono pagare le grandi aziende?', antworten: [
-          { text: 'Meno – le tasse elevate frenano la crescita e l\'innovazione.', x: +2, y: -1 },
-          { text: 'In modo equo e proporzionale alla loro responsabilità sociale.', x: +1, y: +2 },
-          { text: 'Di più – i grandi profitti devono essere maggiormente redistribuiti.', x: -2, y: +2 }
-        ]},
-        { text: 'Cosa pensi dello Stato sociale?', antworten: [
-          { text: 'È troppo generoso – crea dipendenza invece di responsabilità individuale.', x: +1, y: -2 },
-          { text: 'È giusto – ma deve diventare più efficiente e mirato.', x: +1, y: +1 },
-          { text: 'È troppo debole – abbiamo bisogno di più protezione per tutti.', x: -1, y: +2 }
-        ]},
-        { text: 'Come si deve combattere il cambiamento climatico?', antworten: [
-          { text: 'Attraverso meccanismi di mercato – senza interventi statali nell\'economia.', x: +2, y: -1 },
-          { text: 'Con regole intelligenti che rafforzano contemporaneamente economia e ambiente.', x: +1, y: +2 },
-          { text: 'Con divieti e leggi chiare – anche se costa a breve termine.', x: -2, y: +2 }
-        ]},
-        { text: 'Chi deve organizzare e finanziare l\'istruzione?', antworten: [
-          { text: 'Il mercato – la concorrenza e la responsabilità individuale portano più qualità.', x: +2, y: -2 },
-          { text: 'Lo Stato – una buona istruzione per tutti è la migliore politica economica.', x: 0, y: +2 },
-          { text: 'Lo Stato interamente e gratuitamente – l\'istruzione non può essere un privilegio.', x: -1, y: +1 }
-        ]},
-        { text: 'Qual è la tua posizione sulla regolamentazione del mercato del lavoro?', antworten: [
-          { text: 'Meno regolamentazione – la flessibilità avvantaggia sia datori di lavoro che lavoratori.', x: +2, y: -1 },
-          { text: 'Standard minimi equi – né troppo, né troppo poco.', x: +1, y: +1 },
-          { text: 'Diritti dei lavoratori forti e sindacati sono indispensabili.', x: -2, y: +2 }
-        ]},
-        { text: 'Qual è lo scopo principale di un\'azienda di successo?', antworten: [
-          { text: 'Generare profitto – questo crea prosperità per tutti a lungo termine.', x: +2, y: -2 },
-          { text: 'Creare valore – per azionisti, dipendenti e la società.', x: +1, y: +2 },
-          { text: 'Servire la società – il profitto è un mezzo, non un fine in sé.', x: -1, y: +2 }
-        ]}
+        { text: 'La libertà economica e la responsabilità sociale si rafforzano a vicenda – non sono in contraddizione.', dx: 2, dy: 2 },
+        { text: 'Le grandi aziende investirebbero di più nella società se percepissero le tasse come partecipazione attiva anziché come onere statale.', dx: 1, dy: 2 },
+        { text: 'Il libero mercato risolve i problemi sociali meglio degli interventi statali.', dx: 2, dy: -1 },
+        { text: 'La casa è un bisogno fondamentale – il libero mercato non può garantirla senza intervento statale.', dx: -2, dy: 2 },
+        { text: 'Chi produce di più deve trarne vantaggio – la redistribuzione frena la motivazione al rendimento.', dx: 2, dy: -2 },
+        { text: 'La formazione e il perfezionamento professionale devono essere accessibili a tutti e ampiamente finanziati dallo Stato.', dx: -1, dy: 2 },
+        { text: 'La protezione del clima riesce meglio attraverso incentivi di mercato che attraverso divieti.', dx: 2, dy: 0 },
+        { text: 'L\'immigrazione è a lungo termine un arricchimento economico e sociale per la Svizzera.', dx: 1, dy: 1 },
+        { text: 'Le aziende non devono solo generare profitti, ma assumersi anche la responsabilità verso la società e l\'ambiente.', dx: 1, dy: 2 },
+        { text: 'Proteggere le tradizioni e le istituzioni consolidate è più importante del rapido cambiamento sociale.', dx: -1, dy: -2 },
+        { text: 'L\'assistenza sanitaria e la cura di base non devono essere orientate al profitto.', dx: -2, dy: 2 },
+        { text: 'Per le sfide di domani abbiamo bisogno di più dialogo tra Stato, economia e società civile.', dx: 0, dy: 2 }
       ]
     },
     en: {
       frageVon: (n, t) => `Question ${n} of ${t}`,
+      hinweis: 'Rate the following statement:',
       deinQuadrant: 'Your quadrant',
       uebereinstimmung: n => `Match with Severin: ${n}&thinsp;%`,
       aehnlTexte: [
@@ -428,44 +437,29 @@
       btnPolitik: 'Read political position',
       btnNeu: 'Try again',
       duLabel: 'You',
+      shareLabel: 'Share result',
+      shareText: q => `My political compass result: ${q}. Find yours!`,
+      likert: ['Strongly agree', 'Agree', 'Neutral', 'Disagree', 'Strongly disagree'],
       achsen: { x: { links: 'State economy', rechts: 'Free market' }, y: { unten: 'Individual', oben: 'Solidary' } },
       quadranten: {
-        obenLinks:  { name: 'Social Democracy',    beschreibung: 'You rely on a strong, active state and redistribution as the foundation of social cohesion. Economic efficiency matters – but never at the expense of the most vulnerable.' },
+        obenLinks:  { name: 'Social Democracy',     beschreibung: 'You rely on a strong, active state and redistribution as the foundation of social cohesion. Economic efficiency matters – but never at the expense of the most vulnerable.' },
         obenRechts: { name: 'Solidary Liberalism',  beschreibung: 'You believe in economic freedom and social responsibility at the same time. Markets should be able to flourish – but in service of society, not against it.' },
         untenLinks: { name: 'National Conservatism', beschreibung: 'You prefer protection, stability and clear boundaries – economically and socially. What has proven itself has high value for you.' },
-        untenRechts:{ name: 'Right-wing Liberalism', beschreibung: 'You rely on individual freedom and minimal state intervention. The market solves problems better than bureaucracy – personal responsibility comes first.' }
+        untenRechts: { name: 'Right-wing Liberalism', beschreibung: 'You rely on individual freedom and minimal state intervention. The market solves problems better than bureaucracy – personal responsibility comes first.' }
       },
       fragen: [
-        { text: 'How much tax should large companies pay?', antworten: [
-          { text: 'Less – high taxes inhibit growth and innovation.', x: +2, y: -1 },
-          { text: 'Fairly and proportionally to their social responsibility.', x: +1, y: +2 },
-          { text: 'More – large profits must be redistributed more strongly.', x: -2, y: +2 }
-        ]},
-        { text: 'What do you think about the welfare state?', antworten: [
-          { text: 'It\'s too generous – it creates dependency rather than individual responsibility.', x: +1, y: -2 },
-          { text: 'It\'s right – but needs to become more efficient and better targeted.', x: +1, y: +1 },
-          { text: 'It\'s too weak – we need more social protection for everyone.', x: -1, y: +2 }
-        ]},
-        { text: 'How should climate change be addressed?', antworten: [
-          { text: 'Through market mechanisms – without state intervention in the economy.', x: +2, y: -1 },
-          { text: 'With smart regulations that strengthen both the economy and the environment.', x: +1, y: +2 },
-          { text: 'With clear bans and laws – even if it costs in the short term.', x: -2, y: +2 }
-        ]},
-        { text: 'Who should organise and finance education?', antworten: [
-          { text: 'The market – competition and individual responsibility bring more quality.', x: +2, y: -2 },
-          { text: 'The state – good education for all is the best economic policy.', x: 0, y: +2 },
-          { text: 'The state, entirely and free of charge – education must not be a privilege.', x: -1, y: +1 }
-        ]},
-        { text: 'What is your position on labour market regulation?', antworten: [
-          { text: 'Less regulation – flexibility benefits both employers and employees.', x: +2, y: -1 },
-          { text: 'Fair minimum standards – not too much, not too little.', x: +1, y: +1 },
-          { text: 'Strong workers\' rights and trade unions are indispensable.', x: -2, y: +2 }
-        ]},
-        { text: 'What is the main purpose of a successful company?', antworten: [
-          { text: 'Generate profit – this creates long-term prosperity for everyone.', x: +2, y: -2 },
-          { text: 'Create value – for shareholders, employees and society.', x: +1, y: +2 },
-          { text: 'Serve society – profit is a means, not an end in itself.', x: -1, y: +2 }
-        ]}
+        { text: 'Economic freedom and social responsibility reinforce each other – they are not contradictory.', dx: 2, dy: 2 },
+        { text: 'Large companies would invest more in society if they viewed taxes as active participation rather than a state burden.', dx: 1, dy: 2 },
+        { text: 'The free market solves social problems better than state intervention.', dx: 2, dy: -1 },
+        { text: 'Housing is a basic need – the free market cannot secure it without state intervention.', dx: -2, dy: 2 },
+        { text: 'Those who achieve more should benefit from it – redistribution reduces motivation to perform.', dx: 2, dy: -2 },
+        { text: 'Education and training should be accessible to all and largely state-financed.', dx: -1, dy: 2 },
+        { text: 'Climate protection succeeds best through market incentives, not prohibitions.', dx: 2, dy: 0 },
+        { text: 'Immigration is in the long run an economic and social enrichment for Switzerland.', dx: 1, dy: 1 },
+        { text: 'Companies should not only generate profit but also take responsibility for society and the environment.', dx: 1, dy: 2 },
+        { text: 'Protecting proven traditions and institutions is more important than rapid social change.', dx: -1, dy: -2 },
+        { text: 'Basic healthcare and care must not be profit-oriented.', dx: -2, dy: 2 },
+        { text: 'For tomorrow\'s challenges, we need more dialogue between the state, economy and civil society.', dx: 0, dy: 2 }
       ]
     }
   };
@@ -473,29 +467,34 @@
   const T = TEXTS[_lang in TEXTS ? _lang : 'de'];
 
   // ══════════════════════════════════════════════════════════════════
-  // HALTUNGSKOMPASS – Konfiguration
+  // Konfiguration
   // ══════════════════════════════════════════════════════════════════
   const CONFIG = {
-    severin: { x: 72, y: 78, label: 'Severin' },
+    severin:    { x: 72, y: 78, label: 'Severin' },
     achsen:     T.achsen,
     quadranten: T.quadranten,
     fragen:     T.fragen
   };
 
-  // ══════════════════════════════════════════════════════════════════
-  // Logik (nicht ändern)
-  // ══════════════════════════════════════════════════════════════════
-  let aktFrage = 0;
-  let pktX = 0;
-  let pktY = 0;
-  const MAX = CONFIG.fragen.length * 2;
+  // Likert-Gewichte: stimmt völlig=1 → stimmt gar nicht=-1
+  const LIKERT_W = [1, 0.5, 0, -0.5, -1];
 
-  function norm(punkte) {
-    return Math.round(((punkte + MAX) / (MAX * 2)) * 100);
-  }
+  // Achsen-Maxima aus den absoluten dx/dy-Summen
+  const MAX_X = CONFIG.fragen.reduce(function(s, f) { return s + Math.abs(f.dx); }, 0);
+  const MAX_Y = CONFIG.fragen.reduce(function(s, f) { return s + Math.abs(f.dy); }, 0);
+
+  function normX(p) { return Math.round(((p + MAX_X) / (MAX_X * 2)) * 100); }
+  function normY(p) { return Math.round(((p + MAX_Y) / (MAX_Y * 2)) * 100); }
+
+  // ══════════════════════════════════════════════════════════════════
+  // Quiz-Logik
+  // ══════════════════════════════════════════════════════════════════
+  var aktFrage = 0;
+  var pktX = 0;
+  var pktY = 0;
 
   function getQuadrant(x, y) {
-    const q = CONFIG.quadranten;
+    var q = CONFIG.quadranten;
     if (x >= 50 && y >= 50) return q.obenRechts;
     if (x <  50 && y >= 50) return q.obenLinks;
     if (x >= 50 && y <  50) return q.untenRechts;
@@ -503,114 +502,125 @@
   }
 
   function renderFrage() {
-    const pct = (aktFrage / CONFIG.fragen.length) * 100;
+    var pct = (aktFrage / CONFIG.fragen.length) * 100;
     document.getElementById('progressFill').style.width = pct + '%';
 
-    const f = CONFIG.fragen[aktFrage];
-    const btnHTML = f.antworten.map((a, i) =>
-      `<button class="quiz-btn" onclick="waehle(${i})">${a.text}</button>`
-    ).join('');
+    var f = CONFIG.fragen[aktFrage];
+    var btnHTML = T.likert.map(function(label, i) {
+      return '<button class="quiz-btn" onclick="waehle(' + i + ')">' + label + '</button>';
+    }).join('');
 
-    document.getElementById('quizInhalt').innerHTML = `
-      <div class="quiz-slide">
-        <div class="quiz-zaehler">${T.frageVon(aktFrage + 1, CONFIG.fragen.length)}</div>
-        <div class="quiz-frage-text">${f.text}</div>
-        <div class="quiz-antworten">${btnHTML}</div>
-      </div>
-    `;
+    document.getElementById('quizInhalt').innerHTML =
+      '<div class="quiz-slide">' +
+        '<div class="quiz-zaehler">' + T.frageVon(aktFrage + 1, CONFIG.fragen.length) + '</div>' +
+        '<div class="quiz-frage-text">' + f.text + '</div>' +
+        '<div class="quiz-likert-hint">' + T.hinweis + '</div>' +
+        '<div class="quiz-antworten">' + btnHTML + '</div>' +
+      '</div>';
   }
 
   function waehle(idx) {
-    document.querySelectorAll('.quiz-btn').forEach(b => b.disabled = true);
+    document.querySelectorAll('.quiz-btn').forEach(function(b) { b.disabled = true; });
     document.querySelectorAll('.quiz-btn')[idx].classList.add('selected');
 
-    const a = CONFIG.fragen[aktFrage].antworten[idx];
-    pktX += a.x;
-    pktY += a.y;
+    var f = CONFIG.fragen[aktFrage];
+    pktX += f.dx * LIKERT_W[idx];
+    pktY += f.dy * LIKERT_W[idx];
 
-    setTimeout(() => {
+    setTimeout(function() {
       aktFrage++;
       if (aktFrage < CONFIG.fragen.length) {
         renderFrage();
       } else {
-        renderErgebnis();
+        var userX = normX(pktX);
+        var userY = normY(pktY);
+        history.replaceState({}, '', window.location.pathname + '?x=' + userX + '&y=' + userY);
+        renderErgebnisMit(userX, userY);
       }
     }, 380);
   }
 
-  function renderErgebnis() {
+  function renderErgebnisMit(userX, userY) {
     document.getElementById('progressFill').style.width = '100%';
 
-    const userX = norm(pktX);
-    const userY = norm(pktY);
-    const sev   = CONFIG.severin;
-    const quad  = getQuadrant(userX, userY);
+    var sev   = CONFIG.severin;
+    var quad  = getQuadrant(userX, userY);
+    var dist  = Math.sqrt(Math.pow(userX - sev.x, 2) + Math.pow(userY - sev.y, 2));
+    var aehnl = Math.max(0, Math.round(100 - dist));
+    var aehnlText = aehnl >= 70 ? T.aehnlTexte[0] : aehnl >= 45 ? T.aehnlTexte[1] : T.aehnlTexte[2];
 
-    const dist      = Math.sqrt(Math.pow(userX - sev.x, 2) + Math.pow(userY - sev.y, 2));
-    const aehnl     = Math.max(0, Math.round(100 - dist));
-    const aehnlText = aehnl >= 70 ? T.aehnlTexte[0] : aehnl >= 45 ? T.aehnlTexte[1] : T.aehnlTexte[2];
+    var W = 400, H = 440;
+    var px = 54, py = 30;
+    var cw = W - 2 * px;
+    var ch = H - py - 72;
+    var toX = function(v) { return px + (v / 100) * cw; };
+    var toY = function(v) { return (py + ch) - (v / 100) * ch; };
+    var mx = toX(50), my = toY(50);
+    var ux = toX(userX), uy = toY(userY);
+    var sx = toX(sev.x), sy = toY(sev.y);
 
-    const W = 400, H = 440;
-    const px = 54, py = 30;
-    const cw = W - 2 * px;
-    const ch = H - py - 72;
-    const toX = v => px + (v / 100) * cw;
-    const toY = v => (py + ch) - (v / 100) * ch;
-    const mx = toX(50), my = toY(50);
-    const ux = toX(userX), uy = toY(userY);
-    const sx = toX(sev.x), sy = toY(sev.y);
+    document.getElementById('kompassSvg').innerHTML =
+      '<rect x="' + px + '" y="' + py + '" width="' + (cw/2) + '" height="' + (ch/2) + '" fill="#EBF5FB" opacity="0.55"/>' +
+      '<rect x="' + mx + '" y="' + py + '" width="' + (cw/2) + '" height="' + (ch/2) + '" fill="#FDF2F3" opacity="0.7"/>' +
+      '<rect x="' + px + '" y="' + my + '" width="' + (cw/2) + '" height="' + (ch/2) + '" fill="#F5F5F5" opacity="0.45"/>' +
+      '<rect x="' + mx + '" y="' + my + '" width="' + (cw/2) + '" height="' + (ch/2) + '" fill="#FFFBF0" opacity="0.45"/>' +
+      '<rect x="' + px + '" y="' + py + '" width="' + cw + '" height="' + ch + '" fill="none" stroke="#E8E8E8" stroke-width="1"/>' +
+      '<line x1="' + mx + '" y1="' + py + '" x2="' + mx + '" y2="' + (py+ch) + '" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>' +
+      '<line x1="' + px + '" y1="' + my + '" x2="' + (px+cw) + '" y2="' + my + '" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>' +
+      '<text x="' + (px+7) + '" y="' + (py+16) + '" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">' + T.quadranten.obenLinks.name + '</text>' +
+      '<text x="' + (mx+7) + '" y="' + (py+16) + '" font-family="Outfit,sans-serif" font-size="9.5" fill="#C9172A" font-weight="700">' + T.quadranten.obenRechts.name + '</text>' +
+      '<text x="' + (px+7) + '" y="' + (my+16) + '" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">' + T.quadranten.untenLinks.name + '</text>' +
+      '<text x="' + (mx+7) + '" y="' + (my+16) + '" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">' + T.quadranten.untenRechts.name + '</text>' +
+      '<text x="' + (px + cw/2) + '" y="' + (py - 10) + '" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">↑ ' + CONFIG.achsen.y.oben + '</text>' +
+      '<text x="' + (px + cw/2) + '" y="' + (py + ch + 16) + '" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">' + CONFIG.achsen.y.unten + ' ↓</text>' +
+      '<text x="' + px + '" y="' + (py + ch + 34) + '" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF">← ' + CONFIG.achsen.x.links + '</text>' +
+      '<text x="' + (px + cw) + '" y="' + (py + ch + 34) + '" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="end">' + CONFIG.achsen.x.rechts + ' →</text>' +
+      '<line x1="' + ux + '" y1="' + uy + '" x2="' + sx + '" y2="' + sy + '" stroke="#C9172A" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35"/>' +
+      '<circle cx="' + sx + '" cy="' + sy + '" r="9" fill="white" stroke="#C9172A" stroke-width="2"/>' +
+      '<circle cx="' + sx + '" cy="' + sy + '" r="4.5" fill="#C9172A"/>' +
+      '<text x="' + (sx + 13) + '" y="' + (sy + 4) + '" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700">' + sev.label + '</text>' +
+      '<circle cx="' + ux + '" cy="' + uy + '" r="12" fill="#C9172A" opacity="0.12"><animate attributeName="r" values="9;16;9" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.15;0.04;0.15" dur="2.2s" repeatCount="indefinite"/></circle>' +
+      '<circle cx="' + ux + '" cy="' + uy + '" r="7" fill="#C9172A"/>' +
+      '<text x="' + ux + '" y="' + (uy - 13) + '" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700" text-anchor="middle">' + T.duLabel + '</text>';
 
-    document.getElementById('kompassSvg').innerHTML = `
-      <rect x="${px}" y="${py}" width="${cw/2}" height="${ch/2}" fill="#EBF5FB" opacity="0.55"/>
-      <rect x="${mx}" y="${py}" width="${cw/2}" height="${ch/2}" fill="#FDF2F3" opacity="0.7"/>
-      <rect x="${px}" y="${my}" width="${cw/2}" height="${ch/2}" fill="#F5F5F5" opacity="0.45"/>
-      <rect x="${mx}" y="${my}" width="${cw/2}" height="${ch/2}" fill="#FFFBF0" opacity="0.45"/>
-      <rect x="${px}" y="${py}" width="${cw}" height="${ch}" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-      <line x1="${mx}" y1="${py}" x2="${mx}" y2="${py+ch}" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>
-      <line x1="${px}" y1="${my}" x2="${px+cw}" y2="${my}" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5,4"/>
-      <text x="${px+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">${T.quadranten.obenLinks.name}</text>
-      <text x="${mx+7}" y="${py+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#C9172A" font-weight="700">${T.quadranten.obenRechts.name}</text>
-      <text x="${px+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">${T.quadranten.untenLinks.name}</text>
-      <text x="${mx+7}" y="${my+16}" font-family="Outfit,sans-serif" font-size="9.5" fill="#9CA3AF" font-weight="600">${T.quadranten.untenRechts.name}</text>
-      <text x="${px + cw/2}" y="${py - 10}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">↑ ${CONFIG.achsen.y.oben}</text>
-      <text x="${px + cw/2}" y="${py + ch + 16}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">${CONFIG.achsen.y.unten} ↓</text>
-      <text x="${px}" y="${py + ch + 34}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF">← ${CONFIG.achsen.x.links}</text>
-      <text x="${px + cw}" y="${py + ch + 34}" font-family="Outfit,sans-serif" font-size="9" fill="#9CA3AF" text-anchor="end">${CONFIG.achsen.x.rechts} →</text>
-      <line x1="${ux}" y1="${uy}" x2="${sx}" y2="${sy}" stroke="#C9172A" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35"/>
-      <circle cx="${sx}" cy="${sy}" r="9" fill="white" stroke="#C9172A" stroke-width="2"/>
-      <circle cx="${sx}" cy="${sy}" r="4.5" fill="#C9172A"/>
-      <text x="${sx + 13}" y="${sy + 4}" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700">${sev.label}</text>
-      <circle cx="${ux}" cy="${uy}" r="12" fill="#C9172A" opacity="0.12">
-        <animate attributeName="r" values="9;16;9" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.15;0.04;0.15" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="${ux}" cy="${uy}" r="7" fill="#C9172A"/>
-      <text x="${ux}" y="${uy - 13}" font-family="Outfit,sans-serif" font-size="10" fill="#C9172A" font-weight="700" text-anchor="middle">${T.duLabel}</text>
-    `;
+    var pageUrl = 'https://www.severinstadler.ch/haltungskompass.html?x=' + userX + '&y=' + userY;
+    var shareText = T.shareText(quad.name);
 
-    document.getElementById('ergebnisText').innerHTML = `
-      <span class="ergebnis-lage">${T.deinQuadrant}</span>
-      <div class="ergebnis-titel">${quad.name}</div>
-      <p class="ergebnis-text">${quad.beschreibung}</p>
-      <div class="ergebnis-vergleich">
-        <strong>${T.uebereinstimmung(aehnl)}</strong><br>
-        ${aehnlText} ${T.severinInfo}
-      </div>
-      <div class="ergebnis-cta">
-        <a href="politik.html" class="btn">${T.btnPolitik}</a>
-        <button class="btn-neu" onclick="neustart()">${T.btnNeu}</button>
-      </div>
-    `;
+    document.getElementById('ergebnisText').innerHTML =
+      '<span class="ergebnis-lage">' + T.deinQuadrant + '</span>' +
+      '<div class="ergebnis-titel">' + quad.name + '</div>' +
+      '<p class="ergebnis-text">' + quad.beschreibung + '</p>' +
+      '<div class="ergebnis-vergleich"><strong>' + T.uebereinstimmung(aehnl) + '</strong><br>' + aehnlText + ' ' + T.severinInfo + '</div>' +
+      '<div class="ergebnis-cta">' +
+        '<a href="politik.html" class="btn">' + T.btnPolitik + '</a>' +
+        '<button class="btn-neu" onclick="neustart()">' + T.btnNeu + '</button>' +
+      '</div>' +
+      '<div class="share-bar">' +
+        '<div class="share-label">' + T.shareLabel + '</div>' +
+        '<a href="https://x.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(pageUrl) + '" target="_blank" rel="noopener" class="btn-share btn-share-x">' +
+          '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.737l7.731-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>' +
+          ' X' +
+        '</a>' +
+        '<a href="https://wa.me/?text=' + encodeURIComponent(shareText + ' ' + pageUrl) + '" target="_blank" rel="noopener" class="btn-share btn-share-wa">' +
+          '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>' +
+          ' WhatsApp' +
+        '</a>' +
+        '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(pageUrl) + '" target="_blank" rel="noopener" class="btn-share btn-share-li">' +
+          '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>' +
+          ' LinkedIn' +
+        '</a>' +
+      '</div>';
 
     document.getElementById('quiz-bereich').style.display = 'none';
     document.getElementById('ergebnis-bereich').style.display = 'block';
-    setTimeout(() => {
+    setTimeout(function() {
       document.getElementById('ergebnis-bereich').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 50);
   }
 
   function neustart() {
     aktFrage = 0; pktX = 0; pktY = 0;
+    history.replaceState({}, '', window.location.pathname);
     document.getElementById('ergebnis-bereich').style.display = 'none';
     document.getElementById('quiz-bereich').style.display = 'block';
     document.getElementById('progressFill').style.width = '0%';
@@ -618,8 +628,17 @@
     document.getElementById('quiz-bereich').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Start
-  renderFrage();
+  // Start: URL-Parameter prüfen (geteiltes Ergebnis)
+  var urlP = new URLSearchParams(window.location.search);
+  var sharedX = parseInt(urlP.get('x'));
+  var sharedY = parseInt(urlP.get('y'));
+  if (!isNaN(sharedX) && !isNaN(sharedY) && sharedX >= 0 && sharedX <= 100 && sharedY >= 0 && sharedY <= 100) {
+    document.getElementById('quiz-bereich').style.display = 'none';
+    document.getElementById('ergebnis-bereich').style.display = 'block';
+    renderErgebnisMit(sharedX, sharedY);
+  } else {
+    renderFrage();
+  }
   </script>
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
