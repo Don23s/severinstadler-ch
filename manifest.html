@@ -69,10 +69,16 @@
       transition: opacity 0.2s;
     }
 
+    /* Hierarchische Einrückung */
+    .chapnav-item[data-level="1"] { padding-left: 0; }
+    .chapnav-item[data-level="2"] { padding-left: 1rem; }
+    .chapnav-item[data-level="2"] .chapnav-dot { width: 4px; height: 4px; }
+
     .chapnav-item.active { color: var(--rot); }
     .chapnav-item.active .chapnav-label {
       opacity: 1;
       font-weight: 800;
+      font-size: 0.8rem;
     }
     .chapnav-item.active .chapnav-dot {
       background: var(--rot);
@@ -808,34 +814,34 @@
 
   <!-- Sticky Chapter Nav (Desktop) -->
   <div class="manifest-chapnav" id="manifest-chapnav" aria-label="Kapitelnavigation">
-    <a href="#einleitung" class="chapnav-item" data-section="einleitung">
+    <a href="#einleitung" class="chapnav-item" data-section="einleitung" data-level="1">
       <span class="chapnav-dot"></span><span class="chapnav-label">Willensnation</span>
     </a>
-    <a href="#methode" class="chapnav-item" data-section="methode">
+    <a href="#methode" class="chapnav-item" data-section="methode" data-level="1">
       <span class="chapnav-dot"></span><span class="chapnav-label">Ermöglichungspolitik</span>
     </a>
-    <a href="#werkzeug1" class="chapnav-item" data-section="werkzeug1">
+    <a href="#werkzeug1" class="chapnav-item" data-section="werkzeug1" data-level="1">
       <span class="chapnav-dot"></span><span class="chapnav-label">Sol. Liberalismus</span>
     </a>
-    <a href="#gesundheit" class="chapnav-item" data-section="gesundheit">
+    <a href="#gesundheit" class="chapnav-item" data-section="gesundheit" data-level="2">
       <span class="chapnav-dot"></span><span class="chapnav-label">Gesundheit</span>
     </a>
-    <a href="#wohnen" class="chapnav-item" data-section="wohnen">
+    <a href="#wohnen" class="chapnav-item" data-section="wohnen" data-level="2">
       <span class="chapnav-dot"></span><span class="chapnav-label">Wohnen</span>
     </a>
-    <a href="#bildung" class="chapnav-item" data-section="bildung">
+    <a href="#bildung" class="chapnav-item" data-section="bildung" data-level="2">
       <span class="chapnav-dot"></span><span class="chapnav-label">Bildung</span>
     </a>
-    <a href="#finanzierung" class="chapnav-item" data-section="finanzierung">
+    <a href="#finanzierung" class="chapnav-item" data-section="finanzierung" data-level="2">
       <span class="chapnav-dot"></span><span class="chapnav-label">Finanzierung</span>
     </a>
-    <a href="#werkzeug2" class="chapnav-item" data-section="werkzeug2">
+    <a href="#werkzeug2" class="chapnav-item" data-section="werkzeug2" data-level="1">
       <span class="chapnav-dot"></span><span class="chapnav-label">Konstr. Demokratie</span>
     </a>
-    <a href="#demokratie" class="chapnav-item" data-section="demokratie">
+    <a href="#demokratie" class="chapnav-item" data-section="demokratie" data-level="2">
       <span class="chapnav-dot"></span><span class="chapnav-label">Bedürfnis &amp; Sicherheit</span>
     </a>
-    <a href="#aufruf" class="chapnav-item" data-section="aufruf">
+    <a href="#aufruf" class="chapnav-item" data-section="aufruf" data-level="1">
       <span class="chapnav-dot"></span><span class="chapnav-label">Einladung</span>
     </a>
   </div>
@@ -1195,7 +1201,7 @@
   const darkSections = new Set(['einleitung', 'werkzeug2', 'aufruf']);
 
   function updateChapNav() {
-    const threshold = window.innerHeight * 0.4;
+    const threshold = window.innerHeight * 0.88;
     let activeId = null;
     sections.forEach(function(s) {
       if (s.getBoundingClientRect().top <= threshold) activeId = s.dataset.section;
