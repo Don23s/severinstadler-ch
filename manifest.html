@@ -706,7 +706,24 @@
       margin-top: 0.35rem;
       font-size: 0.68rem;
     }
-    .zahl-ref:hover .zahl-tooltip { opacity: 1; }
+    .zahl-ref:hover .zahl-tooltip,
+    .zahl-ref.tooltip-active .zahl-tooltip {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 760px) {
+      .zahl-tooltip {
+        position: fixed;
+        bottom: 1.25rem;
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+        transform: none;
+        top: auto;
+      }
+      .zahl-tooltip::after { display: none; }
+    }
 
     /* ── Share Bar ── */
     .manifest-share {
@@ -1339,6 +1356,37 @@
 
   overlay.querySelectorAll('a').forEach(function(a) {
     a.addEventListener('click', function() { overlay.classList.remove('open'); });
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // ZAHLEN-TOOLTIPS – Tap-Support für Mobile
+  // ═══════════════════════════════════════════════════════════
+
+  document.querySelectorAll('.zahl-icon').forEach(function(icon) {
+    icon.addEventListener('click', function(e) {
+      var ref = icon.closest('.zahl-ref');
+      var isActive = ref.classList.contains('tooltip-active');
+
+      // Alle anderen schliessen
+      document.querySelectorAll('.zahl-ref.tooltip-active').forEach(function(el) {
+        el.classList.remove('tooltip-active');
+      });
+
+      if (!isActive) {
+        e.preventDefault(); // Erster Tap: Tooltip zeigen, nicht navigieren
+        ref.classList.add('tooltip-active');
+      }
+      // Zweiter Tap: Link navigiert normal (preventDefault nicht aufgerufen)
+    });
+  });
+
+  // Tooltip schliessen bei Tap ausserhalb
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.zahl-ref')) {
+      document.querySelectorAll('.zahl-ref.tooltip-active').forEach(function(el) {
+        el.classList.remove('tooltip-active');
+      });
+    }
   });
   </script>
   <script src="assets/main.js"></script>
