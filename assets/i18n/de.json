@@ -266,7 +266,7 @@
     "manifest_p": "Ich habe den Solidarischen Liberalismus ausgearbeitet: mit Mechanismus, Sektoren, historischen Wurzeln und rechtlichen Grundlagen. Version 1.0, Mai 2026.",
     "manifest_btn": "Manifest lesen",
     "kompass_label": "Interaktiv", "kompass_h2": "Wo stehst du?",
-    "kompass_p": "6 Fragen zu Wirtschaft und Gesellschaft – und du siehst auf einem Kompass, wie deine Haltung mit meiner verglichen ist.",
+    "kompass_p": "12 Fragen zu Wirtschaft und Gesellschaft – und du siehst auf einem Kompass, wie deine Haltung mit meiner verglichen ist.",
     "kompass_btn": "Haltungskompass starten"
   },
   "kommunikation": {
@@ -361,7 +361,7 @@
   "kompass": {
     "kicker": "Interaktiv · Politik",
     "h1": "Haltungskompass.",
-    "sub": "6 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du – und wo stehe ich?",
+    "sub": "12 Fragen zu Wirtschaft und Gesellschaft. Wo stehst du – und wo stehe ich?",
     "band": "Wirtschaft · Solidarität · Gesellschaft",
     "section_result": "Dein Ergebnis"
   },

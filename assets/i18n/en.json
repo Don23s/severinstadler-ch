@@ -266,7 +266,7 @@
     "manifest_p": "I have developed solidary liberalism: with mechanism, sectors, historical roots and legal foundations. Version 1.0, May 2026.",
     "manifest_btn": "Read the manifesto",
     "kompass_label": "Interactive", "kompass_h2": "Where do you stand?",
-    "kompass_p": "6 questions on economy and society – and you'll see on a compass how your stance compares to mine.",
+    "kompass_p": "12 questions on economy and society – and you'll see on a compass how your stance compares to mine.",
     "kompass_btn": "Start the compass"
   },
   "kommunikation": {
@@ -361,7 +361,7 @@
   "kompass": {
     "kicker": "Interactive · Politics",
     "h1": "Values Compass.",
-    "sub": "6 questions on economics and society. Where do you stand – and where do I stand?",
+    "sub": "12 questions on economics and society. Where do you stand – and where do I stand?",
     "band": "Economy · Solidarity · Society",
     "section_result": "Your result"
   },

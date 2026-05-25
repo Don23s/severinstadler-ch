@@ -266,7 +266,7 @@
     "manifest_p": "J'ai développé le libéralisme solidaire: avec mécanisme, secteurs, racines historiques et bases juridiques. Version 1.0, mai 2026.",
     "manifest_btn": "Lire le manifeste",
     "kompass_label": "Interactif", "kompass_h2": "Où vous situez-vous?",
-    "kompass_p": "6 questions sur l'économie et la société – et vous verrez sur une boussole comment votre attitude se compare à la mienne.",
+    "kompass_p": "12 questions sur l'économie et la société – et vous verrez sur une boussole comment votre attitude se compare à la mienne.",
     "kompass_btn": "Démarrer la boussole"
   },
   "kommunikation": {
@@ -361,7 +361,7 @@
   "kompass": {
     "kicker": "Interactif · Politique",
     "h1": "Boussole de valeurs.",
-    "sub": "6 questions sur l'économie et la société. Où te situes-tu – et où est-ce que je me situe?",
+    "sub": "12 questions sur l'économie et la société. Où te situes-tu – et où est-ce que je me situe?",
     "band": "Économie · Solidarité · Société",
     "section_result": "Ton résultat"
   },

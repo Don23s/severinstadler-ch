@@ -266,7 +266,7 @@
     "manifest_p": "Ho sviluppato il liberalismo solidale: con meccanismo, settori, radici storiche e fondamenti giuridici. Versione 1.0, maggio 2026.",
     "manifest_btn": "Leggi il manifesto",
     "kompass_label": "Interattivo", "kompass_h2": "Dove ti posizioni?",
-    "kompass_p": "6 domande sull'economia e la società – e vedrai su una bussola come il tuo atteggiamento si confronta con il mio.",
+    "kompass_p": "12 domande sull'economia e la società – e vedrai su una bussola come il tuo atteggiamento si confronta con il mio.",
     "kompass_btn": "Avvia la bussola"
   },
   "kommunikation": {
@@ -361,7 +361,7 @@
   "kompass": {
     "kicker": "Interattivo · Politica",
     "h1": "Bussola dei valori.",
-    "sub": "6 domande su economia e società. Dove ti posizioni – e dove mi posiziono io?",
+    "sub": "12 domande su economia e società. Dove ti posizioni – e dove mi posiziono io?",
     "band": "Economia · Solidarietà · Società",
     "section_result": "Il tuo risultato"
   },
