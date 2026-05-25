@@ -79,6 +79,13 @@
       transform: scale(1.5);
     }
 
+    /* Auf dunklen Sektionen: aktiver Punkt + Label weiss */
+    .manifest-chapnav.chapnav--on-dark .chapnav-item { color: rgba(255,255,255,0.4); }
+    .manifest-chapnav.chapnav--on-dark .chapnav-dot { background: rgba(255,255,255,0.3); }
+    .manifest-chapnav.chapnav--on-dark .chapnav-item.active { color: #fff; }
+    .manifest-chapnav.chapnav--on-dark .chapnav-item.active .chapnav-label { color: #fff; }
+    .manifest-chapnav.chapnav--on-dark .chapnav-item.active .chapnav-dot { background: #fff; }
+
     @media (max-width: 1199px) { .manifest-chapnav { display: none; } }
 
     /* ── Float Button + Overlay (Mobile / Tablet) ── */
@@ -1184,6 +1191,8 @@
 
   const chapNavItems = document.querySelectorAll('.chapnav-item[data-section]');
   const sections = document.querySelectorAll('[data-section]:not(.chapnav-item)');
+  const chapNavEl = document.getElementById('manifest-chapnav');
+  const darkSections = new Set(['einleitung', 'werkzeug2', 'aufruf']);
 
   function updateChapNav() {
     const threshold = window.innerHeight * 0.4;
@@ -1194,6 +1203,7 @@
     chapNavItems.forEach(function(item) {
       item.classList.toggle('active', item.dataset.section === activeId);
     });
+    chapNavEl.classList.toggle('chapnav--on-dark', darkSections.has(activeId));
   }
   window.addEventListener('scroll', updateChapNav, { passive: true });
   updateChapNav();
