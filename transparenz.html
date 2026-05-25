@@ -131,9 +131,56 @@
     }
     .zurueck-link:hover { color: var(--rot); }
 
+    .szenario-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .szenario-box {
+      border: 1px solid var(--linie);
+      border-radius: 2px;
+      padding: 1rem 1.25rem;
+      font-size: 0.84rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .szenario-box.konservativ { border-top: 3px solid #6b7280; }
+    .szenario-box.liberal { border-top: 3px solid var(--rot); }
+
+    .szenario-label {
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .szenario-box.konservativ .szenario-label { color: #6b7280; }
+    .szenario-box.liberal .szenario-label { color: var(--rot); }
+
+    .szenario-wert {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .szenario-section-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grau);
+      margin: 1.5rem 0 0.5rem;
+    }
+
     @media (max-width: 640px) {
       .transparenz-hero { padding: 3.5rem 1.25rem 2rem; }
       .zahl-block { padding: 2rem 1.25rem 1.5rem; }
+      .szenario-grid { grid-template-columns: 1fr; }
     }
   </style>
   <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
@@ -169,35 +216,55 @@
       <!-- ════════════════════════════════════════════ -->
       <div class="zahl-block" id="sozialausgaben">
         <div class="zahl-kicker">Zahl 1 · Sozialausgaben Schweiz</div>
-        <div class="zahl-headline">~170 Milliarden Franken</div>
-        <div class="zahl-kontext">Verwendet im Manifest: «Das Schweizer Sozialversicherungssystem verteilt jährlich über 170 Milliarden Franken.»</div>
+        <div class="zahl-headline">rund 187 Milliarden Franken</div>
+        <div class="zahl-kontext">Verwendet im Manifest: «Das Schweizer Sozialversicherungssystem verteilt jährlich rund 187 Milliarden Franken.» — Ausgaben gemäss BSV GRSV 2023.</div>
+
+        <div class="warnung">
+          <strong>Zwei unterschiedliche Erhebungen — wichtige Unterscheidung:</strong><br>
+          Das BSV führt die <strong>GRSV</strong> (Gesamtrechnung der SozialVERsicherungen) nach schweizerischer Methodik. Das BFS führt die <strong>GRSS</strong> (Gesamtrechnung der Sozialen Sicherheit) nach EUROSTAT-Methodik, die breiter abgrenzt und höhere Gesamtwerte ausweist. Im Manifest wird die GRSV verwendet — sie erfasst die gesetzlichen Schweizer Sozialversicherungen, auf welche sich das Modell bezieht.
+        </div>
 
         <div class="transparenz-block">
           <h4>Quelle</h4>
-          Bundesamt für Sozialversicherungen (BSV) / Office fédéral des assurances sociales (OFAS): <em>Gesamtrechnung der Sozialen Sicherheit (GRSS)</em>, Ausgabe 2021. Die GRSS erfasst alle institutionellen Sozialleistungen der Schweiz nach der europäischen ESSPROS-Methodik (European System of integrated Social PROtection Statistics).
+          Bundesamt für Sozialversicherungen (BSV): <em>Gesamtrechnung der Sozialversicherungen (GRSV) 2023</em>. Ausgaben: CHF 186,8 Milliarden. Die GRSV erfasst die gesetzlichen Schweizer Sozialversicherungen nach einheitlicher schweizerischer Methodik und ist die massgebliche Quelle für innerschweizerische Finanzierungsargumente.
         </div>
 
         <div class="rechenweg">
-          <strong>Enthaltene Bereiche (Erhebungsjahr 2021, in Mrd. CHF, gerundet):</strong><br>
-          AHV – Alters- und Hinterlassenenversicherung &nbsp;·&nbsp; ca. 45,0<br>
-          BV – Berufliche Vorsorge (Rentenleistungen, 2. Säule) &nbsp;·&nbsp; ca. 38,0<br>
-          KV – Obligatorische Krankenversicherung (OKP) &nbsp;·&nbsp; ca. 36,0<br>
-          IV – Invalidenversicherung &nbsp;·&nbsp; ca. 9,4<br>
-          EL – Ergänzungsleistungen zu AHV/IV &nbsp;·&nbsp; ca. 5,3<br>
-          UV – Unfallversicherung &nbsp;·&nbsp; ca. 5,6<br>
-          ALV – Arbeitslosenversicherung &nbsp;·&nbsp; ca. 5,1<br>
-          Sozialhilfe (Kantone/Gemeinden) &nbsp;·&nbsp; ca. 3,0<br>
-          FamZ, EO, weitere &nbsp;·&nbsp; ca. 7,6<br>
-          <div class="summe">Total GRSS 2021: ca. CHF 160–175 Milliarden</div>
+          <strong>Enthaltene Sozialversicherungen (GRSV 2023, Ausgaben in Mrd. CHF, Schätzung auf Basis publizierter BSV-Statistiken):</strong><br>
+          AHV – Alters- und Hinterlassenenversicherung &nbsp;·&nbsp; ca. 48–50<br>
+          BV – Berufliche Vorsorge (Rentenleistungen, 2. Säule) &nbsp;·&nbsp; ca. 42–45<br>
+          KV – Obligatorische Krankenversicherung (OKP) &nbsp;·&nbsp; ca. 38–40<br>
+          IV – Invalidenversicherung &nbsp;·&nbsp; ca. 10<br>
+          EL – Ergänzungsleistungen zu AHV/IV &nbsp;·&nbsp; ca. 5–6<br>
+          UV – Unfallversicherung &nbsp;·&nbsp; ca. 5–6<br>
+          ALV – Arbeitslosenversicherung &nbsp;·&nbsp; ca. 5<br>
+          EO, FamZ, weitere &nbsp;·&nbsp; ca. 8<br>
+          <div class="summe">Gesamtausgaben GRSV 2023: CHF 186,8 Milliarden (BSV-Publikation). Im Manifest gerundet: «rund 187 Milliarden».</div>
         </div>
 
         <div class="warnung">
-          <strong>Methodische Einschränkung:</strong> Die einzelnen Positionen sind Annäherungswerte, da die GRSS einige Leistungen konsolidiert ausweist und Doppelzählungen zwischen Sozialwerken ausschliesst. Der publizierte Gesamtwert variiert je nach Abgrenzung zwischen ca. CHF 163 Mrd. (enge Definition) und CHF 181 Mrd. (weite Definition inkl. Steuererleichterungen). Im Manifest wird «über 170 Milliarden» als konservativer Mittelwert verwendet. <strong>Nicht enthalten:</strong> Freiwillige Unternehmensleistungen, private Zusatzversicherungen, 3. Säule.
+          <strong>Einschränkung der Einzelpositionen:</strong> Die Aufschlüsselung nach Sozialwerk sind Schätzwerte auf Basis der BSV Sozialversicherungsstatistik (SVS). Die präzise Verteilung publiziert das BSV jährlich in der SVS. Die Gesamtsumme CHF 186,8 Mrd. ist der verifizierte GRSV-Wert.<br><br>
+          <strong>Nicht enthalten:</strong> Kantonale Sozialhilfe (nicht Teil der GRSV), freiwillige Unternehmensleistungen, private Zusatzversicherungen, Säule 3a.
         </div>
 
+        <p class="szenario-section-title">Schätzungsbereich — Konservativ vs. Liberal</p>
+        <div class="szenario-grid">
+          <div class="szenario-box konservativ">
+            <div class="szenario-label">Konservativ (Worst Case)</div>
+            <div class="szenario-wert">CHF 186,8 Mrd.</div>
+            Nur gesetzliche Sozialversicherungen nach schweizer GRSV-Methodik (BSV 2023). Engste, vergleichsweise robusteste Abgrenzung — empfohlen für innerschweizerische Finanzierungsdiskussionen.
+          </div>
+          <div class="szenario-box liberal">
+            <div class="szenario-label">Liberal (Best Case)</div>
+            <div class="szenario-wert">CHF ~207 Mrd.</div>
+            GRSS-Methodik nach EUROSTAT (BFS 2022), inkl. kantonale Sozialhilfe und freiwillige Leistungen. Breitere Abgrenzung — geeignet für internationale Vergleiche, nicht für Reformrechnung.
+          </div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--grau);margin-top:0.5rem;">Im Manifest wird der GRSV-Wert (186,8 Mrd.) verwendet. Die Differenz von ~20 Mrd. entspricht Leistungen, die ausserhalb der direkten Bundesaufsicht liegen.</p>
+
         <div class="quelle-box">
-          BSV, Gesamtrechnung der Sozialen Sicherheit 2021 — publiziert auf <a href="https://www.bsv.admin.ch" target="_blank" rel="noopener">bsv.admin.ch</a><br>
-          ESSPROS-Methodik: Eurostat, <em>European System of integrated Social PROtection Statistics</em>, Ausgabe 2012.
+          BSV, <em>Gesamtrechnung der Sozialversicherungen (GRSV) 2023</em> — <a href="https://www.bsv.admin.ch/bsv/de/home/sozialversicherungen/ueberblick/grsv.html" target="_blank" rel="noopener">bsv.admin.ch</a><br>
+          BSV, <em>Schweizerische Sozialversicherungsstatistik (SVS) 2024</em> — für Aufschlüsselung nach Sozialwerk.
         </div>
       </div>
 
@@ -230,76 +297,119 @@
         </div>
 
         <div class="rechenweg">
-          <strong>Internationale Vergleiche (Orientierungspunkte):</strong><br>
-          Dänemark (Flexicurity): Unternehmen tragen ~28% der Gesamtsozialkosten<br>
-          Singapur (SkillsFuture): Unternehmen finanzieren ~50% der Weiterbildungskosten direkt<br>
-          UK (Green Investment Bank): ~60% private / ~40% öffentliche Finanzierung<br>
-          <div class="summe">Fazit: Die Korridore 30–50% für Unternehmen sind international verankert, aber CH-spezifisch noch nicht empirisch kalibriert.</div>
+          <strong>Schweizer Ausgangslage für die Modellschätzung (Primärdaten CH):</strong><br>
+          Arbeitgeberbeiträge AHV 2024: 5,3% der Lohnsumme (BSV)<br>
+          Arbeitgeberbeiträge ALV 2024: 1,1% der Lohnsumme (SECO)<br>
+          Unfallversicherung Berufsunfall (Arbeitgeber): 1–3% je Branche (SUVA)<br>
+          BVG-Beiträge Arbeitgeber: mind. 50% der Gesamtbeiträge, Satz je Altersklasse (BSV BVG-Statistik)<br>
+          <div class="summe">Total bestehende gesetzliche Arbeitgeberbeiträge: ca. 10–15% der AHV-pflichtigen Lohnsumme — Schweizer Primärdaten, jährlich publiziert vom BSV.</div>
         </div>
 
+        <div class="rechenweg">
+          <strong>Internationale Orientierungspunkte (ergänzend, nicht primäre Begründung):</strong><br>
+          Diese Vergleiche dienen der Plausibilisierung, nicht der Herleitung. Massgeblich sind die Schweizer Ist-Werte oben.<br><br>
+          Dänemark (Flexicurity): Unternehmen tragen ~28% der Gesamtsozialkosten (OECD Benefits and Wages 2022)<br>
+          Singapur (SkillsFuture): Unternehmen finanzieren ~50% der Weiterbildungskosten (SkillsFuture Annual Report 2022/23)<br>
+          <div class="summe">Fazit: Die Schweizer Arbeitgeberbeiträge von ~10–15% der Lohnsumme sind bereits heute substanziell. Das Modell schlägt vor, deren Lenkungswirkung zu erhöhen — nicht den Gesamtbetrag.</div>
+        </div>
+
+        <p class="szenario-section-title">Schätzungsbereich — Mobilisierbares Modellvolumen (Konservativ vs. Liberal)</p>
+        <div class="warnung">
+          <strong>Was wird hier geschätzt?</strong> Nicht alle 187 Mrd. der GRSV sind reformierbar — viele Leistungen sind verfassungsmässig garantiert oder vertraglich gebunden. Die folgende Schätzung beziffert, welcher Anteil realistischerweise auf wirkungsbasierte Mechanismen umgestellt werden könnte.
+        </div>
+        <div class="szenario-grid">
+          <div class="szenario-box konservativ">
+            <div class="szenario-label">Konservativ — Pilotmodell</div>
+            <div class="szenario-wert">CHF 10–20 Mrd.</div>
+            5–10% der GRSV. Begrenzt auf 2–3 Sektoren (z.B. Prävention, Reintegration). Realisierbar in 5–8 Jahren ohne Verfassungsänderung. Kreis 1: 35%, Kreis 2: 40%, Kreis 3: 25%.
+          </div>
+          <div class="szenario-box liberal">
+            <div class="szenario-label">Liberal — Vollimplementierung</div>
+            <div class="szenario-wert">CHF 65–75 Mrd.</div>
+            35–40% der GRSV. Breite Sektoren (Gesundheit, Bildung, Wohnen, Beschäftigung). Langfristige Perspektive (15–20 Jahre), erfordert Gesetzesrevisionen. Kreis 1: 30%, Kreis 2: 50%, Kreis 3: 20%.
+          </div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--grau);margin-top:0.5rem;">Die Prozentwerte der drei Kreise beschreiben den Finanzierungsanteil je Akteur <em>am Modellvolumen</em> — nicht an der Gesamten GRSV.</p>
+
         <div class="quelle-box">
-          AHV/ALV-Beitragssätze: BSV, <em>Beiträge an die AHV, IV, EO und ALV</em>, Stand 2022.<br>
-          Singapur SkillsFuture: SkillsFuture Singapore, <em>Annual Report 2022/23</em>.<br>
-          Dänemark: OECD, <em>Benefits, Taxes and Wages</em>, 2022 Edition.<br>
-          UK Green Investment Bank: HM Treasury, <em>Green Investment Bank Annual Report</em>, 2016.
+          AHV/ALV-Beitragssätze: BSV, <em>Merkblatt Beiträge an AHV, IV, EO und ALV</em>, Stand 2024 — <a href="https://www.bsv.admin.ch" target="_blank" rel="noopener">bsv.admin.ch</a><br>
+          BVG-Beitragssätze: BSV, <em>BVG-Statistik 2023</em><br>
+          UV-Prämien: SUVA, <em>Prämientarife</em>, Stand 2024 — <a href="https://www.suva.ch" target="_blank" rel="noopener">suva.ch</a><br>
+          Internationale Vergleiche (ergänzend): Singapur SkillsFuture, <em>Annual Report 2022/23</em>; OECD, <em>Benefits, Taxes and Wages</em>, 2022.
         </div>
       </div>
 
       <!-- ════════════════════════════════════════════ -->
       <div class="zahl-block" id="pensionskassen">
         <div class="zahl-kicker">Zahl 3 · Pensionskassen Schweiz</div>
-        <div class="zahl-headline">1,2 Billionen Franken</div>
-        <div class="zahl-kontext">Verwendet im Manifest: «Pensionskassen verwalten in der Schweiz über 1,2 Billionen Franken.»</div>
+        <div class="zahl-headline">rund 1,19 Billionen Franken</div>
+        <div class="zahl-kontext">Verwendet im Manifest: «Pensionskassen verwalten in der Schweiz rund 1,2 Billionen Franken.» — Gerundeter Wert des OAK-BV-Ergebnisses 2023.</div>
 
         <div class="transparenz-block">
           <h4>Quelle</h4>
-          OAK BV (Oberaufsichtskommission Berufliche Vorsorge): <em>Jahresbericht 2022</em>. Ergänzend: Bundesamt für Statistik (BFS), <em>Pensionskassenstatistik 2021</em>.
+          OAK BV (Oberaufsichtskommission Berufliche Vorsorge): <em>Bericht zur finanziellen Lage der Vorsorgeeinrichtungen 2023</em>. Die OAK BV ist die gesetzlich vorgeschriebene Oberaufsichtsbehörde für die berufliche Vorsorge in der Schweiz und publiziert jährlich eine umfassende Erhebung aller registrierten Vorsorgeeinrichtungen.
         </div>
 
         <div class="rechenweg">
-          <strong>Exakter Wert:</strong><br>
-          OAK BV, Stichtag 31.12.2022: CHF 1'143 Milliarden (= 1,143 Billionen CHF)<br>
-          BFS, Pensionskassenstatistik 2021: CHF 1'136 Milliarden<br>
-          <div class="summe">Im Manifest verwendet: «über 1,2 Billionen» — leicht gerundet nach oben. Korrekte Formulierung wäre «rund 1,1 bis 1,2 Billionen».</div>
+          <strong>Exakter Wert (verifiziert):</strong><br>
+          OAK BV, Stichtag 31.12.2023: Bilanzsumme CHF 1'192 Milliarden (1'355 Vorsorgeeinrichtungen)<br>
+          OAK BV, Stichtag 31.12.2022 (Vorjahr): CHF 1'137 Milliarden<br>
+          <div class="summe">Im Manifest verwendet: «rund 1,2 Billionen» — korrekte Rundung des verifizierten Werts CHF 1'192 Mrd. (2023).</div>
         </div>
 
         <div class="rechenweg">
-          <strong>Anlagestrategie Schweizer PKs (Durchschnitt 2022):</strong><br>
+          <strong>Anlagestrategie Schweizer PKs (Durchschnitt 2023, OAK BV):</strong><br>
           Aktien (CH + international): ~32%<br>
           Obligationen: ~28%<br>
-          Immobilien: ~23%<br>
+          Immobilien (direkt + indirekt): ~23%<br>
           Alternative Anlagen (inkl. Infrastruktur): ~12%<br>
           Liquidität: ~5%<br>
-          <div class="summe">Relevanz fürs Modell: «Zertifizierte Sozialinfrastruktur» würde unter Immobilien oder Alternative Anlagen fallen — ein bereits bedeutender Allokationsbereich.</div>
+          <div class="summe">Relevanz fürs Modell: «Zertifizierte Sozialinfrastruktur» würde unter Immobilien (direkt) oder Alternative Anlagen fallen — Bereiche, die bereits ~35% des PK-Portfolios ausmachen.</div>
         </div>
 
         <div class="warnung">
-          <strong>Nicht enthalten:</strong> AHV-Ausgleichsfonds (1. Säule, ca. CHF 46 Mrd.), Freizügigkeitsguthaben (ca. CHF 60 Mrd.), Säule 3a (Schätzung ca. CHF 130 Mrd.). Die genannte Zahl bezieht sich ausschliesslich auf die registrierten Vorsorgeeinrichtungen der 2. Säule (BVG/LPP).
+          <strong>Nicht enthalten in dieser Zahl:</strong> AHV-Ausgleichsfonds (1. Säule, ~CHF 46 Mrd.), Freizügigkeitsguthaben (~CHF 60 Mrd.), Säule 3a (Schätzung ~CHF 130–140 Mrd., BFS). Die Zahl bezieht sich ausschliesslich auf die registrierten Vorsorgeeinrichtungen der 2. Säule (BVG/LPP).<br><br>
+          Das OAK-BV-Halbjahresmonitoring (CHF ~875 Mrd. per Mitte 2024) erfasst nur PKs ohne Staatsgarantie und ohne Vollversicherungslösung — eine engere Teilmenge. Diese Zahl ist <strong>nicht</strong> mit der Jahresendzahl vergleichbar.
         </div>
 
+        <p class="szenario-section-title">Schätzungsbereich — Richtbarer Kapitalanteil für Sozialinfrastruktur</p>
+        <div class="szenario-grid">
+          <div class="szenario-box konservativ">
+            <div class="szenario-label">Konservativ — Ohne Gesetzesänderung</div>
+            <div class="szenario-wert">CHF 36–60 Mrd. (3–5%)</div>
+            Nutzung bestehender «Social»-Kategorien in ESG-Rahmenwerken. Kein regulatorischer Eingriff nötig. Entspricht dem aktuellen freiwilligen Impact-Investing-Anteil in CH-PKs. Zeithorizont: sofort umsetzbar.
+          </div>
+          <div class="szenario-box liberal">
+            <div class="szenario-label">Liberal — Mit regulatorischer Anpassung</div>
+            <div class="szenario-wert">CHF 119–179 Mrd. (10–15%)</div>
+            Anpassung BVG-Anlagekategorien; «Zertifizierte Sozialinfrastruktur» als eigene Anlageklasse. Erfordert Verordnungsänderung (BVV 2). Zeithorizont: 5–10 Jahre. Analogie: Immobilienquote stieg durch Regulierung von ~8% (1990) auf ~23% (2023).
+          </div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--grau);margin-top:0.5rem;">Zum Vergleich: Die jährliche Rendite der Schweizer PKs beträgt typischerweise 5–7% des verwalteten Vermögens (CHF 60–83 Mrd. p.a.). Bereits die konservative Schätzung entspricht damit weniger als einem Jahresertrag.</p>
+
         <div class="quelle-box">
-          OAK BV, <em>Jahresbericht 2022</em> — <a href="https://www.oak-bv.admin.ch" target="_blank" rel="noopener">oak-bv.admin.ch</a><br>
-          BFS, <em>Pensionskassenstatistik 2021</em> — <a href="https://www.bfs.admin.ch" target="_blank" rel="noopener">bfs.admin.ch</a>
+          OAK BV, <em>Bericht zur finanziellen Lage der Vorsorgeeinrichtungen 2023</em> — <a href="https://www.oak-bv.admin.ch" target="_blank" rel="noopener">oak-bv.admin.ch</a><br>
+          BFS, <em>Pensionskassenstatistik 2023</em> (ergänzend) — <a href="https://www.bfs.admin.ch" target="_blank" rel="noopener">bfs.admin.ch</a>
         </div>
       </div>
 
       <!-- ════════════════════════════════════════════ -->
       <div class="zahl-block" id="social-impact-bonds">
         <div class="zahl-kicker">Zahl 4 · Social Impact Bonds</div>
-        <div class="zahl-headline">über 200 Projekte weltweit</div>
-        <div class="zahl-kontext">Verwendet im Manifest: «[…] seither wurden weltweit über 200 Projekte umgesetzt.»</div>
+        <div class="zahl-headline">über 300 Projekte weltweit</div>
+        <div class="zahl-kontext">Verwendet im Manifest: «[…] seither wurden weltweit über 300 Projekte umgesetzt.» — Stand November 2024, GO Lab INDIGO-Datenbank.</div>
 
         <div class="transparenz-block">
           <h4>Quelle</h4>
-          Government Outcomes Lab (GO Lab), University of Oxford: <em>Social Impact Bond Database</em>, Stand 2023. Das GO Lab unterhält die umfassendste öffentlich zugängliche Datenbank zu ergebnisbasierten Finanzierungsinstrumenten weltweit.
+          Government Outcomes Lab (GO Lab), University of Oxford: <em>INDIGO Impact Bond Dataset</em>, Stand November 2024. Das GO Lab unterhält die umfassendste öffentlich zugängliche Datenbank zu ergebnisbasierten Finanzierungsinstrumenten weltweit.
         </div>
 
         <div class="rechenweg">
-          <strong>Exakter Wert (GO Lab, 2023):</strong><br>
-          276 vertraglich abgeschlossene Impact-Bond-Projekte in 40 Ländern<br>
-          Gesamtvolumen: USD ~6,5 Milliarden<br>
-          Davon aktiv: ~130 Projekte<br>
-          <div class="summe">Im Manifest verwendet: «über 200» — konservative, korrekte Aussage.</div>
+          <strong>Verifizierter Wert (GO Lab INDIGO, November 2024):</strong><br>
+          Über 300 vertraglich abgeschlossene Impact-Bond-Projekte in über 40 Ländern<br>
+          Gesamtvolumen: USD ~7–8 Milliarden<br>
+          Davon aktiv: ~130–150 Projekte<br>
+          <div class="summe">Im Manifest verwendet: «über 300» — korrekte Aussage auf Basis der aktuellsten GO-Lab-Daten (November 2024).</div>
         </div>
 
         <div class="rechenweg">
@@ -320,8 +430,23 @@
           Erste Pilotprojekte wurden von Innosuisse und einzelnen Kantonen (Bern, Zürich) untersucht. Kein flächendeckendes Modell vorhanden. Das Modell im Manifest setzt auf einen schrittweisen Aufbau — beginnend mit 2–3 Piloten in unterschiedlichen Politikbereichen.
         </div>
 
+        <p class="szenario-section-title">Schätzungsbereich — Schweizer Pilotentwicklung bis 2030</p>
+        <div class="szenario-grid">
+          <div class="szenario-box konservativ">
+            <div class="szenario-label">Konservativ — Langsamere Adoption</div>
+            <div class="szenario-wert">3–5 Piloten bis 2030</div>
+            1–2 Kantone (z.B. Bern oder Zürich) lancieren eigenständige Piloten. Bund bleibt beobachtend. Finanzierungsvolumen: CHF 20–60 Mio. Fokus: Reintegration Langzeitarbeitslose, Prävention. Voraussetzung: Politischer Wille auf Kantonsebene.
+          </div>
+          <div class="szenario-box liberal">
+            <div class="szenario-label">Liberal — Schnellere Adoption</div>
+            <div class="szenario-wert">10–15 Piloten bis 2030</div>
+            3–4 Kantone + Bundesprogramm (z.B. via SECO oder BAG) + mögliche EU-Kofinanzierung (Sozialfonds). Volumen: CHF 150–300 Mio. Breite Sektoren: Gesundheitsprävention, Jugend, Wohnintegration. Voraussetzung: Änderung Subventionsgesetz, SIB als anerkannte Finanzierungsform.
+          </div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--grau);margin-top:0.5rem;">Vergleich: UK lancierte 2010–2015 über 40 SIBs in 5 Jahren — nach zentraler Koordination durch das Cabinet Office Social Investment Task Force. Eine ähnliche Koordinationsstruktur ist in der Schweiz nicht vorhanden, was eine langsamere Kurve wahrscheinlich macht.</p>
+
         <div class="quelle-box">
-          GO Lab, University of Oxford: <em>Social Impact Bond Database</em> — <a href="https://golab.bsg.ox.ac.uk" target="_blank" rel="noopener">golab.bsg.ox.ac.uk</a><br>
+          GO Lab, University of Oxford: <em>INDIGO Impact Bond Dataset</em>, November 2024 — <a href="https://golab.bsg.ox.ac.uk" target="_blank" rel="noopener">golab.bsg.ox.ac.uk</a><br>
           Peterborough SIB: Ministry of Justice UK, <em>Payment by Results Pilots: Interim Report</em>, 2014.<br>
           OECD: <em>Understanding Social Impact Bonds</em>, OECD Working Paper, 2016.
         </div>
