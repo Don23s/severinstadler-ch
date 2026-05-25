@@ -1213,7 +1213,7 @@
   // ═══════════════════════════════════════════════════════════
 
   var mainNav = document.querySelector('nav');
-  var darkSections = document.querySelectorAll('.section-statement, .manifest-schluss');
+  var darkNavSections = document.querySelectorAll('.section-statement, .manifest-schluss');
   var darkCount = 0;
 
   var darkObserver = new IntersectionObserver(function(entries) {
@@ -1223,7 +1223,7 @@
     mainNav.classList.toggle('nav--dark', darkCount > 0);
   }, { rootMargin: '-60px 0px 0px 0px' });
 
-  darkSections.forEach(function(s) { darkObserver.observe(s); });
+  darkNavSections.forEach(function(s) { darkObserver.observe(s); });
 
   // ═══════════════════════════════════════════════════════════
   // FLOAT BUTTON – Mobile Chapter Nav
