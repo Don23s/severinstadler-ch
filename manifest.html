@@ -1392,5 +1392,256 @@
   <script src="assets/main.js"></script>
   <script src="assets/animations.js"></script>
   <script src="assets/i18n.js"></script>
+  <script src="assets/manifest-translations.js"></script>
+  <script>
+  (function() {
+    function setText(el, txt) { if (el) el.textContent = txt; }
+    function setHtml(el, html) { if (el) el.innerHTML = html; }
+    function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
+    function containerPs(section) {
+      return Array.from(section.querySelectorAll('p[style]')).filter(function(p) {
+        return !p.closest('.drei-item');
+      });
+    }
+    function sectionH3s(section) {
+      return Array.from(section.querySelectorAll('h3')).filter(function(h) {
+        return !h.closest('.drei-item');
+      });
+    }
+    function nichtSondern(section, nicht, sondern) {
+      var ps = section.querySelectorAll('.nicht-sondern p');
+      if (ps[0]) {
+        var sp = ps[0].querySelector('.nicht');
+        ps[0].innerHTML = (sp ? sp.outerHTML : '') + ' ' + nicht;
+      }
+      if (ps[1]) {
+        var sp = ps[1].querySelector('.sondern');
+        ps[1].innerHTML = (sp ? sp.outerHTML : '') + ' ' + sondern;
+      }
+    }
+    function dreiItems(section, cards) {
+      var items = section.querySelectorAll('.drei-item');
+      cards.forEach(function(card, i) {
+        var item = items[i];
+        if (!item) return;
+        if (card.nr !== undefined) setText(qs('.nummer', item), card.nr);
+        if (card.h) setText(qs('h3', item), card.h);
+        if (card.p) setText(qs('p', item), card.p);
+      });
+    }
+
+    function applyManifestTranslations() {
+      var lang = localStorage.getItem('ss_lang') || 'de';
+      if (lang === 'de') return;
+      if (typeof MANIFEST_TRANSLATIONS === 'undefined') return;
+      var T = MANIFEST_TRANSLATIONS[lang];
+      if (!T) return;
+
+      // ── HERO ──
+      var hero = T.hero;
+      if (hero) {
+        setText(qs('.manifest-untertitel'), hero.untertitel);
+        setText(qs('.manifest-intro'), hero.intro);
+        var rt = qs('.reading-time');
+        if (rt) rt.innerHTML = '&#9679; ' + hero.reading_time;
+        var band = qs('.haltung-band');
+        if (band) band.innerHTML = hero.band.replace(/ · /g, ' &nbsp;·&nbsp; ');
+      }
+
+      // ── EINLEITUNG ──
+      var T_e = T.einleitung, s = document.getElementById('einleitung');
+      if (T_e && s) {
+        setText(qs('.section-label', s), T_e.label);
+        setText(qs('h2', s), T_e.h2);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_e.p1);
+        if (ps[1]) setHtml(ps[1], T_e.p2);
+        if (ps[2]) setHtml(ps[2], T_e.p3);
+      }
+
+      // ── METHODE ──
+      var T_m = T.methode; s = document.getElementById('methode');
+      if (T_m && s) {
+        setText(qs('.section-label', s), T_m.label);
+        setText(qs('h2', s), T_m.h2);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_m.p1);
+        if (ps[1]) setHtml(ps[1], T_m.p2);
+        if (ps[2]) setHtml(ps[2], T_m.p3);
+        if (ps[3]) setHtml(ps[3], T_m.caveat);
+        dreiItems(s, [
+          { h: T_m.card01_h, p: T_m.card01_p },
+          { h: T_m.card02_h, p: T_m.card02_p },
+          { h: T_m.card03_h, p: T_m.card03_p }
+        ]);
+      }
+
+      // ── WERKZEUG 1 ──
+      var T_w1 = T.werkzeug1; s = document.getElementById('werkzeug1');
+      if (T_w1 && s) {
+        setText(qs('.section-label', s), T_w1.label);
+        var h2 = qs('h2', s);
+        if (h2) h2.innerHTML = T_w1.h2 + ' <span style="font-weight:400;color:var(--grau);">' + T_w1.h2_sub + '</span>';
+        var kf = qs('p[style*="0.8rem"]', s);
+        if (kf) setText(kf, T_w1.kernfrage);
+        var ps = containerPs(s).filter(function(p) { return p !== kf; });
+        if (ps[0]) setHtml(ps[0], T_w1.p1);
+        if (ps[1]) setHtml(ps[1], T_w1.p2);
+      }
+
+      // ── GESUNDHEIT ──
+      var T_g = T.gesundheit; s = document.getElementById('gesundheit');
+      if (T_g && s) {
+        setText(qs('.section-label', s), T_g.label);
+        setText(qs('h2', s), T_g.h2);
+        nichtSondern(s, T_g.nicht, T_g.sondern);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_g.p1);
+        setText(qs('h3', s), T_g.h3_mechanismus);
+        if (ps[1]) setHtml(ps[1], T_g.p2);
+        if (ps[2]) setHtml(ps[2], T_g.p3);
+        if (ps[3]) setHtml(ps[3], T_g.vorbild);
+      }
+
+      // ── WOHNEN ──
+      var T_woh = T.wohnen; s = document.getElementById('wohnen');
+      if (T_woh && s) {
+        setText(qs('.section-label', s), T_woh.label);
+        setText(qs('h2', s), T_woh.h2);
+        nichtSondern(s, T_woh.nicht, T_woh.sondern);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_woh.p1);
+        if (ps[1]) setHtml(ps[1], T_woh.p2);
+        setText(qs('h3', s), T_woh.h3_kriterien);
+        dreiItems(s, [
+          { nr: T_woh.card_misch, p: T_woh.card_misch_p },
+          { nr: T_woh.card_ges,   p: T_woh.card_ges_p   },
+          { nr: T_woh.card_nach,  p: T_woh.card_nach_p  }
+        ]);
+      }
+
+      // ── BILDUNG ──
+      var T_bil = T.bildung; s = document.getElementById('bildung');
+      if (T_bil && s) {
+        setText(qs('.section-label', s), T_bil.label);
+        setText(qs('h2', s), T_bil.h2);
+        nichtSondern(s, T_bil.nicht, T_bil.sondern);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_bil.p1);
+        dreiItems(s, [
+          { nr: T_bil.card1_nr, h: T_bil.card1_h, p: T_bil.card1_p },
+          { nr: T_bil.card2_nr, h: T_bil.card2_h, p: T_bil.card2_p },
+          { nr: T_bil.card3_nr, h: T_bil.card3_h, p: T_bil.card3_p }
+        ]);
+      }
+
+      // ── FINANZIERUNG ──
+      var T_fin = T.finanzierung; s = document.getElementById('finanzierung');
+      if (T_fin && s) {
+        setText(qs('.section-label', s), T_fin.label);
+        setText(qs('h2', s), T_fin.h2);
+        // Skip paragraphs with zahl-ref tooltips (p1, sib_p, k3_p)
+        var safePs = containerPs(s).filter(function(p) { return !p.querySelector('.zahl-ref'); });
+        if (safePs[0]) setHtml(safePs[0], T_fin.p2);      // "Die drei beschriebenen Bereiche..."
+        if (safePs[1]) setHtml(safePs[1], T_fin.kreise_p); // "Unternehmen, die in Gesundheit..."
+        if (safePs[2]) setHtml(safePs[2], T_fin.caveat);   // border-left
+        // k1/k2: Kreis-labels have zahl-ref child → replace only first text node
+        var items = s.querySelectorAll('.drei-item');
+        [{ item: items[0], nr: T_fin.k1_nr, h: T_fin.k1_h, p: T_fin.k1_p },
+         { item: items[1], nr: T_fin.k2_nr, h: T_fin.k2_h, p: T_fin.k2_p },
+         { item: items[2], nr: T_fin.k3_nr, h: T_fin.k3_h }
+        ].forEach(function(d) {
+          if (!d.item) return;
+          var numEl = qs('.nummer', d.item);
+          if (numEl && numEl.firstChild && numEl.firstChild.nodeType === 3) {
+            var parts = d.nr.split(' · ');
+            parts.pop();
+            numEl.firstChild.textContent = parts.join(' · ') + ' · ';
+          }
+          setText(qs('h3', d.item), d.h);
+          if (d.p) setText(qs('p', d.item), d.p);
+          // k3_p has zahl-ref → skip translation
+        });
+        var sh3s = sectionH3s(s);
+        if (sh3s[0]) setText(sh3s[0], T_fin.sib_h);
+        if (sh3s[1]) setText(sh3s[1], T_fin.kreise_h);
+        var bq = qs('blockquote.pull-quote', s);
+        if (bq) setHtml(bq, T_fin.quote);
+      }
+
+      // ── WERKZEUG 2 ──
+      var T_w2 = T.werkzeug2; s = document.getElementById('werkzeug2');
+      if (T_w2 && s) {
+        setText(qs('.section-label', s), T_w2.label);
+        var h2 = qs('h2', s);
+        if (h2) h2.innerHTML = T_w2.h2 + ' <span style="font-weight:400;opacity:0.65;">' + T_w2.h2_sub + '</span>';
+        var kf = qs('p[style*="0.8rem"]', s);
+        if (kf) setText(kf, T_w2.kernfrage);
+        var ps = containerPs(s).filter(function(p) { return p !== kf; });
+        if (ps[0]) setHtml(ps[0], T_w2.p1);
+        if (ps[1]) setHtml(ps[1], T_w2.p2);
+      }
+
+      // ── DEMOKRATIE ──
+      var T_dem = T.demokratie; s = document.getElementById('demokratie');
+      if (T_dem && s) {
+        setText(qs('.section-label', s), T_dem.label);
+        setText(qs('h2', s), T_dem.h2);
+        nichtSondern(s, T_dem.nicht, T_dem.sondern);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_dem.p1);
+        if (ps[1]) setHtml(ps[1], T_dem.vorbild);
+        if (ps[2]) setHtml(ps[2], T_dem.sicherheit_p1);
+        if (ps[3]) setHtml(ps[3], T_dem.sicherheit_p2);
+        dreiItems(s, [
+          { nr: T_dem.card1_nr, h: T_dem.card1_h, p: T_dem.card1_p },
+          { nr: T_dem.card2_nr, h: T_dem.card2_h, p: T_dem.card2_p },
+          { nr: T_dem.card3_nr, h: T_dem.card3_h, p: T_dem.card3_p }
+        ]);
+        var sh3s = sectionH3s(s);
+        if (sh3s[0]) setText(sh3s[0], T_dem.sicherheit_h);
+      }
+
+      // ── AUFRUF ──
+      var T_auf = T.aufruf; s = document.getElementById('aufruf');
+      if (T_auf && s) {
+        var bq = qs('blockquote', s);
+        if (bq) setHtml(bq, T_auf.quote);
+        var ps = s.querySelectorAll('p[style]');
+        if (ps[0]) setHtml(ps[0], T_auf.p1);
+        if (ps[1]) setText(ps[1], T_auf.p2);
+        var btns = s.querySelectorAll('a.btn');
+        if (btns[0]) setText(btns[0], T_auf.btn_kompass);
+        if (btns[1]) setText(btns[1], T_auf.btn_kontakt);
+      }
+
+      // ── CHAPNAV ──
+      var cn = T.chapnav;
+      if (cn) {
+        ['einleitung','methode','werkzeug1','gesundheit','wohnen','bildung','finanzierung','werkzeug2','demokratie','aufruf'].forEach(function(id) {
+          if (cn[id]) setText(qs('.chapnav-item[data-section="' + id + '"] .chapnav-label'), cn[id]);
+        });
+        setText(qs('.chapnav-sheet-title'), cn.sheet_title);
+        var sheetMap = {
+          einleitung: cn.sheet_einleitung, methode: cn.sheet_methode,
+          werkzeug1: cn.sheet_werkzeug1, gesundheit: cn.gesundheit,
+          wohnen: cn.wohnen, bildung: cn.bildung, finanzierung: cn.finanzierung,
+          werkzeug2: cn.sheet_werkzeug2, demokratie: cn.sheet_demokratie, aufruf: cn.sheet_aufruf
+        };
+        document.querySelectorAll('.chapnav-sheet a').forEach(function(a) {
+          var id = a.getAttribute('href').replace('#', '');
+          if (sheetMap[id]) setText(qs('span:last-child', a), sheetMap[id]);
+        });
+        var floatBtn = document.getElementById('chapnav-float-btn');
+        if (floatBtn && cn.float_btn) floatBtn.textContent = cn.float_btn;
+      }
+    }
+
+    applyManifestTranslations();
+    window.addEventListener('storage', function(e) {
+      if (e.key === 'ss_lang') applyManifestTranslations();
+    });
+  })();
+  </script>
 </body>
 </html>
