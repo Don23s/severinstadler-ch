@@ -430,6 +430,7 @@ blockquote {
 }
 
 .btn:hover { background: var(--rot-dk); transform: translateY(-1px); }
+.btn--mt { margin-top: 1.5rem; }
 
 .btn-outline {
   background: transparent;
