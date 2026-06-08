@@ -737,7 +737,16 @@ footer {
 .sektor-badge,
 .projekt-card,
 .physik-card,
-.figur-card {
+.figur-card,
+.phase-card,
+.oeko-card,
+.prinzip-item,
+.szenario-box,
+.transparenz-block,
+.zahl-block,
+.bewegt-item,
+.quellen-item,
+.quelle-box {
   transition: box-shadow 0.22s ease, transform 0.22s ease;
 }
 
@@ -745,7 +754,16 @@ footer {
 .sektor-badge:hover,
 .projekt-card:hover,
 .physik-card:hover,
-.figur-card:hover {
+.figur-card:hover,
+.phase-card:hover,
+.oeko-card:hover,
+.prinzip-item:hover,
+.szenario-box:hover,
+.transparenz-block:hover,
+.zahl-block:hover,
+.bewegt-item:hover,
+.quellen-item:hover,
+.quelle-box:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 28px rgba(0,0,0,0.09);
 }
