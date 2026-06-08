@@ -50,6 +50,7 @@
     <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
   </div>
 </nav>
+  <main>
 
   <!-- Hero: Split -->
   <section class="hero-split">
@@ -208,6 +209,32 @@
       </div>
     </div>
   </section>
+
+  <!-- NEWSLETTER-SEKTION -->
+  <!-- Substack einrichten: https://substack.com → Account erstellen → URL unten ersetzen -->
+  <section class="section section-dunkel" data-reveal>
+    <div class="container" style="text-align:center; max-width:560px;">
+      <span class="section-label sans">Newsletter</span>
+      <h2 style="margin-bottom:1rem;">Gedanken, die bleiben.</h2>
+      <p style="color:var(--grau); margin-bottom:2rem;">
+        Unregelmässig. Kein Spam. Nur wenn es etwas zu sagen gibt.
+      </p>
+      <!-- TODO: SUBSTACK_URL durch echte URL ersetzen, z.B. https://severinstadler.substack.com/embed -->
+      <iframe
+        src="SUBSTACK_URL"
+        width="100%"
+        height="150"
+        style="border:1px solid #333; background:transparent; border-radius:4px;"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+      <!-- Fallback bis Substack bereit ist: -->
+      <p style="margin-top:1.5rem; font-size:0.85rem; color:var(--grau);">
+        Newsletter folgt in Kürze.
+      </p>
+    </div>
+  </section>
+  </main>
 
   <footer>
     <div class="footer-inner">
