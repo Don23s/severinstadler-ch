@@ -1,5 +1,17 @@
+# OS- / Cloud-Artefakte
 .DS_Store
 Thumbs.db
+ehthumbs.db
+desktop.ini
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Office-Sperrdateien
+~$*
+
+# Temporaeres
 *.tmp
 *.log
 node_modules/
