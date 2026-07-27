@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finanzierung des Solidarischen Liberalismus – die Dreikreis-Architektur, der Solidaritätsmechanismus mit Wahlrecht, Social Impact Bonds und die demokratische Absicherung.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.severinstadler.ch/finanzierung.html">
+  <meta property="og:title" content="Finanzierung | Severin Stadler">
+  <meta property="og:description" content="Keine neue Steuer. Eine neue Architektur. Wie Staat, Unternehmen und Gesellschaft gemeinsam investieren — und alle drei profitieren.">
+  <meta property="og:image" content="https://www.severinstadler.ch/assets/images/severin-stadler.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Finanzierung | Severin Stadler">
+  <meta name="twitter:description" content="Keine neue Steuer. Eine neue Architektur.">
+  <title>Finanzierung | Severin Stadler</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    html { scroll-behavior: smooth; }
+    .fin-tabelle { width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:1rem; }
+    .fin-tabelle th { text-align:left; font-family:inherit; font-weight:700; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--rot); border-bottom:1px solid var(--linie); padding:0.6rem 0.75rem 0.6rem 0; }
+    .fin-tabelle td { color:var(--grau); border-bottom:1px solid var(--linie); padding:0.7rem 0.75rem 0.7rem 0; vertical-align:top; }
+    .fin-tabelle tr:last-child td { border-bottom:none; }
+    .fin-scroll { overflow-x:auto; max-width:640px; }
+    .weg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin-top:2rem; max-width:640px; }
+    .weg-box { background:#fff; border:1px solid var(--linie); padding:1.5rem; }
+    .weg-box h3 { font-size:1rem; margin:0.4rem 0 0.75rem 0; }
+  </style>
+  <script defer data-domain="severinstadler.ch" src="https://plausible.io/js/script.js"></script>
+  <script src="assets/nav-transition.js" defer></script>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="brand"><span></span>Severin Stadler</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="politik.html" data-i18n="nav.politik">Politik</a>
+      <a href="manifest.html" class="active" data-i18n="nav.manifest">Manifest</a>
+      <a href="kommunikation.html" data-i18n="nav.kommunikation">Kommunikation</a>
+      <a href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </div>
+  </nav>
+  <main>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="kicker">Manifest · Vertiefung</span>
+      <h1>Keine neue Steuer. Eine neue Architektur.</h1>
+      <p class="sub">Die Schweiz verteilt jährlich rund 187 Milliarden Franken über ihre Sozialversicherungen — überwiegend reaktiv. Die Frage ist nicht, ob wir uns mehr leisten können. Die Frage ist, wie die bestehenden Mittel vorausschauend wirken.</p>
+      <a href="manifest.html#finanzierung" style="display:inline-block;margin-top:1.5rem;font-size:0.82rem;font-weight:700;color:var(--rot);text-decoration:none;text-transform:uppercase;letter-spacing:0.08em;">← Zurück zum Manifest</a>
+    </div>
+  </div>
+
+  <div class="haltung-band sans">
+    Solidarischer Liberalismus &nbsp;·&nbsp; Finanzierungsarchitektur &nbsp;·&nbsp; Wirkungsorientierung
+  </div>
+
+  <!-- 1. Ausgangslage -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Die Ausgangslage</span>
+      <h2>Wir geben viel aus. Wir geben spät aus.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1.25rem;">Ein Grossteil der Sozialausgaben fliesst in Behandlung, Kompensation, Reparatur — also in den Moment, in dem der Schaden bereits eingetreten ist. Prävention, Befähigung und Infrastruktur, die Schäden verhindern, konkurrieren jährlich neu um Budgetreste.</p>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1.5rem;">Das Problem ist nicht die Höhe der Mittel. Es ist ihre Logik: Der Staat besteuert, der Bürger empfängt. Die Wirtschaft zahlt, aber gestaltet nicht. Die Gesellschaft finanziert, sieht aber nicht, was ihre Beiträge bewirken.</p>
+      <blockquote style="margin-top:2rem;font-size:1rem;font-weight:600;color:var(--text);border-left:3px solid var(--rot);padding-left:1.25rem;line-height:1.7;">
+        Nicht: Staat besteuert → Bürger empfängt.<br>
+        <span style="font-weight:400;color:var(--grau);">Sondern: Staat, Unternehmen und Gesellschaft investieren gemeinsam in messbare soziale Erträge — und alle drei profitieren vom Rückfluss.</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 2. Die drei Kreise -->
+  <section class="section section-warm" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Die Architektur</span>
+      <h2>Drei Kreise, ein Kreislauf.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:2rem;">Die drei Bereiche des Modells — Gesundheit, Wohnen, Bildung — brauchen keine neue Steuer. Sie brauchen drei Finanzierungsquellen, die sich gegenseitig verstärken statt gegeneinander zu konkurrieren.</p>
+      <div class="drei-grid">
+        <div class="drei-item">
+          <span class="nummer sans">Kreis 1 · Staat · 30–40 %</span>
+          <h3>Grundausstattung</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Keine Neuausgaben, sondern Umschichtung: Bestehende Bildungs- und Sozialausgaben werden auf wirkungsbasierte Mechanismen ausgerichtet. Der Staat finanziert den Grundbetrag des Bildungskontos, die Plattform für Bedürfnisanalysen und die Anreizgelder für Lebensraum-Projekte. Er gibt nicht mehr aus — er gibt gezielter aus.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Kreis 2 · Unternehmen · 40–50 %</span>
+          <h3>Co-Investor mit Wahlrecht</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Unternehmen entrichten einen Solidarteil — mit echtem Gestaltungsrecht: Sie lenken ihren Beitrag in eigene Mitarbeitende oder in lokale Projekte. Wer nachweisbar investiert, zahlt weniger in den staatlichen Topf. Der Rückfluss ist direkt: tiefere Lohnnebenkosten, Steuererleichterungen, Vorrang bei öffentlichen Aufträgen.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Kreis 3 · Gesellschaft · 20–30 %</span>
+          <h3>Kollektivinvestoren</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Pensionskassen verwalten in der Schweiz über 1,2 Billionen Franken und suchen stabile Langzeitrenditen. Zertifizierte Sozialinfrastruktur — Lebensraum-Projekte, Bildungseinrichtungen, Präventionsprogramme — ist genau das: investierbar, staatlich mitgarantiert, lokal verankert. Ergänzt durch Genossenschaftsmodelle.</p>
+        </div>
+      </div>
+
+      <p style="font-size:0.82rem;color:var(--grau);max-width:640px;margin-top:1.75rem;border-left:2px solid var(--linie);padding-left:1rem;">Die Prozentbänder sind normative Zielkorridore, keine Ist-Werte. Die vollständige Herleitung steht auf der <a href="transparenz.html#modellquoten" style="color:var(--rot);font-weight:600;text-decoration:none;">Transparenzseite</a>.</p>
+
+      <h3 style="margin-top:2.5rem;margin-bottom:0.75rem;font-size:1rem;">Warum sich die Kreise verstärken</h3>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;">Unternehmen, die in Gesundheit und Bildung ihrer Mitarbeitenden investieren, senken die staatlichen Sozialkosten. Pensionskassen, die in Sozialinfrastruktur investieren, erhalten stabile Renditen und stärken den Standort. Der Staat, der Wirkung zertifiziert statt Ausgaben verwaltet, wird effizienter. Kein Kreis trägt allein — alle drei profitieren vom Gelingen der anderen.</p>
+    </div>
+  </section>
+
+  <!-- 3. Kreis 2 im Detail -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Kreis 2 im Detail</span>
+      <h2>Zwei Wege, ein Ziel.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1.25rem;">Kreis 2 trägt die grösste Gestaltungsfrage: Wie kann ein Unternehmen beitragen, ohne dass daraus eine weitere anonyme Abgabe wird? Die Antwort ist ein Solidaritätspool mit Wahlrecht. Alle Unternehmen mit Bundessteuerpflicht leisten einen Solidaritätsbeitrag aus zwei Komponenten:</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1.5rem 0;max-width:640px;display:flex;flex-direction:column;gap:0.7rem;">
+        <li style="font-size:0.9rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">3 %</span><span><strong style="color:var(--text);">neu</strong> — ein zusätzlicher Solidarbeitrag auf den bundessteuerbaren Ertrag, also den Reingewinn nach steuerlichen Abzügen. Nicht auf Umsatz, nicht auf Bruttomarge.</span></li>
+        <li style="font-size:0.9rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">2 %</span><span><strong style="color:var(--text);">Lenkungsrecht</strong> — das Recht, 2 % der bestehenden Bundessteuerleistung einem gesellschaftlichen Sektor zu widmen.</span></li>
+      </ul>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;">Zusammen ergibt das einen Solidaritätspool von 5 %, über den jedes Unternehmen aktiv mitentscheidet. Der Beitrag ergänzt die bestehenden Sozialabgaben (AHV, BVG, ALV) — er ersetzt sie nicht.</p>
+
+      <div class="weg-grid">
+        <div class="weg-box">
+          <span class="nummer sans" style="color:var(--rot);font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Weg A</span>
+          <h3>Regionale Investition</h3>
+          <p style="font-size:0.88rem;color:var(--grau);line-height:1.75;margin-bottom:0.9rem;">Das Unternehmen investiert die 3 % direkt in seinem Einzugsgebiet: Kinderbetreuung, Gesundheitsangebote, Berufsbildung, lokale Infrastruktur.</p>
+          <p style="font-size:0.85rem;color:var(--grau);line-height:1.7;margin-bottom:0.9rem;">→ Der Solidaritätsbeitrag fällt als zusätzliche Bundessteuer weg.<br>→ Das 2 %-Lenkungsrecht auf Bundesebene bleibt bestehen.</p>
+          <p style="font-size:0.85rem;color:var(--grau);line-height:1.7;">Ein lokal verwurzeltes Unternehmen investiert sichtbar in seine Gemeinschaft. Gemeinde und Kanton werden indirekt entlastet, weil privat finanzierte Angebote öffentliche Mittel freisetzen. Mitarbeitende können in den Entscheid einbezogen werden — das stärkt die Legitimation.</p>
+        </div>
+        <div class="weg-box">
+          <span class="nummer sans" style="color:var(--rot);font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Weg B</span>
+          <h3>Bundesbeitrag mit Sektorwahl</h3>
+          <p style="font-size:0.88rem;color:var(--grau);line-height:1.75;margin-bottom:0.9rem;">Das Unternehmen zahlt den vollen Beitrag an den Bund und übt sein volles 5 %-Lenkungsrecht aus.</p>
+          <p style="font-size:0.85rem;color:var(--grau);line-height:1.7;margin-bottom:0.9rem;">→ Wählbare Sektoren: Bildung · Gesundheit · Forschung &amp; Innovation · Sicherheit · Kultur · Umwelt · Soziales</p>
+          <p style="font-size:0.85rem;color:var(--grau);line-height:1.7;">International tätige Unternehmen ohne lokale Verwurzelung investieren strategisch in jene Sektoren, die ihr Geschäftsumfeld langfristig stärken — statt in einen anonymen Topf einzuzahlen.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:2.5rem;margin-bottom:0.75rem;font-size:1rem;">Wer prüft, was als Investition zählt</h3>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1.25rem;">Was als gesellschaftlich wirksame Investition gilt, wird tripartitisch definiert — durch Vertreter des Staates, der Arbeitgeberverbände und der Gewerkschaften. Zwei Prinzipien sichern die Substanz:</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1.25rem 0;max-width:640px;display:flex;flex-direction:column;gap:0.8rem;">
+        <li style="font-size:0.9rem;color:var(--grau);display:flex;gap:0.75rem;line-height:1.75;"><span style="color:var(--rot);font-weight:700;">→</span><span><strong style="color:var(--text);">Gesellschaftlicher Nutzen statt Eigennutz.</strong> Eine Kita, die Eltern in der ganzen Gemeinde entlastet, zählt. Eine Betreuung exklusiv für Führungskräfte nicht. Massgeblich ist, wer profitiert — nicht, wer finanziert.</span></li>
+        <li style="font-size:0.9rem;color:var(--grau);display:flex;gap:0.75rem;line-height:1.75;"><span style="color:var(--rot);font-weight:700;">→</span><span><strong style="color:var(--text);">Additives Prinzip.</strong> Anerkannt wird nur die Netto-Mehrleistung. Was bereits als Betriebskosten abgezogen oder als bestehende Leistung verbucht wurde, kann nicht zusätzlich geltend gemacht werden.</span></li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--grau);max-width:640px;line-height:1.8;">Für Standardleistungen wie anerkannte Lehrlingsstellen oder lokale Kita-Kooperationen gilt ein vereinfachtes Verfahren ohne Einzelfallprüfung — damit der Aufwand für kleine Betriebe tragbar bleibt.</p>
+    </div>
+  </section>
+
+  <!-- 4. Social Impact Bonds -->
+  <section class="section section-warm" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Wirkungsbasierte Rückzahlung</span>
+      <h2>Social Impact Bonds: Risiko beim Investor, Nutzen bei allen.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1.25rem;">Private Investoren finanzieren ein soziales Programm vor. Der Staat zahlt zurück — aber nur, wenn vorher definierte, messbare Ziele nachweislich erreicht wurden. Das Risiko trägt der Investor. Den Nutzen tragen alle.</p>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:2rem;">Grossbritannien führte das Modell 2010 als erstes Land ein (Peterborough Prison); seither wurden weltweit über 300 Projekte in mehr als 40 Ländern umgesetzt. Die OECD dokumentiert das Instrument als skalierbar und übertragbar auf föderale Systeme wie die Schweiz.</p>
+
+      <div style="background:#fff;border:1px solid var(--linie);padding:1.5rem 2rem;max-width:560px;">
+        <div style="font-size:0.72rem;font-weight:700;color:var(--rot);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Was das für die Schweiz heisst</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span>Der Staat zahlt für Ergebnisse, nicht für Aktivitäten</li>
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span>Programme ohne Wirkung werden nicht refinanziert — das Risiko liegt beim Kapitalgeber</li>
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span>Pensionskassen erhalten eine Anlageklasse mit gesellschaftlicher Rendite</li>
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span>Die Wirkungsmessung erfolgt durch eine unabhängige Stelle, nicht durch den Zahler</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Demokratische Absicherung -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Demokratische Absicherung</span>
+      <h2>Wer entscheidet am Ende?</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:2rem;">Ein Mitgestaltungsrecht für Unternehmen ist nur dann unproblematisch, wenn es klare Grenzen hat. Drei Mechanismen ziehen sie.</p>
+      <div class="drei-grid">
+        <div class="drei-item">
+          <span class="nummer sans">Parlament</span>
+          <h3>Letztentscheidung bleibt</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Das Parlament berücksichtigt die Sektorpräferenzen der Unternehmen bei der Mittelplanung und begründet Abweichungen öffentlich. Das demokratische Letztentscheidungsrecht bleibt unberührt — die Präferenz hat keine Bindungswirkung.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Kernbereiche</span>
+          <h3>Ausserhalb des Wettbewerbs</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Sozialhilfe, Invalidenversicherung und Grundversorgung werden per Parlamentsbeschluss als nicht verhandelbar definiert. Sie stehen ausserhalb des Wettbewerbs um Unternehmensgunst und bleiben vollständig staatlich gesichert.</p>
+        </div>
+        <div class="drei-item">
+          <span class="nummer sans">Zertifizierung</span>
+          <h3>Unabhängig und plural</h3>
+          <p style="font-size:0.88rem;color:var(--grau);">Soziale Erträge werden durch eine unabhängige, pluralistisch besetzte Stelle zertifiziert — mit Vertreterinnen aus Wissenschaft, Zivilgesellschaft und Kantonen. Das verhindert behauptete statt erbrachte Wirkung.</p>
+        </div>
+      </div>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;margin-top:2rem;">Die Transparenzplattform macht sichtbar, wohin Unternehmen investieren. Damit hat das Parlament eine faktenbasierte Grundlage für seine Nachsteuerung — und die Bevölkerung kann die Verteilung beurteilen und demokratisch einfordern. Wo ein Unternehmen investiert, sagt etwas darüber aus, wer es ist. Das ist kein Compliance-Instrument, sondern eine öffentliche Positionierung.</p>
+    </div>
+  </section>
+
+  <!-- 6. Einwände -->
+  <section class="section section-warm" id="einwaende" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Einwände</span>
+      <h2>Vier offene Konstruktionsfragen.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:2rem;">Das Modell wurde von 22 fachlichen und politischen Perspektiven geprüft — Steuerrecht, Verfassungsrecht, Ökonomie, Föderalismus, KMU, Gewerkschaft, Klima. Die schärfsten Einwände betreffen die Finanzierung. Sie sind hier ungekürzt aufgeführt, samt Stand der Bearbeitung.</p>
+
+      <ol class="steps" style="max-width:640px;">
+        <li>
+          <div>
+            <strong>Globale Mindeststeuer (OECD Pillar 2)</strong>
+            <p style="font-size:0.88rem;color:var(--grau);margin-top:0.25rem;">Seit 2025 gilt für Konzerne ab 750 Mio. EUR Umsatz eine Mindestbesteuerung von 15 %. Ein zusätzlicher Solidarbeitrag addiert sich direkt darauf — ein Konzern in der Schweiz käme auf rund 18 %, einer in Irland auf 15 %. Das betrifft genau jene Unternehmen, die den Grossteil der Gewinnsteuern zahlen.</p>
+            <p style="font-size:0.85rem;color:var(--grau);margin-top:0.5rem;"><strong style="color:var(--text);">Stand:</strong> offen. Drei Lösungswege stehen zur Debatte — Ausnahme für Pillar-2-Konzerne, Gegenfinanzierung durch Senkung der ordentlichen Rate, oder Erhebung ausschliesslich auf dem Bundesanteil bei gleichzeitiger Ratenanpassung.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Föderale Steuerhoheit</strong>
+            <p style="font-size:0.88rem;color:var(--grau);margin-top:0.25rem;">Die Unternehmenssteuer verteilt sich auf rund 30 % Bund und 70 % Kantone und Gemeinden. Ein Bundesgesetz erfasst nur den Bundesanteil. Für den Rest bräuchte es eine Verfassungsänderung oder 26 kantonale Entscheide — das ist kein Vollzugs-, sondern ein Verfassungsproblem.</p>
+            <p style="font-size:0.85rem;color:var(--grau);margin-top:0.5rem;"><strong style="color:var(--text);">Stand:</strong> Lösungsansatz vorhanden. Kantonales Opt-in mit Bundesrahmen und Pilotphase mit freiwilligen Kantonen — der Schweizer Weg, verfassungskonform, aber langsamer.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Sektorverzerrung — der Beauty Contest</strong>
+            <p style="font-size:0.88rem;color:var(--grau);margin-top:0.25rem;">Wenn Unternehmen frei wählen, wählen sie im Eigeninteresse: Tech wählt Bildung und Forschung, Pharma wählt Gesundheit, Banken wählen Sicherheit. Sozialhilfe, Invalidenversicherung und Umwelt wählt niemand. Ohne Ausgleich werden die wichtigsten Bereiche systematisch unterfinanziert.</p>
+            <p style="font-size:0.85rem;color:var(--grau);margin-top:0.5rem;"><strong style="color:var(--text);">Stand:</strong> teilweise gelöst. Kernbereiche sind der Wahl entzogen und bleiben staatlich finanziert. Ob es darüber hinaus Pflichtanteile braucht — etwa ein Mindestanteil für Umwelt und Klima — ist offen.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>KMU-Belastung</strong>
+            <p style="font-size:0.88rem;color:var(--grau);margin-top:0.25rem;">99 % der Schweizer Unternehmen sind KMU. Ein Betrieb mit fünf Mitarbeitenden hat keine HR-Abteilung, keine Kita, kein Gesundheitsprogramm. Deklaration, Nachweis und Plattform dürfen für ihn nicht zur Hürde werden.</p>
+            <p style="font-size:0.85rem;color:var(--grau);margin-top:0.5rem;"><strong style="color:var(--text);">Stand:</strong> teilweise gelöst. Vereinfachtes Anerkennungsverfahren für Standardleistungen wie Lehrlingsstellen ist vorgesehen. Eine Freistellungsgrenze für kleine Gewinne oder kleine Betriebe ist vorgeschlagen, aber noch nicht festgelegt.</p>
+          </div>
+        </li>
+      </ol>
+
+      <p style="font-size:0.85rem;color:var(--grau);max-width:640px;margin-top:2rem;border-left:2px solid var(--linie);padding-left:1rem;line-height:1.75;">Die konzeptionellen Einwände — Rolle der Sozialpartnerschaft, Grenzen des Mitgestaltungsrechts, Tragfähigkeit der Kreislauf-Logik — sind auf der Seite <a href="solidarischer-liberalismus.html" style="color:var(--rot);font-weight:600;text-decoration:none;">Solidarischer Liberalismus</a> behandelt.</p>
+    </div>
+  </section>
+
+  <!-- 7. Grössenordnung -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Grössenordnung</span>
+      <h2>Was das bewegt — und was es kostet.</h2>
+      <p style="font-size:0.95rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1.5rem;">Alle folgenden Zahlen sind Schätzungen auf Basis öffentlich verfügbarer BFS- und EFV-Daten. Sie dienen der Grössenordnung, nicht der Budgetierung.</p>
+
+      <h3 style="margin-top:2rem;margin-bottom:0.5rem;font-size:1rem;">Jährliches Solidaritätsvolumen</h3>
+      <div class="fin-scroll">
+        <table class="fin-tabelle">
+          <thead>
+            <tr><th>Phase</th><th>Basis Bundessteuer</th><th>3 % neu</th><th>2 % Lenkung</th><th>Total Pool</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Phase 1 (Jahr 1)</td><td>~10 Mrd.</td><td>~300–400 Mio.</td><td>—</td><td>~300–400 Mio.</td></tr>
+            <tr><td>Phase 2 (ab Jahr 2)</td><td>~10 Mrd.</td><td>~300–400 Mio.</td><td>~200 Mio.</td><td>~500–600 Mio.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:2.5rem;margin-bottom:0.5rem;font-size:1rem;">Aufteilung im Gleichgewicht</h3>
+      <p style="font-size:0.85rem;color:var(--grau);max-width:640px;">Modellannahme: 55 % der Unternehmen wählen Weg A, 45 % Weg B.</p>
+      <div class="fin-scroll">
+        <table class="fin-tabelle">
+          <thead>
+            <tr><th>Kanal</th><th>Jährlich</th><th>Wirkungsebene</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Weg A — regionale Investitionen</td><td>~165–220 Mio.</td><td>Kantone / Gemeinden</td></tr>
+            <tr><td>Weg B — Sektorlenkung (3 %)</td><td>~135–180 Mio.</td><td>Bund / Sektoren</td></tr>
+            <tr><td>2 %-Lenkungsrecht (bestehend)</td><td>~200 Mio.</td><td>Bund / Sektoren</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:2.5rem;margin-bottom:0.75rem;font-size:1rem;">Stufenweise Einführung</h3>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1rem;"><strong style="color:var(--text);">Phase 1:</strong> 3 %-Solidaritätsbeitrag, das Lenkungsrecht wird erstmals ausgeübt, Sektorpräferenzen werden erfasst und publiziert. Phase 1 ist mehr als eine Übergangslösung — sie ist das gesellschaftliche Signal, dass alle drei Akteure erstmals gemeinsam handeln.</p>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;margin-bottom:1rem;"><strong style="color:var(--text);">Phase 2 (ab Jahr 2):</strong> Volle Aktivierung — 2 %-Lenkungsrecht auf bestehende Steuern, Weg A und Weg B vollständig verfügbar.</p>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;">Die Stufung schützt den Staatshaushalt, gibt dem Parlament Planungssicherheit und erlaubt eine lernende Einführung ohne Systemschock.</p>
+
+      <h3 style="margin-top:2.5rem;margin-bottom:0.75rem;font-size:1rem;">Die Plattform</h3>
+      <p style="font-size:0.92rem;color:var(--grau);max-width:640px;line-height:1.8;">Die Mitgestaltung erfolgt digital — als Erweiterung des bestehenden Bundesportals EasyGov, nicht als Neubeschaffung. Geschätzte Gesamtinvestition über fünf Jahre: 25–55 Millionen Franken, also rund 5–10 % eines Jahres-Solidaritätspools. Jedes Unternehmen meldet dort einmal jährlich: Weg A oder Weg B, Sektorpräferenz, Dokumentation der regionalen Investitionen.</p>
+    </div>
+  </section>
+
+  <!-- 8. CTA -->
+  <section class="section section-warm" data-reveal>
+    <div class="container">
+      <span class="section-label sans">Weiterlesen</span>
+      <h2>Was damit finanziert wird.</h2>
+      <div style="background:#fff;border:1px solid var(--linie);padding:1.5rem 2rem;max-width:560px;margin-bottom:2.5rem;">
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span><a href="solidarischer-liberalismus.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--linie);">Das Fundament: Solidarischer Liberalismus</a></li>
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span><a href="gesundheit.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--linie);">Gesundheit: Prävention als Investition</a></li>
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span><a href="wohnen.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--linie);">Wohnen: Lebensraum statt Rendite</a></li>
+          <li style="font-size:0.88rem;color:var(--grau);display:flex;gap:0.75rem;"><span style="color:var(--rot);font-weight:700;">→</span><a href="bildung.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--linie);">Bildung: Befähigung statt Zertifikat</a></li>
+        </ul>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="manifest.html#finanzierung" class="btn">← Zur Finanzierungs-Sektion im Manifest</a>
+        <a href="transparenz.html" class="btn" style="background:transparent;border-color:var(--linie);color:var(--text);">Zahlen &amp; Quellen</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span></span>Severin Stadler</div>
+        <div class="footer-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> &nbsp;·&nbsp; &copy; 2026</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@FizziAndTheProf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.linkedin.com/in/severin-stadler-055a5519a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+  <script src="assets/animations.js"></script>
+  <script src="assets/i18n.js"></script>
+</body>
+</html>
