@@ -14,6 +14,20 @@ Vollständige Kontrolle über Inhalt, Design und Deployment.
 - [ ] Domain umzeigen (DNS weg von Wix)
 - [ ] Hosting einrichten
 
+## Offene Punkte (Stand 2026-08-17)
+- [ ] **GitHub Pro upgraden** + Repo `Don23s/severinstadler-ch` privat stellen, damit `drafts/`
+  (und `CLAUDE.md`, `DNS_UMZUG.md`) versioniert werden können, ohne im öffentlichen Repo sichtbar
+  zu sein (GitHub Pages ist mit Repo-Sichtbarkeit "public" bei GitHub Free zwingend öffentlich).
+  Ablauf: Settings → Billing & Licensing → Licensing → Upgrade → Pro. Danach Repo-Sichtbarkeit
+  unter Settings → General → Danger Zone auf privat stellen, Pages-Sichtbarkeit separat prüfen.
+  Kostenlose Alternative ohne Pro: sensible Dateien dauerhaft nur via `.gitignore` ungetracked
+  lassen (aktueller Stand).
+  Blockiert aktuell durch einen laufenden GitHub-Ausfall (17.08.2026, API/OAuth/Billing betroffen).
+- [ ] **Claude GitHub App verbinden**: https://claude.ai/code/onboarding?magic=github-app-setup —
+  Voraussetzung, um Cloud-Routinen (z.B. monatliche Manifest-Gesamtübersicht) mit Zugriff auf
+  dieses Repo einzurichten. Ebenfalls aktuell durch den GitHub-Ausfall blockiert (Erstellung der
+  Routine schlug am 2026-08-17 mit 401 "Connect your GitHub account" fehl).
+
 ## Projektstruktur
 
 ```

@@ -41,5 +41,6 @@ Gesellschaftlich eingebettete Unternehmen sind:
 - Attraktiver für Mitarbeitende
 
 ## Fazit
-Wirkung entsteht durch Haltung, nicht durch Zwang.
+Wirkung entsteht durch Haltung, nicht durch Zwang — mit einer Ausnahme: Die Grundpflicht, zum
+Gemeinwesen beizutragen, ist nicht verhandelbar. Frei ist, wie und wohin beigetragen wird — nicht, ob.
 Verantwortung bedeutet Lernfähigkeit, nicht Fehlerfreiheit.

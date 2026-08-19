@@ -16,3 +16,7 @@ Icon?
 *.log
 node_modules/
 .env
+.gstack/
+
+# Claude Code Session-/Tooling-State (lokal, nicht Teil der Website)
+.claude/
