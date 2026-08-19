@@ -149,7 +149,7 @@ Pensionskassen verwalten in der Schweiz über 1.2 Billionen Franken. Sie suchen 
 **Das Prinzip:**
 Nicht: Staat besteuert → Bürger empfängt. Sondern: Staat, Unternehmen und Gesellschaft investieren gemeinsam in messbare soziale Erträge — und alle drei profitieren vom Rückfluss.
 
-Die Zertifizierung sozialer Erträge erfolgt durch eine unabhängige, pluralistisch besetzte Stelle — mit Vertreterinnen aus Wissenschaft, Zivilgesellschaft und Kantonen. Das verhindert, dass Unternehmen soziale Wirkung behaupten, ohne sie zu erbringen, und trotzdem Vorteile erhalten.
+Die Zertifizierung sozialer Erträge bei Grossprojekten erfolgt durch eine unabhängige, pluralistisch besetzte Stelle — mit Vertreterinnen aus Wissenschaft, Zivilgesellschaft und Kantonen. Kleinere, unternehmensfinanzierte Steuer-Projekte prüft stattdessen ein Gremium aus Gewerkschaften der betroffenen Branche, Gemeinde oder Kanton sowie Wissenschaft — beide folgen denselben, per Volksabstimmung legitimierten Bundesprinzipien. Das verhindert, dass Unternehmen soziale Wirkung behaupten, ohne sie zu erbringen, und trotzdem Vorteile erhalten.
 
 **Abgrenzung zur Steuerpolitik:** "Keine neue Steuer" bezieht sich auf diese drei Bereiche — sie werden
 mit den bestehenden Mitteln über die Dreikreis-Architektur finanziert, nicht aus zusätzlichen
@@ -220,16 +220,18 @@ mit, ob es dieses Land in fünfzig Jahren noch so gibt, wie wir es kennen.
 
 Die Willensnation existiert, weil Generationen sie immer wieder gewählt haben — 1291, 1848, heute
 wieder. Klimaverträglichkeit ist deshalb kein Thema neben anderen, sondern eine Vorbedingung dafür,
-dass die Willensnation als Projekt fortbestehen kann. Kein neuer Fördertopf: Die bereits bestehende
-Zertifizierungsstelle der Dreikreis-Finanzierung (siehe oben) erhält ein drittes Kriterium neben
-gesellschaftlichem Nutzen und additivem Prinzip — Generationentauglichkeit, sektorübergreifend für
-Sicherheit, Wohnen, Bildung und Klima gleichermassen. Eine CO2-Lenkungsabgabe lenkt zusätzlich über
-den Preis; ihr Ertrag ist geteilt — teils pro Kopf zurück an die Bevölkerung, teils zweckgebunden in
-Sanierung, erneuerbare Energien und ÖV-Ausbau. Frühe, konsequente Dekarbonisierung ist dabei kein
-Kostenfaktor, sondern ein Standortvorteil — Schweizer Cleantech, Exportstärke, Erstmover-Vorteil. Die
-Schweiz bringt ihre Rolle als geborene Vermittlerin auch in die Klimadiplomatie ein. Das Manifest
-nennt bewusst kein eigenes Zieldatum — der Fokus liegt auf dem Wie, nicht auf einem politisch
-umkämpften Wann.
+dass die Willensnation als Projekt fortbestehen kann. Generationentauglichkeit wird ein Bundesprinzip
+— legitimiert durch Volksabstimmung, sektorübergreifend für Sicherheit, Wohnen, Bildung und Klima
+gleichermassen. Grosse Klimaprojekte wie Sanierung und erneuerbare Energien laufen über dasselbe
+unabhängige Gremium wie andere Grossprojekte (siehe Finanzierung); kleinere, unternehmensfinanzierte
+Vorhaben prüft das branchennahe Gremium aus Gewerkschaften, Gemeinde oder Kanton und Wissenschaft.
+Eine CO2-Lenkungsabgabe lenkt zusätzlich über den Preis; ihr Ertrag ist geteilt — teils pro Kopf
+zurück an die Bevölkerung, teils zweckgebunden in Sanierung, erneuerbare Energien und ÖV-Ausbau.
+Dieser zweckgebundene Teil ist ein eigenständiger neuer Topf — gespeist durch den Konsum der
+Gesellschaft, nicht durch Steuern. Frühe, konsequente Dekarbonisierung ist dabei kein Kostenfaktor,
+sondern ein Standortvorteil — Schweizer Cleantech, Exportstärke, Erstmover-Vorteil. Die Schweiz bringt
+ihre Rolle als geborene Vermittlerin auch in die Klimadiplomatie ein. Das Manifest nennt bewusst kein
+eigenes Zieldatum — der Fokus liegt auf dem Wie, nicht auf einem politisch umkämpften Wann.
 
 *Vertiefung:* [Klima →](klima.html)
 

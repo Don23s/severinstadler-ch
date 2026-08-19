@@ -23,18 +23,25 @@ staatlich mitfinanzierte Massnahme: Sicherheit, Wohnen, Bildung, Klima selbst.
 
 ## Der Mechanismus
 
-### 1. Generationentauglichkeit als Zertifizierungskriterium
+### 1. Generationentauglichkeit als Bundesprinzip, zwei Prüfebenen
 
-Kein neuer Fördertopf, keine neue Behörde. Die Dreikreis-Finanzierung (siehe Finanzierung-Abschnitt)
-hat bereits eine unabhängige, pluralistisch besetzte Zertifizierungsstelle, die prüft, ob geförderte
-Projekte echten gesellschaftlichen Nutzen erbringen (gesellschaftlicher Nutzen statt Eigennutz,
-additives Prinzip). Diese Stelle erhält ein drittes Kriterium: **Generationentauglichkeit** — trägt
-das Projekt über Jahrzehnte zur Gemeinschaft bei, oder löst es nur ein kurzfristiges Problem auf
-Kosten der nächsten Generation?
+Generationentauglichkeit wird kein neues Amt, sondern ein **Bundesprinzip** — festgelegt und
+legitimiert durch Volksabstimmung. Trägt ein Projekt über Jahrzehnte zur Gemeinschaft bei, oder löst
+es nur ein kurzfristiges Problem auf Kosten der nächsten Generation? Die Einzelfallprüfung läuft über
+die bereits bestehende Struktur der Dreikreis-Finanzierung (siehe Finanzierung-Abschnitt), je nach
+Grössenordnung auf zwei Ebenen:
 
-Dieses Kriterium gilt sektorübergreifend. Ein Sicherheitsprojekt, ein Wohnbauvorhaben, eine
-Bildungsinitiative — alle werden auch daran gemessen, ob sie langfristig tragen. Klimaverträglichkeit
-ist dabei in vielen Fällen der entscheidende Faktor, aber nicht der einzige.
+- **Grossprojekte** (Immobilien, Energie): ein unabhängiges Gremium aus Wissenschaft,
+  Zivilgesellschaft und Kantonen — dieselbe Stelle, die auch die soziale Wirkung in der
+  Finanzierungs-Architektur zertifiziert.
+- **Steuer-Projekte** (Unternehmen, lokal, finanziell überschaubarer): ein Gremium aus Gewerkschaften
+  der betroffenen Branche, der betroffenen Gemeinde oder dem Kanton sowie der Wissenschaft.
+
+Beide Gremien folgen denselben, demokratisch legitimierten Prinzipien — nur die Grössenordnung des
+Projekts entscheidet, welches zuständig ist. Das Kriterium gilt sektorübergreifend: für Sicherheit,
+Wohnen, Bildung und Klima gleichermassen. Wohnens bestehendes Förderkriterium „Nachhaltigkeit" ist
+damit keine Konkurrenz, sondern eine sektorspezifische Anwendung dieses übergeordneten
+Bundesprinzips.
 
 ### 2. CO2-Lenkungsabgabe mit geteiltem Ertrag
 
@@ -47,7 +54,10 @@ geteilt:
 - **Ein Teil ist zweckgebunden** und finanziert gezielt Sanierung, erneuerbare Energien, ÖV-Ausbau —
   dort, wo der Markt allein zu langsam wäre.
 
-Der genaue Split ist eine Umsetzungsfrage, keine Grundsatzfrage (siehe offene Punkte).
+Teil B ist ein eigenständiger, neuer Topf — anders als bei der Dreikreis-Finanzierung aber nicht aus
+Steuermitteln gespeist, sondern aus dem Konsum der Gesellschaft selbst: Wer mehr emittiert, füttert
+diesen Topf stärker. Der genaue Split zwischen A und B ist eine Umsetzungsfrage, keine Grundsatzfrage
+(siehe offene Punkte).
 
 ### 3. Klimaschutz als Innovationschance
 
@@ -73,13 +83,26 @@ Bundesziel wird damit weder in Frage gestellt noch neu verhandelt.
 
 ---
 
+## NACHTRAG 1 — Jam-Session, Zertifizierungsstruktur geklärt (2026-08-19)
+
+Beim Konsistenzcheck gegen die Dreikreis-Finanzierung fiel eine Unstimmigkeit auf: `finanzierung.html`
+beschrieb ein tripartitisches Prüfgremium (Staat/Arbeitgeberverbände/Gewerkschaften), `manifest.html`
+eine unabhängige pluralistische Stelle (Wissenschaft/Zivilgesellschaft/Kantone) — unklar, ob dasselbe
+Gremium zweimal unterschiedlich beschrieben war. Auflösung: **zwei tatsächlich verschiedene Gremien**
+für zwei Grössenordnungen, beide unter einem gemeinsamen, per Volksabstimmung legitimierten
+Bundesprinzip (siehe „Der Mechanismus" oben, jetzt aktualisiert). `finanzierung.html` und
+`manifest.html` wurden entsprechend präzisiert.
+
+Ausserdem geklärt: Die CO2-Lenkungsabgabe erzeugt tatsächlich einen neuen, zweckgebundenen Topf (Teil
+B) — im Unterschied zur Dreikreis-Finanzierung aber aus gesellschaftlichem Konsum gespeist, nicht aus
+Steuermitteln. Kein Widerspruch zum „keine neue Steuer"-Prinzip der Dreikreis-Architektur.
+
+Haltungskompass Q7 wurde geprüft und passt bereits zur erarbeiteten Position (Anreize statt Verbote,
+Marktinstrument) — keine Anpassung nötig.
+
 ## OFFENE PUNKTE (Redaktion)
 
 - [ ] Exakter Split-Anteil der Lenkungsabgabe (Rückverteilung vs. zweckgebunden) — noch offen.
-- [ ] Operationalisierung „Generationentauglichkeit" als drittes Zertifizierungskriterium — wie genau
-  geprüft, analog zu „gesellschaftlicher Nutzen" und „additives Prinzip" bei der Finanzierung.
 - [ ] Verhältnis zum geltenden Schweizer CO2-Gesetz — Anschlussfähigkeit ans bestehende Recht, analog
   zum Vorgehen bei Migration/AIG.
 - [ ] Konkrete Ausgestaltung der Klimadiplomatie-Rolle (welche Foren, welche Instrumente).
-- [ ] Haltungskompass Q7 („Klimaschutz über Marktanreize statt Verbote") anpassen, sobald diese
-  Position steht — aktuell bewusst zurückgestellt (siehe Ledger).

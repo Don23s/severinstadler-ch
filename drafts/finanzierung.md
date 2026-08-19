@@ -96,8 +96,11 @@ Das Unternehmen zahlt den vollen Beitrag an den Bund und übt sein volles 5 %-Le
 Sektoren, die ihr Geschäftsumfeld langfristig stärken.
 
 **H3: Wer prüft, was als Investition zählt**
-Was als gesellschaftlich wirksame Investition gilt, wird tripartitisch definiert — durch Vertreter des
-Staates, der Arbeitgeberverbände und der Gewerkschaften. Zwei Prinzipien sichern die Substanz:
+Was als gesellschaftlich wirksame Investition gilt, folgt den sozialen, nachhaltigen und
+generationentauglichen Prinzipien, die der Bund festlegt — legitimiert durch Volksabstimmung. Ob ein
+einzelner Unternehmensvorschlag diesen Prinzipien entspricht, prüft ein Gremium aus Gewerkschaften der
+betroffenen Branche, der betroffenen Gemeinde oder dem Kanton sowie der Wissenschaft. Zwei Prinzipien
+sichern zusätzlich die Substanz:
 
 - **Gesellschaftlicher Nutzen statt Eigennutz:** Eine Kita, die Eltern in der ganzen Gemeinde
   entlastet, zählt. Eine Betreuung exklusiv für Führungskräfte nicht. Massgeblich ist, wer profitiert
@@ -107,6 +110,11 @@ Staates, der Arbeitgeberverbände und der Gewerkschaften. Zwei Prinzipien sicher
 
 Für Standardleistungen wie anerkannte Lehrlingsstellen oder lokale Kita-Kooperationen gilt ein
 vereinfachtes Verfahren ohne Einzelfallprüfung.
+
+Für Grossprojekte — etwa Immobilienbau oder Energieprojekte — entscheidet ein eigenes, unabhängiges
+Gremium aus Wissenschaft, Zivilgesellschaft und Kantonen (siehe Zertifizierung unten). Das hier
+beschriebene Gremium prüft die kleineren, finanziell überschaubaren Steuer-Projekte der Unternehmen —
+nicht dieselben Entscheidungsträger, aber dieselben Bundesprinzipien.
 
 ---
 
@@ -140,7 +148,7 @@ skalierbar und übertragbar auf föderale Systeme wie die Schweiz.
 |---|---|---|
 | Parlament | Letztentscheidung bleibt | Das Parlament berücksichtigt die Sektorpräferenzen der Unternehmen bei der Mittelplanung und begründet Abweichungen öffentlich. Das demokratische Letztentscheidungsrecht bleibt unberührt. |
 | Kernbereiche | Ausserhalb des Wettbewerbs | Sozialhilfe, Invalidenversicherung und Grundversorgung werden per Parlamentsbeschluss als nicht verhandelbar definiert. Sie stehen ausserhalb des Wettbewerbs um Unternehmensgunst. |
-| Zertifizierung | Unabhängig und plural | Soziale Erträge werden durch eine unabhängige, pluralistisch besetzte Stelle zertifiziert — mit Vertreterinnen aus Wissenschaft, Zivilgesellschaft und Kantonen. Das verhindert behauptete statt erbrachte Wirkung. |
+| Zertifizierung | Unabhängig und plural | Soziale Erträge bei Grossprojekten werden durch eine unabhängige, pluralistisch besetzte Stelle zertifiziert — mit Vertreterinnen aus Wissenschaft, Zivilgesellschaft und Kantonen. Das verhindert behauptete statt erbrachte Wirkung. |
 
 **Absatz:** Die Transparenzplattform macht sichtbar, wohin Unternehmen investieren. Damit hat das
 Parlament eine faktenbasierte Grundlage für seine Nachsteuerung — und die Bevölkerung kann die
@@ -231,3 +239,23 @@ würde das die Glaubwürdigkeit der belegten Zahlen beschädigen.
 mit beiden Szenarien nebeneinander (nicht nur dem optimistischen) und explizitem Modellcharakter-
 Hinweis. Das pessimistische Szenario ist dabei das stärkere Argument — «das Schlimmste, was hätte
 passieren können: ein paar Jahre Lernkurve».
+
+---
+
+## Nachtrag 2 — Klima-Jam-Session, Zertifizierungsstruktur geklärt (2026-08-19)
+
+Beim Konsistenzcheck der neuen Klima-Sektion fiel eine Unstimmigkeit auf: Diese Datei beschrieb an
+zwei Stellen scheinbar zwei verschiedene Prüfgremien — tripartitisch (Staat/Arbeitgeberverbände/
+Gewerkschaften) bei „Wer prüft, was als Investition zählt", unabhängig-pluralistisch (Wissenschaft/
+Zivilgesellschaft/Kantone) bei der Zertifizierungs-Zeile der Demokratischen Absicherung.
+
+**Auflösung:** zwei tatsächlich verschiedene Gremien für zwei Grössenordnungen, beide unter einem
+gemeinsamen, per Volksabstimmung legitimierten Bundesprinzip:
+- **Steuer-Projekte** (Kreis 2, finanziell überschaubar): Gewerkschaften der betroffenen Branche +
+  betroffene Gemeinde/Kanton + Wissenschaft (ersetzt die bisherige „tripartitisch: Staat/
+  Arbeitgeberverbände/Gewerkschaften"-Formulierung)
+- **Grossprojekte** (Immobilien, Energie): die bereits bestehende unabhängige, pluralistisch besetzte
+  Stelle (Wissenschaft/Zivilgesellschaft/Kantone)
+
+Details siehe `drafts/klima.md`, Nachtrag 1. Beide Textstellen in dieser Datei sowie in
+`finanzierung.html` und `manifest.html` entsprechend präzisiert.
