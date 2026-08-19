@@ -100,6 +100,22 @@ const MANIFEST_TRANSLATIONS = {
       "kreise_p": "Unternehmen, die in Gesundheit und Bildung ihrer Mitarbeitenden investieren, senken die staatlichen Sozialkosten. Pensionskassen, die in Sozialinfrastruktur investieren, erhalten stabile Renditen und stärken den Standort. Der Staat, der Wirkung zertifiziert statt Ausgaben verwaltet, wird effizienter. Kein Kreis trägt allein — alle drei profitieren vom Gelingen der anderen.",
       "caveat": "Die Zertifizierung sozialer Erträge erfolgt durch eine unabhängige, pluralistisch besetzte Stelle — mit Vertreterinnen aus Wissenschaft, Zivilgesellschaft und Kantonen. Das verhindert, dass Unternehmen soziale Wirkung behaupten, ohne sie zu erbringen, und trotzdem Vorteile erhalten."
     },
+    "migration": {
+      "label": "Migration",
+      "h2": "Wille zur Gemeinschaft statt Herkunft.",
+      "nicht": "Offene Grenzen vs. geschlossene Grenzen.",
+      "sondern": "Wer den Willen zur Gemeinschaft mitbringt — Arbeit, Teilhabe, das Mittragen des gemeinsamen Projekts —, hat einen Platz.",
+      "p1": "Der Begriff des Verfassungspatriotismus (Sternberger/Habermas) beschreibt, was die Schweiz lange vor dem Begriff gelebt hat: Zugehörigkeit durch Bekenntnis zu gemeinsamen Prinzipien statt durch Abstammung. Aufenthalt und Einbürgerung folgen deshalb dem Nachweis von Teilhabe — nicht der Herkunft: Erwerbsarbeit, Sprachkompetenz, gesellschaftliches Engagement und Bekenntnis zu Grundwerten. Schutz vor Verfolgung (Asyl) bleibt davon unberührt — er ist ein bedingungsloses Recht, keine Teilhabe-Leistung; das Willensnation-Prinzip greift erst beim dauerhaften Verbleib.",
+      "p2": "Integration ist Bedingung, nicht Option: Wo sich Parallelgesellschaften strukturell verfestigen, wird das Ziel der Willensnation unterlaufen. Statt neuer Vorschriften nutzt dies einen bereits bestehenden Hebel — geförderter Wohnraum wird nach den Kriterien der Wohnbau-Förderung vergeben (Mischnutzung, Gesellschaftsbezug), Konzentration wird so nicht subventioniert. Kulturelle Vielfalt bleibt dabei ausdrücklich erwünscht — vorausgesetzt, der gemeinsame Wille zur Zukunft trägt."
+    },
+    "klima": {
+      "label": "Klima",
+      "h2": "Überleben, nicht Ideologie.",
+      "nicht": "Klimapolitik als Symbolfrage zwischen ökologischer Musterschülerin und Wachstumsbremse.",
+      "sondern": "Generationentauglichkeit ist eine Überlebensfrage der Willensnation.",
+      "p1": "Die Willensnation existiert, weil Generationen sie immer wieder gewählt haben — 1291, 1848, heute wieder. Klimaverträglichkeit ist deshalb kein Thema neben anderen, sondern eine Vorbedingung dafür, dass die Willensnation als Projekt fortbestehen kann. Kein neuer Fördertopf: Die bereits bestehende Zertifizierungsstelle der Dreikreis-Finanzierung erhält ein drittes Kriterium neben gesellschaftlichem Nutzen und additivem Prinzip — Generationentauglichkeit, sektorübergreifend für Sicherheit, Wohnen, Bildung und Klima gleichermassen.",
+      "p2": "Eine CO2-Lenkungsabgabe lenkt zusätzlich über den Preis; ihr Ertrag ist geteilt — teils pro Kopf zurück an die Bevölkerung, teils zweckgebunden in Sanierung, erneuerbare Energien und ÖV-Ausbau. Frühe, konsequente Dekarbonisierung ist dabei kein Kostenfaktor, sondern ein Standortvorteil — Schweizer Cleantech, Exportstärke, Erstmover-Vorteil. Die Schweiz bringt ihre Rolle als geborene Vermittlerin auch in die Klimadiplomatie ein. Das Manifest nennt bewusst kein eigenes Zieldatum — der Fokus liegt auf dem Wie, nicht auf einem politisch umkämpften Wann."
+    },
     "werkzeug2": {
       "label": "Werkzeug 2",
       "h2": "Konstruktive Demokratie.",
@@ -143,6 +159,8 @@ const MANIFEST_TRANSLATIONS = {
       "wohnen": "Wohnen",
       "bildung": "Bildung",
       "finanzierung": "Finanzierung",
+      "migration": "Migration",
+      "klima": "Klima",
       "werkzeug2": "Konstr. Demokratie",
       "demokratie": "Bedürfnis & Sicherheit",
       "aufruf": "Einladung",
@@ -255,6 +273,22 @@ const MANIFEST_TRANSLATIONS = {
       "kreise_p": "Les entreprises qui investissent dans la santé et la formation de leurs employés réduisent les coûts sociaux de l'État. Les caisses de pension qui investissent dans les infrastructures sociales obtiennent des rendements stables et renforcent la place économique. L'État, qui certifie l'impact plutôt que de gérer les dépenses, devient plus efficace. Aucun cercle n'agit seul — tous trois bénéficient du succès des autres.",
       "caveat": "La certification des retombées sociales est effectuée par une instance indépendante et pluraliste — avec des représentants de la science, de la société civile et des cantons. Cela empêche les entreprises de prétendre à un impact social sans le fournir, tout en bénéficiant d'avantages."
     },
+    "migration": {
+      "label": "Migration",
+      "h2": "La volonté de communauté plutôt que l'origine.",
+      "nicht": "Frontières ouvertes vs. frontières fermées.",
+      "sondern": "Qui apporte la volonté de communauté — travail, participation, l'engagement dans le projet commun — a sa place.",
+      "p1": "Le concept de patriotisme constitutionnel (Sternberger/Habermas) décrit ce que la Suisse a vécu bien avant que le terme n'existe : l'appartenance par l'adhésion à des principes communs plutôt que par l'ascendance. Le séjour et la naturalisation suivent donc la preuve de participation — pas l'origine : activité professionnelle, compétence linguistique, engagement social et adhésion aux valeurs fondamentales. La protection contre la persécution (asile) n'en est pas affectée — c'est un droit inconditionnel, pas une prestation de participation ; le principe de la nation de volonté ne s'applique qu'au séjour durable.",
+      "p2": "L'intégration est une condition, pas une option : là où des sociétés parallèles se consolident structurellement, l'objectif de la nation de volonté est compromis. Au lieu de nouvelles prescriptions, ceci utilise un levier déjà existant — le logement subventionné est attribué selon les critères de promotion du logement (mixité d'usage, ancrage social), la concentration n'est ainsi pas subventionnée. La diversité culturelle reste explicitement bienvenue — à condition que la volonté commune pour l'avenir porte."
+    },
+    "klima": {
+      "label": "Climat",
+      "h2": "Survivre, pas une idéologie.",
+      "nicht": "La politique climatique comme question symbolique entre bonne élève écologique et frein à la croissance.",
+      "sondern": "La compatibilité intergénérationnelle est une question de survie pour la nation de volonté.",
+      "p1": "La nation de volonté existe parce que des générations l'ont choisie encore et encore — 1291, 1848, aujourd'hui à nouveau. La compatibilité climatique n'est donc pas un thème parmi d'autres, mais une condition préalable à la pérennité du projet de la nation de volonté. Pas de nouveau fonds de soutien : l'organisme de certification déjà existant du financement à trois cercles reçoit un troisième critère à côté de l'utilité sociale et du principe additif — la compatibilité intergénérationnelle, transversale pour la sécurité, le logement, la formation et le climat.",
+      "p2": "Une taxe incitative sur le CO2 oriente en plus par le prix ; son produit est partagé — une partie est reversée par habitant à la population, une partie est affectée à l'assainissement, aux énergies renouvelables et à l'extension des transports publics. Une décarbonation précoce et cohérente n'est pas un facteur de coût, mais un avantage compétitif — cleantech suisse, force à l'exportation, avantage du précurseur. La Suisse apporte aussi son rôle de médiatrice née dans la diplomatie climatique. Le manifeste ne cite délibérément aucune échéance propre — l'accent est mis sur le comment, pas sur un quand politiquement disputé."
+    },
     "werkzeug2": {
       "label": "Outil 2",
       "h2": "Démocratie constructive.",
@@ -298,6 +332,8 @@ const MANIFEST_TRANSLATIONS = {
       "wohnen": "Logement",
       "bildung": "Éducation",
       "finanzierung": "Financement",
+      "migration": "Migration",
+      "klima": "Climat",
       "werkzeug2": "Démocratie constructive",
       "demokratie": "Besoin & Sécurité",
       "aufruf": "Invitation",
@@ -410,6 +446,22 @@ const MANIFEST_TRANSLATIONS = {
       "kreise_p": "Le imprese che investono nella salute e nell'educazione dei propri dipendenti riducono i costi sociali statali. Le casse pensioni che investono in infrastrutture sociali ottengono rendimenti stabili e rafforzano la piazza economica. Lo Stato, che certifica l'impatto invece di gestire le spese, diventa più efficiente. Nessun cerchio opera da solo — tutti e tre beneficiano del successo degli altri.",
       "caveat": "La certificazione dei risultati sociali è effettuata da un organismo indipendente e pluralistico — con rappresentanti della scienza, della società civile e dei cantoni. Questo impedisce alle imprese di rivendicare un impatto sociale senza fornirlo, ottenendo comunque vantaggi."
     },
+    "migration": {
+      "label": "Migrazione",
+      "h2": "Volontà di comunità anziché origine.",
+      "nicht": "Confini aperti vs. confini chiusi.",
+      "sondern": "Chi porta la volontà di comunità — lavoro, partecipazione, il sostegno del progetto comune — ha un posto.",
+      "p1": "Il concetto di patriottismo costituzionale (Sternberger/Habermas) descrive ciò che la Svizzera ha vissuto molto prima che il termine esistesse: appartenenza attraverso l'adesione a principi comuni anziché per discendenza. Soggiorno e naturalizzazione seguono quindi la prova di partecipazione — non l'origine: attività lavorativa, competenza linguistica, impegno sociale e adesione ai valori fondamentali. La protezione dalla persecuzione (asilo) non ne è toccata — è un diritto incondizionato, non una prestazione di partecipazione; il principio della nazione di volontà si applica solo al soggiorno permanente.",
+      "p2": "L'integrazione è una condizione, non un'opzione: dove si consolidano strutturalmente società parallele, l'obiettivo della nazione di volontà viene minato. Invece di nuove prescrizioni, questo utilizza una leva già esistente — l'edilizia sovvenzionata viene assegnata secondo i criteri di promozione edilizia (uso misto, legame sociale), la concentrazione non viene così ulteriormente sovvenzionata. La diversità culturale rimane esplicitamente benvenuta — a condizione che la volontà comune per il futuro regga."
+    },
+    "klima": {
+      "label": "Clima",
+      "h2": "Sopravvivere, non ideologia.",
+      "nicht": "La politica climatica come questione simbolica tra primato ecologico e freno alla crescita.",
+      "sondern": "La sostenibilità intergenerazionale è una questione di sopravvivenza per la nazione di volontà.",
+      "p1": "La nazione di volontà esiste perché le generazioni l'hanno scelta più volte — 1291, 1848, oggi di nuovo. La sostenibilità climatica non è quindi un tema tra tanti, ma una precondizione affinché il progetto della nazione di volontà possa continuare a esistere. Nessun nuovo fondo: l'organismo di certificazione già esistente del finanziamento a tre cerchi riceve un terzo criterio accanto all'utilità sociale e al principio additivo — la sostenibilità intergenerazionale, trasversale per sicurezza, edilizia abitativa, formazione e clima.",
+      "p2": "Una tassa di incentivazione sul CO2 orienta inoltre tramite il prezzo; il suo provento è diviso — una parte torna pro capite alla popolazione, una parte è vincolata a risanamenti, energie rinnovabili ed espansione del trasporto pubblico. Una decarbonizzazione precoce e coerente non è un fattore di costo, ma un vantaggio di localizzazione — cleantech svizzero, forza export, vantaggio del pioniere. La Svizzera porta il suo ruolo di mediatrice nata anche nella diplomazia climatica. Il manifesto non cita deliberatamente una propria scadenza — l'accento è posto sul come, non su un quando politicamente conteso."
+    },
     "werkzeug2": {
       "label": "Strumento 2",
       "h2": "Democrazia costruttiva.",
@@ -453,6 +505,8 @@ const MANIFEST_TRANSLATIONS = {
       "wohnen": "Abitare",
       "bildung": "Istruzione",
       "finanzierung": "Finanziamento",
+      "migration": "Migrazione",
+      "klima": "Clima",
       "werkzeug2": "Democrazia costruttiva",
       "demokratie": "Bisogno & Sicurezza",
       "aufruf": "Invito",
@@ -565,6 +619,22 @@ const MANIFEST_TRANSLATIONS = {
       "kreise_p": "Companies that invest in the health and education of their employees reduce state social costs. Pension funds that invest in social infrastructure receive stable returns and strengthen the location. The state, which certifies impact instead of managing expenditures, becomes more efficient. No circle bears the burden alone — all three benefit from the success of the others.",
       "caveat": "The certification of social returns is carried out by an independent, pluralistically composed body — with representatives from science, civil society, and the cantons. This prevents companies from claiming social impact without delivering it, and still receiving benefits."
     },
+    "migration": {
+      "label": "Migration",
+      "h2": "Will to community, not origin.",
+      "nicht": "Open borders vs. closed borders.",
+      "sondern": "Whoever brings the will to community — work, participation, carrying the shared project — has a place.",
+      "p1": "The concept of constitutional patriotism (Sternberger/Habermas) describes what Switzerland lived long before the term existed: belonging through commitment to shared principles rather than descent. Residence and naturalization therefore follow proof of participation — not origin: employment, language proficiency, civic engagement, and commitment to fundamental values. Protection from persecution (asylum) remains unaffected by this — it is an unconditional right, not a participation benefit; the nation-of-will principle only applies to permanent residence.",
+      "p2": "Integration is a condition, not an option: where parallel societies become structurally entrenched, the goal of the nation of will is undermined. Instead of new regulations, this uses an already existing lever — subsidized housing is allocated according to the housing-support criteria (mixed use, community ties), so concentration is not further subsidized. Cultural diversity remains explicitly welcome — provided the shared will for the future carries it."
+    },
+    "klima": {
+      "label": "Climate",
+      "h2": "Survival, not ideology.",
+      "nicht": "Climate policy as a symbolic question between eco poster child and growth brake.",
+      "sondern": "Intergenerational viability is a survival question for the nation of will.",
+      "p1": "The nation of will exists because generations chose it again and again — 1291, 1848, today once more. Climate viability is therefore not one topic among others, but a precondition for the nation of will to continue existing as a project. No new funding pot: the already existing certification body of the three-circle financing gets a third criterion alongside social benefit and the additive principle — intergenerational viability, cross-sector for security, housing, education, and climate alike.",
+      "p2": "A CO2 levy additionally steers through price; its proceeds are split — part returned per capita to the population, part earmarked for renovation, renewable energy, and public transport expansion. Early, consistent decarbonization is not a cost factor but a location advantage — Swiss cleantech, export strength, first-mover advantage. Switzerland brings its role as a born mediator into climate diplomacy as well. The manifesto deliberately names no target date of its own — the focus is on the how, not on a politically contested when."
+    },
     "werkzeug2": {
       "label": "Tool 2",
       "h2": "Constructive Democracy.",
@@ -608,6 +678,8 @@ const MANIFEST_TRANSLATIONS = {
       "wohnen": "Housing",
       "bildung": "Education",
       "finanzierung": "Financing",
+      "migration": "Migration",
+      "klima": "Climate",
       "werkzeug2": "Constr. Democracy",
       "demokratie": "Need & Security",
       "aufruf": "Invitation",

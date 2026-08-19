@@ -1618,6 +1618,28 @@
         if (bq) setHtml(bq, T_fin.quote);
       }
 
+      // ── MIGRATION ──
+      var T_mig = T.migration; s = document.getElementById('migration');
+      if (T_mig && s) {
+        setText(qs('.section-label', s), T_mig.label);
+        setText(qs('h2', s), T_mig.h2);
+        nichtSondern(s, T_mig.nicht, T_mig.sondern);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_mig.p1);
+        if (ps[1]) setHtml(ps[1], T_mig.p2);
+      }
+
+      // ── KLIMA ──
+      var T_kl = T.klima; s = document.getElementById('klima');
+      if (T_kl && s) {
+        setText(qs('.section-label', s), T_kl.label);
+        setText(qs('h2', s), T_kl.h2);
+        nichtSondern(s, T_kl.nicht, T_kl.sondern);
+        var ps = containerPs(s);
+        if (ps[0]) setHtml(ps[0], T_kl.p1);
+        if (ps[1]) setHtml(ps[1], T_kl.p2);
+      }
+
       // ── WERKZEUG 2 ──
       var T_w2 = T.werkzeug2; s = document.getElementById('werkzeug2');
       if (T_w2 && s) {
@@ -1667,7 +1689,7 @@
       // ── CHAPNAV ──
       var cn = T.chapnav;
       if (cn) {
-        ['einleitung','methode','werkzeug1','gesundheit','wohnen','bildung','finanzierung','werkzeug2','demokratie','aufruf'].forEach(function(id) {
+        ['einleitung','methode','werkzeug1','gesundheit','wohnen','bildung','finanzierung','migration','klima','werkzeug2','demokratie','aufruf'].forEach(function(id) {
           if (cn[id]) setText(qs('.chapnav-item[data-section="' + id + '"] .chapnav-label'), cn[id]);
         });
         setText(qs('.chapnav-sheet-title'), cn.sheet_title);
@@ -1675,6 +1697,7 @@
           einleitung: cn.sheet_einleitung, methode: cn.sheet_methode,
           werkzeug1: cn.sheet_werkzeug1, gesundheit: cn.gesundheit,
           wohnen: cn.wohnen, bildung: cn.bildung, finanzierung: cn.finanzierung,
+          migration: cn.migration, klima: cn.klima,
           werkzeug2: cn.sheet_werkzeug2, demokratie: cn.sheet_demokratie, aufruf: cn.sheet_aufruf
         };
         document.querySelectorAll('.chapnav-sheet a').forEach(function(a) {
