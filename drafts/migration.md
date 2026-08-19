@@ -82,6 +82,6 @@ Geist wie „keine neue Steuer, sondern neue Architektur" bei der Dreikreis-Fina
 - [ ] Verfassungspatriotismus-Zitat/Zuschreibung (Sternberger/Habermas) vor Publikation verifizieren.
 - [ ] Konkrete Schwellenwerte (Sprachniveau, Fristen) — bewusst nicht im Manifest selbst, eher auf
   Vertiefungsseite/politischer Umsetzungsebene zu klären.
-- [ ] Haltungskompass: aktuelle Migrations-Frage („Zuwanderung ist eine Bereicherung") bildet die
-  Teilhabe-Bedingung nicht ab — bei der ohnehin geplanten Haltungskompass-Überarbeitung (siehe
-  Ledger, Q3/Q6/Q7/Q8/Q10) prüfen, ob eine zusätzliche/geänderte Frage sinnvoll ist.
+- [x] Haltungskompass Q8 überarbeitet (2026-08-19): neue Formulierung „Migration ist eine
+  Bereicherung, wenn Zuwandernde sich durch Arbeit, Sprache und gesellschaftliches Engagement aktiv
+  in die Gesellschaft integrieren." (dx:0, dy:1), in allen vier Sprachen (DE/FR/IT/EN) aktualisiert.
