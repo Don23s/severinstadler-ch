@@ -212,6 +212,29 @@ bleibt dabei ausdrücklich erwünscht — vorausgesetzt, der gemeinsame Wille zu
 
 ---
 
+### Klima: Überleben, nicht Ideologie
+
+**Nicht:** Klimapolitik als Symbolfrage zwischen ökologischer Musterschülerin und Wachstumsbremse.
+**Sondern:** Generationentauglichkeit ist eine Überlebensfrage der Willensnation — sie entscheidet
+mit, ob es dieses Land in fünfzig Jahren noch so gibt, wie wir es kennen.
+
+Die Willensnation existiert, weil Generationen sie immer wieder gewählt haben — 1291, 1848, heute
+wieder. Klimaverträglichkeit ist deshalb kein Thema neben anderen, sondern eine Vorbedingung dafür,
+dass die Willensnation als Projekt fortbestehen kann. Kein neuer Fördertopf: Die bereits bestehende
+Zertifizierungsstelle der Dreikreis-Finanzierung (siehe oben) erhält ein drittes Kriterium neben
+gesellschaftlichem Nutzen und additivem Prinzip — Generationentauglichkeit, sektorübergreifend für
+Sicherheit, Wohnen, Bildung und Klima gleichermassen. Eine CO2-Lenkungsabgabe lenkt zusätzlich über
+den Preis; ihr Ertrag ist geteilt — teils pro Kopf zurück an die Bevölkerung, teils zweckgebunden in
+Sanierung, erneuerbare Energien und ÖV-Ausbau. Frühe, konsequente Dekarbonisierung ist dabei kein
+Kostenfaktor, sondern ein Standortvorteil — Schweizer Cleantech, Exportstärke, Erstmover-Vorteil. Die
+Schweiz bringt ihre Rolle als geborene Vermittlerin auch in die Klimadiplomatie ein. Das Manifest
+nennt bewusst kein eigenes Zieldatum — der Fokus liegt auf dem Wie, nicht auf einem politisch
+umkämpften Wann.
+
+*Vertiefung:* [Klima →](klima.html)
+
+---
+
 ### Das Solidaritätsdreieck
 *[Bestehender Inhalt — wird in überarbeiteter Form integriert]*
 
