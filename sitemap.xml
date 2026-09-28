@@ -51,6 +51,21 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.severinstadler.ch/steuerpolitik.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.severinstadler.ch/migration.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.severinstadler.ch/klima.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.severinstadler.ch/transparenz.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
