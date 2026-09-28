@@ -78,13 +78,27 @@ Komponenten:
 Zusammen ein Solidaritätspool von 5 %, über den jedes Unternehmen aktiv mitentscheidet. Der Beitrag
 ergänzt die bestehenden Sozialabgaben (AHV, BVG, ALV) — er ersetzt sie nicht.
 
+**Mindestanteil-Regel:** Von den 3 % neu darf ein Unternehmen höchstens 2 Prozentpunkte über Weg A
+(eigene Belegschaft/regionale Investition) umlenken. Mindestens 1 Prozentpunkt fliesst immer über
+Weg B in den Bundes-/Sektor-Topf — unabhängig davon, wie stark ein Unternehmen sein Weg-A-Potenzial
+ausschöpft. Grund: Wer eigene Mitarbeitende gesünder oder besser ausgebildet macht, senkt damit auch
+die eigenen künftigen Lohnnebenkosten — das ist kein Widerspruch zur Ermöglichungspolitik, sondern ihr
+Kernprinzip ("kein Vertrauen auf guten Willen", siehe Manifest-Einleitung): Interessenangleichung
+statt Selbstlosigkeit vorauszusetzen, ist Absicht, nicht Etikettenschwindel. Ohne Untergrenze könnte
+diese Angleichung aber dazu führen, dass ressourcenstarke Unternehmen ihren gesamten Beitrag intern
+verbrauchen und nichts in den gemeinsamen Topf einzahlen, während ressourcenschwache Unternehmen und
+Sektoren ohne eigene Programme voll einzahlen — dieselbe Bezeichnung "solidarisch" für zwei sehr
+unterschiedliche Realitäten. Die Mindestanteil-Regel stellt sicher, dass ein Sockel echter,
+nicht-firmenspezifischer Solidarität in jedem Fall bestehen bleibt.
+
 **Zwei Boxen nebeneinander:**
 
 **Weg A — Regionale Investition**
-Das Unternehmen investiert die 3 % direkt in seinem Einzugsgebiet: Kinderbetreuung,
-Gesundheitsangebote, Berufsbildung, lokale Infrastruktur.
-→ Der Solidaritätsbeitrag fällt als zusätzliche Bundessteuer weg.
-→ Das 2 %-Lenkungsrecht auf Bundesebene bleibt bestehen.
+Das Unternehmen investiert bis zu 2 der 3 % direkt in seinem Einzugsgebiet: Kinderbetreuung,
+Gesundheitsangebote, Berufsbildung, lokale Infrastruktur. Der verbleibende 1 Prozentpunkt fliesst
+zwingend über Weg B in den Bundes-/Sektor-Topf (Mindestanteil-Regel, siehe oben).
+→ Der über Weg A investierte Anteil fällt als zusätzliche Bundessteuer weg, der Mindestanteil nicht.
+→ Das 2 %-Lenkungsrecht auf Bundesebene bleibt zusätzlich bestehen.
 *Wirkung:* Ein lokal verwurzeltes Unternehmen investiert sichtbar in seine Gemeinschaft. Gemeinde und
 Kanton werden indirekt entlastet, weil privat finanzierte Angebote öffentliche Mittel freisetzen.
 Mitarbeitende können in den Entscheid einbezogen werden — das stärkt die Legitimation.
@@ -107,6 +121,14 @@ sichern zusätzlich die Substanz:
   — nicht, wer finanziert.
 - **Additives Prinzip:** Anerkannt wird nur die Netto-Mehrleistung. Was bereits als Betriebskosten
   abgezogen oder als bestehende Leistung verbucht wurde, kann nicht zusätzlich geltend gemacht werden.
+
+**Zertifizierung ist periodisch, nicht einmalig.** Das Gremium prüft nicht nur bei der Zusage, sondern
+jährlich nachträglich, ob die zertifizierte Investition tatsächlich erbracht wurde. Bei Abweichung
+entfällt der Rabatt rückwirkend für die betroffene Periode, die Differenz wird nachgefordert —
+dieselbe Durchsetzungslogik wie bei der Steuerpolitik (dort: risikobasierte Stichprobenkontrolle +
+bestehende Rechtsfolgen bei Falschdeklaration), auf Kreis 2 übertragen. Das verhindert, dass eine
+einmal erteilte Zertifizierung zu implizitem Vertrauensvorschuss wird — konsistent mit dem
+Ermöglichungspolitik-Prinzip "kein Vertrauen auf guten Willen" (siehe Manifest-Einleitung).
 
 Für Standardleistungen wie anerkannte Lehrlingsstellen oder lokale Kita-Kooperationen gilt ein
 vereinfachtes Verfahren ohne Einzelfallprüfung.
@@ -171,7 +193,9 @@ Grössenordnung, nicht der Budgetierung.*
 | Phase 1 (Jahr 1) | ~CHF 10 Mrd. | ~CHF 300–400 Mio. | — | ~CHF 300–400 Mio. |
 | Phase 2 (ab Jahr 2) | ~CHF 10 Mrd. | ~CHF 300–400 Mio. | ~CHF 200 Mio. | ~CHF 500–600 Mio. |
 
-**Tabelle 2 — Aufteilung im Gleichgewicht** (Annahme: 55 % Weg A, 45 % Weg B)
+**Tabelle 2 — Aufteilung im Gleichgewicht** (Annahme: 55 % Weg A, 45 % Weg B — die Mindestanteil-Regel
+garantiert unabhängig von Unternehmensentscheiden mindestens 33 % Weg B; die Annahme liegt bewusst
+darüber, weil realistischerweise nicht jedes Unternehmen sein volles Weg-A-Potenzial ausschöpft)
 
 | Kanal | Jährlich | Wirkungsebene |
 |---|---|---|
@@ -259,3 +283,30 @@ gemeinsamen, per Volksabstimmung legitimierten Bundesprinzip:
 
 Details siehe `drafts/klima.md`, Nachtrag 1. Beide Textstellen in dieser Datei sowie in
 `finanzierung.html` und `manifest.html` entsprechend präzisiert.
+
+## Nachtrag 3 — Kritische Gesamtprüfung, Mindestanteil-Regel für Kreis 2 (2026-09-28)
+
+Eine kritische Prüfung des gesamten Manifests stellte fest: Weg A (eigene Belegschaft) erlaubte
+bisher, den gesamten 3-%-Solidarbeitrag intern zu verbrauchen. Die bestehenden Schutzklauseln
+("Gesellschaftlicher Nutzen statt Eigennutz", "Additives Prinzip") verhindern zwar plumpe
+Umdeklaration, nicht aber die strukturelle Schieflage: Ressourcenstarke Unternehmen können ihren
+gesamten Solidarbeitrag über hochwertige eigene Programme abdecken und zahlen dadurch faktisch nichts
+in den gemeinsamen Topf, während ressourcenschwache Unternehmen und ganze Sektoren ohne eigene
+Programme voll einzahlen — beides heisst "Solidarbeitrag", meint aber sehr Unterschiedliches.
+
+**Auflösung: Mindestanteil-Regel.** Höchstens 2 der 3 Prozentpunkte sind über Weg A umlenkbar;
+mindestens 1 Prozentpunkt fliesst zwingend über Weg B in den Bundes-/Sektor-Topf, unabhängig vom
+Weg-A-Ausschöpfungsgrad des Unternehmens (siehe „Kreis 2 im Detail" oben, jetzt aktualisiert). Zugleich
+explizit festgehalten: Die Interessenangleichung (Eigeninvestition senkt auch eigene künftige
+Lohnnebenkosten) ist kein Etikettenschwindel, sondern angewandte Ermöglichungspolitik — das Prinzip
+"kein Vertrauen auf guten Willen" aus der Manifest-Einleitung. Die Mindestanteil-Regel sorgt dafür,
+dass diese Angleichung die kollektive Solidarität begrenzt, statt sie zu ersetzen. Kondensierte
+Fassung in `manifest-entwurf.md` (Finanzierung-Abschnitt) und `manifest.html` (Kreis-2-Box)
+nachgezogen.
+
+**Zusätzlich (Befund 6 derselben Prüfung):** Die Zertifizierung fand bisher nur einmalig bei der
+Investitionszusage statt — kein beschriebener Mechanismus prüfte, ob die Investition über die Zeit
+auch tatsächlich erbracht wird. Das hätte faktisch wieder Vertrauen auf guten Willen vorausgesetzt,
+obwohl genau das die Ermöglichungspolitik ausschliesst. Auflösung: periodische, jährliche
+Nachprüfung mit rückwirkendem Rabattentzug bei Abweichung (siehe „Wer prüft, was als Investition
+zählt" oben, jetzt ergänzt).

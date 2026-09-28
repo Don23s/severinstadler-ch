@@ -30,6 +30,8 @@ Herkunft kann man nicht wählen. Den Willen zur Gemeinschaft schon.
 
 Dieses Fundament ist der Boden, auf dem alle Werkzeuge dieses Manifests stehen. Nicht weil es romantisch klingt — sondern weil es das Einzige ist, das uns verbindet, wenn uns sonst nichts verbindet.
 
+**Dieses Fundament trägt auf zwei Arten, nicht auf beliebig viele:** Als **direkte Folgerung**, wo aus der Mitgliedschaft in der Willensnation eine konkrete Pflicht folgt — etwa die Beitragspflicht ohne Freibetrag (Steuerpolitik) oder Zugehörigkeit durch Teilhabe statt Herkunft (Migration). Und als **Vorbedingung**, wo ein Prinzip nicht aus der Willensnation folgt, sondern ihr Fortbestehen als wählbares Projekt überhaupt erst sichert — etwa die Generationentauglichkeit beim Klima. Was sich keiner der beiden Formen zuordnen lässt, kann sich nicht zu Recht auf dieses Fundament berufen — auch wenn es an anderer Stelle gut begründet sein mag.
+
 ---
 
 ### Ermöglichungspolitik — die Methode
@@ -52,6 +54,8 @@ Dieser Ansatz funktioniert nur, wenn strukturelle Machtungleichgewichte — Lobb
 
 Eine Ausnahme ist bewusst: Wo der Sozialstaat seine eigene Funktionsbedingung sichert — dass Vermögen von Wohlstand zu Bedürftigkeit umverteilt wird —, ist Beitragspflicht kein Verstoss gegen Ermöglichungspolitik, sondern ihre Voraussetzung. Ermöglichen kann nur, wer über Mittel verfügt; diese Mittel entstehen nicht von selbst. Die Unterscheidung bleibt bestehen: Was mit den erhobenen Mitteln geschieht, folgt so weit wie möglich der Ermöglichungslogik (Wahlrecht, Anreize, Wirkungsorientierung) — dass überhaupt beigetragen wird, ist Pflicht, nicht Ermöglichung.
 
+Eine zweite, deutlich engere Ausnahme betrifft nicht die Erhebung eines Beitrags, sondern die Höhe an der äussersten Spitze (siehe Steuerpolitik): Wo Vermögen eine Grössenordnung erreicht, die selbst beginnt, Marktzugang, politischen Einfluss und die Handlungsfähigkeit des Staates zu verzerren, hört Ermöglichung für alle anderen dort auf, wo Anhäufung für Einzelne schrankenlos bliebe — schrankenlose Konzentration an dieser Spitze ist selbst ein Ermöglichungshindernis für alle übrigen. Diese Ausnahme ist eng begrenzt: Sie betrifft nicht Erfolg oder Leistung (kein rechtlicher Einkommensdeckel, siehe Steuerpolitik), sondern ausschliesslich die demokratisch bestimmte Extremschwelle, an der Vermögenswachstum beginnt, sich strukturell selbst zu verstärken statt aus Leistung zu folgen. Unterhalb dieser Schwelle bleibt die Ermöglichungslogik vollständig in Kraft.
+
 Für diesen Weg gibt es zwei Werkzeuge. Sie kommen aus unterschiedlichen Traditionen. Sie zeigen in dieselbe Richtung.
 
 ---
@@ -68,6 +72,8 @@ Wirtschaftliche Freiheit ist kein Selbstzweck. Sie ist das wirksamste Mittel, da
 > — Karl Polanyi, "The Great Transformation" (1944)
 
 Elinor Ostrom zeigte empirisch — wofür sie 2009 den Nobelpreis erhielt — dass Gemeinschaftsgüter weder durch den Staat allein noch durch den Markt allein nachhaltig verwaltet werden. Gemeinschaften, die ihre eigenen Regeln entwickeln, sind resilienter als beides. Das ist das Fundament des Solidarischen Liberalismus.
+
+**Liberal heisst hier Methode, nicht Umverteilungsgrad.** Wer die Werkzeuge in diesem Kapitel durchgeht — keine Steuerfreigrenze selbst für die Ärmsten, ein Grenzsteuersatz nahe 100 % an der Spitze, ein bedingungsloses Grundeinkommen, ein staatlicher Bürgerfonds —, fragt zu Recht, was daran noch liberal ist. Die Antwort: liberal ist hier die Art, *wie* umverteilt wird — über Marktmechanismen, Anreize und individuelle Wahlfreiheit (negative Einkommenssteuer statt Bürokratie, ein börsenfinanzierter Fonds statt Verwaltungsapparat, eine Wertschöpfungsabgabe statt Verbot) —, nicht *wie viel* umverteilt wird. Das Ergebnis ist redistributiver, als klassischer Liberalismus es normalerweise vorsieht. Das ist eine bewusste Entscheidung, keine Ungenauigkeit im Namen — und der Grund, warum die einzelnen Werkzeuge in den folgenden Kapiteln jeweils liberale wie linke Vordenker gleichermassen zitieren: Sie zeigen liberale Mittel für ein Ziel, das über das hinausgeht, was klassischer Liberalismus für sich beansprucht.
 
 ---
 
@@ -141,7 +147,7 @@ Kein Vorschlag ohne Finanzierungslogik. Die drei oben beschriebenen Bereiche —
 Keine Neuausgaben, sondern Umschichtung: Bestehende Bildungs- und Sozialausgaben werden auf wirkungsbasierte Mechanismen ausgerichtet. Der Staat finanziert den Grundbetrag des Bildungskontos, die Plattform für Bedürfnisanalysen und die Anreizgelder für Lebensraum-Projekte.
 
 **Kreis 2 — Unternehmen (Co-Investor mit Wahlrecht, ~40–50%)**
-Unternehmen entrichten einen Solidarteil — aber mit echtem Gestaltungsrecht (Sektorwahl): Sie können ihren Beitrag direkt in eigene Mitarbeitende (Gesundheit, Bildung) oder in lokale Projekte lenken. Wer nachweisbar investiert, zahlt weniger in den staatlichen Topf. Der Rückfluss ist direkt: tiefere Lohnnebenkosten, Steuererleichterungen, Vorrang bei öffentlichen Aufträgen.
+Unternehmen entrichten einen Solidarteil — aber mit echtem Gestaltungsrecht (Sektorwahl): Sie können ihren Beitrag direkt in eigene Mitarbeitende (Gesundheit, Bildung) oder in lokale Projekte lenken. Wer nachweisbar investiert, zahlt weniger in den staatlichen Topf. Der Rückfluss ist direkt: tiefere Lohnnebenkosten, Steuererleichterungen, Vorrang bei öffentlichen Aufträgen. Eine Mindestanteil-Regel stellt sicher, dass davon unabhängig immer ein Teil in den gemeinsamen Bundes-/Sektor-Topf fliesst (siehe `finanzierung.html`) — Interessenangleichung ist gewollt, darf aber die kollektive Solidarität nicht vollständig verdrängen. Die Zertifizierung ist zudem periodisch, nicht einmalig: Wer die zugesagte Investition nachweislich nicht erbringt, verliert den Rabatt rückwirkend.
 
 **Kreis 3 — Gesellschaft (Kollektivinvestoren, ~20–30%)**
 Pensionskassen verwalten in der Schweiz über 1.2 Billionen Franken. Sie suchen stabile Langzeitrenditen. Zertifizierte Sozialinfrastruktur — Lebensraum-Projekte, Bildungseinrichtungen, Präventionsprogramme — ist investierbar, staatlich mitgarantiert und lokal verankert. Ergänzt durch Genossenschaftsmodelle und Social Impact Bonds: Private co-investieren in soziale Programme, der Staat zahlt zurück — aber nur, wenn messbare Ziele erreicht werden.
@@ -155,6 +161,12 @@ Die Zertifizierung sozialer Erträge bei Grossprojekten erfolgt durch eine unabh
 mit den bestehenden Mitteln über die Dreikreis-Architektur finanziert, nicht aus zusätzlichen
 Steuereinnahmen. Die Frage der Steuergerechtigkeit zwischen Einkommen und Vermögen ist ein eigenständiger
 Strang (siehe unten).
+
+**Erweiterung durch Automatisierung:** Die Bemessungsgrundlage von Kreis 2 wird von einer
+lohnsummenbasierten zu einer wertschöpfungsbasierten Grösse weiterentwickelt, die automatisierte
+Wertschöpfung mitzählt — der bestehende Betrag für Gesundheit, Wohnen und Bildung bleibt davon
+unangetastet; nur das zusätzliche Aufkommen aus dieser Anpassung finanziert einen vierten
+Verwendungszweck (siehe „Künstliche Intelligenz" weiter unten).
 
 ---
 
@@ -234,6 +246,39 @@ ihre Rolle als geborene Vermittlerin auch in die Klimadiplomatie ein. Das Manife
 eigenes Zieldatum — der Fokus liegt auf dem Wie, nicht auf einem politisch umkämpften Wann.
 
 *Vertiefung:* [Klima →](klima.html)
+
+---
+
+### Künstliche Intelligenz: Beitrag neu definieren, nicht Bedeutung verlieren
+
+**Nicht:** Der Versuch, den alten Zusammenhang „menschliche Leistung = wirtschaftlicher Wert" gegen
+die Automatisierung zu verteidigen.
+**Sondern:** Die Willensnation erlebt zum ersten Mal, dass der Mensch nicht mehr die intelligenteste
+Instanz im Raum ist. Direkt aus ihr folgt dabei nur ein Punkt — derselbe wie in der Steuerpolitik:
+Beitrag zur Gemeinschaft bleibt die Grundlage von Zugehörigkeit, unabhängig von der Form, in der er
+geleistet wird. Wo bezahlte Erwerbsarbeit als Beitragsform wegfällt, muss die Gesellschaft eine neue
+finden — das begründet **Beitragsarbeit**, nicht die übrigen drei Bausteine.
+
+Vier Bausteine greifen ineinander, mit unterschiedlicher Begründung — nicht alle sind
+Willensnation-Folgerungen: Unternehmen, die durch Automatisierung Wertschöpfung ohne wachsende
+Lohnsumme erzielen, tragen über eine angepasste Bemessungsgrundlage in Kreis 2 einen grösseren Anteil
+bei — keine neue Steuer, sondern dieselbe Logik wie die international diskutierte Robotersteuer
+(Xavier Oberson, Genf). Ein bedingungsloses Grundeinkommen sichert die Existenz — begründet durch die
+ökonomische Realität wegfallender Erwerbsarbeit, nicht durch die Willensnation; **Beitragsarbeit**
+— finanziell abgegoltenes Engagement für die Gemeinschaft (Pflege, Bildung, Nachbarschaft, Umwelt) —
+ermöglicht darüber hinaus den Ausbau und ist die eine direkte Willensnation-Folgerung in diesem Kapitel
+(siehe Einleitung). Ein staatlicher Bürgerfonds nach dem Vorbild des Alaska Permanent Fund — begründet
+durch Kapitalbeteiligungs-Fairness, nicht durch Zugehörigkeit — macht jede Bürgerin zur Mitbesitzerin
+der automatisierten Wertschöpfung. Und sektorbezogene Allianzen aus Unternehmen und Bürgerinnen —
+begründet durch dieselbe prozessuale Logik wie Werkzeug 2, nicht durch Werkzeug 1 — gestalten die
+Transformation branchenspezifisch mit, statt dass starre Parteiblöcke top-down entscheiden.
+
+Diese Position ist weder links noch rechts zuzuordnen: Ein Grundeinkommen, das liberale Ökonomen wie
+Milton Friedman einst mit der negativen Einkommenssteuer begründeten; ein Bürgerfonds nach dem
+Vorbild eines republikanischen Gouverneurs; eine Sozialpartnerschaft, die die Schweiz der liberalen
+Mitte verdankt — die Bausteine tragen ihre lagerübergreifende Herkunft bereits in sich.
+
+*Vertiefung:* [Künstliche Intelligenz →](ki-gesellschaft.html)
 
 ---
 
@@ -339,10 +384,38 @@ Gute Ideen entstehen im Gespräch, nicht im Monolog.
 
 ---
 
+## NACHTRAG — Kritische Gesamtprüfung des Manifests (2026-09-28)
+
+Eine kritische Prüfung des gesamten Konstrukts (alle Kapitel) identifizierte 7 Befunde, priorisiert
+nach Schwere. Bearbeitet in dieser Session:
+
+1. **Willensnation-Überdehnung** — auf zwei zulässige Begründungstypen beschränkt (direkte Folgerung
+   vs. Vorbedingung), siehe Einleitung oben. Details: `drafts/ki-gesellschaft.md`, Nachtrag 4.
+2. **Ermöglichungspolitik vs. Steuerpolitik-Grenzsteuersatz** — zweite, eng begrenzte Ausnahme
+   ergänzt (Ermöglichungspolitik-Abschnitt oben): schrankenlose Vermögenskonzentration an der Spitze
+   ist selbst ein Ermöglichungshindernis für alle anderen.
+3. **Kreis-2-Solidarität als teils verkleidetes Eigeninteresse** — Mindestanteil-Regel ergänzt, siehe
+   `drafts/finanzierung.md`, Nachtrag 3.
+4. **Rechtsflanke: liberale Verpackung, redistributive Substanz** — zentrale Klarstellung "liberal
+   heisst Methode, nicht Umverteilungsgrad" im Werkzeug-1-Abschnitt oben ergänzt, statt das Argument
+   in jedem Kapitel einzeln zu wiederholen.
+
+6. **Kreis-2-Durchsetzung beruhte auf einmaliger Zertifizierung** — periodische Nachprüfung mit
+   rückwirkendem Rabattentzug ergänzt, siehe `drafts/finanzierung.md`, Nachtrag 3 (Zusatz). Konsistent
+   mit "kein Vertrauen auf guten Willen".
+7. **Loser Faden "Arbeit"** — inhaltlich durch das KI-Gesellschaft-Kapitel (BGE, Beitragsarbeit,
+   Wertschöpfungsabgabe) abgedeckt, Offene-Punkte-Eintrag unten entsprechend bereinigt.
+
+**Bewusst zurückgestellt (Umsetzungsebene, nicht Kernidee — auf User-Wunsch):**
+5. Referendums-Sequenzierung (Steuerpolitik, Klima, KI verlangen je einen eigenen
+   Abstimmungsparameter plus Bundeskompetenz-Verfassungsänderung) — relevant erst, wenn die
+   inhaltliche Vision steht, nicht in dieser Phase.
+
 ## OFFENE PUNKTE (Redaktion)
 
 - [ ] Solidaritätsdreieck / Mechanismus / Sektoren: bestehender Inhalt integrieren
-- [ ] Arbeit: bewusst zurückgestellt, kein Hinweis im Text
+- [x] Arbeit — inhaltlich abgedeckt durch das KI-Gesellschaft-Kapitel (BGE, Beitragsarbeit,
+  Wertschöpfungsabgabe statt Lohnsteuer-Zentrierung), siehe Nachtrag oben, Punkt 7
 - [ ] Übersetzungen: FR / IT / EN nach Abnahme DE
 - [ ] Zitate vor Publikation gegen Originalquellen verifizieren (Verzeichnis oben)
 - [ ] Polanyi-Zitat: auf Englisch — Übersetzung oder deutschen Originalsatz suchen
